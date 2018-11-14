@@ -1,0 +1,33 @@
+
+var transform = function (num) {
+  switch (num){
+      case 0:
+        return {
+          name: '未支付',
+          class: 'not'
+        }
+      case 1:
+        return {
+          name: '已支付',
+          class: 'paid'
+        };
+      case 2:
+        return {
+          name: '已关闭',
+          class: 'closed'
+        };
+      case 3: 
+        return {
+          name: '正在退款',
+          class: 'closed'
+        };
+      case 4: 
+        return {
+          name: '已退款',
+          class: 'closed'
+        };
+
+  }
+}
+
+module.exports.transform = transform;

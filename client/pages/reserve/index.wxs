@@ -1,0 +1,11 @@
+module.exports = {
+    date: {
+      start: '2018-11-11',
+      end: '2019-12-01'
+    },
+    time: {
+      start: '10:00',
+      end: '23:00'
+    },
+    buildings: ['腾讯大厦', '滨海大厦', '飞亚达大厦']
+}

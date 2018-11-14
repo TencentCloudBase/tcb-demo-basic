@@ -1,0 +1,3 @@
+module.exports = {
+    buildings: ['腾讯大厦', '滨海大厦', '飞亚达大厦']
+}

@@ -1,0 +1,7 @@
+.page {
+  padding: 15rpx;
+}
+
+.section {
+  display: block;
+}

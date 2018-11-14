@@ -1,0 +1,42 @@
+<import src="../common/head.wxml"/>
+<import src="../common/foot.wxml"/>
+
+<view class="container">
+  <template is="head" data="{{title}}"/>
+    <!-- 预约查询 -->
+    <view class="weui-form-preview">
+        <view class="weui-form-preview__hd" style="height:2.5em;">
+            <view class="weui-form-preview__label">访客姓名</view>
+            <view class="weui-form-preview__value_in-hd">{{reserve.visitor}}</view>
+        </view>
+
+        <view class="weui-form-preview__bd">
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">电话</view>
+                <view class="weui-form-preview__value">{{reserve.phone}}</view>
+            </view>
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">来访日期</view>
+                <view class="weui-form-preview__value">{{reserve.date}}</view>
+            </view>
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">来访大厦</view>
+                <view class="weui-form-preview__value">{{index.buildings[reserve.building]}}</view>
+            </view>
+            <view class="weui-form-preview__item">
+                <view class="weui-form-preview__label">事由</view>
+                <view class="weui-form-preview__value">{{reserve.desc}}</view>
+            </view>
+        </view>
+        <wxs src="./index.wxs" module="index" />
+    </view>
+    <view class="weui-btn-area">
+        <button
+           class="weui-btn" type="primary" 
+          bindtap="goBack"
+        >
+          再次预约
+        </button>
+    </view>
+  <template is="foot" />
+</view>

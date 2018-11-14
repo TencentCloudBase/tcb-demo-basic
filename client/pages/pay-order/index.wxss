@@ -1,0 +1,49 @@
+page,
+.page, {
+  height: 100%;
+  overflow-y:auto;
+}
+
+.weui-media-box__title {
+  margin-bottom: 0;
+}
+
+.weui-media-box__desc {
+  margin: 10rpx 0;
+}
+
+.paid {
+  color: green;
+  font-size: 28rpx;
+}
+
+.not {
+  color: red;
+  font-size: 28rpx;
+}
+
+.closed {
+  color: slategrey;
+  font-size: 28rpx;
+}
+
+.empty {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+  border: none;
+  height: 28px;
+  font-size: 28rpx;
+}
+
+.weui-panel__hd:after {
+  left: 0;
+}
+
+.weui-media-box:before {
+  left: 0;
+}

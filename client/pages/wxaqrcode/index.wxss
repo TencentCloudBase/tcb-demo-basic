@@ -1,0 +1,46 @@
+/* pages/wxaqrcode/wxaqrcode.wxss */
+
+.page {
+  padding: 0 15rpx;
+}
+
+.guide .counter {
+  margin-top: 50rpx;
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+}
+
+.pannel {
+  display: block;
+  padding: 10rpx 0rpx;
+  text-align:center;
+}
+
+.qr-container {
+  display: block;
+  border: none;
+  text-align:center;
+  width: 100%;
+  height: 400rpx;
+  padding-left:50%;
+}
+
+.qr-image {
+  display: block;
+  width: 400rpx;
+  height: 400rpx;
+  border: 0px solid black;
+  margin-left: -200rpx;
+}
+
+.footer {
+  display: block;
+  text-align: center;
+}
+
+.submit, .back {
+  width: 400rpx;
+  display: block;
+  margin: 20rpx;
+}

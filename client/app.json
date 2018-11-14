@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/user/index",
+    "pages/reserve/index",
+    "pages/reserve-detail/index",
+    "pages/wxaqrcode/index",
+    "pages/pay-list/index",
+    "pages/pay-order/index",
+    "pages/pay-result/index"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "云开发体验",
+    "navigationBarTextStyle": "black"
+  },
+  "cloud": true
+}
