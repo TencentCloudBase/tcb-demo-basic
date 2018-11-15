@@ -1,3 +1,4 @@
+/* eslint-disable complexity */
 // eslint-disable-next-line no-unused-vars
 const regeneratorRuntime = require('../../libs/runtime')
 
@@ -41,7 +42,6 @@ Page({
   },
 
   async onReserve(e) {
-    // this.setData({ showTopTips: true })
     wx.showLoading({
       title: '预约中...',
       mask: true
@@ -49,28 +49,123 @@ Page({
 
     const messageType = e.detail.target.id.replace('messageType', '')
 
-    try {
-      const res = await wx.cloud.callFunction({
-        name: 'add-reserve',
-        data: {
-          visitor: e.detail.value.visitor,
-          phone: e.detail.value.phone,
-          ID: e.detail.value.ID,
-          building: e.detail.value.building,
-          date: e.detail.value.date,
-          time: e.detail.value.time,
-          receptionist: e.detail.value.receptionist,
-          receptionistPhone: e.detail.value.receptionistPhone,
-          desc: e.detail.value.desc,
-          formId: e.detail.formId,
-          messageType
-        }
-      })
+    const db = wx.cloud.database()
+    const reserves = await db.collection('reserves').get()
+    if (reserves && reserves.errMsg === 'collection.get:ok') {
+      let addRes = null
+      let updateRes = null
+      if (reserves && reserves.data.length) {
+        addRes = await db.collection('reserves').doc(reserves.data[0]._id).update({
+          data: {
+            visitor: e.detail.value.visitor,
+            phone: e.detail.value.phone,
+            date: e.detail.value.date,
+            building: e.detail.value.building,
+            desc: e.detail.value.desc
+          }
+        })
+      } else {
+        updateRes = await db.collection('reserves').add({
+          data: {
+            visitor: e.detail.value.visitor,
+            phone: e.detail.value.phone,
+            date: e.detail.value.date,
+            building: e.detail.value.building,
+            desc: e.detail.value.desc
+          }
+        })
+      }
+
+      let messageRes = null
+
+      if (+messageType === 1) {
+        messageRes = await wx.cloud.callFunction({
+          name: 'send-message',
+          data: {
+            messageType,
+            formId: e.detail.formId,
+            page: 'pages/reserve-detail/index',
+            data: {
+              keyword1: {
+                value: e.detail.value.visitor // 来访人
+              },
+              keyword2: {
+                value: e.detail.value.phone // 来访人电话
+              },
+              keyword3: {
+                value: ['腾讯大厦', '滨海大厦', '飞亚达大厦'][e.detail.value.building]// 大楼名称
+              },
+              keyword4: {
+                value: `${e.detail.value.date}`// 到访日期
+              },
+              keyword5: {
+                value: e.detail.value.desc// 来访事由
+              }
+            }
+          }
+        })
+      } else if (+messageType === 2) {
+        messageRes = await wx.cloud.callFunction({
+          name: 'send-message',
+          data: {
+            messageType,
+            formId: e.detail.formId,
+            page: 'pages/reserve-detail/index',
+            data: {
+              keyword1: {
+                value: e.detail.value.visitor // 来访人
+              },
+              keyword2: {
+                value: e.detail.value.phone // 来访人电话
+              },
+              keyword3: {
+                value: ['腾讯大厦', '滨海大厦', '飞亚达大厦'][e.detail.value.building]// 大楼名称
+              },
+              keyword4: {
+                value: `${e.detail.value.date}`// 到访日期
+              },
+              keyword5: {
+                value: e.detail.value.desc// 来访事由
+              }
+            }
+          }
+        })
+      } else if (+messageType === 3) {
+        messageRes = await wx.cloud.callFunction({
+          name: 'send-message',
+          data: {
+            messageType,
+            formId: e.detail.formId,
+            url: 'http://weixin.qq.com/download',
+            page: 'pages/reserve-detail/index',
+            data: {
+              first: {
+                value: '预约成功'
+              },
+              keyword1: {
+                value: e.detail.value.visitor // 来访人
+              },
+              keyword2: {
+                value: e.detail.value.phone // 来访人电话
+              },
+              keyword3: {
+                value: e.detail.value.desc // 大楼名称
+              },
+              keyword4: {
+                value: `${e.detail.value.date}`// 到访日期
+              },
+              remark: {
+                value: e.detail.value.desc// 来访事由
+              }
+            }
+          }
+        })
+      }
+
 
       wx.hideLoading()
-      if (res.result) {
-        const {code} = res.result
-        if (code === 0) {
+      if (messageRes.result) {
+        if (messageRes.result.errcode === 0 || messageRes.result.errcode === 41028) {
           wx.showToast({
             title: '预约成功',
             icon: 'success',
@@ -95,12 +190,11 @@ Page({
           duration: 2000
         })
       }
-    } catch (err) {
-      wx.hideLoading()
+    } else {
       wx.showToast({
         title: '预约失败，请稍后重试！',
         icon: 'error',
-        duration: 3000
+        duration: 2000
       })
     }
   }

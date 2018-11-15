@@ -30,6 +30,7 @@
         </view>
         <wxs src="./index.wxs" module="index" />
     </view>
+    <!-- <view style="display: block;height:400px;">{{msg}}</view> -->
     <view class="weui-btn-area">
         <button
            class="weui-btn" type="primary" 

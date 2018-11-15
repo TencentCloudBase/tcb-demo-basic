@@ -14,7 +14,8 @@ Page({
       date: '',
       time: '',
       status: 1
-    }
+    },
+    msg: ''
   },
 
   /**
@@ -25,27 +26,26 @@ Page({
       title: '数据获取中...',
       mask: true
     })
-
-    const {result} = await wx.cloud.callFunction({
-      name: 'get-reserve',
-      data: {}
-    })
+    const db = wx.cloud.database()
+    const reserves = await db.collection('reserves').get()
     wx.hideLoading()
-
-    if (result && result.code === 0 && result.data.data.length > 0) {
-      const reserve = result.data.data[0]
-      this.setData({reserve})
-    } else {
-      wx.showLoading({
-        title: '没有获取到预约信息',
-        icon: 'error',
-        mask: true
-      })
-      setTimeout(function () {
-        wx.reLaunch({
-          url: '/pages/reserve/index'
+    // this.setData({ msg: JSON.stringify(reserves, null, 4)})
+    if (reserves && reserves.errMsg === 'collection.get:ok') {
+      if (reserves && reserves.data.length) {
+        const reserve = reserves.data[0]
+        this.setData({reserve})
+      } else {
+        wx.showLoading({
+          title: '没有获取到预约信息',
+          icon: 'error',
+          mask: true
         })
-      }, 1000)
+        setTimeout(function () {
+          wx.reLaunch({
+            url: '/pages/reserve/index'
+          })
+        }, 1000)
+      }
     }
   },
   goBack() {
