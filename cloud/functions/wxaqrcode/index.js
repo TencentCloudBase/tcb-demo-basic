@@ -3,8 +3,7 @@
 // 云函数入口文件
 const cloud = require('wx-server-sdk')
 const {
-  appId,
-  secret,
+  SECRET,
   bucketPrefix
 } = require('./config')
 
@@ -12,6 +11,10 @@ const {
 cloud.init()
 
 async function getQR(method, path, fileID) {
+  const {
+    APPID,
+  } = cloud.getWXContext()
+
   try {
     await cloud.downloadFile({
       fileID: bucketPrefix + fileID
@@ -29,8 +32,8 @@ async function getQR(method, path, fileID) {
 
     // 获取access_token
     const wXMINIUser = new WXMINIUser({
-      appId,
-      secret
+      appId: APPID,
+      secret: SECRET
     })
     const access_token = await wXMINIUser.getAccessToken()
 

@@ -10,7 +10,7 @@
 		"nodeModules": true
 	},
 	"appid": "",
-	"projectname": "miniprogram-demo",
+	"projectname": "mp-book-demo-basic",
 	"libVersion": "2.4.0",
 	"condition": {
 		"search": {
