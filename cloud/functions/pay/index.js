@@ -194,7 +194,7 @@ exports.main = async function (event) {
               formId: prepay_id,
               openId: OPENID,
               appId: APPID,
-              page: `/pages/pay-result/index?id=${out_trade_no}`,
+              page: `pages/pay-result/index?id=${out_trade_no}`,
               data: {
                 keyword1: {
                   value: out_trade_no // 订单号
