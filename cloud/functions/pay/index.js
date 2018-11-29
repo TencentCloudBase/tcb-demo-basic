@@ -185,8 +185,8 @@ exports.main = async function (event) {
         // console.log('======restData======');
         // console.log(restData);
 
-        const curDate = new Date()
-        const time = `${curDate.getFullYear()}-${curDate.getMonth() + 1}-${curDate.getDate()} ${curDate.getHours()}:${curDate.getMinutes()}:${curDate.getSeconds()}`
+        const curTime = restData.time_end
+        const time = `${curTime.slice(0, 4)}-${curTime.slice(4, 6)}-${curTime.slice(6, 8)} ${curTime.slice(8, 10)}:${curTime.slice(10, 12)}:${curTime.slice(12, 14)}`
         try {
           const messageResult = await cloud.callFunction({
             name: 'pay-message',
