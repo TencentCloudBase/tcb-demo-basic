@@ -1,0 +1,12 @@
+.page {
+  padding: 15rpx;
+}
+
+.section {
+  display: block;
+}
+
+.ps {
+  margin: 0 40rpx;
+  font-size: 28rpx;
+}

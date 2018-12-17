@@ -1,0 +1,12 @@
+// 分转换元
+var transform = function (num) {
+  if (!num) {
+    {
+      return '0元'
+    }
+  } else {
+    return Number(num) / 100 + '元'
+  }
+}
+
+module.exports.transform = transform

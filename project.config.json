@@ -1,0 +1,67 @@
+{
+	"miniprogramRoot": "client/",
+	"cloudfunctionRoot": "cloud/functions/",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"nodeModules": true
+	},
+	"appid": "wxcf5102ada68a7ac9",
+	"projectname": "tcb-demo-basic",
+	"libVersion": "2.4.2",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 4,
+			"list": [
+				{
+					"id": -1,
+					"name": "用户管理",
+					"pathName": "pages/user/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "微信支付",
+					"pathName": "pages/pay-list/index",
+					"query": ""
+				},
+				{
+					"id": 2,
+					"name": "订单列表",
+					"pathName": "pages/pay-order/index",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "订单详情",
+					"pathName": "pages/pay-result/index",
+					"query": "id=goods_4-1541683061235"
+				},
+				{
+					"id": -1,
+					"name": "模板消息",
+					"pathName": "pages/reserve/index",
+					"query": ""
+				}
+			]
+		}
+	}
+}

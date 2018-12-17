@@ -1,0 +1,18 @@
+<!--pages/wxaqrcode/wxaqrcode.wxml-->
+<import src="../common/head.wxml"/>
+<import src="../common/foot.wxml"/>
+
+<view class="container">
+  <template is="head" data="{{title}}"/>
+    <!-- 二维码画布 -->
+    <view class="pannel">
+      <div class="qr-container">
+        <image class="qr-image" src="{{qrSource}}"/>
+      </div>
+    </view>
+    <view class="weui-btn-area">
+    <button class="weui-btn" type="primary" bindtap="onCreateSquare">生成小程序二维码</button>
+    <button class="weui-btn" type="primary" bindtap="onCreateLimit">生成小程序码</button>
+  </view>
+  <template is="foot" />
+</view>

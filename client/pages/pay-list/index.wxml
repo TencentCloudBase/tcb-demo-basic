@@ -1,0 +1,23 @@
+<import src="../common/foot.wxml"/>
+
+<view class="container">
+  <view class="good-item" wx:for="{{goods}}" wx:key="*this" ontap="getDetail" data-goodid="{{item._id}}">
+    <view class="good-image">
+      <image src="{{item.pic}}"></image>
+    </view>
+    <view class="good-detail">
+      <view class="title">商品: {{item.name}}</view>
+      <view class="content">价格： {{item.price / 100}} 元 </view>
+      <button
+        class="button"
+        type="primary"
+        bindtap="makeOrder"
+        data-goodid="{{item._id}}"
+      >下单</button>
+    </view>
+  </view>
+  <navigator class="cart" url="/pages/pay-order/index">
+    <image class="cart" src="../../images/cart.png"> </image>
+  </navigator >
+</view>
+<template is="foot" />

@@ -1,0 +1,70 @@
+<import src="../common/head.wxml"/>
+<import src="../common/foot.wxml"/>
+
+<view class="container">
+  <template is="head" data="{{title}}"/>
+  <wxs src="./index.wxs" module="index" />
+  <form class="page-body" bindsubmit="onReserve" report-submit="{{true}}">
+    <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">{{topTipsMsg}}</view>
+
+    <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">访客姓名</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" name="visitor" value="{{visitor}}" placeholder="请输入访客姓名"/>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input weui-cell_vcode">
+            <view class="weui-cell__hd">
+                <view class="weui-label">访客电话</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" name="phone" value="{{phoneNum}}" placeholder="请输入访客电话" />
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">来访日期</view>
+            </view>
+            <view class="weui-cell__bd">
+                <picker mode="date" name="date" value="{{currDate}}" start="{{index.date.start}}" end="{{index.date.end}}" bindchange="bindDateChange">
+                    <view class="weui-input">{{currDate}}</view>
+                </picker>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_select">
+            <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                <view class="weui-label">来访大厦</view>
+            </view>
+            <view class="weui-cell__bd">
+                <picker name="building" value="{{buildingIndex}}" range="{{index.buildings}}" bindchange="bindBuildingChange">
+                    <view class="weui-select weui-select_in-select-after">{{index.buildings[buildingIndex]}}</view>
+                </picker>
+            </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd">
+                <view class="weui-label">事由</view>
+            </view>
+            <view class="weui-cell__bd">
+                <input class="weui-input" name="desc" value="{{desc}}" placeholder="请输入访问事由"/>
+            </view>
+        </view>
+    </view>
+
+    <view class="weui-btn-area">
+        <button class="weui-btn" type="primary" id="messageType1" formType="submit">预约(发送模板消息)</button>
+    </view>
+    <view class="weui-btn-area">
+        <button class="weui-btn" type="primary" id="messageType2"  formType="submit">预约(统一服务消息-weapp)</button>
+    </view>
+    <view class="weui-btn-area">
+        <button class="weui-btn" type="primary" id="messageType3" formType="submit">预约(统一服务消息-公众号)</button>
+    </view>
+  </form>
+
+  <view class="ps">注：要体验公众号发送模板消息，务必 “扫码” 进入小程序后，在最底部关注“腾讯云云开发服务”公众号</view>
+  <template is="foot" />
+</view>

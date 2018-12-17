@@ -1,0 +1,39 @@
+{
+    "_id": "goods_1",
+    "name": "鸡蛋干",
+    "pic": "",
+    "price": "1",
+    "timestamp": {  "$date" : "2018-08-31T17:30:00.882Z"  }
+}
+
+{
+    "_id": "goods_2",
+    "name": "辣条",
+    "pic": "",
+    "price": "1",
+    "timestamp": {  "$date" : "2018-08-31T17:30:00.882Z"  }
+}
+
+{
+    "_id": "goods_3",
+    "name": "坚果",
+    "pic": "",
+    "price": "1",
+    "timestamp": {  "$date" : "2018-08-31T17:30:00.882Z"  }
+}
+
+{
+    "_id": "goods_4",
+    "name": "薯片",
+    "pic": "",
+    "price": "1",
+    "timestamp": {  "$date" : "2018-08-31T17:30:00.882Z"  }
+}
+
+{
+    "_id": "goods_5",
+    "name": "包子",
+    "pic": "",
+    "price": "1",
+    "timestamp": {  "$date" : "2018-08-31T17:30:00.882Z"  }
+}

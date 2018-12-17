@@ -1,0 +1,7 @@
+.page {
+  padding: 10rpx 0;
+}
+
+.page .avatar {
+  border-radius: 50%;
+}

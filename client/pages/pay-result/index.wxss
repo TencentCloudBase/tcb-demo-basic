@@ -1,0 +1,7 @@
+.button{
+    margin: 40rpx;   
+}
+
+.weui-form-preview__hd:after {
+  left: 0;
+}
