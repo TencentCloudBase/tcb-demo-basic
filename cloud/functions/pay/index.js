@@ -185,8 +185,13 @@ exports.main = async function (event) {
         // console.log('======restData======');
         // console.log(restData);
 
+<<<<<<< HEAD
         const curTime = restData.time_end;
         const time = `${curTime.slice(0, 4)}-${curTime.slice(4, 6)}-${curTime.slice(6, 8)} ${curTime.slice(8, 10)}:${curTime.slice(10, 12)}:${curTime.slice(12, 14)}`;
+=======
+        const curTime = restData.time_end
+        const time = `${curTime.slice(0, 4)}-${curTime.slice(4, 6)}-${curTime.slice(6, 8)} ${curTime.slice(8, 10)}:${curTime.slice(10, 12)}:${curTime.slice(12, 14)}`
+>>>>>>> a0387876c5a4487bc3948a9baba5c24556090ea7
         try {
           const messageResult = await cloud.callFunction({
             name: 'pay-message',
