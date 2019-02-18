@@ -25,6 +25,12 @@ Page({
         name: '视频通话',
         appid: 'wx5a9f6a2c25353607',
         type: 'miniprogram'
+      },
+      {
+        id: 'ai',
+        name: '智能图像',
+        appid: 'wx5449e34426a83bdd',
+        type: 'miniprogram'
       }
     ]
   },
@@ -46,7 +52,7 @@ Page({
         console.log(list[i].id, id)
         if (list[i].type && list[i].type === 'miniprogram') {
           wx.navigateToMiniProgram({
-            appId: 'wx5a9f6a2c25353607',
+            appId: list[i].appid,
             path: 'pages/index/index',
             extraData: {},
             // envVersion: 'develop',

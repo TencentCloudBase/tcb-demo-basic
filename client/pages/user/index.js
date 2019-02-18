@@ -149,13 +149,15 @@ Page({
 
   // 获取用户手机号码
   async bindGetPhoneNumber(e) {
-    // console.log(e.detail);
+    console.log(e.detail);
     wx.showLoading({
       title: '正在获取',
     })
 
     try {
       const data = this.data.userTemp
+      console.log('==============hey=====')
+      console.log(data)
       const result = await wx.cloud.callFunction({
         name: 'user-login-register',
         data: {
