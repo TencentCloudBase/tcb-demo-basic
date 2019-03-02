@@ -14,8 +14,8 @@ module.exports = async (param) => {
     mpTemplateMsg
   } = param
 
-  const wxMiniUser = new WXMINIUser({appId, secret})
-  const accessToken = await wxMiniUser.getAccessToken()
+  const wXMINIUser = new WXMINIUser({appId, secret})
+  const accessToken = await wXMINIUser.getCacheAccessToken()
 
   const wxUniformMessage = new WXUniformMessage()
 

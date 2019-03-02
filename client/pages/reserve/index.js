@@ -1,6 +1,7 @@
 /* eslint-disable complexity */
 // eslint-disable-next-line no-unused-vars
 const regeneratorRuntime = require('../../libs/runtime')
+const curDate = new Date()
 
 Page({
 
@@ -9,8 +10,8 @@ Page({
    */
   data: {
     title: 'templateMessage & uniformMessage',
-    currDate: '2018-11-21',
-    currTime: '12:01',
+    currDate: `${curDate.getFullYear()}-${curDate.getMonth()}-${curDate.getDay()}`,
+    currTime: `${curDate.getHours()}:${curDate.getMinutes()}`,
     buildingIndex: 0,
     showTopTips: false,
     visitor: '张三',

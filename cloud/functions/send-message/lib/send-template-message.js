@@ -15,8 +15,8 @@ module.exports = async (param) => {
     openId
   } = param
 
-  const wxMiniUser = new WXMINIUser({appId, secret})
-  const accessToken = await wxMiniUser.getAccessToken()
+  const wXMINIUser = new WXMINIUser({appId, secret})
+  const accessToken = await wXMINIUser.getCacheAccessToken()
 
   const wxMiniMessage = new WXMINIMessage({openId, formId, templateId})
 

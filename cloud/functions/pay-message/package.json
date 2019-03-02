@@ -9,6 +9,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "wx-js-utils": "0.0.5"
+    "wx-js-utils": "latest"
   }
 }

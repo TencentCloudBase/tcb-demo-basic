@@ -35,8 +35,9 @@ async function getQR(method, path, fileID) {
       appId: APPID,
       secret: SECRET
     })
-    const access_token = await wXMINIUser.getAccessToken()
+    const access_token = await wXMINIUser.getCacheAccessToken()
 
+    console.log('access_token: ', access_token)
     // 生成小程序码
     const wXMINIQR = new WXMINIQR()
     const qrResult = await wXMINIQR[method]({
