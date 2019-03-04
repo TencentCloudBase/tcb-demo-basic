@@ -18,9 +18,12 @@ module.exports = async (param) => {
   const wXMINIUser = new WXMINIUser({appId, secret})
   const accessToken = await wXMINIUser.getCacheAccessToken()
 
-  const wxMiniMessage = new WXMINIMessage({openId, formId, templateId})
+  const wxMiniMessage = new WXMINIMessage()
 
   return wxMiniMessage.sendMessage({
+    touser: openId,
+    form_id: formId,
+    template_id: templateId,
     access_token: accessToken,
     data,
     page
