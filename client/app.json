@@ -7,7 +7,10 @@
     "pages/wxaqrcode/index",
     "pages/pay-list/index",
     "pages/pay-order/index",
-    "pages/pay-result/index"
+    "pages/pay-result/index",
+    "pages/customer-msg/index/index",
+    "pages/customer-msg/messageList/index",
+    "pages/customer-msg/chooseLib/index"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -20,5 +23,6 @@
   "navigateToMiniProgramAppIdList": [
     "wx5a9f6a2c25353607",
     "wx5449e34426a83bdd"
-  ]
+  ],
+  "sitemapLocation": "sitemap73.json"
 }

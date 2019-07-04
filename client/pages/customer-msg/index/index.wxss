@@ -1,0 +1,9 @@
+/**index.wxss**/
+@import "../../../style/navigate.wxss";
+.container{
+  min-height: auto;
+}
+
+.uploader.message{
+  padding-left: 0;
+}

@@ -11,7 +11,9 @@
 	},
 	"appid": "wxcf5102ada68a7ac9",
 	"projectname": "tcb-demo-basic",
-	"libVersion": "2.4.2",
+	"libVersion": "2.7.3",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,

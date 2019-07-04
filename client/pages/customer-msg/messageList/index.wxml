@@ -1,0 +1,24 @@
+<!--pages/messageList/MessageList.wxml-->
+<view class="container">
+  <text class="headline">客服消息列表</text>
+
+  <view class="section">
+    <view class="section__title">请选择用户记录: </view>
+    <picker bindchange="bindPickerChange" value="{{openIdIndex}}" range="{{openIdList}}">
+      <view class="picker">
+       {{openIdList[openIdIndex]}}
+      </view>
+    </picker>
+  </view>
+
+   <scroll-view class="message-list">
+    <view  wx:for="{{messageList}}" wx:key="time">
+      <text class="name">{{item.from}}</text><text class="message-time">{{item.messageTime}}</text>
+      <view class="message-body {{item.worker == item.from ? 'message-self' : ''}}">
+        <!-- <view class="triangle"></view> -->
+        <image style="max-width:100%;" mode="widthFix" wx:if="{{item.imageUrl}}" src="{{item.imageUrl}}"></image>
+        <text wx:if="{{!item.imageUrl}}">{{item.text}}</text>
+      </view>
+    </view>
+  </scroll-view>
+</view>

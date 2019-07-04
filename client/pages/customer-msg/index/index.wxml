@@ -1,0 +1,15 @@
+<!-- index.wxml -->
+<view class="container">
+  <!-- 客服消息 -->
+  <view class="uploader message">
+    <button class="uploader-text" open-type="contact" class="uploader-text" style="background:#fff; border:0; margin:0; text-align: left; border-radius: 0px;">
+      <text>客服消息</text>
+    </button>
+  </view>
+  <!-- 客服消息 -->
+  <view class="uploader">
+    <navigator url="../messageList/index" open-type="navigate" class="uploader-text">
+      <text>消息历史</text>
+    </navigator>
+  </view>
+</view>

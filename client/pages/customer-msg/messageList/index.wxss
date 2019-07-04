@@ -1,0 +1,37 @@
+/* pages/messageList/MessageList.wxss */
+.container{
+  min-height: auto;
+}
+
+.headline {
+  font-size: 120%;
+  margin: 20rpx 0;
+}
+.message-body{
+  background: white;
+  margin: 20rpx;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  /* margin-left: 140rpx; */
+}
+.message-body.message-self{
+  background: #CCE4FC;
+}
+.message-body .triangle {
+ background: white;
+ width: 20rpx;
+ height: 20rpx;
+ margin-top: 26rpx;
+ transform: rotate(45deg);
+ position: absolute;
+ left: 130rpx
+}
+.message-list .name, .message-list .message-time{
+  font-size: 60%;
+  color: gray;
+  margin-left: 20rpx;
+}
+
+.message-list .name{
+  font-size: 70%;
+}
