@@ -9,7 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bluebird": "^3.5.5",
+    "ms": "^2.1.2",
     "node-fetch": "^2.6.0",
+    "tencentcloud-sdk-nodejs": "^3.0.72",
     "wx-server-sdk": "latest"
   }
 }
