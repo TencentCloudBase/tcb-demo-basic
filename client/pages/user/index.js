@@ -68,7 +68,6 @@ Page({
   async checkUser() {
     const Users = this.db.collection('users')
     const users = await Users.get()
-    console.log(users)
 
     wx.checkSession({
       success: () => {
@@ -93,7 +92,6 @@ Page({
   updateSession() {
     wx.login({
       success: async (res) => {
-        console.log(res)
         try {
           await wx.cloud.callFunction({
             name: 'user-session',
@@ -102,7 +100,7 @@ Page({
             }
           })
         } catch (e) {
-          console.log(e)
+
         }
       }
     })
@@ -149,15 +147,12 @@ Page({
 
   // 获取用户手机号码
   async bindGetPhoneNumber(e) {
-    console.log(e.detail);
     wx.showLoading({
       title: '正在获取',
     })
 
     try {
       const data = this.data.userTemp
-      console.log('==============hey=====')
-      console.log(data)
       const result = await wx.cloud.callFunction({
         name: 'user-login-register',
         data: {
@@ -170,7 +165,6 @@ Page({
           }
         }
       })
-      console.log(result)
 
       if (!result.result.code && result.result.data) {
         this.setUserInfo(result.result.data)

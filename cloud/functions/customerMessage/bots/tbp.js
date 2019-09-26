@@ -43,8 +43,6 @@ class TBPBot {
   
     const result = await this.client.TextResetAsync(params)
   
-    console.log(result)
-  
     return result
   }
 
@@ -56,9 +54,6 @@ class TBPBot {
     params.InputText = inputText
     // params.SessionAttributes = ''
     const result = await this.client.TextProcessAsync(params)
-
-    console.log(params)
-    console.log(result)
 
     return result
   }

@@ -48,7 +48,6 @@ Page({
         openIdList: res.openIdList,
         messageList
       })
-      console.log(res)
     }catch(e) {
 
     }

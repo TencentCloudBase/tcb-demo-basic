@@ -106,8 +106,6 @@ async function handleTextMsgWithTBPBot(event) {
     }
   })
 
-  console.log(doc)
-
   const tbp = new TBPBot(BotId, BotEnv, doc._id)
   if (event.Content.toLowerCase() === 'reset') {
     await Promise.all([
@@ -160,7 +158,6 @@ async function handleTextMsgWithTBPBot(event) {
     })
   }
 
-  console.log('reply', reply)
   await cloud.openapi.customerServiceMessage.send(reply)
   return result
 }
@@ -211,16 +208,11 @@ async function handleTextMsgWithTBPBotSample(event) {
     }
   }
 
-  console.log('reply', reply)
   await cloud.openapi.customerServiceMessage.send(reply)
   return result
 }
 
 exports.main = async (event, context) => {
-  console.log(event)
-  // console.log(context)
-  // console.log(cloud.getWXContext())
-
   let result
 
   switch (event.MsgType) {
@@ -247,6 +239,5 @@ exports.main = async (event, context) => {
       break;
   }
 
-  console.log('result:', result)
   return result ? result : 'success'
 }

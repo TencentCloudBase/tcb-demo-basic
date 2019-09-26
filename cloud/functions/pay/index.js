@@ -182,9 +182,6 @@ exports.main = async function (event) {
             }
           })
 
-        // console.log('======restData======');
-        // console.log(restData);
-
         const curTime = restData.time_end
         const time = `${curTime.slice(0, 4)}-${curTime.slice(4, 6)}-${curTime.slice(6, 8)} ${curTime.slice(8, 10)}:${curTime.slice(10, 12)}:${curTime.slice(12, 14)}`
         try {
@@ -211,11 +208,7 @@ exports.main = async function (event) {
               }
             }
           })
-          console.log('=======message=========')
-          console.log(messageResult)
         } catch (e) {
-          console.log('===========')
-          console.log(e)
         }
       }
 
@@ -255,7 +248,6 @@ exports.main = async function (event) {
       const {out_trade_no} = data
       const orders = await orderCollection.where({out_trade_no}).get()
 
-      console.log(orders)
 
       if (!orders.data.length) {
         return {
@@ -314,8 +306,6 @@ exports.main = async function (event) {
         out_trade_no
       })
 
-      console.log('===queryrefund================')
-      console.log(result)
       const {refund_status_0, return_code} = result
 
       if (return_code === 'SUCCESS' && refund_status_0 === 'SUCCESS') {

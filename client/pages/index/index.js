@@ -54,7 +54,6 @@ Page({
 
     for (let i = 0, len = list.length; i < len; ++i) {
       if (list[i].id === id) {
-        console.log(list[i].id, id);
         if (list[i].type && list[i].type === "miniprogram") {
           wx.navigateToMiniProgram({
             appId: list[i].appid,

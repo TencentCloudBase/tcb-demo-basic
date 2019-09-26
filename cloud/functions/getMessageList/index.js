@@ -16,8 +16,6 @@ exports.main = async (event, context) => {
     `https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=${appId}&secret=${appSecret}`
   ).then(res => res.json());
 
-  console.log("access_token", at_res);
-
   let access_token = at_res.access_token;
 
   let msgList = await fetch(
@@ -33,8 +31,6 @@ exports.main = async (event, context) => {
       headers: { "Content-Type": "application/json" }
     }
   ).then(d => d.json());
-
-  console.log(msgList);
 
   let res = {};
 

@@ -19,11 +19,8 @@ async function getQR(method, path, fileID) {
     await cloud.downloadFile({
       fileID: bucketPrefix + fileID
     })
-    console.log('get from cos!!!')
-
     return {fileID: bucketPrefix + fileID}
   } catch (e) {
-    console.log('get cos failed, invoke api generate!')
 
     const {
       WXMINIUser,
@@ -37,7 +34,6 @@ async function getQR(method, path, fileID) {
     })
     const access_token = await wXMINIUser.getCacheAccessToken()
 
-    console.log('access_token: ', access_token)
     // 生成小程序码
     const wXMINIQR = new WXMINIQR()
     const qrResult = await wXMINIQR[method]({
@@ -47,7 +43,6 @@ async function getQR(method, path, fileID) {
       is_hyaline: true
     })
 
-    console.log(bucketPrefix + fileID)
     return await cloud.uploadFile({
       cloudPath: fileID,
       fileContent: qrResult

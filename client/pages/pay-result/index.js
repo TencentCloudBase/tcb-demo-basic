@@ -184,7 +184,6 @@ Page({
 
   // 删除订单
   async delete() {
-    console.log(this.data)
     const order = this.data.order
     const db = wx.cloud.database()
     try {
