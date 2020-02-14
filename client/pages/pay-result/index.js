@@ -14,7 +14,7 @@ Page({
     })
 
     this.setData({
-      out_trade_no: id
+      outTradeNo: id
     }, async () => {
       await this.getOrder()
 
@@ -25,11 +25,11 @@ Page({
   // 获取订单详情
   async getOrder() {
     const {result} = await wx.cloud.callFunction({
-      name: 'pay',
+      name: 'pay-v2',
       data: {
         type: 'orderquery',
         data: {
-          out_trade_no: this.data.out_trade_no
+          outTradeNo: this.data.outTradeNo
         }
       }
     })
@@ -49,23 +49,13 @@ Page({
   // 发起支付
   pay() {
     const orderQuery = this.data.order
-    const out_trade_no = this.data.out_trade_no
 
     const {
-      time_stamp,
-      nonce_str,
-      sign,
-      prepay_id,
-      body,
-      total_fee
+      payment,
     } = orderQuery
 
     wx.requestPayment({
-      timeStamp: time_stamp,
-      nonceStr: nonce_str,
-      package: `prepay_id=${prepay_id}`,
-      signType: 'MD5',
-      paySign: sign,
+      ...payment,
       success: async () => {
         wx.showLoading({
           title: '正在支付',
@@ -77,19 +67,6 @@ Page({
           duration: 1500,
           success: async () => {
             this.getOrder()
-
-            await wx.cloud.callFunction({
-              name: 'pay',
-              data: {
-                type: 'payorder',
-                data: {
-                  body,
-                  prepay_id,
-                  out_trade_no,
-                  total_fee
-                }
-              }
-            })
             wx.hideLoading()
           }
         })
@@ -104,14 +81,14 @@ Page({
       title: '正在关闭',
     })
 
-    const out_trade_no = this.data.out_trade_no
+    const outTradeNo = this.data.outTradeNo
 
     await wx.cloud.callFunction({
-      name: 'pay',
+      name: 'pay-v2',
       data: {
         type: 'closeorder',
         data: {
-          out_trade_no
+          outTradeNo
         }
       }
     })
@@ -124,11 +101,11 @@ Page({
   // 查询退款情况
   async queryRefund() {
     const {result} = await wx.cloud.callFunction({
-      name: 'pay',
+      name: 'pay-v2',
       data: {
         type: 'queryrefund',
         data: {
-          out_trade_no: this.data.out_trade_no
+          outTradeNo: this.data.outTradeNo
         }
       }
     })
@@ -137,9 +114,9 @@ Page({
     if (!result.code && result.data) {
       const data = result.data
       const order = this.data.order
-      order.trade_state_desc = data.trade_state_desc
+      order.tradeStateDesc = data.tradeStateDesc
       order.status = data.status
-      order.trade_state = data.trade_state
+      order.tradeState = data.tradeState
 
       this.setData({
         order
@@ -154,11 +131,11 @@ Page({
     })
 
     const result = await wx.cloud.callFunction({
-      name: 'pay',
+      name: 'pay-v2',
       data: {
         type: 'refund',
         data: {
-          out_trade_no: this.data.out_trade_no
+          outTradeNo: this.data.outTradeNo
         }
       }
     })
@@ -167,9 +144,9 @@ Page({
 
     if (!result.code) {
       const order = this.data.order
-      order.trade_state_desc = '正在退款'
+      order.tradeStateDesc = '正在退款'
       order.status = 3
-      order.trade_state = 'REFUNDING'
+      order.tradeState = 'REFUNDING'
 
       this.setData({
         order
@@ -191,7 +168,7 @@ Page({
         title: '正在删除',
       })
 
-      await db.collection('orders').doc(order._id).remove()
+      await db.collection('orders-v2').doc(order._id).remove()
 
       wx.hideLoading()
       wx.showToast({

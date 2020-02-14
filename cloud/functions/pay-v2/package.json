@@ -1,5 +1,5 @@
 {
-  "name": "pay",
+  "name": "pay-v2",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,6 @@
   "license": "MIT",
   "dependencies": {
     "ip": "^1.1.5",
-    "wx-server-sdk": "latest",
-    "wx-js-utils": "latest"
+    "wx-server-sdk": "1.8.1"
   }
 }

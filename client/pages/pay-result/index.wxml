@@ -4,12 +4,12 @@
 
         <view class="weui-form-preview__hd" style="height:2.5em;">
             <view class="weui-form-preview__label">标价金额</view>
-            <view class="weui-form-preview__value_in-hd">{{order.fee_type}} {{index.transform(order.total_fee)}}</view>
+            <view class="weui-form-preview__value_in-hd">{{order.feeType}} {{index.transform(order.totalFee)}}</view>
         </view>
 
         <view class="weui-form-preview__hd" style="height:2.5em;">
             <view class="weui-form-preview__label">现金支付金额</view>
-            <view class="weui-form-preview__value_in-hd">{{index.transform(order.cash_fee)}}</view>
+            <view class="weui-form-preview__value_in-hd">{{index.transform(order.cashFee)}}</view>
         </view>
 
         <view class="weui-form-preview__bd">
@@ -20,38 +20,38 @@
 
             <view class="weui-form-preview__item">
                 <view class="weui-form-preview__label">交易类型</view>
-                <view class="weui-form-preview__value">{{order.trade_type}}</view>
+                <view class="weui-form-preview__value">{{order.tradeType}}</view>
             </view>
             <view class="weui-form-preview__item">
                 <view class="weui-form-preview__label">交易状态</view>
-                <view class="weui-form-preview__value">{{order.trade_state}}</view>
+                <view class="weui-form-preview__value">{{order.tradeState}}</view>
             </view>
             <view class="weui-form-preview__item">
                 <view class="weui-form-preview__label">付款银行</view>
-                <view class="weui-form-preview__value">{{order.bank_type}}</view>
+                <view class="weui-form-preview__value">{{order.bankType}}</view>
             </view>
             <view class="weui-form-preview__item">
                 <view class="weui-form-preview__label">商户订单号</view>
                 <view class="weui-form-preview__value">
-                  {{order.out_trade_no}}
+                  {{order.outTradeNo}}
                 </view>
             </view>
             <view class="weui-form-preview__item">
                 <view class="weui-form-preview__label">支付完成时间</view>
                 <view class="weui-form-preview__value">
-                  {{order.time_end}}
+                  {{order.timeEnd}}
                 </view>
             </view>
             <view class="weui-form-preview__item">
                 <view class="weui-form-preview__label">交易状态描述</view>
                 <view class="weui-form-preview__value">
-                  {{order.trade_state_desc}}
+                  {{order.tradeStateDesc}}
                 </view>
             </view>
         </view>
         <wxs src="./index.wxs" module="index" />
     </view>
-    <view wx:if="{{order.trade_state ==='NOTPAY'}}" class="block">
+    <view wx:if="{{order.tradeState ==='NOTPAY'}}" class="block">
         <button
           type="primary"
           class="button"
@@ -67,7 +67,7 @@
           取消订单
         </button>
     </view>
-    <view wx:if="{{order.trade_state ==='SUCCESS'}}" class="block">
+    <view wx:if="{{order.tradeState ==='SUCCESS'}}" class="block">
       <button
           type="warn"
           class="button"
@@ -76,7 +76,7 @@
           退款
         </button>
     </view>
-    <view wx:if="{{order.trade_state ==='REFUNDED' || order.trade_state ==='CLOSED'}}" class="block">
+    <view wx:if="{{order.tradeState ==='REFUNDED' || order.tradeState ==='CLOSED'}}" class="block">
       <button
           type="warn"
           class="button"

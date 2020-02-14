@@ -23,7 +23,7 @@ Page({
     wx.showLoading({title: '数据获取中...'})
 
     const db = wx.cloud.database()
-    const result = await db.collection('orders').get()
+    const result = await db.collection('orders-v2').get()
     const data = result.data || []
     this.setData({
       historyorders: data

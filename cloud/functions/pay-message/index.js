@@ -39,6 +39,7 @@ exports.main = async (event, context, callback) => {
     appId,
     openId
   } = event
+  
 
   return sendMessage({
     appId,
