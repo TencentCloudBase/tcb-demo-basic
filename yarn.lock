@@ -24,9 +24,9 @@ acorn-jsx@^5.0.0:
   integrity sha1-lYWE3bYJkMAsl8G9nVIfzkM7sQE=
 
 acorn@^6.0.2:
-  version "6.0.4"
-  resolved "http://r.tnpm.oa.com/acorn/download/acorn-6.0.4.tgz#77377e7353b72ec5104550aa2d2097a2fd40b754"
-  integrity sha1-dzd+c1O3LsUQRVCqLSCXov1At1Q=
+  version "6.4.1"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.4.1.tgz#531e58ba3f51b9dacb9a6646ca4debf5b14ca474"
+  integrity sha512-ZVA9k326Nwrj3Cj9jlh3wGFutC2ZornPNARZwsNYqQYgN0EsV2d53w5RN/co65Ohn4sUAUtb1rSUAOD6XN9idA==
 
 ajv@^6.5.3:
   version "6.5.5"
