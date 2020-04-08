@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/user/index",
+	"pages/messsend/index",
     "pages/reserve/index",
     "pages/reserve-detail/index",
     "pages/wxaqrcode/index",
