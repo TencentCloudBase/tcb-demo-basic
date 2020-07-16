@@ -259,13 +259,13 @@ exports.main = async function(event) {
         } catch (e) {
           return {
             code: 1,
-            mesasge: e.message,
+            message: e.message,
           };
         }
       } else {
         return {
           code: 1,
-          mesasge: '退款失败，请重试',
+          message: '退款失败，请重试',
         };
       }
 

@@ -153,7 +153,7 @@ Page({
       title: '正在申请退款',
     })
 
-    const result = await wx.cloud.callFunction({
+    const tempResult = await wx.cloud.callFunction({
       name: 'pay',
       data: {
         type: 'refund',
@@ -162,6 +162,8 @@ Page({
         }
       }
     })
+    
+    const result = tempResult.result
 
     wx.hideLoading()
 
