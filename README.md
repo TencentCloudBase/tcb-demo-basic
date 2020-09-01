@@ -13,5 +13,5 @@
 ## 体验
 
 <p align="center">
-    <img src="https://ask.qcloudimg.com/draft/1011618/1rvk9ugc3n.png" width="500px">
+    <img src="https://main.qcloudimg.com/raw/bc85b4e8b701d6bad28a489ca0630597.jpg" width="500px">
 </p>
