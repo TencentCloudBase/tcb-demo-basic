@@ -10,6 +10,6 @@
   "license": "MIT",
   "dependencies": {
     "ip": "^1.1.5",
-    "wx-server-sdk": "1.8.1"
+    "wx-server-sdk": "latest"
   }
 }

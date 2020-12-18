@@ -1,4 +1,4 @@
-const cloud = require('./wx-server-sdk')
+const cloud = require('wx-server-sdk')
 const ip = require('ip')
 const { ENV, MCHID } = require('./config/index')
 
