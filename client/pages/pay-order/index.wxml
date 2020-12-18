@@ -5,14 +5,14 @@
       <view 
         class="weui-media-box weui-media-box_text"
         wx:for="{{historyorders}}"
-        data-order="{{item.out_trade_no}}" 
+        data-order="{{item.outTradeNo}}" 
         wx:key="{{item}}"
         bindtap="queryorder"
       >
           <view class="weui-media-box__title weui-media-box__title_in-text">{{item.body}}</view>
           <view class="weui-media-box__desc">
             <text>订单号： </text>
-            <text class="text">{{item.out_trade_no}}</text>
+            <text class="text">{{item.outTradeNo}}</text>
           </view>
           <view class="weui-media-box__desc ">
             <text>订单状态： </text>
