@@ -1,6 +1,6 @@
 <view class="tcb-srcoll-box">
   <view class="nav_bar_customize_top">
-    <navBar title-text="工具箱" title-text-left="true" background="transparent" back-icon="" home-icon="" backImg="" bindback="back"/>
+    <navBar title-text="工具箱" title-text-left="true" background="#F7F7F8" back-icon="" home-icon="" backImg="" bindback="back"/>
   </view>
   <view class="tcb-container" style="padding-top: {{navHeight}}px; margin-top: -{{navHeight}}px;">
     <view class="toolbox-container">
