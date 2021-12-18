@@ -21,7 +21,7 @@ Page({
       shading: 'https://7463-tcb-advanced-a656fc-1257967285.tcb.qcloud.la/tcb-miniprogram/toolbox/云托管png@2x.png',
       navigateType:'mini',
       appId: 'wxbd19e398fb9eb96b',
-      url: '/pages/course-detail/course-detail.html?docid=00068c2c0106c0667f5b01d015b80d',
+      url: '/pages/course-detail/course-detail?docid=00068c2c0106c0667f5b01d015b80d',
     },{
       icon: 'https://7463-tcb-advanced-a656fc-1257967285.tcb.qcloud.la/tcb-miniprogram/toolbox/icon低码@2x.png',
       title: '微搭低代码',

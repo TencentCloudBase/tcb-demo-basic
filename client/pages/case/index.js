@@ -64,23 +64,29 @@ Page({
       title: '微搭低代码',
       active: false,
       cases: [{
+        coverImage: 'https://7463-tcb-advanced-a656fc-1257967285.tcb.qcloud.la/tcb-miniprogram/case/weda1.png',
+        title: '客户故事丨热血青年要怎样才能创业成功？这事他们琢磨了10年',
+        description: '友好速搭创始人王林乐希望代码可以通过更优雅的方式传递给用户。腾讯云微搭助力这份“优雅”完美落地。',
+        navigateType: 'web',
+        url: 'https://mp.weixin.qq.com/s/jxXHuMniSUvA3PNLIlSoQA',
+      },{
+        coverImage: 'https://7463-tcb-advanced-a656fc-1257967285.tcb.qcloud.la/tcb-miniprogram/case/weda2.png',
+        title: '7天搭建一款小程序+管理后台，这届鹅厂 HR 有福了',
+        description: '腾讯HR招聘团队借助微搭低代码实现7天搭建一款小程序+管理后台',
+        navigateType: 'web',
+        url: 'https://mp.weixin.qq.com/s/YIITQcCdn0uSa6rwBjSUXg',
+      },{
         coverImage: 'https://7463-tcb-advanced-a656fc-1257967285.tcb.qcloud.la/tcb-miniprogram/case/weda3.png',
         title: '把最好的幼儿园带到县城，她用7天上线一个小程序',
         description: '甘肃偏远县城幼儿园借助微搭低代码平台，仅用7天时间，“七色果幼儿园”小程序正式上线。',
         navigateType: 'web',
-        url: 'https://mp.weixin.qq.com/s/qb1u3JDtZjpow6gCbi5gow',
+        url: 'https://mp.weixin.qq.com/s/ErPrp2a4OORa99_IR3EPuA',
       },{
         coverImage: 'https://7463-tcb-advanced-a656fc-1257967285.tcb.qcloud.la/tcb-miniprogram/case/weda4.png',
         title: '一码行川！微搭低代码平台助力“四川天府健康通”快速上线',
         description: '四川天府健康通的打造，创新性地使用了低码开发技术，整个过程只耗费十余天，适时满足了疫情防控的迫切需要。',
         navigateType: 'web',
-        url: 'https://mp.weixin.qq.com/s/b-C2Edi9bksu8MAAVKxpVw',
-      },{
-        coverImage: 'https://7463-tcb-advanced-a656fc-1257967285.tcb.qcloud.la/tcb-miniprogram/case/weda5.png',
-        title: '腾讯云微搭低代码，用技术助力“一网统管”轻应用快速落地',
-        description: '腾讯云微搭一站式低代码平台、政务微信等平台能力，打造统一的服务门户，快速响应“一网统管”移动端应用开发需求，像搭积木一样快速实现应用落地。',
-        navigateType: 'web',
-        url: 'https://mp.weixin.qq.com/s/zgY_e3XdOD0eHkuh-c3L8A',
+        url: 'https://mp.weixin.qq.com/s/-rraLjXXK1XctIOK8ytXwg',
       }]
     }],
   },
