@@ -114,20 +114,22 @@ product-advantage__logo > image{
   box-sizing: border-box;
   background-color: #F4F5F9;
   border-radius: 20rpx;
-  width: calc(50% - 12rpx);
+  width: 330rpx;
   height: 212rpx;
   margin-left: 24rpx;
   margin-bottom: 24rpx;
   padding: 0 32rpx;
-  float:left;
+  float: right;
 }
 .help__item:first-child {
+  width: 332rpx;
   height: 448rpx;
   margin-left: 0;
   background-image: url('https://7463-tcb-advanced-a656fc-1257967285.tcb.qcloud.la/tcb-miniprogram/home/底纹@2x.png');
   background-position: bottom right;
   background-repeat: no-repeat;
   background-size: 242rpx 236rpx;
+  float: left
 }
 .help__logo {
   width: 64rpx;

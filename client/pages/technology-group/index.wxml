@@ -4,6 +4,7 @@
       <view class="tcb-card__title group-title">
         <view>{{group.title}}</view>
       </view>
+      <view class="group-tip">小程序暂不支持识别群二维码，请长按保存后用微信识别加群</view>
       <image class="group-qrcode" show-menu-by-longpress src="{{group.qrcode}}"></image>
     </view>
   </view>
