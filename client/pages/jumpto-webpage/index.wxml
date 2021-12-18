@@ -1,0 +1,2 @@
+<!--pages/jumpto-webpage/index.wxml-->
+<web-view src="{{url}}"></web-view>

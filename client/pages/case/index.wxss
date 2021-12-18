@@ -1,0 +1,10 @@
+page {
+  background: #FFFFFF;
+}
+.case-bar {
+  padding: 0 32rpx;
+}
+.case-pannel {
+  background-color: #F7F7F8;
+  padding: 32rpx 24rpx;
+}

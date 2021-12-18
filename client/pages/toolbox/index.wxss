@@ -1,0 +1,23 @@
+page {
+  background-color: #F7F7F8;
+}
+.toolbox-container {
+  margin-top: 32rpx;
+  padding: 0 32rpx;
+} 
+.toolbox-container .tcb-card__content {
+  padding-left: 40rpx;
+}
+.toolbox-container .tcb-card__description {
+  width: 452rpx;
+  font-size: 26rpx;
+  line-height: 40rpx;
+  margin-top: 26rpx;
+}
+.tcb-card__shading {
+  position: absolute;
+  width: 216rpx;
+  height: 260rpx;
+  right: 0;
+  bottom: 0;
+}

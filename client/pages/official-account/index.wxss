@@ -1,0 +1,16 @@
+.official-container {
+  margin-top: 32rpx;
+  padding: 0 32rpx;
+  text-align: center;
+}
+.official-title {
+  justify-content: center;
+  color: #3D434C;
+  font-weight: 400;
+  margin-bottom: 16rpx;
+}
+.official-qrcode {
+  width: 264rpx;
+  height: 264rpx;
+  border: 1px dashed #E6E9EE;
+}

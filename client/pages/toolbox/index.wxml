@@ -1,0 +1,15 @@
+<view>
+  <navBar title-text="工具箱" title-text-left="true" background="transparent" back-icon="" home-icon="" backImg="" bindback="back"/>
+  <view class="toolbox-container">
+    <view class="tcb-card" wx:for="{{toolbox}}" wx:key="title" wx:for-item="tool">
+      <view class="tcb-card__content">
+        <view class="tcb-card__title">
+          <image class="tcb-card_icon" src="{{tool.icon}}"></image>
+          <view>{{tool.title}}</view>
+        </view>
+        <view class="tcb-card__description">{{tool.description}}</view>
+      </view>
+      <image class="tcb-card__shading" src="{{tool.shading}}"></image>
+    </view>
+  </view>
+</view>

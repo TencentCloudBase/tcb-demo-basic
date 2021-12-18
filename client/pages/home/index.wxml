@@ -1,0 +1,55 @@
+<view class="tcb-srcoll-box">
+  <view class="nav_bar_customize_top">
+    <navBar title-text="首页" title-text-left="true" background="#fff" back-icon="" home-icon="" backImg="" bindback="back"/>
+  </view>
+  <view class="tcb-container">
+    <view class="banner">
+      <image class="banner__logo" src="{{banner.logo}}"></image>
+    </view>
+    <view class="recommand-grid">
+      <view wx:for="{{recommandList}}" wx:key="title" wx:for-item="recommand" class="recommand__item">
+        <view class="recommand__logo">
+          <image src="{{recommand.logo}}"></image>
+        </view>
+        <view class="recommand__title">{{recommand.title}}</view></view>
+    </view>
+    <view class="section">
+      <view class="section__title">产品家族</view>
+      <view class="tcb-tabs">
+        <view class="tcb-tabs__bar">
+          <button wx:for="{{productFamilySet}}" wx:key="title" wx:for-item="productFamily" bindtap="switchTab" class="tcb-tabs__item {{productFamily.active ? 'tcb-tabs__item--active' : ''}}" data-id="{{productFamily.id}}">{{productFamily.title}}</button>
+        </view>
+        <view class="tcb-tabs__pannel">
+          <view wx:for="{{productFamilySet}}" hidden="{{!productFamily.active}}" wx:key="title" wx:for-item="productFamily" class="tcb-tabs__content">
+            <view class="product__tip">{{productFamily.tip}}</view>
+            <view class="product-advantage">
+              <view wx:for="{{productFamily.advantage}}" wx:key="title" wx:for-item="advantage" class="product-advantage__item">
+                <view class="product-advantage__header">
+                  <view class="product-advantage__logo">
+                    <image src="{{advantage.logo}}"></image>
+                  </view>
+                  <view class="product-advantage__title">{{advantage.title}}</view>
+                </view>
+                <view class="product-advantage__description">{{advantage.description}}</view>
+              </view>
+            </view>
+            <button class="product-advantage__more" data-url="{{productFamily.url}}" bindtap="navigateToMore">查看更多<image src="../../images/home/进入icon@2x.png"></image></button>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="section">
+      <view class="section__title">帮助与服务</view>
+      <view class="help">
+        <view wx:for="{{helpList}}" wx:key="title" wx:for-item="help" class="help__item" bindtap="navigateToHelp" data-navigatetype="{{help.navigateType}}" data-appid="{{help.appId}}" data-url="{{help.url}}">
+          <view class="help__logo">
+            <image src="{{help.logo}}"></image>
+          </view>
+          <view class="help__title">{{help.title}}</view>
+          <view class="help__description">{{help.description}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="copyright"><text>powered by Weda</text></view>
+  </view>
+</view>

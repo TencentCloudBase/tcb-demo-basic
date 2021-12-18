@@ -1,0 +1,10 @@
+<view class="group-container">
+  <view class="tcb-card" wx:for="{{technologyGroup}}" wx:key="title" wx:for-item="group">
+    <view class="tcb-card__content">
+      <view class="tcb-card__title group-title">
+        <view>{{group.title}}</view>
+      </view>
+      <image class="group-qrcode" src="{{group.qrcode}}"></image>
+    </view>
+  </view>
+</view>
