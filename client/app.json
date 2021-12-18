@@ -1,9 +1,6 @@
 {
   "pages": [
     "pages/home/index",
-    "pages/case/index",
-    "pages/toolbox/index",
-    "pages/official-account/index",
     "pages/index/index",
     "pages/user/index",
     "pages/reserve/index",
@@ -16,7 +13,11 @@
     "pages/customer-msg/messageList/index",
     "pages/customer-msg/chooseLib/index",
     "pages/jumpto-webpage/index",
-    "pages/technology-group/index"
+    "pages/case/index",
+    "pages/toolbox/index",
+    "pages/official-account/index",
+    "pages/technology-group/index",
+    "pages/weda-appmarket/index"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

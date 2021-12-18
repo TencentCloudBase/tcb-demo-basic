@@ -1,0 +1,30 @@
+<view class="tcb-srcoll-box">
+  <view class="nav_bar_customize_top">
+    <navBar background="transparent" back-icon="{{navBar.backIcon}}" home-icon="" backImg="{{navBar.backImg}}" backImgMode="{{navBar.backImgMode}}"  bindback="back"/>
+  </view>
+  <view class="tcb-container" style="padding-top: {{navHeight}}px; margin-top: -{{navHeight * 2}}px;">
+    <view class="weda-banner">
+      <image style="width: 100%" mode="widthFix" src="{{banner.src}}"></image>
+      <view class="weda-banner__tip" style="top: {{navHeight + 12}}px">
+        <view class="weda-banner__title">{{banner.title}}</view>
+        <view class="weda-banner__description">{{banner.description}}</view>
+      </view>
+    </view>
+    <view class="weda-container">
+      <view class="tcb-card weda-card" wx:for="{{applicationMarket}}" wx:key="title" wx:for-item="application">
+        <view class="tcb-card__logo">
+          <image src="{{application.coverImage}}"></image>
+        </view>
+        <view class="tcb-card__content">
+          <view class="tcb-card__title">
+            <view>{{application.title}}</view>
+          </view>
+          <view class="tcb-card__description">{{application.description}}</view>
+        </view>
+        <view class="tcb-card__footer">
+          <view class="weda-card__perview" bindtap="navigateToApplication"  data-navigatetype="{{application.navigateType}}" data-appid="{{application.appId || ''}}" data-url="{{application.url || ''}}">预览</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

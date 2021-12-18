@@ -338,6 +338,33 @@ input {
   color: #2782D7;
 }
 
+.tcb-srcoll-box {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+::-webkit-scrollbar {
+  display:none;
+  width:0;
+  height:0;
+  color:transparent;
+}
+.nav_bar_customize_top{
+  position: sticky;
+  top: 0;
+  z-index: 9;
+  width: 100%;    
+  overflow: hidden;
+}
+.tcb-container {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  flex: 1;
+  z-index: 0;
+}
+
 
 .section {
   overflow: hidden;
@@ -410,5 +437,4 @@ input {
   line-height: 40rpx;
   color: #757D88;
   margin-top: 20rpx;
-  height: 80rpx;
 }

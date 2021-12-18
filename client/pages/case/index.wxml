@@ -1,14 +1,17 @@
-<view>
-  <navBar title-text="案例" title-text-left="true" background="transparent" back-icon="" home-icon="" backImg="" bindback="back"/>
-  <view class="tcb-tabs">
+<view class="tcb-srcoll-box">
+  <view class="nav_bar_customize_top">
+    <navBar title-text="案例" title-text-left="true" background="#F7F7F8" back-icon="" home-icon="" backImg="" bindback="back"/>
+  </view>
+  <view class="tcb-container" style="padding-top: {{navHeight}}px; margin-top: -{{navHeight}}px;">
+    <view class="tcb-tabs">
       <view class="tcb-tabs__bar case-bar">
         <button wx:for="{{productCaseSet}}" wx:key="title" wx:for-item="productCase" bindtap="switchTab" class="tcb-tabs__item {{productCase.active ? 'tcb-tabs__item--active' : ''}}" data-id="{{productCase.id}}">{{productCase.title}}</button>
       </view>
       <view class="tcb-tabs__pannel case-pannel">
         <view wx:for="{{productCaseSet}}" hidden="{{!productCase.active}}" wx:key="title" wx:for-item="productCase" class="tcb-tabs__content">
-          <view class="tcb-card" wx:for="{{productCase.cases}}" wx:key="title" wx:for-item="case">
+          <view class="tcb-card" wx:for="{{productCase.cases}}" wx:key="title" wx:for-item="case" bindtap="navigateToCase" data-navigatetype="{{case.navigateType}}" data-url="{{case.url}}">
             <view class="tcb-card__logo">
-              <image src="{{case.logo}}"></image>
+              <image src="{{case.coverImage}}"></image>
             </view>
             <view class="tcb-card__content">
               <view class="tcb-card__title">{{case.title}}</view>
@@ -18,4 +21,5 @@
         </view>
       </view>
     </view>
+  </view>
 </view>

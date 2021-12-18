@@ -7,13 +7,13 @@ Page({
   data: {
     technologyGroup: [{
       title: '云开发CloudBase官方交流',
-      qrcode: '../../images/technology-group/云开发公众号 2@2x.png',
+      qrcode: 'https://7463-tcb-advanced-a656fc-1257967285.tcb.qcloud.la/tcb-miniprogram/technology-group/云开发公众号 2@2x.png',
     }, {
       title: '微信云托管交流群',
-      qrcode: '../../images/technology-group/微信云托管交流群 1@2x.png',
+      qrcode: 'https://7463-tcb-advanced-a656fc-1257967285.tcb.qcloud.la/tcb-miniprogram/technology-group/微信云托管交流群 1@2x.png',
     }, {
       title: '微搭低代码官方交流群',
-      qrcode: '../../images/technology-group/腾讯云微搭低代码公众号 1@2x.png',
+      qrcode: 'https://7463-tcb-advanced-a656fc-1257967285.tcb.qcloud.la/tcb-miniprogram/technology-group/腾讯云微搭低代码公众号 1@2x.png',
     }]
   },
 

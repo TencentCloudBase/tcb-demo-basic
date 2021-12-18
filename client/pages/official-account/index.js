@@ -7,10 +7,10 @@ Page({
   data: {
     officialAccount: [{
       title: '云开发CloudBase公众号',
-      qrcode: '../../images/official-account/云开发公众号 1@2x.png',
+      qrcode: 'https://7463-tcb-advanced-a656fc-1257967285.tcb.qcloud.la/tcb-miniprogram/official-account/云开发公众号 1@2x.png',
     }, {
       title: '腾讯云微搭低代码公众号',
-      qrcode: '../../images/official-account/腾讯云微搭低代码公众号 1@2x.png',
+      qrcode: 'https://7463-tcb-advanced-a656fc-1257967285.tcb.qcloud.la/tcb-miniprogram/official-account/腾讯云微搭低代码公众号 1@2x.png',
     }]
   },
 

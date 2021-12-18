@@ -13,7 +13,7 @@ Component({
     },
     titleText: {
       type: String,
-      value: "导航栏",
+      value: "",
     },
     titleTextLeft: {
       type: Boolean,
@@ -47,6 +47,10 @@ Component({
       type: String,
       value: "",
     },
+    backImgMode: {
+      type: String,
+      value: 'scaleToFill'
+    }
   },
   attached: function () {
     let that = this;

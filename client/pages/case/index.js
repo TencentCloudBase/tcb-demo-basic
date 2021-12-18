@@ -1,48 +1,92 @@
 // pages/case/index.js
+const app = getApp()
 Page({
 
   /**
    * Page initial data
    */
   data: {
+    navHeight: app.globalData.navHeight,
     productCaseSet: [{
       id: 'cloudbase',
       title: '云开发',
       active: true,
       cases: [{
-        logo: 'https://via.placeholder.com/351x150.png',
+        coverImage: 'https://7463-tcb-advanced-a656fc-1257967285.tcb.qcloud.la/tcb-miniprogram/case/cloudbase1.png',
         title: '从0到3000万，TA们用云开发这样做丨一番赏Online案例',
-        description: '腾讯light将在全国妇联宣传部、厦门市人民政府的指导下，联合中国儿童中心，在厦门举办“创变者”'
+        description: '作为一个不到 10 人的初创团队，在半年时间里创造了 3000 多万的销售业绩，这样的飞速发展离不开云开发的助力。',
+        navigateType: 'web',
+        url: 'https://mp.weixin.qq.com/s/1floqHGaCcscsfjOxZ-PSw',
       },{
-        logo: 'https://via.placeholder.com/351x150.png',
+        coverImage: 'https://7463-tcb-advanced-a656fc-1257967285.tcb.qcloud.la/tcb-miniprogram/case/cloudbase2.png',
         title: '亿点点调用 = 一点点费用丨微信红包封面案例',
-        description: '腾讯light将在全国妇联宣传部、厦门市人民政府的指导下，联合中国儿童中心，在厦门举办“创变者”'
+        description: '承载如此巨大的流量洪峰，用云开发，在没有任何特殊计价的情况下，仅仅花费几千元就搞定了！',
+        navigateType: 'web',
+        url: 'https://mp.weixin.qq.com/s/wCe-cpKpf5EM4IQ1sWUK8Q',
+      },{
+        coverImage: 'https://7463-tcb-advanced-a656fc-1257967285.tcb.qcloud.la/tcb-miniprogram/case/cloudbase3.png',
+        title: '开发者不骗开发者，你跟我说这只要100块？',
+        description: '2021腾讯游戏年度发布会开发了专属小程序，包含直播、抽奖、观看回放等功能，其中所有的弹幕功能均基于云开发的实时数据推送实现。支撑整个项目弹幕系统运行的总费用仅为100元左右。',
+        navigateType: 'web',
+        url: 'https://mp.weixin.qq.com/s/o483QBt3lW-LQT3b7UwxcQ',
+      },{
+        coverImage: 'https://7463-tcb-advanced-a656fc-1257967285.tcb.qcloud.la/tcb-miniprogram/case/cloudbase4.png',
+        title: '企业案例丨腾讯教育官网 X 云开发CloudBase',
+        description: '腾讯教育基于云开发 CloudBase 快速开发上线腾讯教育官网和 MEET 峰会官网，并采用了 CloudBase CMS 内容管理系统，节省大量研发成本。',
+        navigateType: 'web',
+        url: 'https://mp.weixin.qq.com/s/W1jeSzbYVxwI18SXht3G1Q',
       }]
     },{
       id: 'cloudbaserun',
       title: '云托管',
       active: false,
       cases: [{
-        logo: 'https://via.placeholder.com/351x150.png',
-        title: '从0到3000万，TA们用云开发这样做丨一番赏Online案例',
-        description: '腾讯light将在全国妇联宣传部、厦门市人民政府的指导下，联合中国儿童中心，在厦门举办“创变者”'
+        coverImage: 'https://7463-tcb-advanced-a656fc-1257967285.tcb.qcloud.la/tcb-miniprogram/case/cloudbaserun1.png',
+        title: '小城里的明星产业，有微信云托管保驾护航',
+        description: '信阳长远科技是一个小规模创业团队，在研发人力不足，掌握的技术栈也非常有限的情况下，如何使用云托管快速破局。',
+        navigateType: 'web',
+        url: 'https://mp.weixin.qq.com/s/ihLMo4gZbO88_1hisY23UQ',
       },{
-        logo: 'https://via.placeholder.com/351x150.png',
-        title: '亿点点调用 = 一点点费用丨微信红包封面案例',
-        description: '腾讯light将在全国妇联宣传部、厦门市人民政府的指导下，联合中国儿童中心，在厦门举办“创变者”'
+        coverImage: 'https://7463-tcb-advanced-a656fc-1257967285.tcb.qcloud.la/tcb-miniprogram/case/cloudbaserun2.png',
+        title: '0到1000万，微信云托管助力冻品行业初创企业快速成长',
+        description: '冻品行业初创企业借助微信云托管实现了半年内销售额从0到1000万的快速增长，月成交小店已达6000家，汇集300+服务商，年订货交易额已突破2亿，成为了冻品运输这一传统行业的新兴力量。',
+        navigateType: 'web',
+        url: 'https://mp.weixin.qq.com/s/9EA0GLku7U00LV0SJ9ZwhA',
+      },{
+        coverImage: 'https://7463-tcb-advanced-a656fc-1257967285.tcb.qcloud.la/tcb-miniprogram/case/cloudbaserun3.png',
+        title: '剧本杀小程序创业者，解锁微信云托管新玩法',
+        description: '他们为剧本杀店家和玩家开发小程序，做“剧本杀SaaS”，每个月仅花费几百元的云开发费用，便可开发和维护数千个微信小程序。',
+        navigateType: 'web',
+        url: 'https://developers.weixin.qq.com/community/business/doc/00080eff6d8650dc631d71b065640d',
       }]
     },{
       id: 'weda',
       title: '微搭低代码',
       active: false,
       cases: [{
-        logo: 'https://via.placeholder.com/351x150.png',
-        title: '从0到3000万，TA们用云开发这样做丨一番赏Online案例',
-        description: '腾讯light将在全国妇联宣传部、厦门市人民政府的指导下，联合中国儿童中心，在厦门举办“创变者”'
+        coverImage: 'https://7463-tcb-advanced-a656fc-1257967285.tcb.qcloud.la/tcb-miniprogram/case/weda1.png',
+        title: '客户故事丨热血青年要怎样才能创业成功？这事他们琢磨了10年',
+        description: '友好速搭创始人王林乐希望代码可以通过更优雅的方式传递给用户。腾讯云微搭助力这份“优雅”完美落地。',
+        navigateType: 'web',
+        url: 'https://mp.weixin.qq.com/s/jxXHuMniSUvA3PNLIlSoQA',
       },{
-        logo: 'https://via.placeholder.com/351x150.png',
-        title: '亿点点调用 = 一点点费用丨微信红包封面案例',
-        description: '腾讯light将在全国妇联宣传部、厦门市人民政府的指导下，联合中国儿童中心，在厦门举办“创变者”'
+        coverImage: 'https://7463-tcb-advanced-a656fc-1257967285.tcb.qcloud.la/tcb-miniprogram/case/weda2.png',
+        title: '7天搭建一款小程序+管理后台，这届鹅厂 HR 有福了',
+        description: '腾讯HR招聘团队借助微搭低代码实现7天搭建一款小程序+管理后台',
+        navigateType: 'web',
+        url: 'https://mp.weixin.qq.com/s/YIITQcCdn0uSa6rwBjSUXg',
+      },{
+        coverImage: 'https://7463-tcb-advanced-a656fc-1257967285.tcb.qcloud.la/tcb-miniprogram/case/weda3.png',
+        title: '把最好的幼儿园带到县城，她用7天上线一个小程序',
+        description: '甘肃偏远县城幼儿园借助微搭低代码平台，仅用7天时间，“七色果幼儿园”小程序正式上线。',
+        navigateType: 'web',
+        url: 'https://mp.weixin.qq.com/s/ErPrp2a4OORa99_IR3EPuA',
+      },{
+        coverImage: 'https://7463-tcb-advanced-a656fc-1257967285.tcb.qcloud.la/tcb-miniprogram/case/weda4.png',
+        title: '一码行川！微搭低代码平台助力“四川天府健康通”快速上线',
+        description: '腾讯云微搭一站式低代码平台、政务微信等平台能力，打造统一的服务门户，快速响应“一网统管”移动端应用开发需求，像搭积木一样快速实现应用落地。',
+        navigateType: 'web',
+        url: 'https://mp.weixin.qq.com/s/-rraLjXXK1XctIOK8ytXwg',
       }]
     }],
   },
@@ -112,4 +156,7 @@ Page({
       productCaseSet: updatedProductCaseSet
     })
   },
+  navigateToCase(e) {
+    app.tcbNavigateTo(e);
+  }
 })

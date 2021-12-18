@@ -1,15 +1,19 @@
-<view>
-  <navBar title-text="工具箱" title-text-left="true" background="transparent" back-icon="" home-icon="" backImg="" bindback="back"/>
-  <view class="toolbox-container">
-    <view class="tcb-card" wx:for="{{toolbox}}" wx:key="title" wx:for-item="tool">
-      <view class="tcb-card__content">
-        <view class="tcb-card__title">
-          <image class="tcb-card_icon" src="{{tool.icon}}"></image>
-          <view>{{tool.title}}</view>
+<view class="tcb-srcoll-box">
+  <view class="nav_bar_customize_top">
+    <navBar title-text="工具箱" title-text-left="true" background="transparent" back-icon="" home-icon="" backImg="" bindback="back"/>
+  </view>
+  <view class="tcb-container" style="padding-top: {{navHeight}}px; margin-top: -{{navHeight}}px;">
+    <view class="toolbox-container">
+      <view class="tcb-card" wx:for="{{toolbox}}" wx:key="title" wx:for-item="tool" bindtap="navigateToTool"  data-navigatetype="{{tool.navigateType}}" data-appid="{{tool.appId || ''}}" data-url="{{tool.url || ''}}">
+        <view class="tcb-card__content">
+          <view class="tcb-card__title">
+            <image class="tcb-card_icon" src="{{tool.icon}}"></image>
+            <view>{{tool.title}}</view>
+          </view>
+          <view class="tcb-card__description">{{tool.description}}</view>
         </view>
-        <view class="tcb-card__description">{{tool.description}}</view>
+        <image class="tcb-card__shading" src="{{tool.shading}}"></image>
       </view>
-      <image class="tcb-card__shading" src="{{tool.shading}}"></image>
     </view>
   </view>
 </view>

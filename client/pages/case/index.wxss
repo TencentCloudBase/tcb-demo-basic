@@ -1,5 +1,5 @@
 page {
-  background: #FFFFFF;
+  background: #F7F7F8;
 }
 .case-bar {
   padding: 0 32rpx;

@@ -2,7 +2,7 @@
   <view class="nav_bar_customize_top">
     <navBar title-text="首页" title-text-left="true" background="#fff" back-icon="" home-icon="" backImg="" bindback="back"/>
   </view>
-  <view class="tcb-container">
+  <view class="tcb-container" style="padding-top: {{navHeight}}px; margin-top: -{{navHeight}}px;">
     <view class="banner">
       <image class="banner__logo" src="{{banner.logo}}"></image>
     </view>
@@ -33,7 +33,7 @@
                 <view class="product-advantage__description">{{advantage.description}}</view>
               </view>
             </view>
-            <button class="product-advantage__more" data-url="{{productFamily.url}}" bindtap="navigateToMore">查看更多<image src="../../images/home/进入icon@2x.png"></image></button>
+            <button class="product-advantage__more" data-navigatetype="{{productFamily.navigateType}}" data-url="{{productFamily.url}}" bindtap="navigateToHandler">查看更多<image src="https://7463-tcb-advanced-a656fc-1257967285.tcb.qcloud.la/tcb-miniprogram/home/进入icon@2x.png"></image></button>
           </view>
         </view>
       </view>
@@ -41,7 +41,7 @@
     <view class="section">
       <view class="section__title">帮助与服务</view>
       <view class="help">
-        <view wx:for="{{helpList}}" wx:key="title" wx:for-item="help" class="help__item" bindtap="navigateToHelp" data-navigatetype="{{help.navigateType}}" data-appid="{{help.appId}}" data-url="{{help.url}}">
+        <view wx:for="{{helpList}}" wx:key="title" wx:for-item="help" class="help__item" bindtap="navigateToHandler" data-navigatetype="{{help.navigateType}}" data-appid="{{help.appId || ''}}" data-url="{{help.url || ''}}">
           <view class="help__logo">
             <image src="{{help.logo}}"></image>
           </view>

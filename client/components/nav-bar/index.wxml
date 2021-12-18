@@ -1,5 +1,5 @@
 <view class='nav' style='height: {{status + navHeight}}px'>
-    <image class="top" mode="scaleToFill" src="{{backImg}}"></image>
+    <image class="top" mode="{{backImgMode}}" src="{{backImg}}"></image>
     <view class='status' style='height: {{status}}px;{{containerStyle}}'></view>
     <view class='navbar' style='height:{{navHeight}}px;{{containerStyle}}'>
         <view class='back-icon' wx:if="{{backIcon}}" bindtap='back'>

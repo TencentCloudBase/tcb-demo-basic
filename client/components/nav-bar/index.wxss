@@ -22,8 +22,8 @@
   left: 50px
 }
 .back-icon image{
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   margin: auto;
 }
 .home-icon image{
