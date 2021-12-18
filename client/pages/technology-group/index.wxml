@@ -4,7 +4,7 @@
       <view class="tcb-card__title group-title">
         <view>{{group.title}}</view>
       </view>
-      <image class="group-qrcode" src="{{group.qrcode}}"></image>
+      <image class="group-qrcode" show-menu-by-longpress src="{{group.qrcode}}"></image>
     </view>
   </view>
 </view>

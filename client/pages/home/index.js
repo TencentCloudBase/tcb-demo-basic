@@ -99,7 +99,7 @@ Page({
     },{
       logo: 'https://7463-tcb-advanced-a656fc-1257967285.tcb.qcloud.la/tcb-miniprogram/home/开发文档icon@2x.png',
       title: '开发文档',
-      description: '技术团队在线答疑',
+      description: '微信云服务小程序',
       navigateType:'mini',
       appId: 'wxfe70b3f986aad2fb',
       url: ''

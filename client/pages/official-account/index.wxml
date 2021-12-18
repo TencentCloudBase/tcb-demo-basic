@@ -4,7 +4,7 @@
         <view class="tcb-card__title official-title">
           <view>{{official.title}}</view>
         </view>
-        <image class="official-qrcode" src="{{official.qrcode}}"></image>
+        <image class="official-qrcode" show-menu-by-longpress src="{{official.qrcode}}"></image>
       </view>
     </view>
   </view>

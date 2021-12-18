@@ -40,7 +40,8 @@ App({
         url
       }),
       mini: () => wx.navigateToMiniProgram({
-        appId
+        appId,
+        path: '/pages/course-detail/course-detail?docid=00068c2c0106c0667f5b01d015b80d'
       }),
       web: () =>  wx.navigateTo({
         url: `/pages/jumpto-webpage/index?url=${encodeURIComponent(url)}`
