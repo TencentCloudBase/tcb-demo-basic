@@ -33,7 +33,7 @@
                 <view class="product-advantage__description">{{advantage.description}}</view>
               </view>
             </view>
-            <button class="product-advantage__more" data-navigatetype="{{productFamily.navigateType}}" data-url="{{productFamily.url}}" bindtap="navigateToHandler">查看更多<image src="https://7463-tcb-advanced-a656fc-1257967285.tcb.qcloud.la/tcb-miniprogram/home/进入icon@2x.png"></image></button>
+            <!-- <button class="product-advantage__more" data-navigatetype="{{productFamily.navigateType}}" data-url="{{productFamily.url}}" bindtap="navigateToHandler">查看更多<image src="https://7463-tcb-advanced-a656fc-1257967285.tcb.qcloud.la/tcb-miniprogram/home/进入icon@2x.png"></image></button> -->
           </view>
         </view>
       </view>
