@@ -12,5 +12,4 @@
 .official-qrcode {
   width: 264rpx;
   height: 264rpx;
-  border: 1px dashed #E6E9EE;
 }
