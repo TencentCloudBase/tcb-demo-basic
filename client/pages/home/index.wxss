@@ -125,7 +125,7 @@ product-advantage__logo > image{
   width: 332rpx;
   height: 448rpx;
   margin-left: 0;
-  background-image: url('https://7463-tcb-advanced-a656fc-1257967285.tcb.qcloud.la/tcb-miniprogram/home/底纹@2x.png');
+  background-image: url('https://qcloudimg.tencent-cloud.cn/raw/f4880ac61545ba41223aa5a123b132a5/%E5%BA%95%E7%BA%B9@2x.png');
   background-position: bottom right;
   background-repeat: no-repeat;
   background-size: 242rpx 236rpx;
