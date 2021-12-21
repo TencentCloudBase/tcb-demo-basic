@@ -3,50 +3,19 @@ page {
   background: #FFFFFF;
 }
 .banner {
-  margin-top: 16rpx;
-  padding: 0 32rpx;
-}
-.banner__logo {
   width: 100%;
-  height: 260rpx;
-  border-radius: 20rpx;
-}
-.recommand-grid {
+  height: 556rpx;
   position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 48rpx 0 20rpx;
-  padding-bottom: 40rpx;
-  text-align: center;
-}
-.recommand-grid::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  width: 100%;
-  height: 120rpx;
-  background-color: #fff; /* 浏览器不支持的时候显示 */
-  background-image: linear-gradient(180deg, #F5F5F7, #fff); 
   z-index: -1;
 }
-.recommand__item {
-  width: 198rpx;
-}
-.recommand__logo {
-  width: 96rpx;
-  height: 96rpx;
-  margin: 0 auto;
-}
-.recommand__logo > image{
-  width: 100%;
-  height: 100%;
-}
-.recommand__title {
- height: 44rpx;
- font-size: 26rpx;
- text-align: center;
- line-height: 44rpx;
+.home-container {
+  background-color: #fff;
+  box-sizing: border-box;
+  border-top-left-radius: 40rpx;
+  border-top-right-radius: 40rpx;
+  padding-top: 16rpx;
+  margin-top: -40rpx;
+  z-index: 1;
 }
 .product__tip {
   font-size: 28rpx;
@@ -90,6 +59,27 @@ product-advantage__logo > image{
   font-size: 14px;
   color: #757D88;
 }
+.product-schematic {
+  line-height: 44rpx;
+  margin-top: 24rpx;
+  margin-bottom: 60rpx;
+}
+.product-schematic__title {
+  font-size: 28rpx;
+  font-weight: 500;
+  margin-bottom: 4rpx;
+}
+.product-schematic__description {
+  font-size: 24rpx;
+  color: #757D88;
+  margin-bottom: 24rpx;
+}
+.product-schematic__image {
+  text-align: center;
+}
+.product-schematic__image image {
+  width: 100%;
+}
 .product-advantage__more {
   display: flex;
   justify-content: center;
@@ -99,7 +89,7 @@ product-advantage__logo > image{
   height: 96rpx;
   line-height: 96rpx;
   font-size: 28rpx;
-  margin: 8rpx 0 0;
+  margin: 0;
   border-color: #E6E9EE;
 }
 .product-advantage__more image {
