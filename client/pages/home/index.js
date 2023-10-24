@@ -105,14 +105,22 @@ Page({
       navigateType:'mini',
       appId: 'wxfe70b3f986aad2fb',
       url: ''
-    }]
+    }],
+    winStyle: false
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    this.trdPrivacy = this.selectComponent("#trdPrivacy");
+  },
 
+  showPrivacyWin() {
+    this.setData({
+      winStyle: false,
+    })
+    this.trdPrivacy.showPrivacyWin();
   },
 
   /**

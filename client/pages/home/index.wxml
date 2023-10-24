@@ -51,7 +51,13 @@
           </view>
         </view>
       </view>
-      <view class="copyright"><text>powered by Weda</text></view>
+      <view class="section" style="padding-top: 0;">
+        <view class="show_privacy" bindtap="showPrivacyWin">《小程序服务声明》</view>
+        <trd-privacy id="trdPrivacy" name="云开发体验小程序" date="2023年10月24日" winStyle="{{winStyle}}"></trd-privacy>
+      </view>
+      <view class="copyright">
+        <text>powered by Weda</text>
+      </view>
     </view>
   </view>
 </view>

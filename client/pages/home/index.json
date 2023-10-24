@@ -1,5 +1,7 @@
 {
   "navigationBarTitleText": "首页",
   "navigationStyle": "custom",
-  "usingComponents": {}
+  "usingComponents": {
+    "trd-privacy": "../../components/trd-privacy/privacy"
+  }
 }

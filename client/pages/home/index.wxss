@@ -175,3 +175,14 @@ product-advantage__logo > image{
   transform: translate(18rpx, -1rpx);
   background-color: #E6E9EE;
 }
+
+.intro {
+  margin: 30px;
+  text-align: center;
+}
+.show_privacy {
+  color: #576b95;
+  text-align: right;
+  line-height: 50rpx;
+  font-size: 24rpx;
+}
