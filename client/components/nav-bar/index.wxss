@@ -1,0 +1,51 @@
+.navbar{
+  position: relative;
+}
+.top{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.back-icon, .home-icon{
+  width: 28px;
+  height: 100%;
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  display: flex;
+}
+.back-icon{
+  left: 16px;
+}
+.home-icon{
+  left: 50px
+}
+.back-icon image{
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.home-icon image{
+  width: 20px;
+  height: 20px;
+  margin: auto;
+}
+.nav-title, .nav-icon{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  font-size: 0;
+  font-weight: bold;
+}
+.nav-title, .nav-icon .left{
+  transform: translateY(-50%);
+  left: 44rpx;
+}
+/* iphone5 */
+@media screen and (max-width: 321px)  and (-webkit-device-pixel-ratio: 2){
+  .title-text{
+      font-size: 15px !important;
+  }
+}

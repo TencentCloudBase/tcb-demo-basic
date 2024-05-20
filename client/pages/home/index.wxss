@@ -1,0 +1,188 @@
+/* pages/home/index.wxss */
+page {
+  background: #FFFFFF;
+}
+.banner {
+  width: 100%;
+  height: 556rpx;
+  position: relative;
+  z-index: -1;
+}
+.home-container {
+  background-color: #fff;
+  box-sizing: border-box;
+  border-top-left-radius: 40rpx;
+  border-top-right-radius: 40rpx;
+  padding-top: 16rpx;
+  margin-top: -40rpx;
+  z-index: 1;
+}
+.product__tip {
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color: #B5BDC8;
+  margin-top: 8rpx;
+}
+.product-advantage__item {
+  padding: 40rpx 0;
+}
+.product-advantage__item:not(:last-child) {
+  border-bottom: 1px solid #E6E9EE;
+}
+.product-advantage__header {
+  display: flex;
+  align-items: center;
+  height: 48rpx;
+  margin-bottom: 18rpx;
+  line-height: 48rpx;
+}
+.product-advantage__logo {
+  display: inline-block;
+  width: 48rpx;
+  height: 48rpx;
+  margin-right: 16rpx;
+  line-height: 48rpx;
+}
+.product-advantage__logo > image {
+  width: 100%;
+  height: 100%;
+}
+product-advantage__logo > image{
+  width: 100%;
+  height: 100%;
+}
+.product-advantage__title {
+  font-size: 32rpx;
+  font-weight: 500;
+}
+.product-advantage__description {
+  font-size: 14px;
+  color: #757D88;
+}
+.product-schematic {
+  line-height: 44rpx;
+  margin-top: 24rpx;
+  margin-bottom: 60rpx;
+}
+.product-schematic__title {
+  font-size: 28rpx;
+  font-weight: 500;
+  margin-bottom: 4rpx;
+}
+.product-schematic__description {
+  font-size: 24rpx;
+  color: #757D88;
+  margin-bottom: 24rpx;
+}
+.product-schematic__image {
+  text-align: center;
+}
+.product-schematic__image image {
+  width: 100%;
+}
+.product-advantage__more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  background-color: transparent;
+  height: 96rpx;
+  line-height: 96rpx;
+  font-size: 28rpx;
+  margin: 0;
+  border-color: #E6E9EE;
+}
+.product-advantage__more image {
+  width: 32rpx;
+  height: 32rpx;
+  margin-left: 4rpx;
+}
+.help {
+  padding-top: 40rpx;
+}
+.help__item {
+  box-sizing: border-box;
+  background-color: #F4F5F9;
+  border-radius: 20rpx;
+  width: 330rpx;
+  height: 212rpx;
+  margin-left: 24rpx;
+  margin-bottom: 24rpx;
+  padding: 0 32rpx;
+  float: right;
+}
+.help__item:first-child {
+  width: 332rpx;
+  height: 448rpx;
+  margin-left: 0;
+  background-image: url('https://qcloudimg.tencent-cloud.cn/raw/f4880ac61545ba41223aa5a123b132a5/%E5%BA%95%E7%BA%B9@2x.png');
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: 242rpx 236rpx;
+  float: left
+}
+.help__logo {
+  width: 64rpx;
+  height: 64rpx;
+  margin-top: 24rpx;
+}
+.help__logo > image {
+  width: 100%;
+  height: 100%;
+}
+.help__title {
+  font-size: 28rpx;
+  line-height: 44rpx;
+  margin-top: 12rpx;
+}
+.help__description {
+  font-size: 24rpx;
+  color: #7C878E;
+  margin-top: 16rpx;
+}
+.copyright {
+  font-size: 24rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  color: #C1C6CD;
+  text-align: center;
+  padding-top: 32rpx;
+  padding-bottom: 40rpx;
+}
+.copyright > text {
+  position: relative;
+  display: inline-block;
+}
+.copyright > text::before {
+  content: '';
+  display: block;
+  height: 2rpx;
+  width: 24rpx;
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  transform: translate(-18rpx, -1rpx);
+  background-color: #E6E9EE;
+}
+.copyright > text::after {
+  content: '';
+  display: block;
+  height: 2rpx;
+  width: 24rpx;
+  position:absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(18rpx, -1rpx);
+  background-color: #E6E9EE;
+}
+
+.intro {
+  margin: 30px;
+  text-align: center;
+}
+.show_privacy {
+  color: #576b95;
+  text-align: right;
+  line-height: 50rpx;
+  font-size: 24rpx;
+}

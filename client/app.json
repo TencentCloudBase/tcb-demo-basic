@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/home/index",
     "pages/index/index",
     "pages/user/index",
     "pages/reserve/index",
@@ -10,7 +11,13 @@
     "pages/pay-result/index",
     "pages/customer-msg/index/index",
     "pages/customer-msg/messageList/index",
-    "pages/customer-msg/chooseLib/index"
+    "pages/customer-msg/chooseLib/index",
+    "pages/jumpto-webpage/index",
+    "pages/case/index",
+    "pages/toolbox/index",
+    "pages/official-account/index",
+    "pages/technology-group/index",
+    "pages/weda-appmarket/index"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -18,6 +25,35 @@
     "navigationBarBackgroundColor": "#F6F6F6",
     "navigationBarTitleText": "云开发体验",
     "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "navBar": "components/nav-bar/index"
+  },
+  "tabBar": {
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "selectedColor": "#006EFF",
+    "color": "#7C878E",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/home/index",
+        "iconPath": "images/首页-nor@2x.png",
+        "selectedIconPath": "images/首页- focus@2x.png"
+      },
+      {
+        "text": "案例",
+        "pagePath": "pages/case/index",
+        "iconPath": "images/案例-nor@2x.png",
+        "selectedIconPath": "images/案例- focus@2x.png"
+      },
+      {
+        "text": "工具箱",
+        "pagePath": "pages/toolbox/index",
+        "iconPath": "images/工具-nor@2x.png",
+        "selectedIconPath": "images/工具- focus@2x.png"
+      }
+    ]
   },
   "cloud": true,
   "navigateToMiniProgramAppIdList": [

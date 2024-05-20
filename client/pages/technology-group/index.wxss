@@ -1,0 +1,21 @@
+.group-container {
+  margin: 32rpx auto 0;
+  padding: 0 32rpx;
+  text-align: center;
+}
+.group-title {
+  justify-content: center;
+  color: #3D434C;
+  font-weight: 400;
+  margin-bottom: 16rpx;
+}
+.group-tip {
+  width: 368rpx;
+  margin: 24rpx auto;
+  font-size: 24rpx;
+  color: #7C878E;
+}
+.group-qrcode {
+  width: 264rpx;
+  height: 264rpx;
+}

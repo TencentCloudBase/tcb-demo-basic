@@ -1,0 +1,10 @@
+<view class="official-container">
+    <view class="tcb-card" wx:for="{{officialAccount}}" wx:key="title" wx:for-item="official">
+      <view class="tcb-card__content">
+        <view class="tcb-card__title official-title">
+          <view>{{official.title}}</view>
+        </view>
+        <image class="official-qrcode" show-menu-by-longpress src="{{official.qrcode}}"></image>
+      </view>
+    </view>
+  </view>
