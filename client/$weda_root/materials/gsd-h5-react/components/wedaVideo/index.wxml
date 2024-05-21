@@ -1,0 +1,29 @@
+<view style="position: relative">
+  <video
+    class="weda-ui_video-mp {{className}}"
+    style="{{style}}"
+    id="{{videoId}}"
+    src="{{realSrc}}"
+    poster="{{realPosterImage}}"
+    autoplay="{{autoPlay}}"
+    loop="{{loopPlay}}"
+    muted="{{mutePlay}}"
+    controls="{{controlBarStatus}}"
+    initial-time="{{startTime}}"
+    duration="{{endTime}}"
+    show-mute-btn="{{true}}"
+    object-fit="{{objectFit}}"
+    show-center-play-btn="{{showCenterPlayBtn}}"
+    bindplay="bindplay"
+    bindpause="bindpause"
+    bindended="bindended"
+    bindtimeupdate="bindtimeupdate"
+    bindfullscreenchange="bindfullscreenchange"
+    bindwaiting="bindwaiting"
+    binderror="binderror"
+    bindprogress="bindprogress"
+    bindloadedmetadata="bindloadedmetadata"
+    bindseekcomplete="bindseekcomplete"
+  ></video>
+  <view class="weda-ui_video-mp_error" wx:if="{{videoErrStatus}}"> 视频资源加载出错，错误信息：{{videoErrMsg}} </view>
+</view>

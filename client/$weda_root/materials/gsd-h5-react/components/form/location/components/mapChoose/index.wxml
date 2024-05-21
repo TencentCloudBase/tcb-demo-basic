@@ -1,0 +1,54 @@
+<!--components/mapChooseV2.0/index.wxml-->
+<view class="weda-ui_mapChoose" wx:if="{{isVisible}}">
+  <view class="weda-ui_mapChoose_outTip {{isOutofrange?'weda-ui_mapChoose_outTip_block':''}}">
+    <icon wx:if="{{isOutofrange}}" class="icon-box-img" type="warn" size="20" color="#ED7B2F" style="margin-right: 9px"></icon>
+    <text wx:if="{{isOutofrange}}">定位超出允许范围,请调整</text>
+  </view>
+  <view class="weda-ui_mapChoose_map" style="height: {{mapBoxHeight}}px;">
+    <view class="weda-ui_mapChoose_msg">
+      <view class="weda-ui_mapChoose_confirm {{(isOutofrange||!searchChoosedLocation.id)?'weda-ui_mapChoose_confirm_disable':''}}" bindtap="handleConfirm">确定</view>
+      <view class="weda-ui_mapChoose_colse" bindtap="handleClose">取消</view>
+    </view>
+    <map id="weda-ui_mapChoose_map" markers="{{markers}}" longitude="{{mapChoosedLocation.longitude}}" latitude="{{mapChoosedLocation.latitude}}" bindregionchange="regionchange" circles="{{circles}}" bindtap="handleMap" style="height: 100%; width: 100%"></map>
+    <view class="weda-ui_mapChoose_map_control" bindtap="handleMapControl">
+      <image class="weda-ui_mapChoose_map_control_img" src="https://qcloudimg.tencent-cloud.cn/raw/16f372916b73decb45faa912e37f6e6f.svg"></image>
+    </view>
+  </view>
+  <view class="weda-ui_mapChoose_search" style="height: {{searchBoxHeight}}px;" bindtouchstart="handletouchstart" bindtouchmove="handletouchmove">
+    <view class="weda-ui_mapChoose_search_input_arrow" wx:if="{{searchBoxHeight!==328&&searchBoxHeight!==282}}" bindtap="handleSetSearchBoxHeight" data-status="{{false}}">
+      <text class="weda-ui_mapChoose_search_input_arrow-con"></text>
+    </view>
+    <view class="weda-ui_mapChoose_search_input">
+      <view class="weda-ui_mapChoose_search_input_con {{isSearchFucos?' weda-ui_mapChoose_search_input_con_focus':''}} ">
+        <input type=" text" bindfocus="setIsSearchFucos" data-status="{{true}}" focus="{{isSearchFucos}}" value="{{searchValue}}" bindinput="changeSearchValue" />
+        <view class="weda-ui_mapChoose_search_input_place {{isSearchFucos?' weda-ui_mapChoose_search_input_place_focus':''}}">
+          <image class="weda-ui_mapChoose_search_input_icon" src="https://qcloudimg.tencent-cloud.cn/raw/388c48cdcbe9ca07f5682fb10d05ebdd.png" alt="" />
+          <text wx:if="{{!searchValue}}">搜索地点</text>
+        </view>
+        <view class="weda-ui_mapChoose_search_input_clear" wx:if="{{!!searchValue}}" bindtap="clearSearch">
+          <text class="weda-ui_mapChoose_search_input_clear_close"></text>
+        </view>
+      </view>
+      <view class="weda-ui_mapChoose_search_input_cancel" data-status="{{false}}" data-clear="{{true}}" bindtap="setIsSearchFucos" wx:if="{{isSearchFucos}}"> 取消 </view>
+    </view>
+    <view class="weda-ui_mapChoose_search_list_lodading" wx:if="{{searchLoadingStatus&&!isSearchFucos}}">
+      <view class="weda-ui_mapChoose_search_list_lodading_con"></view>
+    </view>
+    <scroll-view scroll-y="true" class="weda-ui_mapChoose_search_list {{searchBoxHeight!==328&&searchBoxHeight!==282?' weda-ui_mapChoose_search_list_top':''}}" bindscrolltolower="scrolltolower" bindscroll="bindscroll">
+      <view class="weda-ui_mapChoose_search_list_li" wx:if="{{!isSearchFucos}}" wx:for="{{searchList}}" wx:key="index" data-value="{{item}}" bindtap="handleLocation">
+        <view class="weda-ui_mapChoose_search_list_li_wrap">
+          <view class="weda-ui_mapChoose_search_list_li_title"> {{item.title}} </view>
+          <view class="weda-ui_mapChoose_search_list_li_con"> {{item.detailedAddress?item.detailedAddress:item.address}} </view>
+          <view class="weda-ui_mapChoose_search_list_li_con_choosed" wx:if="{{item.id===searchChoosedLocation.id}}"></view>
+        </view>
+      </view>
+      <view class="weda-ui_mapChoose_search_list_li" wx:if="{{isSearchFucos}}" wx:for="{{suggestionList}}" wx:key="index" bindtap="handleSuggestionLocation" data-value="{{item}}">
+        <view class="weda-ui_mapChoose_search_list_li_wrap">
+          <view class="weda-ui_mapChoose_search_list_li_title"> {{item.title}} </view>
+          <view class="weda-ui_mapChoose_search_list_li_con"> {{item.address}} </view>
+          <view class="weda-ui_mapChoose_search_list_li_con_choosed" wx:if="{{item.id===searchChoosedLocation.id}}"></view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

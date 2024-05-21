@@ -1,0 +1,11 @@
+<formcell className="{{cls}}" style="{{style}}" label="{{labelVisible ? label : null}}" layout="{{layout}}" multiCell="{{false}}" requiredFlag="{{requiredFlag}}">
+  <view class="{{subCls}}">
+    <view wx:if="{{isFlex}}" class="weui-cell__bd" />
+    <view class="{{ isFlex? 'weui-cell__ft' : 'weui-cell__bd'}}">
+      <label class="weui-switch-cp">
+        <switch class="weui-switch-cp__input" checked="{{checked}}" bindchange="change" disabled="{{disabled}}" />
+        <view class="weui-switch-cp__box" />
+      </label>
+    </view>
+  </view>
+</formcell>

@@ -1,0 +1,3 @@
+<view id="{{id}}" class="weda-ui {{className}} {{classPrefix + '-slot'}} {{classPrefix + '-mp-slot'}}" style="{{style}}">
+  <slot></slot>
+</view>

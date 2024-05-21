@@ -1,0 +1,31 @@
+@import '../../../style/weda-ui.wxss';
+
+.weda-formcells__flag {
+  display: inline-block;
+  margin-left: 4px;
+  font-family: SimSun;
+  font-size: 12px;
+  color: #f60;
+  align-self: flex-start;
+}
+
+.weda-formcells.weui-flex .weda-formcells__label {
+  width: 130px;
+  padding-bottom: 16px;
+}
+
+.weui-cells__group_form .weui-cell {
+  padding: 16px 16px;
+}
+
+.weda-formcells .weda-formcells__label {
+  padding-bottom: 8px;
+}
+
+.weda-formcells__content.weui-flex__item .weui-cell_form {
+  padding: 0;
+}
+
+.weda-formcells__content.weui-flex__item .weui-cell_form {
+  padding-right: 16px;
+}

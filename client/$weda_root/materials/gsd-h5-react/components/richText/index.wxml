@@ -1,0 +1,3 @@
+<view class="weda-ui weda-RichTextView {{className}}" style="{{style}}">
+  <rich-text nodes="{{__html}}"></rich-text>
+</view>

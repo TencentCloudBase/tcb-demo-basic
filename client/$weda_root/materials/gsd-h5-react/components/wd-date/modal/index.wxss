@@ -1,0 +1,3 @@
+@import '../../../style/wd-design.wxss';
+@import '../../../style/utils.wxss';
+@import '../../wd-select/select.wxss';

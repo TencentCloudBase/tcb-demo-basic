@@ -1,0 +1,25 @@
+{
+  "renderer": "webview",
+  "usingComponents": {
+  "a": "/$weda_root/materials/gsd-h5-react/components/container/index",
+  "b": "/$weda_root/materials/gsd-h5-react/components/wd-menu-layout/index",
+  "c": "/$weda_root/materials/gsd-h5-react/components/wd-icon/index",
+  "d": "/$weda_root/materials/gsd-h5-react/components/wd-image/index",
+  "e": "/$weda_root/materials/gsd-h5-react/components/wd-text/index",
+  "f": "/$weda_root/materials/gsd-h5-react/components/wd-button/index",
+  "g": "/$weda_root/materials/gsd-h5-react/components/wd-modal/index",
+  "h": "/$weda_root/materials/gsd-h5-react/components/wd-divider/index",
+  "i": "/$weda_root/materials/gsd-h5-react/components/scrollView/index",
+  "j": "/$weda_root/materials/gsd-h5-react/components/richText/index",
+  "k": "/$weda_root/materials/gsd-h5-react/components/wd-textarea/index",
+  "l": "/$weda_root/materials/gsd-h5-react/components/wd-select/index",
+  "m": "/$weda_root/materials/gsd-h5-react/components/wd-input/index",
+  "n": "/$weda_root/materials/gsd-h5-react/components/grid/index",
+  "o": "/$weda_root/materials/gsd-h5-react/components/grid/row/index",
+  "p": "/$weda_root/materials/gsd-h5-react/components/grid/col/index",
+  "q": "/$weda_root/materials/gsd-h5-react/components/listView/index",
+  "r": "/$weda_root/materials/gsd-h5-react/components/wd-tag/index",
+  "wd-info": "/$weda_root/common/info/index"
+},
+"backgroundColor":"#FFFFFF","navigationStyle":"default","pageOrientation":"portrait","backgroundColorTop":"#FFFFFF","backgroundTextStyle":"dark","backgroundColorBottom":"#FFFFFF","enablePullDownRefresh":true,"navigationBarTextStyle":"white","navigationBarTitleText":"云开发 AI  智能体","navigationBarBackgroundColor":"#3A30D8","onReachBottomDistance":50
+}

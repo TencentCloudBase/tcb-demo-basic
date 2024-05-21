@@ -1,0 +1,38 @@
+<view class="weda-ui weui-cells weui-cells_form weda-formcells {{className}}" id="{{id}}" style="{{style}}">
+  <view>
+    <mp-uploader
+      max-size="{{maxSize  * 1024 * 1024}}"
+      files="{{files}}"
+      title="{{title}}"
+      labelVisible="{{labelVisible}}"
+      showDelete="{{!disabled}}"
+      ext-class="{{_layout}}"
+      bindfail="uploadError"
+      bindsuccess="uploadSuccess"
+      select="{{selectFile}}"
+      upload="{{uploadFile}}"
+      maxCount="{{maxCount}}"
+      binddelete="onDelete"
+      requiredFlag="{{requiredFlag}}"
+      disabled="{{disabled}}"
+      showShape="{{showShape}}"
+      isChooseAvatar="{{isChooseAvatar}}"
+      layout="{{_layout}}"
+      extClass="{{layoutCls}}"
+      readOnly="{{readOnly}}"
+      sourceType="{{sourceTypeArray}}"
+    >
+    </mp-uploader>
+  </view>
+</view>
+
+<!-- uploader delete 实际代码接受 showDelete
+    https://developers.weixin.qq.com/community/develop/doc/000a4e7b9cc158c110aa3961056400
+ -->
+
+<!-- bind开头的是事件handler，wxml模版中不能带 `{{}}`
+```
+<mp-uploader files="{{files}}" showDelete="{{!disabled}}" ext-class="{{layout}}" bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uploadFile}}" maxCount="{{maxUploadCount}}" title="{{title}}" binddelete="onDelete"></mp-uploader>
+```
+upload 是函数带{{}}， bindtelete直接传函数名字符串
+-->

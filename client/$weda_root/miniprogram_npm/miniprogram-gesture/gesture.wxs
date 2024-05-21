@@ -1,0 +1,263 @@
+
+/* eslint-disable */
+// @ts-ignore
+function getLen(v) {
+  return Math.sqrt(v.x * v.x + v.y * v.y)
+}
+function dot(v1, v2) {
+  return v1.x * v2.x + v1.y * v2.y
+}
+function getAngle(v1, v2) {
+  var mr = getLen(v1) * getLen(v2)
+  if (mr === 0) return 0
+  var r = dot(v1, v2) / mr
+  if (r > 1) r = 1
+  return Math.acos(r)
+}
+function cross(v1, v2) {
+  return v1.x * v2.y - v2.x * v1.y
+}
+function getRotateAngle(v1, v2) {
+  var angle = getAngle(v1, v2)
+  if (cross(v1, v2) > 0) {
+    angle *= -1
+  }
+  return angle * 180 / Math.PI
+}
+function _swipeDirection(x1, x2, y1, y2) {
+  if (Math.abs(x1 - x2) >= Math.abs(y1 - y2)) {
+    return x1 - x2 > 0 ? 'Left' : 'Right'
+  } else {
+    return y1 - y2 > 0 ? 'Up' : 'Down'
+  }
+}
+// 实现setTimeout功能
+var setTimeout = function(callback, interval, instance) { 
+  var now = Date.now
+  var stime = now()
+  var loop = function() {
+    if (now() - stime >= interval) {
+      callback()
+    } else {
+      instance.requestAnimationFrame(loop)
+    }
+  }
+  instance.requestAnimationFrame(loop)
+}
+var start = function(event, ownerInstance) {
+  var instance = event.instance;
+  var State = instance.getState()
+  if(!State._init) {
+    State.preV = {x: null, y: null}
+    State.pinchStartLen = null
+    State.zoom = 1
+    State.isDoubleTap = false
+    State.delta = null
+    State.last = null
+    State.now = null
+    State.x1 = State.x2 = State.y1 = State.y2 = null
+    State.preTapPosition = {x: null, y: null}
+    // 控制定时器
+    State._cancelLongTap = function() {
+      State.longTapTimeout = false
+    }
+    State._cancelSingleTap = function() {
+      State.singleTapTimeout = false
+    }
+    State._tapTimeout = function() {
+      State.tapTimeout = false
+    }
+    State._swipeTimeout = function() {
+      State.swipeTimeout = false
+    }
+    State._init = true // 表示已经初始化完成
+  }
+  State.tapTimeout = true
+  State.singleTapTimeout = true
+  State.longTapTimeout = true
+  State.swipeTimeout = true
+  State.now = Date.now()
+  State.x1 = event.touches[0].pageX
+  State.y1 = event.touches[0].pageY
+  State.delta = State.now - (State.last || State.now)
+  // 触发 touchStart 事件
+  ownerInstance.triggerEvent('touchStart', event)
+  if (State.preTapPosition.x !== null) {
+    State.isDoubleTap = (State.delta > 0 &&
+      State.delta <= 250 &&
+      Math.abs(State.preTapPosition.x - State.x1) < 30 &&
+      Math.abs(State.preTapPosition.y - State.y1) < 30)
+    if (State.isDoubleTap) {
+      State._cancelSingleTap()
+    }
+  }
+  State.preTapPosition.x = State.x1
+  State.preTapPosition.y = State.y1
+  State.last = State.now
+  var preV = State.preV
+  var len = event.touches.length
+  if (len > 1) {
+    State._cancelLongTap()
+    State._cancelSingleTap()
+    var v = {x: event.touches[1].pageX - State.x1, y: event.touches[1].pageY - State.y1}
+    preV.x = v.x
+    preV.y = v.y
+    State.pinchStartLen = getLen(preV)
+    // 触发 multipointStart 多指点按 事件
+    ownerInstance.triggerEvent('multipointStart', event)
+  }
+  State._preventTap = false
+  setTimeout(function () {
+    // 触发 longTap（长按） 事件
+    if(State.longTapTimeout) {
+      ownerInstance.triggerEvent('longTap', event)
+      State._preventTap = true
+      State.longTapTimeout = true
+    }
+  }, 750, instance)
+
+  if (!instance.getDataset()['propagation']) return false
+}
+var move = function(event, ownerInstance) {
+  var instance = event.instance;
+  var State = instance.getState()
+  var preV = State.preV
+  var len = event.touches.length
+  var currentX = event.touches[0].pageX
+  var currentY = event.touches[0].pageY
+  State.isDoubleTap = false
+  if (len > 1) {
+    var sCurrentX = event.touches[1].pageX
+    var sCurrentY = event.touches[1].pageY
+    var v = {x: event.touches[1].pageX - currentX, y: event.touches[1].pageY - currentY}
+    if (preV.x !== null) {
+      if (State.pinchStartLen > 0) {
+        event.zoom = getLen(v) / State.pinchStartLen
+        // 触发 pinch 事件
+        ownerInstance.triggerEvent('pinch', event)
+      }
+      event.angle = getRotateAngle(v, preV)
+      // 触发 rotate 事件
+      ownerInstance.triggerEvent('rotate', event)
+    }
+    preV.x = v.x
+    preV.y = v.y
+    if (State.x2 !== null && State.sx2 !== null) {
+      event.deltaX = (currentX - State.x2 + sCurrentX - State.sx2) / 2
+      event.deltaY = (currentY - State.y2 + sCurrentY - State.sy2) / 2
+    } else {
+      event.deltaX = 0
+      event.deltaY = 0
+    }
+    // 触发 twoFingerPressMove 事件
+    ownerInstance.triggerEvent('twoFingerPressMove', event)
+    State.sx2 = sCurrentX
+    State.sy2 = sCurrentY
+  } else {
+    if (State.x2 !== null) {
+      event.deltaX = currentX - State.x2
+      event.deltaY = currentY - State.y2
+      // move事件中添加对当前触摸点到初始触摸点的判断，
+      // 如果曾经大于过某个距离(比如10),就认为是移动到某个地方又移回来，应该不再触发tap事件才对。
+      var movedX = Math.abs(State.x1 - State.x2)
+      var movedY = Math.abs(State.y1 - State.y2)
+      if (movedX > 10 || movedY > 10) {
+        State._preventTap = true
+      }
+    } else {
+      event.deltaX = 0
+      event.deltaY = 0
+    }
+    // 触发 pressMove 单指点按移动 事件
+    ownerInstance.triggerEvent('pressMove', event)
+  }
+  // 触发 touchMove 移动事件
+  ownerInstance.triggerEvent('touchMove', event)
+  State._cancelLongTap()
+  State.x2 = currentX
+  State.y2 = currentY
+  // if (len > 1) {
+  //   // event.preventDefault()
+  // }
+  if (!instance.getDataset()['propagation']) return false
+}
+var end = function(event, ownerInstance) {
+  var instance = event.instance;
+  var State = instance.getState()
+  State._cancelLongTap()
+  if (event.touches.length < 2) {
+    // 触发 multipointEnd 多指点按结束 事件
+    ownerInstance.triggerEvent('multipointEnd', event)
+    State.sx2 = State.sy2 = null
+  }
+  // swipe 
+  if ((State.x2 && Math.abs(State.x1 - State.x2) > 30) ||
+    (State.y2 && Math.abs(State.y1 - State.y2) > 30)) {
+    event.direction = _swipeDirection(State.x1, State.x2, State.y1, State.y2)
+    setTimeout(function () {
+      if(State.swipeTimeout) {
+        // 触发 swipe 滑动 上下左右 事件
+        ownerInstance.triggerEvent('swipe', event)
+        State.swipeTimeout = true
+      }
+    }, 0, instance)
+  } else {
+    setTimeout(function () {
+      if(State.tapTimeout) {
+        if (!State._preventTap) {
+          // 触发 tap 事件
+          ownerInstance.triggerEvent('tap', event)
+        }
+        // trigger double tap immediately
+        if (State.isDoubleTap) {
+          // 触发 doubleTap 事件
+          ownerInstance.triggerEvent('doubleTap', event)
+          State.isDoubleTap = false
+        }
+        State.tapTimeout = true
+      }
+    }, 0, instance)
+    if (!State.isDoubleTap) {
+      if (instance.getDataset()['requirefailure']) { // requireFailure
+        setTimeout(function () {
+          if(State.singleTapTimeout) {
+            // 触发 singleTap 事件
+            ownerInstance.triggerEvent('singleTap', event)
+            State.singleTapTimeout = true
+          }
+        }, 250, instance)
+      } else {
+        ownerInstance.triggerEvent('singleTap', event)
+        State.singleTapTimeout = true
+      }
+    }
+  }
+  // 触发 touchEnd 事件
+  ownerInstance.triggerEvent('touchEnd', event)
+  State.preV.x = 0
+  State.preV.y = 0
+  State.zoom = 1
+  State.pinchStartLen = null
+  State.x1 = State.x2 = null
+  State.y1 = State.y2 = null
+
+  if (!instance.getDataset()['propagation']) return false
+}
+var cancel = function(event, ownerInstance) {
+  var instance = event.instance;
+  var State = instance.getState()
+  State._cancelLongTap()
+  State._cancelSingleTap()
+  State._tapTimeout()
+  State._swipeTimeout()
+  // 触发 touchCancel 事件
+  ownerInstance.triggerEvent('touchCancel', event)
+
+  if (!instance.getDataset()['propagation']) return false
+}
+module.exports = {
+  start: start,
+  move: move,
+  end: end,
+  cancel: cancel
+}

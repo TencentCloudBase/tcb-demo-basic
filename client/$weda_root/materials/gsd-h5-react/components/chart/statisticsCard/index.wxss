@@ -1,0 +1,42 @@
+.weda-statistics-card {
+  background: #ffffff;
+  border: 1px solid #f1f2f5;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-height: 140px;
+  font-size: 14px;
+}
+
+.weda-statistics-card .weda-statistics-card__wrapper {
+  width: 100%;
+  padding: 40px 24px;
+  box-sizing: border-box;
+}
+
+.weda-statistics-card .weda-statistics-card__title {
+  font-size: 1em;
+  line-height: 1.57142em;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.weda-statistics-card .weda-statistics-card__detail {
+  margin-top: 4px;
+}
+
+.weda-statistics-card .weda-statistics-card__count {
+  font-size: 2em;
+  line-height: 2.42857em;
+  color: rgba(0, 0, 0, 0.9);
+  word-break: break-all;
+}
+
+.weda-statistics-card .weda-statistics-card__unit {
+  font-size: 2em;
+  line-height: 2.42857em;
+  color: rgba(0, 0, 0, 0.4);
+  margin-left: 4px;
+  vertical-align: middle;
+}

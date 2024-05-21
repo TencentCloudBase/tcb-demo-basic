@@ -1,0 +1,6 @@
+<view id="{{id}}" style="{{style}}" class="{{classPrefix + '-side-tab-root'}} {{classPrefix + '-mp-side-tab-root'}} {{className}}">
+  <wd-tabs list="{{tabsData}}" selectedIndex="{{selectedValue}}" direction="vertical" bind:onCurrent="getCurrent" bind:change="change">
+    <slot wx:if="{{isMultipleSlot}}" name="panel{{currentIndex + 1}}"></slot>
+    <slot wx:else name="panel1"></slot>
+  </wd-tabs>
+</view>

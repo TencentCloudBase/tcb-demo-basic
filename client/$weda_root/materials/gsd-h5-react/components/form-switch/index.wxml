@@ -1,0 +1,6 @@
+<block wx:if="{{visible}}">
+  <form-item-wrapper>
+    <old-switch id="{{id}}" className="{{className}}" style="{{style}}" name="{{name}}" label="{{label}}" disabled="{{disabled}}" checked="{{value}}" layout="{{actualLayout}}" labelVisible="{{labelVisible}}" requiredFlag="{{requiredFlag && required}}" bind:change="change" />
+    <tips wx:if="{{validateState === 'error' || validateState === 'warn'}}" tips="{{validateErrorMsg}}" type="warn" />
+  </form-item-wrapper>
+</block>

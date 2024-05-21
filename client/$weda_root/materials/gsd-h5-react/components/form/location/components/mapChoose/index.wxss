@@ -1,0 +1,301 @@
+/* components/mapChooseV2.0/index.wxss */
+
+.weda-ui_mapChoose {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 1001;
+  font-size: 16px;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+}
+
+.weda-ui_mapChoose_map {
+  width: 100vw;
+  transition: height 0.2s linear;
+  position: relative;
+}
+
+.weda-ui_mapChoose_search {
+  width: 100vw;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.weda-ui_mapChoose_search_input {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.weda-ui_mapChoose_search_input_icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 7px;
+  opacity: 0.4;
+}
+
+.weda-ui_mapChoose_search_input_con {
+  height: 36px;
+  background: #f1f2f5;
+  gap: 4px;
+  border-radius: 4px;
+  width: 100%;
+  position: relative;
+}
+
+.weda-ui_mapChoose_search_input_con_focus {
+  width: calc(100% - 44px);
+}
+
+.weda-ui_mapChoose_search_input_place {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.weda-ui_mapChoose_search_input_con input {
+  width: 100%;
+  height: 100%;
+  padding-left: 36px;
+  padding-right: 40px;
+  box-sizing: border-box;
+}
+
+.weda-ui_mapChoose_search_input_cancle {
+  color: var(--wd-color-brand, #0052d9);
+  word-wrap: keep-all;
+  margin-left: 12px;
+  white-space: normal;
+  width: 43px;
+  text-align: right;
+  font-size: 16px;
+}
+
+.weda-ui_mapChoose_search_input_place_focus {
+  left: 10px;
+  transform: translate(0, -50%);
+}
+
+.weda-ui_mapChoose_search_input_clear {
+  width: 21px;
+  height: 21px;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.26);
+  right: 10px;
+  top: 0;
+  transform: translate(0, 40%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+
+.weda-ui_mapChoose_search_input_clear::before,
+.weda-ui_mapChoose_search_input_clear::after {
+  content: '';
+  position: absolute;
+  background-color: #fff;
+  height: 12px;
+  width: 2px;
+  top: 90%;
+  left: 50%;
+  margin-top: -15px;
+  margin-left: -1px;
+}
+
+.weda-ui_mapChoose_search_input_clear::before {
+  transform: rotate(45deg);
+}
+
+.weda-ui_mapChoose_search_input_clear::after {
+  transform: rotate(-45deg);
+}
+
+.weda-ui_mapChoose_search_input_arrow {
+  width: 30px;
+  height: 14px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.weda-ui_mapChoose_search_input_arrow-con {
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid rgba(0, 0, 0, 0.6);
+  border-right: 2px solid rgba(0, 0, 0, 0.6);
+  transform: rotate(135deg);
+}
+
+.weda-ui_mapChoose_search_list {
+  width: 100%;
+  height: calc(100% - 46px);
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+
+.weda-ui_mapChoose_search_list_top {
+  height: calc(100% - 76px);
+}
+
+.weda-ui_mapChoose_search_list_li {
+  padding: 0 20px;
+}
+
+.weda-ui_mapChoose_search_list_li_wrap {
+  border-bottom: 1px solid #e3e6eb;
+  padding: 12px 0;
+  position: relative;
+}
+
+.weda-ui_mapChoose_search_list_li_title {
+  font-weight: 400;
+  line-height: 24px;
+  width: 90%;
+}
+
+.weda-ui_mapChoose_search_list_li_con {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: rgba(0, 0, 0, 0.4);
+  width: 90%;
+}
+
+.weda-ui_mapChoose_search_list_lodading {
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weda-ui_mapChoose_search_list_li_con_choosed {
+  width: 8px;
+  height: 16px;
+  border-color: var(--wd-color-brand, #0052d9);
+  border-style: solid;
+  border-width: 0 1.5px 1.5px 0;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 40%;
+  right: 12px;
+}
+
+.weda-ui_mapChoose_msg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  background: linear-gradient(
+    180.8deg,
+    #000000 -98.69%,
+    rgba(0, 0, 0, 0) 99.31%
+  );
+  z-index: 21;
+}
+
+.weda-ui_mapChoose_confirm,
+.weda-ui_mapChoose_colse {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 15px;
+  padding: 7px 16px;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.weda-ui_mapChoose_confirm {
+  right: 20px;
+  background: var(--wd-color-brand, #0052d9);
+}
+
+.weda-ui_mapChoose_confirm_disable {
+  background: #bbd3fb;
+}
+
+.weda-ui_mapChoose_colse {
+  left: 20px;
+}
+
+.weda-ui_mapChoose_outTip {
+  background-color: #f9e0c7;
+  color: rgba(0, 0, 0, 0.9);
+  text-align: center;
+  width: calc(100vw - 32px);
+  padding: 0 16px;
+  height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 14px;
+  transition: height 0.2s linear;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.weda-ui_mapChoose_outTip_block {
+  height: 46px;
+}
+
+.weda-ui_mapChoose_map_control {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weda-ui_mapChoose_map_control_img {
+  width: 20px;
+  height: 20px;
+}
+
+.weda-ui_mapChoose_search_list_lodading_con {
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--wd-color-brand, #0052d9);
+  border-top-color: transparent;
+  border-radius: 100%;
+  animation: circle infinite 0.75s linear;
+}
+
+.weda-ui_mapChoose_search_input_cancel {
+  color: var(--wd-color-brand, #0052d9);
+}
+
+@keyframes circle {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

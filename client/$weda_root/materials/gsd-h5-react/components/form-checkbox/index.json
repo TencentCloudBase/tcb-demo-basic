@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "styleIsolation": "shared",
+  "usingComponents": {
+    "old-checkbox": "../form/checkbox",
+    "form-item-wrapper": "../common/form-item-wrapper",
+    "tips": "../form/tips"
+  }
+}

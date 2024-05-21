@@ -1,0 +1,1 @@
+<web-view id="{{id}}" style="{{style}}" class="{{cls}}" src="{{link}}" bindmessage="message" bindload="load" binderror="error"></web-view>

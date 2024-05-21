@@ -1,0 +1,4 @@
+<block bind:tap="tap" id="{{id}}">
+  <view wx:if="{{iconType ==='inner'}}" style="{{fontSize}}; {{iconColor}} ;{{style}}" class="{{cls}}" bind:tap="tap" bindload="load"> </view>
+  <wd-image wx:if="{{iconType ==='custom'}}" style="{{width}}; {{height}}; {{style}}" className="{{cls}}" src="{{src ? src : 'https://qcloudimg.tencent-cloud.cn/raw/4a29d51b504f12b4933ce4490110b4dc.svg'}}" events="{{tap}}" maskClosable="{{false}}" lazyLoad="{{false}}"></wd-image>
+</block>

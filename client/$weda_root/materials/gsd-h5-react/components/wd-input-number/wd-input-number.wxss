@@ -1,0 +1,243 @@
+.wd-input-number-root {
+  --wd-input-number-content-width-max: 3.4375rem;
+  --wd-input-number-btn-text-color: var(--wd-color-text-default);
+  --wd-input-number-btn-text-color-hover: var(--wd-color-text-default);
+  --wd-input-number-btn-text-color-active: var(--wd-color-text-default);
+  --wd-input-number-btn-text-color-disabled: var(--wd-color-text-disabled);
+  --wd-input-number-btn-color-bg: transparent;
+  --wd-input-number-btn-color-bg-hover: transparent;
+  --wd-input-number-btn-color-bg-active: var(--wd-color-brand-active);
+  --wd-input-number-btn-color-bg-disabled: var(--wd-color-gray-2);
+  --wd-input-number-btn-color-border: var(--wd-color-gray-4);
+  --wd-input-number-btn-color-border-hover: var(--wd-color-brand-hover);
+  --wd-input-number-btn-color-border-active: var(--wd-color-brand-active);
+  --wd-input-number-btn-color-border-disabled: var(--wd-color-gray-4);
+  --wd-input-number-btn-height-sm: 1.5rem;
+  --wd-input-number-btn-height-md: 2rem;
+  --wd-input-number-btn-height-lg: 2.5rem;
+  --wd-input-number-btn-width-sm: 1.5rem;
+  --wd-input-number-btn-width-md: 2rem;
+  --wd-input-number-btn-width-lg: 2.5rem;
+  --wd-input-number-btn-font-sm: var(--wd-font-size-2);
+  --wd-input-number-btn-font-md: var(--wd-font-size-3);
+  --wd-input-number-btn-font-lg: var(--wd-font-size-4);
+  --wd-input-number-icon-color-bg: var(--wd-color-gray-1);
+  --wd-input-number-icon-color-bg-hover: var(--wd-color-gray-3);
+  --wd-input-number-icon-color-bg-active: var(--wd-color-gray-4);
+  --wd-input-number-icon-color-bg-disabled: var(--wd-color-gray-2);
+  --wd-input-number-icon-height-sm: 0.625rem;
+  --wd-input-number-icon-height-md: 0.875rem;
+  --wd-input-number-icon-height-lg: 1.125rem;
+  --wd-input-number-icon-width-sm: 1.25rem;
+  --wd-input-number-icon-width-md: 1.75rem;
+  --wd-input-number-icon-width-lg: 2.1875rem;
+  --wd-input-number-icon-font-sm: var(--wd-font-size-2);
+  --wd-input-number-icon-font-md: var(--wd-font-size-4);
+  --wd-input-number-icon-font-lg: var(--wd-font-size-6);
+  --wd-input-number-content-max-width: 1rem;
+}
+
+.wd-input-number-root.wd-input-number--row .wd-form-input-wrap {
+  width: 100%;
+  border-radius: var(--wd-form-input-group-border-radius);
+}
+.wd-input-number-root.wd-input-number--row .wd-form-input-wrap--no-radius-left {
+  border-radius: 0 var(--wd-form-input-group-border-radius) var(--wd-form-input-group-border-radius) 0;
+}
+.wd-input-number-root.wd-input-number--row .wd-form-input-wrap--no-radius-right {
+  border-radius: var(--wd-form-input-group-border-radius) 0 0 var(--wd-form-input-group-border-radius);
+}
+.wd-input-number-root.wd-input-number--row .wd-form-input-wrap--no-radius {
+  border-radius: 0;
+}
+.wd-input-number-root.wd-input-number--row .wd-form-input-wrap__content {
+  width: var(--wd-input-number-content-max-width);
+  min-width: var(--wd-input-number-content-max-width);
+}
+.wd-input-number-root.wd-input-number--row .wd-form-input-wrap__control {
+  min-width: 10px;
+}
+.wd-input-number-root.wd-input-number--row .wd-form-input-wrap__control-wrap {
+  width: auto;
+}
+.wd-input-number-root.wd-input-number--row .wd-form-input-group {
+  flex: 1;
+}
+.wd-input-number-root.wd-input-number--row .wd-form-input-group__content {
+  z-index: inherit;
+}
+.wd-input-number-root.wd-input-number--row .wd-form-item-wrap__control {
+  min-width: 7rem;
+}
+.wd-input-number-root.input-number-step-right .wd-form-input-group.is-not-h5 .wd-input-number__text-before {
+  margin-right: 0.5rem;
+}
+.wd-input-number-root .wd-form-input-group__content {
+  z-index: inherit;
+}
+.wd-input-number-root .wd-input-number-input-number {
+  border: 1px solid var(--wd-form-input-wrap-border-default);
+}
+.wd-input-number-root .wd-input-number-btn__before {
+  margin-right: 0.5rem;
+}
+.wd-input-number-root .wd-input-number-btn__after {
+  margin-left: 0.5rem;
+}
+.wd-input-number-root .wd-form-input-group__addon-right-percent {
+  border: none;
+  background: none;
+}
+.wd-input-number-root .wd-form-input-wrap--no-padding-right {
+  padding-right: 0;
+}
+.wd-input-number-root .wd-form-input-wrap--no-padding-right .wd-form-input-wrap__after {
+  margin-right: 0;
+}
+.wd-input-number__text-after {
+  color: var(--wd-color-text-default);
+}
+.wd-input-number .wd-form-input-wrap__input-row {
+  text-align: center;
+}
+.wd-input-number-btn {
+  flex: none;
+  width: var(--wd-input-number-btn-width-md);
+  height: var(--wd-input-number-btn-height-md);
+  min-height: var(--wd-input-number-btn-height-md);
+  background-color: var(--wd-input-number-btn-color-bg);
+  border-color: var(--wd-input-number-btn-color-border);
+  color: var(--wd-input-number-btn-text-color);
+}
+.wd-input-number-btn.size-md {
+  width: var(--wd-input-number-btn-width-md);
+  height: var(--wd-input-number-btn-height-md);
+  min-height: var(--wd-input-number-btn-height-md);
+  font-size: var(--wd-input-number-btn-font-md);
+}
+.wd-input-number-btn.size-sm {
+  width: var(--wd-input-number-btn-width-sm);
+  height: var(--wd-input-number-btn-height-sm);
+  min-height: var(--wd-input-number-btn-height-sm);
+  font-size: var(--wd-input-number-btn-font-sm);
+}
+.wd-input-number-btn.size-lg {
+  width: var(--wd-input-number-btn-width-lg);
+  height: var(--wd-input-number-btn-height-lg);
+  min-height: var(--wd-input-number-btn-height-lg);
+  font-size: var(--wd-input-number-btn-font-lg);
+}
+.wd-input-number-btn:hover:not(.is-disabled) {
+  background-color: var(--wd-input-number-btn-color-bg-hover);
+  border-color: var(--wd-input-number-btn-color-border-hover);
+  color: var(--wd-input-number-btn-text-color-hover);
+}
+.wd-input-number-btn:active:not(.is-disabled) {
+  background-color: var(--wd-btn-color-white-active);
+  border-color: var(--wd-btn-color-brand-active);
+  color: var(--wd-input-number-btn-text-color-active);
+}
+.wd-input-number-btn.is-disabled {
+  background-color: var(--wd-input-number-btn-color-bg-disabled);
+  border-color: var(--wd-input-number-btn-color-border-disabled);
+  color: var(--wd-input-number-btn-text-color-disabled);
+}
+.wd-input-number-icon__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 0.5rem;
+}
+.wd-input-number-icon__right-item {
+  width: var(--wd-input-number-icon-width-md);
+  height: var(--wd-input-number-icon-height-md);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: var(--wd-input-number-icon-color-bg);
+}
+.wd-input-number-icon__right-item.size-md {
+  width: var(--wd-input-number-icon-width-md);
+  height: var(--wd-input-number-icon-height-md);
+  font-size: var(--wd-input-number-icon-font-md);
+}
+.wd-input-number-icon__right-item.size-sm {
+  width: var(--wd-input-number-icon-width-sm);
+  height: var(--wd-input-number-icon-height-sm);
+  font-size: var(--wd-input-number-icon-font-sm);
+}
+.wd-input-number-icon__right-item.size-lg {
+  width: var(--wd-input-number-icon-width-lg);
+  height: var(--wd-input-number-icon-height-lg);
+  font-size: var(--wd-input-number-icon-font-lg);
+}
+.wd-input-number-icon__right-item:hover:not(.is-disabled) {
+  background-color: var(--wd-input-number-icon-color-bg-hover);
+}
+.wd-input-number-icon__right-item:active:not(.is-disabled) {
+  background-color: var(--wd-input-number-icon-color-bg-active);
+}
+.wd-input-number-icon__right-item.is-disabled {
+  color: var(--wd-color-text-disabled);
+  background-color: var(--wd-input-number-icon-color-bg-disabled);
+  cursor: no-drop;
+}
+.wd-input-number__increase {
+  margin-bottom: 2px;
+  border-radius: 0 var(--wd-form-input-wrap-border-radius) 0 0;
+}
+.wd-input-number__decrease {
+  border-radius: 0 0 var(--wd-form-input-wrap-border-radius) 0;
+}
+
+.wd-form-input-wrap.size-font-sm {
+  font: var(--wd-typography-body-sm);
+}
+.wd-form-input-wrap.size-height-sm {
+  height: var(--wd-form-height-sm);
+}
+.wd-form-input-wrap.size-width-sm {
+  width: var(--wd-form-width-sm);
+}
+.wd-form-input-wrap.size-font-md {
+  font: var(--wd-typography-body-md);
+}
+.wd-form-input-wrap.size-height-md {
+  height: var(--wd-form-item-height-md);
+}
+.wd-form-input-wrap.size-width-md {
+  width: var(--wd-form-width-md);
+}
+.wd-form-input-wrap.size-font-lg {
+  font: var(--wd-typography-body-lg);
+}
+.wd-form-input-wrap.size-height-lg {
+  height: var(--wd-form-item-height-lg);
+}
+.wd-form-input-wrap.size-width-lg {
+  width: var(--wd-form-width-lg);
+}
+.wd-form-input-wrap.size-width-hundred {
+  width: 100%;
+}
+
+.wd-form-item--weui .wd-form-input-wrap.is-not-h5.wd-form-input-wrap--no-border,
+.wd-form-input-wrap.is-not-h5.wd-form-input-wrap--no-border {
+  padding-left: 0;
+  flex: 1;
+}
+.wd-form-item--weui .wd-form-input-wrap.is-not-h5.wd-form-input-wrap--no-border .wd-form-input-wrap__content,
+.wd-form-input-wrap.is-not-h5.wd-form-input-wrap--no-border .wd-form-input-wrap__content {
+  width: auto;
+}
+.wd-form-item--weui .wd-form-input-wrap.is-not-h5.wd-form-input-wrap--no-border .wd-form-input-wrap__input-row,
+.wd-form-input-wrap.is-not-h5.wd-form-input-wrap--no-border .wd-form-input-wrap__input-row {
+  text-align: var(--wd-form-input-wrap-text-align);
+}
+
+.wd-form-input-wrap.is-not-h5 {
+  line-height: 2;
+}

@@ -1,0 +1,2 @@
+@import '../../style/wd-design.wxss';
+@import './wd-divider.wxss';

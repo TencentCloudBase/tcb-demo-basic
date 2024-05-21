@@ -1,0 +1,25 @@
+.wd-bubble {
+  --wd-bubble-top: 0px;
+  --wd-bubble-inner-horizontal-padding: 12px;
+  --wd-bubble-inner-vertical-padding: 8px;
+  --wd-divider-inner-border-radius: var(--wd-border-radius);
+}
+
+.wd-bubble {
+  margin-top: var(--wd-bubble-top);
+}
+
+.wd-wedatea2td-bubble__inner {
+  padding: var(--wd-bubble-inner-vertical-margin) var(--wd-bubble-inner-horizontal-margin);
+  border-radius: var(--wd-divider-inner-border-radius);
+}
+
+.wd-bubble-content {
+  min-width: 140px;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.wd-bubble-child {
+  display: inline-block;
+}

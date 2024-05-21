@@ -1,0 +1,2 @@
+<canvas class="wd-qrcode--convas" canvas-id="QrCode" />
+<image src="{{base64Url}}" mode="aspectFit" webp="{{true}}" id="{{id}}" class="{{cls}}" style="{{style}}" show-menu-by-longpress="{{showMenuByLongpress}}"></image>

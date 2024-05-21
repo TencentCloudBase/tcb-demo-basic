@@ -1,0 +1,41 @@
+<view class="weda-lottery" style="{{style}}">
+  <view class="weda-lottery__wrap">
+    <block wx:for="{{dotList}}" wx:key="dotIndex" wx:for-item="dot">
+      <view wx-if="{{dot.single}}" class="weda-lottery__dot-single weda-lottery__dot-{{dot.position}}"></view>
+      <block wx-if="{{!dot.single}}">
+        <view class="weda-lottery__dot-{{dot.position}}">
+          <view class="weda-lottery__dot weda-lottery__dot-{{dot.direction}}">
+            <block wx:for="{{dot.list}}" wx:key="index" wx:for-item="item">
+              <view class="weda-lottery__dot-item"></view>
+            </block>
+          </view>
+        </view>
+      </block>
+    </block>
+    <view class="weda-lottery__inner">
+      <view class="weda-lottery__inner-wrap">
+        <view class="weda-lottery__list">
+          <block wx:for="{{lotteryList}}" wx:key="index" wx:for-item="item">
+            <view key="{{index}}" class="weda-lottery__turntable-item {{item.actived ? 'is-actived' : ''}}, {{item.selected ? 'is-selected' : ''}}">
+              <view class="weda-lottery__turntable-cell">
+                <view class="weda-lottery__turntable-cell-image" wx-if="{{item.src}}">
+                  <image mode="aspectFit" src="{{item.src}}" alt="{{item.desc}}" class="weda-lottery__turntable-cell-icon"></image>
+                </view>
+                <view class="weda-lottery__turntable-cell-desc" wx-if="{{item.desc}}"> {{item.desc}} </view>
+              </view>
+            </view>
+          </block>
+        </view>
+        <view class="weda-lottery__turntable-btn {{btnActived ? 'is-actived' : ''}}">
+          <view class="weda-lottery__btn-inner" bindtap="{{clickLotteryEnable ? 'clickLotteryButton' : ''}}">
+            <view class="weda-lottery__btn">
+              <view class="weda-lottery__btn-image">
+                <text class="weda-lottery__btn-text">开始\n抽奖</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

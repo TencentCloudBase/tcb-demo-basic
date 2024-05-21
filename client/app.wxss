@@ -326,6 +326,16 @@ input {
   width: 60rpx;
   height: 60rpx;
 }
+.kind-list-new-icon {
+  background-color: royalblue;
+  color: #fff;
+  padding: 3px 6px;
+  border-radius: 20px;
+  margin-left: 16rpx;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
 .kind-list-item-hd {
   padding: 30rpx;
   display: flex;

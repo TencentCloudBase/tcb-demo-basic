@@ -1,0 +1,9 @@
+@import '../../style/wd-design.wxss';
+@import '../../style/utils.wxss';
+
+@import '../form/form/index.wxss';
+@import '../wd-select/select.wxss';
+@import '../wd-input-wrap/wd-input-wrap.wxss';
+@import '../wd-input-group/wd-input-group.wxss';
+
+@import './wd-date.wxss';

@@ -1,0 +1,118 @@
+.weda-ui-custom-mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.4);
+  transition: all 0.4s ease-in-out 0;
+  pointer-events: none;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.weda-ui-custom-picker {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 1001;
+}
+
+.weda-ui-custom-picker__inner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  border-radius: 10px 10px 0 0;
+  height: 430px;
+}
+
+.weda-ui-custom-picker__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 20px;
+  border-bottom: 0.5px solid #e3e6eb;
+}
+
+.weda-ui-custom-picker__body {
+}
+
+.weda-ui-custom-picker__header-btn {
+  margin: 0;
+  background-color: transparent;
+  font-size: 16px;
+  padding: 0;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.weda-ui-custom-picker__header-btn.is-primary {
+  color: var(--wd-color-brand, #0052d9);
+}
+
+.weda-ui-custom-picker__header-btn::after {
+  border: none;
+}
+
+.weda-ui-custom-picker__select {
+  padding: 8px 20px;
+  border-bottom: 0.5px solid #e3e6eb;
+}
+
+.weda-ui-custom-picker__select-item {
+  display: inline-flex;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8px;
+  background-color: #f3f3f3;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 400;
+  margin-right: 8px;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.weda-ui-custom-picker__select-item.is-active {
+  color: var(--wd-color-brand, #0052d9);
+}
+
+.weda-ui-custom-picker__datewrap {
+  height: 368px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.weda-ui-custom-picker-view {
+  width: 100%;
+  height: 220px;
+  margin: 65px 0;
+}
+
+.weda-ui-custom-picker-view-indicator {
+  height: 45px;
+}
+
+.weda-ui-custom-picker-calendar__current-date {
+  font-weight: bold;
+  font-size: inherit;
+  line-height: 1.57142em;
+  display: inline-flex;
+  align-items: center;
+  position: fixed;
+  z-index: 999;
+  margin: 10px 20px;
+}
+
+.weda-ui-custom-picker-calendar__current-date-icon {
+  width: 20px;
+  height: 16px;
+}
+
+.weda-ui-custom-picker-calendar-arrow-open {
+  transform: rotate(90deg);
+}

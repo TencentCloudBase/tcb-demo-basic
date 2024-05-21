@@ -1,0 +1,5 @@
+@import '../../style/wd-design.wxss';
+
+.wd-mp-top-tab-root .wd-tabs__scroll {
+  width: 100%;
+}

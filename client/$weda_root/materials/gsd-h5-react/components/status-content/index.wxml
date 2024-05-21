@@ -1,0 +1,28 @@
+<view class="weda-status_content wd-status-content">
+  <view class="weda-status_content__content wd-status-content__content {{(hasRecord || component === 'listview')? 'white-bg':'grey-bg'}}">
+    <view wx:if="{{!hasRecord}}" class="weda-status_content__content__image wd-status-content__status-icon error"></view>
+    <text class="title"> 数据加载失败 </text>
+    <text class="code"> 错误码：{{errorObj.code}} </text>
+    <view class="detail" bindtap="showModal">
+      查看详细异常信息
+      <image class="arrow" src="arrow-right.svg" />
+    </view>
+  </view>
+</view>
+<view class="weda-status_content_error-picker" wx:if="{{visible}}">
+  <view class="weda-status_content_mask" bindtap="hideModal"></view>
+  <view class="weda-status_content_picker-inner">
+    <view class="title">
+      详细异常信息
+      <image class="close" src="close.svg" bindtap="hideModal" />
+    </view>
+    <view class="detail">
+      <text class="line">错误码: {{errorObj.code}}</text>
+      <text class="line">错误信息: {{errorObj.message}}</text>
+      <text class="line">RequestId: {{errorObj.requestId}}</text>
+    </view>
+    <view class="foot">
+      <view class="copy" bindtap="copyClipBoard">复制到剪贴板</view>
+    </view>
+  </view>
+</view>

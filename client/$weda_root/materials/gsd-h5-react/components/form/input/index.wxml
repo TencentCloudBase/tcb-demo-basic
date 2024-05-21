@@ -1,0 +1,25 @@
+<formcell className="weda-ui weda-input {{className}}" style="{{style}}" label="{{labelVisible ? label : ''}}" layout="{{layout}}" multiCell="{{false}}" requiredFlag="{{requiredFlag}}">
+  <view class="weui-cell weui-cell_active weui-cell_form}} {{disabled ? 'weui-cell_disabled' : ''}}">
+    <view class="weui-cell__bd weui-flex">
+      <input
+        class="weui-input {{isFocus ? 'focus' : ''}} {{value ? 'not-placeholder-shown' : ''}}"
+        type="{{isNickNameType?'nickname':type}}"
+        placeholder="{{placeholder}}"
+        placeholder-class="weui-input__placeholder"
+        value="{{value}}"
+        disabled="{{disabled}}"
+        auto-focus="{{focus}}"
+        focus="{{focus}}"
+        password="{{password}}"
+        bindinput="handleChange"
+        bindfocus="handleFocus"
+        bindblur="handleBlur"
+        bindconfirm="handleConfirm"
+        maxlength="{{maxLength}}"
+      />
+      <view wx:if="{{clearable}}" class="weui-btn_reset weui-btn_icon weui-btn_input-clear" bindtap="handleClear">
+        <i class="weui-icon-clear" />
+      </view>
+    </view>
+  </view>
+</formcell>

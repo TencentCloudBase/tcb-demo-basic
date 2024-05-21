@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "styleIsolation": "shared",
+  "usingComponents": {
+    "old-select": "../form/select",
+    "form-item-wrapper": "../common/form-item-wrapper",
+    "tips": "../form/tips"
+  }
+}

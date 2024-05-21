@@ -1,0 +1,1116 @@
+@charset "UTF-8";
+.wd-rating {
+  color: var(--wd-color-text-default);
+  font-size: var(--wd-font-size-default);
+  line-height: var(--wd-font-line-height-default);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  position: relative;
+  width: max-content;
+}
+.wd-rating__full-icons-container {
+  display: flex;
+  position: absolute;
+}
+.wd-rating__empty-icons-container {
+  display: flex;
+}
+.wd-rating__icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wd-form,
+.wd-form-item,
+.gsd-h5-react-formitem {
+  --wd-form-item-mb: calc(var(--wd-space-base) * 5);
+  --wd-form-item-pd: calc(var(--wd-space-base) * 4);
+  --wd-form-item-label-width: 6em;
+  --wd-form-item-label-mr: calc(var(--wd-space-base) * 4);
+  --wd-form-item-label-height-xs: var(--wd-form-item-height-xs);
+  --wd-form-item-label-height-sm: var(--wd-form-item-height-sm);
+  --wd-form-item-label-height-md: var(--wd-form-item-height-md);
+  --wd-form-item-label-height-lg: var(--wd-form-item-height-lg);
+  --wd-form-container-width-sm: 31.75rem;
+  --wd-form-container-width-md: 39.25rem;
+  --wd-form-container-width-lg: 49.25rem;
+  --wd-form-item-width-sm: 20.25rem;
+  --wd-form-item-width-md: 27.75rem;
+  --wd-form-item-width-lg: 35.25rem;
+  --wd-form-item-label-color: var(--wd-color-text-form-label);
+  --wd-form-item-label-font-size: var(--wd-font-size-default);
+  --wd-form-item-label-font-weight: var(--wd-font-weight-regular);
+  --wd-form-item-label-color-disabled: var(--wd-color-text-form-disabled);
+  --wd-form-item-help-text-color: var(--wd-color-text-placeholder);
+  --wd-form-item-help-text-font-size: var(--wd-font-size-3);
+  --wd-form-item-border-color: var(--wd-color-border-default);
+  --wd-form-item-border-width: 0.5px;
+  --wd-form-title-size: var(--wd-font-size-6);
+  --wd-form-title-weight: 500;
+  --wd-form-title-line-height: calc(var(--wd-space-base) * 7);
+  --wd-form-title-border-color: var(--wd-color-border-separator);
+  --wd-form-title-pd-btm: calc(var(--wd-space-base) * 3);
+  --wd-form-readonly-font-weight: var(--wd-font-weight-regular);
+  --wd-form-readonly-font-size: var(--wd-font-size-4);
+  --wd-form-readonly-web-font-size: var(--wd-font-size-3);
+  --wd-form-readonly-font-color: var(--wd-font-gray-2);
+  --wd-input-limit-number-size: var(--wd-font-size-2);
+  --wd-input-limit-number-weight: var(--wd-font-weight-regular);
+  --wd-input-limit-number-color: var(--wd-color-text-placeholder);
+}
+
+.wd-form.wd-form--weui,
+.wd-form-item.wd-form-item--weui {
+  --wd-form-item-mb: calc(var(--wd-space-base) * 4);
+  --wd-form-item-label-font-size: var(--wd-font-size-4);
+  --wd-form-weui-control-height: calc(var(--wd-space-base) * 14);
+  --wd-form-weui-item-label-pd: calc(var(--wd-space-base) * 3);
+  --wd-form-weui-item-press-border-radius: var(--wd-space-base);
+  --wd-form-weui-input-wrap-bg-focus: var(--wd-color-gray-1);
+  --wd-form-weui-input-wrap-text-disabled: var(--wd-color-text-form-disabled);
+  --wd-form-weui-input-group-addon-min-width: 5.125rem;
+}
+
+.wd-form__action {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+@media screen and (max-width: 768px) {
+  .wd-form__action {
+    padding-top: 24px;
+    padding-bottom: var(--wd-form-item-mb);
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+.wd-form__action > .wd-h5-btn,
+.wd-form__action > .wd-mp-btn {
+  display: block;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.wd-form__action > .wd-pc-btn {
+  margin-right: 8px;
+}
+
+.wd-form {
+  color: var(--wd-color-text-default);
+  font-size: var(--wd-font-size-default);
+  line-height: var(--wd-font-line-height-default);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.wd-form-title__text {
+  /* 不启用，复用了文本组件
+  font-weight: var(--wd-form-title-weight);
+  font-size: var(--wd-form-title-size);
+  line-height: var(--wd-form-title-line-height);
+  width: auto;
+  */
+  padding-bottom: var(--wd-form-title-pd-btm);
+  border-bottom: 1px solid var(--wd-form-title-border-color);
+}
+.wd-form-title__text-left {
+  text-align: left;
+}
+.wd-form-title__text-right {
+  text-align: right;
+}
+
+.wd-form-item {
+  margin-bottom: unset;
+  padding: 0px;
+}
+.wd-form-item.size-width-hundred {
+  width: 100%;
+}
+.wd-form-item.size-width-sm {
+  width: var(--wd-form-item-width-sm);
+}
+.wd-form-item.size-width-md {
+  width: var(--wd-form-item-width-md);
+}
+.wd-form-item.size-width-lg {
+  width: var(--wd-form-item-width-lg);
+}
+.wd-form-item-wrap {
+  display: flex;
+}
+.wd-form-item-wrap__label {
+  word-break: break-all;
+  width: var(--wd-form-item-label-width);
+  margin-right: var(--wd-form-item-label-mr);
+  color: var(--wd-form-item-label-color);
+  font-size: var(--wd-form-item-label-font-size);
+  font-weight: var(--wd-form-item-label-font-weight);
+  line-height: var(--wd-form-height-md);
+  flex: 0 0 auto;
+}
+.wd-form-item-wrap__label.is-disabled {
+  color: var(--wd-form-item-label-color-disabled);
+}
+.wd-form-item-wrap__label > label {
+  display: inline-block;
+  line-height: var(--wd-font-line-height-default);
+}
+.wd-form-item-wrap__label-explain {
+  margin-left: var(--wd-space-base);
+  position: relative;
+  top: -1px;
+}
+.wd-form-item-wrap__label.is-nowrap .wd-form-item-wrap__label-text {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.wd-form-item-wrap__label.is-nowrap .wd-form-item-wrap__label-explain {
+  display: flex;
+  align-items: center;
+}
+.wd-form-item-wrap__label.is-nowrap.wd-form-item-wrap__label-explain {
+  display: flex;
+  align-items: center;
+}
+.wd-form-item-wrap__label.is-nowrap.wd-form-item-wrap__label > label {
+  display: flex;
+}
+.wd-form-item-wrap__control {
+  flex: auto;
+  width: 100%;
+}
+.wd-form-item-wrap__control-wrap {
+  display: flex;
+  align-items: center;
+  min-height: calc(var(--wd-space-base) * 6);
+}
+.wd-form-item-wrap__control-wrap--right {
+  justify-content: flex-end;
+}
+.wd-form-item-wrap__control-wrap .wd-form-input-wrap.wd-form-inherit--font {
+  font-family: inherit;
+}
+.wd-form-item-wrap__control.is-press {
+  border-color: transparent;
+  background-color: var(--wd-form-weui-input-wrap-bg-focus);
+  box-shadow: none;
+  border-radius: var(--wd-form-weui-item-press-border-radius);
+}
+.wd-form-item-wrap__control.is-press .wd-form-input-wrap {
+  border-color: transparent;
+  background-color: transparent;
+  box-shadow: none;
+}
+.wd-form-item-wrap__control.is-press .wd-form-input-wrap__label {
+  line-height: none;
+}
+.wd-form-item.is-required .wd-form-item-wrap__label-text::before {
+  content: "*";
+  color: var(--wd-color-text-error);
+  margin-right: var(--wd-space-base);
+}
+.wd-form-item.is-borderless .wd-form-input-wrap:not(.is-not-h5) {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+}
+.wd-form-item.is-borderless .wd-form-input-wrap:not(.is-not-h5).is-focused:not(.is-disabled), .wd-form-item.is-borderless .wd-form-input-wrap:not(.is-not-h5):focus:not(.is-disabled) {
+  border-color: transparent;
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: var(--wd-form-weui-item-press-border-radius);
+}
+.wd-form-item.is-borderless .wd-form-input-wrap:not(.is-not-h5).is-disabled {
+  border-color: transparent;
+  background-color: transparent;
+  box-shadow: none;
+  color: var(--wd-form-weui-input-wrap-text-disabled);
+  cursor: not-allowed;
+}
+.wd-form-item.is-borderless .wd-form-input-wrap:not(.is-not-h5).is-disabled input {
+  cursor: not-allowed;
+}
+.wd-form-item.is-borderless .wd-form-input-wrap:not(.is-not-h5).is-disabled ::-webkit-input-placeholder {
+  color: var(--wd-form-weui-input-wrap-text-disabled);
+}
+.wd-form-item.is-borderless .wd-form-input-wrap:not(.is-not-h5).is-disabled :-moz-placeholder {
+  color: var(--wd-form-weui-input-wrap-text-disabled);
+}
+.wd-form-item.is-borderless .wd-form-input-wrap:not(.is-not-h5).is-disabled ::-moz-placeholder {
+  color: var(--wd-form-weui-input-wrap-text-disabled);
+}
+.wd-form-item.is-borderless .wd-form-input-wrap:not(.is-not-h5).is-disabled :-ms-input-placeholder {
+  color: var(--wd-form-weui-input-wrap-text-disabled);
+}
+.wd-form-item.is-borderless .wd-form-textarea-wrap {
+  height: 100%;
+  padding-top: calc(var(--wd-space-base) * 2);
+}
+.wd-form-item.is-borderless .wd-form-input-group:not(.is-not-h5) .wd-form-input-group__addon {
+  background: none;
+  border: none;
+  position: relative;
+  min-width: auto;
+  padding: 0;
+}
+.wd-form-item.is-borderless .wd-form-input-group:not(.is-not-h5) .wd-form-input-group__addon-left {
+  padding-right: calc(var(--wd-space-base) * 4);
+}
+.wd-form-item.is-borderless .wd-form-input-group:not(.is-not-h5) .wd-form-input-group__addon-left::after {
+  position: absolute;
+  height: calc(var(--wd-space-base) * 4);
+  content: "";
+  right: calc(var(--wd-space-base) * 2);
+  background: var(--wd-form-item-border-color);
+  width: var(--wd-form-item-border-width);
+}
+.wd-form-item.is-borderless .wd-form-input-group:not(.is-not-h5) .wd-form-input-group__addon-right {
+  padding-left: calc(var(--wd-space-base) * 4);
+}
+.wd-form-item.is-borderless .wd-form-input-group:not(.is-not-h5) .wd-form-input-group__addon-right::before {
+  position: absolute;
+  height: calc(var(--wd-space-base) * 4);
+  content: "";
+  left: calc(var(--wd-space-base) * 2);
+  background: var(--wd-form-item-border-color);
+  width: var(--wd-form-item-border-width);
+}
+.wd-form-item.is-borderless .wd-form-input-wrap__input-number-right {
+  width: 100%;
+}
+.wd-form-item.is-borderless .wd-form-input-group.is-not-h5 {
+  height: var(--wd-form-input-group-height-md);
+}
+.wd-form-item.is-borderless .wd-form-input-group.is-not-h5 .wd-form-input-group__addon {
+  padding: var(--wd-form-input-addon-padding);
+  background: var(--wd-form-input-addon-bg);
+  border: 1px solid var(--wd-form-input-addon-border-default);
+}
+.wd-form-item.is-borderless .wd-form-input-group.is-not-h5 .wd-form-input-group__addon-left {
+  padding: var(--wd-form-input-addon-padding);
+}
+.wd-form-item.is-borderless .wd-form-input-group.is-not-h5 .wd-form-input-group__addon-left::after {
+  width: 0px;
+}
+.wd-form-item.is-borderless .wd-form-input-group.is-not-h5 .wd-form-input-group__addon-right {
+  padding: var(--wd-form-input-addon-padding);
+}
+.wd-form-item.is-borderless .wd-form-input-group.is-not-h5 .wd-form-input-group__addon-right::before {
+  width: 0px;
+}
+.wd-form-item.is-borderless .wd-form-input-wrap.is-not-h5 {
+  border-radius: var(--wd-form-input-wrap-border-radius);
+  padding: var(--wd-form-input-wrap-padding);
+  background-color: var(--wd-form-input-wrap-bg-default);
+  border: 1px solid var(--wd-form-input-wrap-border-default);
+  height: var(--wd-form-input-wrap-height-md);
+}
+.wd-form-item.is-borderless .wd-form-input-wrap.is-not-h5.wd-form-input-wrap--no-radius-left {
+  border-radius: 0 var(--wd-form-input-group-border-radius) var(--wd-form-input-group-border-radius) 0;
+}
+.wd-form-item.is-borderless .wd-form-input-wrap.is-not-h5.wd-form-input-wrap--no-radius-right {
+  border-radius: var(--wd-form-input-group-border-radius) 0 0 var(--wd-form-input-group-border-radius);
+}
+.wd-form-item.is-borderless .wd-form-input-wrap.is-not-h5.wd-form-input-wrap--no-radius {
+  border-radius: 0;
+}
+.wd-form-item.is-borderless .wd-form-input-wrap.is-not-h5.wd-form-input-wrap--no-border {
+  border: none;
+}
+.wd-form-item.is-borderless .wd-form-input-wrap.is-not-h5.wd-form-input-wrap--no-border.is-focused:not(.is-disabled), .wd-form-item.is-borderless .wd-form-input-wrap.is-not-h5.wd-form-input-wrap--no-border:focus:not(.is-disabled) {
+  border-bottom: none;
+}
+.wd-form-item.is-borderless .wd-form-input-wrap.is-not-h5.is-focused:not(.is-disabled), .wd-form-item.is-borderless .wd-form-input-wrap.is-not-h5:focus:not(.is-disabled) {
+  border-color: var(--wd-form-input-wrap-border-hover);
+  background-color: var(--wd-form-input-wrap-bg-focus);
+  color: var(--wd-form-input-wrap-text-focus);
+  box-shadow: 0px 0px 0px 0px;
+}
+.wd-form-item.is-borderless .wd-form-item-wrap {
+  border-bottom: none;
+}
+.wd-form-item__help {
+  display: flex;
+  margin-top: 0.25rem;
+}
+.wd-form-item__help .wd-form-item-wrap__label {
+  visibility: hidden;
+  height: 1px;
+}
+.wd-form-item__help-text {
+  flex: 1 1 0px;
+  color: var(--wd-form-item-help-text-color);
+  font-size: var(--wd-form-item-help-text-font-size);
+}
+.wd-form-item__readonly {
+  font-size: var(--wd-form-readonly-font-size);
+  font-weight: var(--wd-form-readonly-font-weight);
+  color: var(--wd-form-readonly-font-color);
+  width: 100%;
+  word-break: break-word;
+}
+.wd-form-item__readonly.size-font-sm {
+  font: var(--wd-typography-body-sm);
+}
+.wd-form-item__readonly.size-height-sm {
+  height: var(--wd-form-height-sm);
+}
+.wd-form-item__readonly.size-width-sm {
+  width: var(--wd-form-width-sm);
+}
+.wd-form-item__readonly.size-font-md {
+  font: var(--wd-typography-body-md);
+}
+.wd-form-item__readonly.size-height-md {
+  height: var(--wd-form-item-height-md);
+}
+.wd-form-item__readonly.size-width-md {
+  width: var(--wd-form-width-md);
+}
+.wd-form-item__readonly.size-font-lg {
+  font: var(--wd-typography-body-lg);
+}
+.wd-form-item__readonly.size-height-lg {
+  height: var(--wd-form-item-height-lg);
+}
+.wd-form-item__readonly.size-width-lg {
+  width: var(--wd-form-width-lg);
+}
+.wd-form-item__readonly.size-width-hundred {
+  width: 100%;
+}
+.wd-form-item__readonly-web {
+  font-size: var(--wd-form-readonly-web-font-size);
+  font-weight: var(--wd-form-readonly-font-weight);
+  color: var(--wd-form-readonly-font-color);
+  width: 100%;
+  word-break: break-word;
+}
+.wd-form-item__readonly-web.size-font-sm {
+  font: var(--wd-typography-body-sm);
+}
+.wd-form-item__readonly-web.size-height-sm {
+  height: var(--wd-form-height-sm);
+}
+.wd-form-item__readonly-web.size-width-sm {
+  width: var(--wd-form-width-sm);
+}
+.wd-form-item__readonly-web.size-font-md {
+  font: var(--wd-typography-body-md);
+}
+.wd-form-item__readonly-web.size-height-md {
+  height: var(--wd-form-item-height-md);
+}
+.wd-form-item__readonly-web.size-width-md {
+  width: var(--wd-form-width-md);
+}
+.wd-form-item__readonly-web.size-font-lg {
+  font: var(--wd-typography-body-lg);
+}
+.wd-form-item__readonly-web.size-height-lg {
+  height: var(--wd-form-item-height-lg);
+}
+.wd-form-item__readonly-web.size-width-lg {
+  width: var(--wd-form-width-lg);
+}
+.wd-form-item__readonly-web.size-width-hundred {
+  width: 100%;
+}
+.wd-form-item.wd-textarea-root .wd-form-item-wrap, .wd-form-item.wd-rich-text-root .wd-form-item-wrap {
+  height: 100%;
+}
+.wd-form-item.wd-textarea-root .wd-form-item-wrap__control, .wd-form-item.wd-rich-text-root .wd-form-item-wrap__control {
+  height: 100%;
+}
+.wd-form-item.wd-textarea-root .wd-form-item-wrap__control-wrap, .wd-form-item.wd-rich-text-root .wd-form-item-wrap__control-wrap {
+  height: 100%;
+}
+.wd-form-item.wd-textarea-root .wd-form-item-wrap__control-wrap .wd-form-textarea-wrap, .wd-form-item.wd-rich-text-root .wd-form-item-wrap__control-wrap .wd-form-textarea-wrap {
+  height: 100%;
+}
+
+.wd-form--horizontal-left .wd-form-item-wrap__label,
+.wd-form-item.wd-form-item--horizontal-left .wd-form-item-wrap__label {
+  text-align: left;
+}
+.wd-form--horizontal-left .wd-form-item-wrap__label.is-nowrap.wd-form-item-wrap__label > label,
+.wd-form-item.wd-form-item--horizontal-left .wd-form-item-wrap__label.is-nowrap.wd-form-item-wrap__label > label {
+  justify-content: flex-start;
+}
+
+.wd-form--horizontal-right .wd-form-item-wrap__label,
+.wd-form-item.wd-form-item--horizontal-right .wd-form-item-wrap__label {
+  text-align: right;
+}
+.wd-form--horizontal-right .wd-form-item-wrap__label.is-nowrap.wd-form-item-wrap__label > label,
+.wd-form-item.wd-form-item--horizontal-right .wd-form-item-wrap__label.is-nowrap.wd-form-item-wrap__label > label {
+  justify-content: flex-end;
+}
+
+.wd-form--horizontal-left .wd-form-item-wrap,
+.wd-form-item.wd-form-item--horizontal-left .wd-form-item-wrap,
+.wd-form--horizontal-right .wd-form-item-wrap,
+.wd-form-item.wd-form-item--horizontal-right .wd-form-item-wrap {
+  flex-direction: row;
+}
+.wd-form--horizontal-left .wd-form-item-wrap__label,
+.wd-form-item.wd-form-item--horizontal-left .wd-form-item-wrap__label,
+.wd-form--horizontal-right .wd-form-item-wrap__label,
+.wd-form-item.wd-form-item--horizontal-right .wd-form-item-wrap__label {
+  width: var(--wd-form-item-label-width);
+  margin-right: var(--wd-form-item-label-mr);
+}
+
+.wd-form--vertical-left .wd-form-item-wrap,
+.wd-form-item.wd-form-item--vertical-left .wd-form-item-wrap {
+  align-items: flex-start;
+  flex-direction: column;
+}
+.wd-form--vertical-left .wd-form-item-wrap__label,
+.wd-form-item.wd-form-item--vertical-left .wd-form-item-wrap__label {
+  width: 100%;
+  justify-content: flex-start;
+  margin-right: 0;
+  line-height: 0;
+  padding-bottom: calc(var(--wd-space-base) * 2);
+}
+.wd-form--vertical-left .wd-form-item-wrap__label > label,
+.wd-form-item.wd-form-item--vertical-left .wd-form-item-wrap__label > label {
+  line-height: var(--wd-font-line-height-default) !important;
+}
+.wd-form--vertical-left .wd-form-item-wrap__label.is-nowrap.wd-form-item-wrap__label > label,
+.wd-form-item.wd-form-item--vertical-left .wd-form-item-wrap__label.is-nowrap.wd-form-item-wrap__label > label {
+  justify-content: flex-start;
+}
+.wd-form--vertical-left .wd-form-item__help,
+.wd-form-item.wd-form-item--vertical-left .wd-form-item__help {
+  padding-left: 0;
+}
+
+.wd-form--vertical-right .wd-form-item-wrap,
+.wd-form-item.wd-form-item--vertical-right .wd-form-item-wrap {
+  align-items: flex-end;
+  flex-direction: column;
+}
+.wd-form--vertical-right .wd-form-item-wrap__label,
+.wd-form-item.wd-form-item--vertical-right .wd-form-item-wrap__label {
+  width: 100%;
+  justify-content: flex-start;
+  margin-right: 0;
+  text-align: right;
+  line-height: 0;
+  padding-bottom: calc(var(--wd-space-base) * 2);
+}
+.wd-form--vertical-right .wd-form-item-wrap__label > label,
+.wd-form-item.wd-form-item--vertical-right .wd-form-item-wrap__label > label {
+  line-height: var(--wd-font-line-height-default) !important;
+}
+.wd-form--vertical-right .wd-form-item-wrap__label.is-nowrap.wd-form-item-wrap__label > label,
+.wd-form-item.wd-form-item--vertical-right .wd-form-item-wrap__label.is-nowrap.wd-form-item-wrap__label > label {
+  justify-content: flex-end;
+}
+.wd-form--vertical-right .wd-form-item__help,
+.wd-form-item.wd-form-item--vertical-right .wd-form-item__help {
+  padding-left: 0;
+}
+
+.wd-form--inline {
+  display: flex;
+  gap: calc(var(--wd-space-base) * 6);
+  flex-wrap: wrap;
+}
+.wd-form--inline .wd-form-item {
+  display: inline-flex;
+}
+.wd-form--inline .wd-form-item-wrap {
+  display: inline-flex;
+}
+.wd-form--inline .wd-form-item-wrap__label {
+  width: auto;
+}
+
+input,
+textarea {
+  caret-color: var(--wd-color-brand);
+}
+
+.wd-form.wd-form--weui.wd-form-item,
+.wd-form-item--weui.wd-form-item {
+  margin-bottom: 0;
+  padding: 0px var(--wd-form-item-pd);
+}
+.wd-form.wd-form--weui .wd-form-item-wrap,
+.wd-form-item--weui .wd-form-item-wrap {
+  border-bottom: var(--wd-form-item-border-width) solid var(--wd-form-item-border-color);
+}
+.wd-form.wd-form--weui .wd-form-item-wrap__label,
+.wd-form-item--weui .wd-form-item-wrap__label {
+  margin-bottom: 0;
+  padding: calc(var(--wd-space-base) * 2) 0;
+}
+.wd-form.wd-form--weui .wd-form-item-wrap__label.wd-radio__label,
+.wd-form-item--weui .wd-form-item-wrap__label.wd-radio__label {
+  padding-top: calc(var(--wd-space-base) * 4);
+}
+.wd-form.wd-form--weui .wd-form-item-wrap__label.wd-checkbox__label,
+.wd-form-item--weui .wd-form-item-wrap__label.wd-checkbox__label {
+  padding-top: calc(var(--wd-space-base) * 4);
+}
+.wd-form.wd-form--weui .wd-form-item-wrap__control,
+.wd-form-item--weui .wd-form-item-wrap__control {
+  padding: calc(var(--wd-space-base) * 2) 0;
+}
+.wd-form.wd-form--weui .wd-form-item.is-borderless .wd-form-item-wrap,
+.wd-form-item--weui .wd-form-item.is-borderless .wd-form-item-wrap {
+  border-bottom: none;
+}
+.wd-form.wd-form--weui .wd-form-input-wrap:not(.is-not-h5),
+.wd-form-item--weui .wd-form-input-wrap:not(.is-not-h5) {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+}
+.wd-form.wd-form--weui .wd-form-input-wrap:not(.is-not-h5).is-focused:not(.is-disabled), .wd-form.wd-form--weui .wd-form-input-wrap:not(.is-not-h5):focus:not(.is-disabled),
+.wd-form-item--weui .wd-form-input-wrap:not(.is-not-h5).is-focused:not(.is-disabled),
+.wd-form-item--weui .wd-form-input-wrap:not(.is-not-h5):focus:not(.is-disabled) {
+  border-color: transparent;
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: var(--wd-form-weui-item-press-border-radius);
+}
+.wd-form.wd-form--weui .wd-form-input-wrap:not(.is-not-h5).is-disabled,
+.wd-form-item--weui .wd-form-input-wrap:not(.is-not-h5).is-disabled {
+  border-color: transparent;
+  background-color: transparent;
+  box-shadow: none;
+  color: var(--wd-form-weui-input-wrap-text-disabled);
+  cursor: not-allowed;
+}
+.wd-form.wd-form--weui .wd-form-input-wrap:not(.is-not-h5).is-disabled input,
+.wd-form-item--weui .wd-form-input-wrap:not(.is-not-h5).is-disabled input {
+  cursor: not-allowed;
+}
+.wd-form.wd-form--weui .wd-form-input-wrap:not(.is-not-h5).is-disabled ::-webkit-input-placeholder,
+.wd-form-item--weui .wd-form-input-wrap:not(.is-not-h5).is-disabled ::-webkit-input-placeholder {
+  color: var(--wd-form-weui-input-wrap-text-disabled);
+}
+.wd-form.wd-form--weui .wd-form-input-wrap:not(.is-not-h5).is-disabled :-moz-placeholder,
+.wd-form-item--weui .wd-form-input-wrap:not(.is-not-h5).is-disabled :-moz-placeholder {
+  color: var(--wd-form-weui-input-wrap-text-disabled);
+}
+.wd-form.wd-form--weui .wd-form-input-wrap:not(.is-not-h5).is-disabled ::-moz-placeholder,
+.wd-form-item--weui .wd-form-input-wrap:not(.is-not-h5).is-disabled ::-moz-placeholder {
+  color: var(--wd-form-weui-input-wrap-text-disabled);
+}
+.wd-form.wd-form--weui .wd-form-input-wrap:not(.is-not-h5).is-disabled :-ms-input-placeholder,
+.wd-form-item--weui .wd-form-input-wrap:not(.is-not-h5).is-disabled :-ms-input-placeholder {
+  color: var(--wd-form-weui-input-wrap-text-disabled);
+}
+.wd-form.wd-form--weui .wd-form-textarea-wrap,
+.wd-form-item--weui .wd-form-textarea-wrap {
+  height: 100%;
+  padding-top: calc(var(--wd-space-base) * 2);
+}
+.wd-form.wd-form--weui .wd-form-input-group:not(.is-not-h5) .wd-form-input-group__addon,
+.wd-form-item--weui .wd-form-input-group:not(.is-not-h5) .wd-form-input-group__addon {
+  background: none;
+  border: none;
+  position: relative;
+  min-width: auto;
+  padding: 0;
+}
+.wd-form.wd-form--weui .wd-form-input-group:not(.is-not-h5) .wd-form-input-group__addon-left,
+.wd-form-item--weui .wd-form-input-group:not(.is-not-h5) .wd-form-input-group__addon-left {
+  padding-right: calc(var(--wd-space-base) * 4);
+}
+.wd-form.wd-form--weui .wd-form-input-group:not(.is-not-h5) .wd-form-input-group__addon-left::after,
+.wd-form-item--weui .wd-form-input-group:not(.is-not-h5) .wd-form-input-group__addon-left::after {
+  position: absolute;
+  height: calc(var(--wd-space-base) * 4);
+  content: "";
+  right: calc(var(--wd-space-base) * 2);
+  background: var(--wd-form-item-border-color);
+  width: var(--wd-form-item-border-width);
+}
+.wd-form.wd-form--weui .wd-form-input-group:not(.is-not-h5) .wd-form-input-group__addon-right,
+.wd-form-item--weui .wd-form-input-group:not(.is-not-h5) .wd-form-input-group__addon-right {
+  padding-left: calc(var(--wd-space-base) * 4);
+}
+.wd-form.wd-form--weui .wd-form-input-group:not(.is-not-h5) .wd-form-input-group__addon-right::before,
+.wd-form-item--weui .wd-form-input-group:not(.is-not-h5) .wd-form-input-group__addon-right::before {
+  position: absolute;
+  height: calc(var(--wd-space-base) * 4);
+  content: "";
+  left: calc(var(--wd-space-base) * 2);
+  background: var(--wd-form-item-border-color);
+  width: var(--wd-form-item-border-width);
+}
+.wd-form.wd-form--weui .wd-form-input-wrap__input-number-right,
+.wd-form-item--weui .wd-form-input-wrap__input-number-right {
+  width: 100%;
+}
+.wd-form.wd-form--weui .wd-form-input-group.is-not-h5,
+.wd-form-item--weui .wd-form-input-group.is-not-h5 {
+  height: var(--wd-form-input-group-height-md);
+}
+.wd-form.wd-form--weui .wd-form-input-group.is-not-h5 .wd-form-input-group__addon,
+.wd-form-item--weui .wd-form-input-group.is-not-h5 .wd-form-input-group__addon {
+  padding: var(--wd-form-input-addon-padding);
+  background: var(--wd-form-input-addon-bg);
+  border: 1px solid var(--wd-form-input-addon-border-default);
+}
+.wd-form.wd-form--weui .wd-form-input-group.is-not-h5 .wd-form-input-group__addon-left,
+.wd-form-item--weui .wd-form-input-group.is-not-h5 .wd-form-input-group__addon-left {
+  padding: var(--wd-form-input-addon-padding);
+}
+.wd-form.wd-form--weui .wd-form-input-group.is-not-h5 .wd-form-input-group__addon-left::after,
+.wd-form-item--weui .wd-form-input-group.is-not-h5 .wd-form-input-group__addon-left::after {
+  width: 0px;
+}
+.wd-form.wd-form--weui .wd-form-input-group.is-not-h5 .wd-form-input-group__addon-right,
+.wd-form-item--weui .wd-form-input-group.is-not-h5 .wd-form-input-group__addon-right {
+  padding: var(--wd-form-input-addon-padding);
+}
+.wd-form.wd-form--weui .wd-form-input-group.is-not-h5 .wd-form-input-group__addon-right::before,
+.wd-form-item--weui .wd-form-input-group.is-not-h5 .wd-form-input-group__addon-right::before {
+  width: 0px;
+}
+.wd-form.wd-form--weui .wd-form-input-wrap.is-not-h5,
+.wd-form-item--weui .wd-form-input-wrap.is-not-h5 {
+  border-radius: var(--wd-form-input-wrap-border-radius);
+  padding: var(--wd-form-input-wrap-padding);
+  background-color: var(--wd-form-input-wrap-bg-default);
+  border: 1px solid var(--wd-form-input-wrap-border-default);
+  height: var(--wd-form-input-wrap-height-md);
+}
+.wd-form.wd-form--weui .wd-form-input-wrap.is-not-h5.wd-form-input-wrap--no-radius-left,
+.wd-form-item--weui .wd-form-input-wrap.is-not-h5.wd-form-input-wrap--no-radius-left {
+  border-radius: 0 var(--wd-form-input-group-border-radius) var(--wd-form-input-group-border-radius) 0;
+}
+.wd-form.wd-form--weui .wd-form-input-wrap.is-not-h5.wd-form-input-wrap--no-radius-right,
+.wd-form-item--weui .wd-form-input-wrap.is-not-h5.wd-form-input-wrap--no-radius-right {
+  border-radius: var(--wd-form-input-group-border-radius) 0 0 var(--wd-form-input-group-border-radius);
+}
+.wd-form.wd-form--weui .wd-form-input-wrap.is-not-h5.wd-form-input-wrap--no-radius,
+.wd-form-item--weui .wd-form-input-wrap.is-not-h5.wd-form-input-wrap--no-radius {
+  border-radius: 0;
+}
+.wd-form.wd-form--weui .wd-form-input-wrap.is-not-h5.wd-form-input-wrap--no-border,
+.wd-form-item--weui .wd-form-input-wrap.is-not-h5.wd-form-input-wrap--no-border {
+  border: none;
+}
+.wd-form.wd-form--weui .wd-form-input-wrap.is-not-h5.wd-form-input-wrap--no-border.is-focused:not(.is-disabled), .wd-form.wd-form--weui .wd-form-input-wrap.is-not-h5.wd-form-input-wrap--no-border:focus:not(.is-disabled),
+.wd-form-item--weui .wd-form-input-wrap.is-not-h5.wd-form-input-wrap--no-border.is-focused:not(.is-disabled),
+.wd-form-item--weui .wd-form-input-wrap.is-not-h5.wd-form-input-wrap--no-border:focus:not(.is-disabled) {
+  border-bottom: none;
+}
+.wd-form.wd-form--weui .wd-form-input-wrap.is-not-h5.is-focused:not(.is-disabled), .wd-form.wd-form--weui .wd-form-input-wrap.is-not-h5:focus:not(.is-disabled),
+.wd-form-item--weui .wd-form-input-wrap.is-not-h5.is-focused:not(.is-disabled),
+.wd-form-item--weui .wd-form-input-wrap.is-not-h5:focus:not(.is-disabled) {
+  border-color: var(--wd-form-input-wrap-border-hover);
+  background-color: var(--wd-form-input-wrap-bg-focus);
+  color: var(--wd-form-input-wrap-text-focus);
+  box-shadow: 0px 0px 0px 0px;
+}
+.wd-form.wd-form--weui .wd-upload__control,
+.wd-form-item--weui .wd-upload__control {
+  height: auto;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+}
+.wd-form.wd-form--weui .wd-upload__item-file-right .wd-icon,
+.wd-form-item--weui .wd-upload__item-file-right .wd-icon {
+  cursor: pointer;
+  font-size: 20px;
+}
+.wd-form.wd-form--weui .wd-upload__item-file-right > img.wd-icon,
+.wd-form-item--weui .wd-upload__item-file-right > img.wd-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.wd-form.wd-form--weui.wd-radio-root .wd-form-item-wrap__control,
+.wd-form-item--weui.wd-radio-root .wd-form-item-wrap__control {
+  padding: var(--wd-space-base) 0;
+}
+.wd-form.wd-form--weui.wd-radio-root .wd-form-item-wrap__control-wrap,
+.wd-form-item--weui.wd-radio-root .wd-form-item-wrap__control-wrap {
+  min-height: calc(var(--wd-space-base) * 6);
+}
+.wd-form.wd-form--weui.wd-radio-root .wd-form-item-wrap__control-wrap .wd-form-item__readonly,
+.wd-form-item--weui.wd-radio-root .wd-form-item-wrap__control-wrap .wd-form-item__readonly {
+  line-height: calc(var(--wd-space-base) * 12);
+}
+.wd-form.wd-form--weui.wd-radio-root .wd-radio-group,
+.wd-form-item--weui.wd-radio-root .wd-radio-group {
+  min-height: 48px;
+  padding-top: 1px;
+}
+.wd-form.wd-form--weui.wd-radio-root .wd-radio-wrap,
+.wd-form-item--weui.wd-radio-root .wd-radio-wrap {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: calc(var(--wd-space-base) * 3) 0;
+}
+.wd-form.wd-form--weui.wd-checkbox-root .wd-form-item-wrap__control,
+.wd-form-item--weui.wd-checkbox-root .wd-form-item-wrap__control {
+  padding: var(--wd-space-base) 0;
+}
+.wd-form.wd-form--weui.wd-checkbox-root .wd-form-item-wrap__control-wrap,
+.wd-form-item--weui.wd-checkbox-root .wd-form-item-wrap__control-wrap {
+  min-height: calc(var(--wd-space-base) * 6);
+}
+.wd-form.wd-form--weui.wd-checkbox-root .wd-form-item-wrap__control-wrap .wd-form-item__readonly,
+.wd-form-item--weui.wd-checkbox-root .wd-form-item-wrap__control-wrap .wd-form-item__readonly {
+  line-height: calc(var(--wd-space-base) * 12);
+}
+.wd-form.wd-form--weui.wd-checkbox-root .wd-checkbox-group,
+.wd-form-item--weui.wd-checkbox-root .wd-checkbox-group {
+  min-height: 48px;
+  padding-top: 1px;
+}
+.wd-form.wd-form--weui.wd-checkbox-root .wd-checkbox-wrap,
+.wd-form-item--weui.wd-checkbox-root .wd-checkbox-wrap {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: calc(var(--wd-space-base) * 3) 0;
+}
+
+.wd-form--weui.wd-form--vertical-left.wd-switch-root .wd-form-item-wrap__control,
+.wd-form-item--weui.wd-form-item--vertical-left.wd-switch-root .wd-form-item-wrap__control,
+.wd-form--weui.wd-form--vertical-right.wd-switch-root .wd-form-item-wrap__control,
+.wd-form-item--weui.wd-form-item--vertical-right.wd-switch-root .wd-form-item-wrap__control {
+  min-height: 48px;
+}
+.wd-form--weui.wd-form--vertical-left.wd-switch-root .wd-form-item-wrap__control-wrap,
+.wd-form-item--weui.wd-form-item--vertical-left.wd-switch-root .wd-form-item-wrap__control-wrap,
+.wd-form--weui.wd-form--vertical-right.wd-switch-root .wd-form-item-wrap__control-wrap,
+.wd-form-item--weui.wd-form-item--vertical-right.wd-switch-root .wd-form-item-wrap__control-wrap {
+  min-height: calc(var(--wd-space-base) * 6);
+}
+
+.wd-form--weui.wd-form--horizontal-left .wd-form-item--weui.wd-form-item--layout-.wd-textarea-root .wd-form-item-wrap__label-text,
+.wd-form--weui.wd-form--horizontal-right .wd-form-item--weui.wd-form-item--layout-.wd-textarea-root .wd-form-item-wrap__label-text {
+  line-height: normal;
+}
+
+.wd-form-item--weui.wd-form-item--layout-.wd-textarea-root .wd-form-item-wrap__label-text,
+.wd-form-item--weui.wd-form-item--layout-horizontal.wd-textarea-root .wd-form-item-wrap__label-text {
+  line-height: normal;
+}
+
+.wd-form--weui.wd-form--vertical-left .wd-form-item--weui.wd-form-item--layout-.wd-textarea-root .wd-form-item-wrap__label-text,
+.wd-form--weui.wd-form--vertical-right .wd-form-item--weui.wd-form-item--layout-.wd-textarea-root .wd-form-item-wrap__label-text {
+  line-height: inherit;
+}
+
+.wd-form--weui.wd-form--vertical-left.wd-form-item,
+.wd-form-item--weui.wd-form-item--vertical-left.wd-form-item {
+  margin-bottom: 0;
+}
+.wd-form--weui.wd-form--vertical-left .wd-form-textarea-wrap,
+.wd-form-item--weui.wd-form-item--vertical-left .wd-form-textarea-wrap {
+  padding-top: 0;
+}
+.wd-form--weui.wd-form--vertical-left .wd-form-item,
+.wd-form-item--weui.wd-form-item--vertical-left .wd-form-item {
+  margin-bottom: 0;
+}
+.wd-form--weui.wd-form--vertical-left .wd-form-item-wrap__label,
+.wd-form-item--weui.wd-form-item--vertical-left .wd-form-item-wrap__label {
+  margin-bottom: 0;
+  padding: calc(var(--wd-space-base) * 4) 0 0 0;
+}
+.wd-form--weui.wd-form--vertical-left .wd-form-item-wrap__control,
+.wd-form-item--weui.wd-form-item--vertical-left .wd-form-item-wrap__control {
+  padding: calc(var(--wd-space-base) * 2) 0;
+  flex: auto;
+}
+.wd-form--weui.wd-form--vertical-left .wd-form-item__help,
+.wd-form-item--weui.wd-form-item--vertical-left .wd-form-item__help {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.wd-form--weui.wd-form--vertical-right.wd-form-item,
+.wd-form-item--weui.wd-form-item--vertical-right.wd-form-item {
+  margin-bottom: 0;
+}
+.wd-form--weui.wd-form--vertical-right .wd-form-textarea-wrap,
+.wd-form-item--weui.wd-form-item--vertical-right .wd-form-textarea-wrap {
+  padding-top: 0;
+}
+.wd-form--weui.wd-form--vertical-right .wd-form-item,
+.wd-form-item--weui.wd-form-item--vertical-right .wd-form-item {
+  margin-bottom: 0;
+}
+.wd-form--weui.wd-form--vertical-right .wd-form-item-wrap__label,
+.wd-form-item--weui.wd-form-item--vertical-right .wd-form-item-wrap__label {
+  margin-bottom: 0;
+  padding: calc(var(--wd-space-base) * 4) 0 0 0;
+}
+.wd-form--weui.wd-form--vertical-right .wd-form-item-wrap__control,
+.wd-form-item--weui.wd-form-item--vertical-right .wd-form-item-wrap__control {
+  padding: calc(var(--wd-space-base) * 2) 0;
+  flex: auto;
+}
+.wd-form--weui.wd-form--vertical-right .wd-form-item__help,
+.wd-form-item--weui.wd-form-item--vertical-right .wd-form-item__help {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.wd-form--weui.wd-form--horizontal-right .wd-form-item--weui.wd-form-item--vertical-right .wd-form-item-wrap__label,
+.wd-form--weui.wd-form--horizontal-right .wd-form-item--weui.wd-form-item--vertical-left .wd-form-item-wrap__label,
+.wd-form-item--weui.wd-form-item.wd-form-item--horizontal-right .wd-form-item--weui.wd-form-item--vertical-right .wd-form-item-wrap__label,
+.wd-form-item--weui.wd-form-item.wd-form-item--horizontal-right .wd-form-item--weui.wd-form-item--vertical-left .wd-form-item-wrap__label {
+  width: 100%;
+}
+.wd-form--weui.wd-form--horizontal-right.wd-form-item,
+.wd-form-item--weui.wd-form-item.wd-form-item--horizontal-right.wd-form-item {
+  margin-bottom: 0;
+}
+.wd-form--weui.wd-form--horizontal-right .wd-form-item,
+.wd-form-item--weui.wd-form-item.wd-form-item--horizontal-right .wd-form-item {
+  margin-bottom: 0;
+}
+.wd-form--weui.wd-form--horizontal-right .wd-form-item-wrap__label,
+.wd-form-item--weui.wd-form-item.wd-form-item--horizontal-right .wd-form-item-wrap__label {
+  width: var(--wd-form-item-label-width);
+  margin-right: var(--wd-form-item-label-mr);
+  text-align: right;
+}
+.wd-form--weui.wd-form--horizontal-right .wd-form-item-wrap__label.wd-radio__label,
+.wd-form-item--weui.wd-form-item.wd-form-item--horizontal-right .wd-form-item-wrap__label.wd-radio__label {
+  padding-top: calc(var(--wd-space-base) * 4);
+}
+.wd-form--weui.wd-form--horizontal-right .wd-form-item-wrap__label.wd-checkbox__label,
+.wd-form-item--weui.wd-form-item.wd-form-item--horizontal-right .wd-form-item-wrap__label.wd-checkbox__label {
+  padding-top: calc(var(--wd-space-base) * 4);
+}
+.wd-form--weui.wd-form--horizontal-right .wd-form-item-wrap__label.is-nowrap.wd-form-item-wrap__label > label,
+.wd-form-item--weui.wd-form-item.wd-form-item--horizontal-right .wd-form-item-wrap__label.is-nowrap.wd-form-item-wrap__label > label {
+  justify-content: flex-end;
+}
+
+.wd-form--weui.wd-form--horizontal-left .wd-form-item--weui.wd-form-item--vertical-right .wd-form-item-wrap__label,
+.wd-form--weui.wd-form--horizontal-left .wd-form-item--weui.wd-form-item--vertical-left .wd-form-item-wrap__label,
+.wd-form-item--weui.wd-form-item.wd-form-item--horizontal-left .wd-form-item--weui.wd-form-item--vertical-right .wd-form-item-wrap__label,
+.wd-form-item--weui.wd-form-item.wd-form-item--horizontal-left .wd-form-item--weui.wd-form-item--vertical-left .wd-form-item-wrap__label {
+  width: 100%;
+}
+.wd-form--weui.wd-form--horizontal-left.wd-form-item,
+.wd-form-item--weui.wd-form-item.wd-form-item--horizontal-left.wd-form-item {
+  margin-bottom: 0;
+}
+.wd-form--weui.wd-form--horizontal-left .wd-form-item,
+.wd-form-item--weui.wd-form-item.wd-form-item--horizontal-left .wd-form-item {
+  margin-bottom: 0;
+}
+.wd-form--weui.wd-form--horizontal-left .wd-form-item-wrap__label,
+.wd-form-item--weui.wd-form-item.wd-form-item--horizontal-left .wd-form-item-wrap__label {
+  width: var(--wd-form-item-label-width);
+  margin-right: var(--wd-form-item-label-mr);
+  text-align: left;
+}
+.wd-form--weui.wd-form--horizontal-left .wd-form-item-wrap__label.wd-radio__label,
+.wd-form-item--weui.wd-form-item.wd-form-item--horizontal-left .wd-form-item-wrap__label.wd-radio__label {
+  padding-top: calc(var(--wd-space-base) * 4);
+}
+.wd-form--weui.wd-form--horizontal-left .wd-form-item-wrap__label.wd-checkbox__label,
+.wd-form-item--weui.wd-form-item.wd-form-item--horizontal-left .wd-form-item-wrap__label.wd-checkbox__label {
+  padding-top: calc(var(--wd-space-base) * 4);
+}
+.wd-form--weui.wd-form--horizontal-left .wd-form-item-wrap__label.is-nowrap.wd-form-item-wrap__label > label,
+.wd-form-item--weui.wd-form-item.wd-form-item--horizontal-left .wd-form-item-wrap__label.is-nowrap.wd-form-item-wrap__label > label {
+  justify-content: flex-start;
+}
+
+.wd-form-item.wd-form-item--label-left .wd-form-item-wrap__label {
+  text-align: left;
+}
+.wd-form-item.wd-form-item--label-left .wd-form-item-wrap__label.is-nowrap.wd-form-item-wrap__label > label {
+  justify-content: flex-start;
+}
+
+.wd-form-item.wd-form-item--label-right .wd-form-item-wrap__label {
+  text-align: right;
+}
+.wd-form-item.wd-form-item--label-right .wd-form-item-wrap__label.is-nowrap.wd-form-item-wrap__label > label {
+  justify-content: flex-end;
+}
+
+.wd-form.wd-form--horizontal-left .wd-form-item.wd-form-item--label-left .wd-form-item-wrap__label,
+.wd-form.wd-form--horizontal-right .wd-form-item.wd-form-item--label-left .wd-form-item-wrap__label,
+.wd-form.wd-form--vertical-left .wd-form-item.wd-form-item--label-left .wd-form-item-wrap__label,
+.wd-form.wd-form--vertical-right .wd-form-item.wd-form-item--label-left .wd-form-item-wrap__label,
+.wd-form--weui.wd-form--horizontal-left .wd-form-item.wd-form-item--label-left .wd-form-item-wrap__label,
+.wd-form--weui.wd-form--horizontal-right .wd-form-item.wd-form-item--label-left .wd-form-item-wrap__label,
+.wd-form--weui.wd-form--vertical-left .wd-form-item.wd-form-item--label-left .wd-form-item-wrap__label,
+.wd-form--weui.wd-form--vertical-right .wd-form-item.wd-form-item--label-left .wd-form-item-wrap__label {
+  text-align: left;
+}
+.wd-form.wd-form--horizontal-left .wd-form-item.wd-form-item--label-left .wd-form-item-wrap__label.is-nowrap.wd-form-item-wrap__label > label,
+.wd-form.wd-form--horizontal-right .wd-form-item.wd-form-item--label-left .wd-form-item-wrap__label.is-nowrap.wd-form-item-wrap__label > label,
+.wd-form.wd-form--vertical-left .wd-form-item.wd-form-item--label-left .wd-form-item-wrap__label.is-nowrap.wd-form-item-wrap__label > label,
+.wd-form.wd-form--vertical-right .wd-form-item.wd-form-item--label-left .wd-form-item-wrap__label.is-nowrap.wd-form-item-wrap__label > label,
+.wd-form--weui.wd-form--horizontal-left .wd-form-item.wd-form-item--label-left .wd-form-item-wrap__label.is-nowrap.wd-form-item-wrap__label > label,
+.wd-form--weui.wd-form--horizontal-right .wd-form-item.wd-form-item--label-left .wd-form-item-wrap__label.is-nowrap.wd-form-item-wrap__label > label,
+.wd-form--weui.wd-form--vertical-left .wd-form-item.wd-form-item--label-left .wd-form-item-wrap__label.is-nowrap.wd-form-item-wrap__label > label,
+.wd-form--weui.wd-form--vertical-right .wd-form-item.wd-form-item--label-left .wd-form-item-wrap__label.is-nowrap.wd-form-item-wrap__label > label {
+  justify-content: flex-start;
+}
+.wd-form.wd-form--horizontal-left .wd-form-item.wd-form-item--label-right .wd-form-item-wrap__label,
+.wd-form.wd-form--horizontal-right .wd-form-item.wd-form-item--label-right .wd-form-item-wrap__label,
+.wd-form.wd-form--vertical-left .wd-form-item.wd-form-item--label-right .wd-form-item-wrap__label,
+.wd-form.wd-form--vertical-right .wd-form-item.wd-form-item--label-right .wd-form-item-wrap__label,
+.wd-form--weui.wd-form--horizontal-left .wd-form-item.wd-form-item--label-right .wd-form-item-wrap__label,
+.wd-form--weui.wd-form--horizontal-right .wd-form-item.wd-form-item--label-right .wd-form-item-wrap__label,
+.wd-form--weui.wd-form--vertical-left .wd-form-item.wd-form-item--label-right .wd-form-item-wrap__label,
+.wd-form--weui.wd-form--vertical-right .wd-form-item.wd-form-item--label-right .wd-form-item-wrap__label {
+  text-align: right;
+}
+.wd-form.wd-form--horizontal-left .wd-form-item.wd-form-item--label-right .wd-form-item-wrap__label.is-nowrap.wd-form-item-wrap__label > label,
+.wd-form.wd-form--horizontal-right .wd-form-item.wd-form-item--label-right .wd-form-item-wrap__label.is-nowrap.wd-form-item-wrap__label > label,
+.wd-form.wd-form--vertical-left .wd-form-item.wd-form-item--label-right .wd-form-item-wrap__label.is-nowrap.wd-form-item-wrap__label > label,
+.wd-form.wd-form--vertical-right .wd-form-item.wd-form-item--label-right .wd-form-item-wrap__label.is-nowrap.wd-form-item-wrap__label > label,
+.wd-form--weui.wd-form--horizontal-left .wd-form-item.wd-form-item--label-right .wd-form-item-wrap__label.is-nowrap.wd-form-item-wrap__label > label,
+.wd-form--weui.wd-form--horizontal-right .wd-form-item.wd-form-item--label-right .wd-form-item-wrap__label.is-nowrap.wd-form-item-wrap__label > label,
+.wd-form--weui.wd-form--vertical-left .wd-form-item.wd-form-item--label-right .wd-form-item-wrap__label.is-nowrap.wd-form-item-wrap__label > label,
+.wd-form--weui.wd-form--vertical-right .wd-form-item.wd-form-item--label-right .wd-form-item-wrap__label.is-nowrap.wd-form-item-wrap__label > label {
+  justify-content: flex-end;
+}
+
+.item-size-height-xs .wd-form-item-wrap__label {
+  line-height: var(--wd-form-item-label-height-xs);
+}
+.item-size-height-xs .wd-form-item-wrap .is-nowrap.wd-form-item-wrap__label > label {
+  line-height: var(--wd-form-item-label-height-xs);
+}
+.item-size-height-xs .wd-form-item-wrap__control {
+  flex: auto;
+  width: 100%;
+}
+.item-size-height-xs .wd-form-item-wrap__control-wrap {
+  min-height: var(--wd-form-item-label-height-xs);
+}
+
+.item-size-height-sm .wd-form-item-wrap__label {
+  line-height: var(--wd-form-item-label-height-sm);
+}
+.item-size-height-sm .wd-form-item-wrap .is-nowrap.wd-form-item-wrap__label > label {
+  line-height: var(--wd-form-item-label-height-sm);
+}
+.item-size-height-sm .wd-form-item-wrap__control {
+  flex: auto;
+  width: 100%;
+}
+.item-size-height-sm .wd-form-item-wrap__control-wrap {
+  min-height: var(--wd-form-item-label-height-sm);
+}
+
+.item-size-height-md .wd-form-item-wrap__label {
+  line-height: var(--wd-form-item-label-height-md);
+}
+.item-size-height-md .wd-form-item-wrap .is-nowrap.wd-form-item-wrap__label > label {
+  line-height: var(--wd-form-item-label-height-md);
+}
+.item-size-height-md .wd-form-item-wrap__control {
+  flex: auto;
+  width: 100%;
+}
+.item-size-height-md .wd-form-item-wrap__control-wrap {
+  min-height: var(--wd-form-item-label-height-md);
+}
+
+.item-size-height-lg .wd-form-item-wrap__label {
+  line-height: var(--wd-form-item-label-height-lg);
+}
+.item-size-height-lg .wd-form-item-wrap .is-nowrap.wd-form-item-wrap__label > label {
+  line-height: var(--wd-form-item-label-height-lg);
+}
+.item-size-height-lg .wd-form-item-wrap__control {
+  flex: auto;
+  width: 100%;
+}
+.item-size-height-lg .wd-form-item-wrap__control-wrap {
+  min-height: var(--wd-form-item-label-height-lg);
+}
+
+.wd-input__limit-number {
+  padding-left: calc(var(--wd-space-base) * 2);
+  color: var(--wd-input-limit-number-color);
+  font-weight: var(--wd-input-limit-number-weight);
+  font-size: var(--wd-input-limit-number-size);
+}
+
+.wd-form-read-value {
+  padding-top: 2px;
+}
+.wd-form-read-value .wedatea2td-dropdown__header.wedatea2td-dropdown-btn {
+  padding: 0;
+  border: none;
+  color: var(--wd-form-readonly-font-color);
+  background: transparent;
+}
+.wd-form-read-value .wedatea2td-dropdown__header.wedatea2td-dropdown-btn:hover {
+  background: transparent;
+}
+.wd-form-read-value .wedatea2td-dropdown__header.wedatea2td-dropdown-btn .wedatea2td-dropdown__value {
+  line-height: inherit;
+}
+.wd-form-read-value .weui-input-arrow {
+  display: none;
+}
+.wd-form-read-value .wedatea2td-icon.wedatea2td-icon-arrowdown {
+  display: none;
+}
+
+.wd-form-read-color {
+  opacity: 0.6;
+}
+.wd-form-read-color .wedatea2td-tag {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+}
+
+.wd-select__disabled {
+  line-height: var(--wd-form-item-height-md);
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.wd-form .wd-select__disabled {
+  line-height: 1.38rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.wd-form.wd-pc-form .wd-form-item {
+  width: 100%;
+  padding-top: calc(var(--wd-space-base) * 2.5);
+  padding-bottom: calc(var(--wd-space-base) * 2.5);
+}
+.wd-form.wd-pc-form .wd-form-input-group, .wd-form.wd-pc-form .wd-form-input-wrap {
+  width: 100%;
+}
+.wd-form.size-width-sm {
+  width: var(--wd-form-container-width-sm);
+}
+.wd-form.size-width-md {
+  width: var(--wd-form-container-width-md);
+}
+.wd-form.size-width-lg {
+  width: var(--wd-form-container-width-lg);
+}
+.wd-form.size-width-hundred {
+  width: 100%;
+}

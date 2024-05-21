@@ -1,0 +1,31 @@
+<block wx:if="{{visible}}">
+  <form-item-wrapper>
+    <old-select
+      id="{{id}}"
+      className="{{className}}"
+      style="{{style}}"
+      name="{{name}}"
+      label="{{label}}"
+      disabled="{{disabled}}"
+      layout="{{actualLayout}}"
+      labelVisible="{{labelVisible}}"
+      requiredFlag="{{requiredFlag && required}}"
+      defaultValue="{{value}}"
+      enumName="{{enumName}}"
+      format="{{format === 'many-one' ? 'father-son' : format}}"
+      placeholder="{{placeholder}}"
+      primaryField="{{primaryField}}"
+      range="{{range}}"
+      size="{{size}}"
+      tipBlock="{{tipBlock}}"
+      viewId="{{viewId}}"
+      where="{{where}}"
+      dataSourceName="{{dataSourceName}}"
+      mode="selector"
+      bind:change="change"
+      bind:cancel="cancel"
+      bind:search="search"
+    />
+    <tips wx:if="{{validateState === 'error' || validateState === 'warn'}}" tips="{{validateErrorMsg}}" type="warn" />
+  </form-item-wrapper>
+</block>

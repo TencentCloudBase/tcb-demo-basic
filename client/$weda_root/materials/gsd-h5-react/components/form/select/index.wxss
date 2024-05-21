@@ -1,0 +1,61 @@
+@import '../../../style/weda-ui.wxss';
+.weda-ui .weui-cell.weui-check__label {
+  padding: 16px;
+}
+.weda-ui .weui-flex__item .weui-cell.weui-check__label {
+  padding-left: 0;
+}
+
+.weda-ui.weda-select .weui-cell_form {
+  padding: 0 16px;
+}
+
+.weda-ui.weda-select .weui-flex__item .weui-cell_form {
+  padding: 0;
+  padding-right: 16px;
+}
+
+.weui-picker__group.weui-input.select-picker::after {
+  content: '';
+  width: 24px;
+  height: 24px;
+  display: block;
+  position: absolute;
+  right: -6px;
+  top: 12px;
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Crect opacity='0.01' width='24' height='24' fill='%23D8D8D8'/%3E %3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15.6003 12.5769L7.93943 20L6.99981 19.0875L14.3157 11.9986L6.99983 4.91249L7.93945 4L15.5754 11.3961C15.5858 11.4048 15.596 11.4139 15.6059 11.4235L15.8278 11.639C16.0302 11.8355 16.03 12.1605 15.8274 12.3568L15.6253 12.5526L15.6049 12.5725C15.6034 12.574 15.6018 12.5754 15.6003 12.5769Z' fill='black' fill-opacity='0.4'/%3E %3C/svg%3E ");
+}
+
+.weda-ui.weda-select .select-picker-input {
+  margin-right: 17.5px;
+}
+
+/* 标准化样式适配 start */
+.wd-form-item .wd-form-input-wrap .weda-select {
+  width: 100%;
+}
+
+.wd-form-item
+  .wd-form-input-wrap
+  .weda-select
+  .weui-picker__group.weui-input.select-picker::after {
+  display: none;
+}
+
+.wd-mp-select-root .weui-cells::before,
+.wd-mp-select-root .weui-cells::after {
+  display: none;
+}
+
+.wd-form-item .wd-form-input-wrap .weda-select .weda-ui .weui-input {
+  padding: 9px 0;
+}
+
+.wd-form-item
+  .wd-form-input-wrap
+  .weda-select
+  .weui-flex__item
+  .weui-cell_form {
+  padding-right: 0;
+}
+/* 标准化样式适配 end */

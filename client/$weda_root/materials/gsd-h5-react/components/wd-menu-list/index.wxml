@@ -1,0 +1,50 @@
+<wxs module="tools"> function includes(tabItem) { return tabItem.iconUrl && tabItem.iconUrl.indexOf('http') !== -1 ? 'custom' : 'inner' } module.exports = { includes: includes } </wxs>
+<view style="{{style}}" class="{{className}} weda-menu-mobile__drawer">
+  <view class="weda-drawer-drawer__body">
+    <scroll-view class="weda-drawer-menu weda-menu__drawer-menu weda-drawer-menu--light" scroll-y>
+      <view class="weda-drawer-menu weda-menu__drawer-menu weda-drawer-menu--light" style="background:{{navigationStyle.menuBackgroundColor}}">
+        <view class="weda-drawer-menu__body">
+          <view class="weda-drawer-menu__list">
+            <block wx:for="{{menuData}}" wx:key="menuIndex" wx:for-item="menuItem">
+              <view class="{{menuItem.children ? 'weda-drawer-menu__submenu' : ''}} {{menuItem.expand?'expand':''}}">
+                <view class="weda-drawer-menu__item {{selectedKey===menuItem.key ? 'is-selected' : ''}} {{menuItem.disabled ? 'is-disabled' : ''}}" bindtap="menuClick" data-menu="{{menuItem}}">
+                  <wd-icon wx:if="{{menuItem.iconUrl}}" name="{{menuItem.iconUrl}}" type="{{tools.includes(menuItem)}}" size="md" />
+                  <wd-icon wx:elif="{{menuItem.selectedIconPath || menuItem.iconPath}}" name="{{selectedKey === menuItem.key? menuItem.selectedIconPath : menuItem.iconPath}}" src="{{selectedKey === menuItem.key? menuItem.selectedIconPath : menuItem.iconPath}}" type="custom" size="md" />
+                  <view class="weda-drawer-menu__text">{{menuItem.title}}</view>
+                  <view wx-if="{{menuItem.children.length>0}}" class="weda-menu__bar-btn-expand lcap-icon lcap-icon-chevrondown"></view>
+                </view>
+                <view class="weda-drawer-menu__list">
+                  <block wx-if="{{menuItem.children}}">
+                    <block wx:for="{{menuItem.children}}" wx:key="secondIndex" wx:for-item="secondMenu">
+                      <view class="{{secondMenu.children ? 'weda-drawer-menu__submenu weda-menu__submenu' : ''}} {{secondMenu.expand?'expand':''}}">
+                        <view class="weda-drawer-menu__item {{selectedKey===secondMenu.key ? 'is-selected' : ''}} {{secondMenu.disabled ? 'is-disabled' : ''}}" bindtap="menuClick" data-menu="{{secondMenu}}">
+                          <wd-icon wx:if="{{secondMenu.iconUrl}}" name="{{secondMenu.iconUrl}}" size="md" type="{{tools.includes(secondMenu)}}" />
+                          <wd-icon wx:elif="{{secondMenu.selectedIconPath || secondMenu.iconPath}}" name="{{selectedKey === secondMenu.key? secondMenu.selectedIconPath : secondMenu.iconPath}}" src="{{selectedKey === secondMenu.key? secondMenu.selectedIconPath : secondMenu.iconPath}}" type="custom" size="md" />
+                          <view class="weda-drawer-menu__text">{{secondMenu.title}}</view>
+                          <view wx-if="{{secondMenu.children.length>0}}" class="weda-menu__bar-btn-expand lcap-icon lcap-icon-chevrondown"></view>
+                        </view>
+                        <view class="weda-drawer-menu__list">
+                          <block wx-if="{{secondMenu.children}}">
+                            <block wx:for="{{secondMenu.children}}" wx:key="thridIndex" wx:for-item="thridMenu">
+                              <view class="">
+                                <view class="weda-drawer-menu__item {{selectedKey===thridMenu.key ? 'is-selected' : ''}} {{thridMenu.disabled ? 'is-disabled' : ''}}" bindtap="menuClick" data-menu="{{thridMenu}}">
+                                  <wd-icon wx:if="{{thridMenu.iconUrl}}" name="{{thridMenu.iconUrl}}" size="md" type="{{tools.includes(thridMenu)}}" />
+                                  <wd-icon wx:elif="{{thridMenu.selectedIconPath || thridMenu.iconPath}}" name="{{selectedKey === thridMenu.key? thridMenu.selectedIconPath : thridMenu.iconPath}}" src="{{selectedKey === thridMenu.key? thridMenu.selectedIconPath : thridMenu.iconPath}}" type="custom" size="md" />
+                                  <view class="weda-drawer-menu__text">{{thridMenu.title}}</view>
+                                </view>
+                              </view>
+                            </block>
+                          </block>
+                        </view>
+                      </view>
+                    </block>
+                  </block>
+                </view>
+              </view>
+            </block>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "styleIsolation": "shared",
+  "usingComponents": {
+    "wd-form-item": "../wd-form-item/index",
+    "wd-icon": "../wd-icon/index",
+    "tooltip": "../tooltip/index"
+  }
+}

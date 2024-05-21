@@ -1,0 +1,3 @@
+<view class="weda-ui wa-comp-CLOUDBASE_STANDARD-FormSwitch gsd-h5-react-formitem wa-comp-CLOUDBASE_STANDARD-FormItem weda-ui-to-wd">
+  <slot></slot>
+</view>

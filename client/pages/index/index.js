@@ -5,6 +5,12 @@ Page({
   data: {
     list: [
       {
+        id: "ai-bot",
+        name: "AI 智能体",
+        url: "/$weda_root/packages/mIOXHS1t/pages/chat/index",
+        isNew: true
+      },
+      {
         id: "user",
         name: "用户管理"
       },
@@ -19,24 +25,12 @@ Page({
       {
         id: "customer-msg",
         name: "客服消息",
-        url: "customer-msg/index/index"
+        url: "/pages/customer-msg/index/index"
       },
       {
         id: "pay-list",
         name: "微信支付"
       },
-      {
-        id: "webrtc",
-        name: "视频通话",
-        appid: "wx5a9f6a2c25353607",
-        type: "miniprogram"
-      },
-      {
-        id: "ai",
-        name: "智能图像",
-        appid: "wx5449e34426a83bdd",
-        type: "miniprogram"
-      }
     ]
   },
 
@@ -67,7 +61,7 @@ Page({
         } else {
           wx.navigateTo({
             url: list[i].url
-              ? `/pages/${list[i].url}`
+              ? list[i].url
               : `/pages/${list[i].id}/index`
           });
         }

@@ -1,0 +1,37 @@
+<block wx:if="{{visible}}">
+  <wd-form-item
+    id="{{id}}"
+    className="{{className}}"
+    style="{{style}}"
+    label="{{label}}"
+    labelVisible="{{labelVisible}}"
+    labelTips="{{labelTips}}"
+    labelWidth="{{labelWidth}}"
+    labelAlign="{{labelAlign}}"
+    labelWrap="{{labelWrap}}"
+    layout="{{actualLayout}}"
+    extra="{{extra}}"
+    required="{{required}}"
+    disabled="{{disabled}}"
+    readOnly="{{readOnly}}"
+    requiredFlag="{{requiredFlag}}"
+    validateState="{{validateState}}"
+    validateErrorMsg="{{validateErrorMsg}}"
+    borderedH5="{{borderedH5}}"
+    readValue="{{readValue}}"
+    classRoot="checkbox"
+    size="xs"
+  >
+    <view class="{{checkboxCls}}">
+      <block wx:for="{{options}}" wx:key="index" wx:for-item="option">
+        <label class="{{classPrefix}}-checkbox-wrap size-lg {{(disabled || option.disabled) ? 'is-disabled' : ''}} {{checkedItemValue[option.value] ? 'is-checked' : ''}} {{isAll ? 'is-indeterminate' : ''}} checkbox{{index+1}}" bindtap="handleClick" data-value="{{option.value}}" data-item="{{option}}">
+          <checkbox class="{{classPrefix}}-checkbox-input" value="{{option.value}}" checked="{{!!checkedItemValue[option.value]}}" disabled="{{disabled}}" />
+          <text class="{{classPrefix}}-checkbox-inner" />
+          <block wx:if="{{option.label}}">
+            <text class="{{classPrefix}}-checkbox-label" style="cursor: none">{{option.label}}</text>
+          </block>
+        </label>
+      </block>
+    </view>
+  </wd-form-item>
+</block>

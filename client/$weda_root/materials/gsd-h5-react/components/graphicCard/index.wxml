@@ -1,0 +1,27 @@
+<view class="weda-graphic-card" style="{{style}}">
+  <view class="weda-graphic-card__wrapper">
+    <block wx:for="{{optionList}}" wx:key="colIndex" wx:for-item="row">
+      <view class="weda-grid weda-graphic-card__row">
+        <block wx:for="{{row}}" wx:key="colIndex" wx:for-item="col">
+          <view class="weda-col weda-grid__item weda-graphic-card__col weda-graphic-card__col--{{textAlign}}" style="width: {{(1 / ColMobile) * 100}}%" data-item="{{col}}" bindtap="navigaTo">
+            <view class="weda-grid__box">
+              <view class="weda-graphic-card__col-body">
+                <view class="weda-graphic-card__icon" style="{{iconStyle}}">
+                  <img src="{{col.icon}}" mode="scaleToFill" className="weda-graphic-card__img" className="weda-graphic-card__img" />
+                </view>
+                <view class="weda-graphic-card__title" style="{{titleStyle}}" wx:if="{{titleVisible}}"> {{col.title}} </view>
+                <view class="weda-graphic-card__desc" style="text-align: {{textAlign}}" wx:if="{{desVisible}}" style="{{desStyle}}"> {{col.des}} </view>
+              </view>
+              <view class="wedatea2td-btn wedatea2td-btn--link weda-graphic-card__btn" wx:if="{{buttonVisible && col}}">
+                <text class="weda-graphic-card__btn--text">{{buttonText}}</text>
+                <view class="weda-graphic-card__btn-wrap">
+                  <image src="chevron-right.svg" class="weda-graphic-card__btn--icon wedatea2td-icon wedatea2td-icon-btnback"></image>
+                </view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </block>
+  </view>
+</view>

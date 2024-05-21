@@ -1,0 +1,11 @@
+<image id="{{id}}" style="{{style}}" class="wd-image {{clsx}} wd-mp-image" src="{{realSrc}}" alt="{{alt}}" mode="{{imgMode}}" lazy-load="{{lazyLoad}}" show-menu-by-longpress="{{showMenuByLongpress}}" bindtap="onImgTap" bindload="load" binderror="error" />
+<root-portal>
+  <view wx:if="{{showImg}}" class="wd-image-preview-container wd-image-mask" bindtap="onMaskClick">
+    <view bindtap="onCloseClick" class="wd-image-mask__close-btn">
+      <icon class="wd-image-mask__icon-close"></icon>
+    </view>
+    <gesture class="gesture-test" bindpinch="onPinch" catchtap="onTapImgPreview" bindpressMove="onPressMove" propagation="{{propagation}}">
+      <view class="wd-image-preview" style="margin-top:{{offsetHeight}}px;margin-left:{{offsetWidth}}px;width: {{showWidth}}px;height:{{showHeight}}px;background-image: url('{{realSrc}}');transform: scale({{zoom}}) translateX({{previewTranslateX}}px) translateY({{previewTranslateY}}px);"></view>
+    </gesture>
+  </view>
+</root-portal>

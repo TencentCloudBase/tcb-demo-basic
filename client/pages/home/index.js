@@ -30,6 +30,12 @@ Page({
         coverImage: 'https://qcloudimg.tencent-cloud.cn/raw/62a3d7d24f1a8a8849213ddd30126373/icon%E5%85%8D%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%85%8D%E5%9F%9F%E5%90%8D@2x.png',
         title: '免服务器免域名',
         description: '免服务器免运维，专业处理高并发，解决开发人力配备不足、运维成本高等问题。'
+      },{
+        coverImage: 'https://cloudcache.tencent-cloud.com/qcloud/ui/static/static_source_business/63e6ea94-fe57-4697-9852-c2656c1677fa.png',
+        title: '在线体验',
+        description: '即刻体验云开发基础能力、AI、微信开放能力等示例',
+        navigateType:'path',
+        url: '/pages/index/index'
       }],
       schematic:{
         description: '简单几行代码即可调用云开发后台能力，如云数据库',

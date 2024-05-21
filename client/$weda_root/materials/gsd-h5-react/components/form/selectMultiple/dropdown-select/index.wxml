@@ -1,0 +1,37 @@
+<wxs module="tools"> function includes(array, item) { return array.map(function (v) { return v.value }).indexOf(item.value) !== -1 } module.exports = { includes: includes } </wxs>
+<view class="weda-ui-custom-picker">
+  <view class="weda-ui-custom-mask" data-clear="false" bindtap="cancelPicker"></view>
+  <view class="weda-ui-custom-picker__inner" style="height: {{height}};">
+    <view wx:if="{{!focus}}" class="weda-ui-custom-picker__header">
+      <button class="weda-ui-custom-picker__header-btn" bindtap="closeModal" data-clear="false">取消</button>
+      <button class="weda-ui-custom-picker__header-btn" bindtap="confirmModal">确定</button>
+    </view>
+    <view class="weda-ui-custom-search {{focus?'is-focused':''}}" style="{{focus? 'margin: 34rpx 32rpx 16rpx 32rpx':'margin: 20rpx 32rpx'}}">
+      <view class="weda-ui-custom-search-box" bindtap="onFocus">
+        <input class="weda-ui-input" focus="{{focus}}" bindfocus="onFocus" bindblur="onBlur" bindinput="bindinput" value="{{searchValue}}" hold-keyboard="true" bindconfirm="bindconfirm" />
+        <view class="weda-ui-custom-search-box__label multiple">
+          <span class="weda-ui-custom-search-box__search-icon"></span>
+          <span class="weda-ui-custom-search-box__search-placeholder"> 搜索 </span>
+        </view>
+        <span wx:if="{{focus && searchValue !== ''}}" class="weda-ui-custom-search-box__dismiss-icon" bindtap="clear"></span>
+      </view>
+      <text class="weda-ui-custom-search__btn-cancle" bindtap="shrink">取消</text>
+    </view>
+    <scroll-view wx:if="{{status !== -1}}" class="weda-ui-custom-picker__body" scroll-y="true" enhanced="true" bindscrolltolower="bindscrolltolower">
+      <view class="weda-ui-custom-picker__cloumns">
+        <view class="weda-ui-custom-picker__cloumn">
+          <view wx:for="{{showOption}}" wx:key="i" wx:for-index="i" class="weda-ui-custom-picker__cloumn-item multiple {{ tools.includes(selectedCache, item) ? 'is-selected':''}} {{ (i === disabledIndex || item.disabled) ? 'is-disabled':''}}" bindtap="onItemClick" data-value="{{item}}">
+            <text class="weda-ui-custom-picker__cloumn-item-text multiple">{{item.label}}</text>
+          </view>
+          <view wx:if="{{status === 1}}" class="weda-ui-custom-picker__status weda-ui-custom-picker__status--loading"> <i class="weda-ui-custom-picker__loading-icon"></i>加载中... </view>
+          <view wx:if="{{status === 2}}" class="weda-ui-custom-picker__status">
+            加载失败
+            <text class="weda-ui-custom-picker__btn weda-ui-custom-picker__btn--link" bindtap="onRetry">重试</text>
+          </view>
+          <view wx:if="{{status === 3}}" class="weda-ui-custom-picker__status"> 暂无数据 </view>
+        </view>
+      </view>
+    </scroll-view>
+    <view wx:if="{{status === -1}}" class="weda-ui-custom-picker__empty">暂无数据</view>
+  </view>
+</view>

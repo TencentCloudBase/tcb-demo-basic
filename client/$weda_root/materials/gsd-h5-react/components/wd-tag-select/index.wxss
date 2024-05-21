@@ -1,0 +1,4 @@
+@import '../../style/wd-design.wxss';
+@import '../wd-text/wd-text.wxss';
+@import '../wd-tag/wd-tag.wxss';
+@import './wd-tag-select.wxss';

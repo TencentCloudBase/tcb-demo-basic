@@ -1,0 +1,56 @@
+.wedatea2td-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-position: inherit;
+  font-size: 0;
+}
+
+.wedatea2td-action-state {
+  font-size: 14px;
+  display: inline-flex;
+  max-width: 100%;
+  align-items: center;
+}
+.wedatea2td-mr-2n {
+  margin-right: 8px !important;
+}
+
+.wedatea2td-action-state__text {
+  display: inline;
+}
+
+.wedatea2td-icon-loading {
+  background-image: url(data:image/svg+xml;base64,Cjxzdmcgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCIgdmlld0JveD0iMCAwIDE2IDE2IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIGZpbGw9IiMwMDUyRDkiPgogICAgPHRpdGxlIGZpbGw9IiMwMDUyRDkiPui3r+W+hOWkh+S7vTwvdGl0bGU+CiAgICA8ZyBpZD0iY29sb3IiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSIjMDA1MkQ5IiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJidXR0b27lpIfku70iIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNTY3LjAwMDAwMCwgLTI2NTYuMDAwMDAwKSIgZmlsbD0iIzAwNTJEOSI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0xNTc1LDI2NzIgQzE1NzAuNTgxNzIsMjY3MiAxNTY3LDI2NjguNDE4MjggMTU2NywyNjY0IEMxNTY3LDI2NTkuNTgxNzIgMTU3MC41ODE3MiwyNjU2IDE1NzUsMjY1NiBMMTU3NSwyNjU4IEMxNTcxLjY4NjI5LDI2NTggMTU2OSwyNjYwLjY4NjI5IDE1NjksMjY2NCBDMTU2OSwyNjY3LjMxMzcxIDE1NzEuNjg2MjksMjY3MCAxNTc1LDI2NzAgQzE1NzguMzEzNzEsMjY3MCAxNTgxLDI2NjcuMzEzNzEgMTU4MSwyNjY0IEwxNTgzLDI2NjQgQzE1ODMsMjY2OC40MTgyOCAxNTc5LjQxODI4LDI2NzIgMTU3NSwyNjcyIFoiIGlkPSLot6/lvoTlpIfku70iIGZpbGw9IiMwMDUyRDkiIC8+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=);
+  -webkit-animation: spin 0.6s linear infinite;
+  animation: spin 0.6s linear infinite;
+}
+
+.wedatea2td-icon-loading {
+  background: conic-gradient(from 90deg at 50% 50%, #fff 0deg, #0052d9 1turn);
+  border-radius: 50%;
+  -webkit-mask: radial-gradient(transparent calc(50% - 0.5px), #fff 50%);
+  mask: radial-gradient(transparent calc(50% - 0.5px), #fff 50%);
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}

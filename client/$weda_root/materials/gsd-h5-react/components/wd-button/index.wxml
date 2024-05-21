@@ -1,0 +1,32 @@
+<button
+  id="{{id}}"
+  class="{{cls}}"
+  style="{{style}}"
+  size="{{size}}"
+  disabled="{{disabled}}"
+  open-type="{{openType}}"
+  form-type="{{_formType}}"
+  bind:tap="tap"
+  bindcontact="contact"
+  bindlaunchapp="launchApp"
+  bindopensetting="openSetting"
+  session-from="{{sessionFrom}}"
+  send-message-title="{{sendMessageTitle}}"
+  send-message-path="{{sendMessagePath}}"
+  send-message-img="{{sendMessageImg}}"
+  show-message-card="{{showMessageCard}}"
+  app-parameter="{{appParameter}}"
+>
+  <block wx:if="{{iconPosition === 'before' && _iconType === 'text-with-icon'}}">
+    <Icon className="{{iconCls}}" size="sm" name="{{_icon}}" src="{{iconSrc}}" type="{{iconSource}}" />
+  </block>
+  <block wx:if="{{_iconType === 'icon-only'}}">
+    <Icon className="{{iconCls}}" size="sm" name="{{_icon}}" src="{{iconSrc}}" type="{{iconSource}}" />
+  </block>
+  <block wx:else>
+    <text class="{{textCls}}">{{text}}</text>
+  </block>
+  <block wx:if="{{iconPosition === 'after' && _iconType === 'text-with-icon'}}">
+    <Icon className="{{iconCls}}" size="sm" name="{{_icon}}" src="{{iconSrc}}" type="{{iconSource}}" />
+  </block>
+</button>

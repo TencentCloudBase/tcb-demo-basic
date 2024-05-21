@@ -1,0 +1,7 @@
+<block wx:if="{{visible && isAuthVisible}}">
+  <wd-form-item id="{{id}}" className="{{className}}" style="{{style}}" label="{{label}}" labelVisible="{{labelVisible}}" labelTips="{{labelTips}}" labelWidth="{{labelWidth}}" labelAlign="{{labelAlign}}" labelWrap="{{labelWrap}}" extra="{{extra}}" classRoot="{{classRoot}}" layout="{{_layout}}" isWdFormDetail="{{isWdFormDetail}}">
+    <view wx:if="{{isAuthVisible}}" class="weda-ui form-detail-wrap form-detail-flex-wrap h5-form-detail-wrap mp-form-detail-wrap {{ isDisabled?'disabled':''}} {{readOnly?'readOnly':''}}">
+      <slot></slot>
+    </view>
+  </wd-form-item>
+</block>

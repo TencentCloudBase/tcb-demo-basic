@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "styleIsolation": "shared",
+  "usingComponents": {
+    "calendar": "../calendar",
+    "year-month-picker": "../year-month-picker/index",
+    "time-picker": "../time-picker/index"
+  }
+}

@@ -1,0 +1,7 @@
+.wd-custom-picker .wd-custom-picker__box--month {
+  padding: 45px 0;
+}
+
+.wd-custom-picker .wd-custom-picker__box--month .weda-ui-custom-picker-view {
+  margin: 0;
+}

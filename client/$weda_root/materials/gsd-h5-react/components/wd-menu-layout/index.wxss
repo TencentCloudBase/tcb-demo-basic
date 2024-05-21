@@ -1,0 +1,13 @@
+@import '../../style/wd-design.wxss';
+@import './wd-menu-layout.wxss';
+
+.wd-menulayout-h5__drawer-slot {
+  position: fixed;
+  bottom: 0px;
+  z-index: 1000;
+  right: 0;
+}
+
+.wd-menulayout .weda-drawer-menu {
+  padding-bottom: 62px;
+}

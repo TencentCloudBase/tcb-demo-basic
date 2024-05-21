@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "styleIsolation": "shared",
+  "usingComponents": {
+    "old-radio": "../form/radio",
+    "form-item-wrapper": "../common/form-item-wrapper",
+    "tips": "../form/tips"
+  }
+}

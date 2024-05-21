@@ -1,0 +1,148 @@
+.wd-icon {
+  --wd-icon-size-xxs: 0.875rem;
+  --wd-icon-size-xs: 1rem;
+  --wd-icon-size-sm: 1.25rem;
+  --wd-icon-size-md: 1.5rem;
+  --wd-icon-size-lg: 2rem;
+  --wd-icon-size-xl: 3rem;
+}
+
+.wd-mp-icon.size-self-adaptive,
+.wd-h5-icon.size-self-adaptive {
+  --wd-icon-size-xxs: 1rem;
+  --wd-icon-size-xs: 1.25rem;
+  --wd-icon-size-sm: 1.5rem;
+  --wd-icon-size-md: 2rem;
+  --wd-icon-size-lg: 2rem;
+  --wd-icon-size-xl: 3rem;
+}
+
+.wd-pc-icon.size-self-adaptive {
+  --wd-icon-size-xxs: 0.875rem;
+  --wd-icon-size-xs: 1rem;
+  --wd-icon-size-sm: 1.25rem;
+  --wd-icon-size-md: 1.5rem;
+  --wd-icon-size-lg: 2rem;
+  --wd-icon-size-xl: 3rem;
+}
+
+@font-face {
+  font-family: "wd-lcap-icon";
+  font-weight: normal;
+  font-style: normal;
+  src: url(data:application/font-woff2;charset=utf-8;base64,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) format("woff2");
+}
+.wd-icon--xxs,
+.wd-image.wd-icon.wd-icon--custom--xxs {
+  font-size: var(--wd-icon-size-xxs);
+  width: var(--wd-icon-size-xxs);
+  height: var(--wd-icon-size-xxs);
+}
+.wd-icon--xs,
+.wd-image.wd-icon.wd-icon--custom--xs {
+  font-size: var(--wd-icon-size-xs);
+  width: var(--wd-icon-size-xs);
+  height: var(--wd-icon-size-xs);
+}
+.wd-icon--sm,
+.wd-image.wd-icon.wd-icon--custom--sm {
+  font-size: var(--wd-icon-size-sm);
+  width: var(--wd-icon-size-sm);
+  height: var(--wd-icon-size-sm);
+}
+.wd-icon--md,
+.wd-image.wd-icon.wd-icon--custom--md {
+  font-size: var(--wd-icon-size-md);
+  width: var(--wd-icon-size-md);
+  height: var(--wd-icon-size-md);
+}
+.wd-icon--lg,
+.wd-image.wd-icon.wd-icon--custom--lg {
+  font-size: var(--wd-icon-size-lg);
+  width: var(--wd-icon-size-lg);
+  height: var(--wd-icon-size-lg);
+}
+.wd-icon--xl,
+.wd-image.wd-icon.wd-icon--custom--xl {
+  font-size: var(--wd-icon-size-xl);
+  width: var(--wd-icon-size-xl);
+  height: var(--wd-icon-size-xl);
+}
+.wd-icon--inherit,
+.wd-image.wd-icon.wd-icon--custom--inherit {
+  font-size: inherit;
+  width: auto;
+  height: auto;
+}
+
+.wd-image.wd-icon.wd-icon--custom {
+  max-width: unset;
+}
+
+.wd-lcap-icon {
+  font-family: "wd-lcap-icon" !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+  text-align: center;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: middle;
+  width: 1em;
+  height: 1em;
+}
+
+.t-icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "t" !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+  text-align: center;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: middle;
+  width: 1em;
+  height: 1em;
+}
+
+@keyframes t-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.t-icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.t-icon::before {
+  font-family: unset;
+}
+
+.t-icon-loading {
+  animation: t-spin 1s linear infinite;
+}
+
+.t-icon {
+  fill: currentColor;
+}

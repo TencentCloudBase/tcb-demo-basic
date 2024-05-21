@@ -1,0 +1,1 @@
+<view id="{{id}}" style="{{style}}" class="wd-divider wd-mp-divider {{type === 'solid'? 'wd-divider--solid' : 'wd-divider--dashed'}} {{className}}" />

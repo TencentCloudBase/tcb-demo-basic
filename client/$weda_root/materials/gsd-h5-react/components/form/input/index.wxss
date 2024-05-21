@@ -1,0 +1,22 @@
+@import '../../../style/weda-ui.wxss';
+
+/*
+把weui-cell 的padding还回到input
+*/
+.weda-ui .weui-input {
+  padding: 14px 0;
+}
+
+.weui-btn_input-clear {
+  align-self: center;
+}
+.weda-ui.weda-input .weui-cell_form {
+  padding: 0 16px;
+}
+.weda-ui.weda-input .weui-flex__item .weui-cell_form {
+  padding: 0;
+  padding-right: 16px;
+}
+/**
+ * END
+ */

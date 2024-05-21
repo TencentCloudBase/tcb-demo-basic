@@ -1,0 +1,9 @@
+.weda-ui-custom-picker-view {
+  width: 100%;
+  height: 220px;
+  margin: 65px 0;
+}
+
+.weda-ui-custom-picker-view-indicator {
+  height: 45px;
+}

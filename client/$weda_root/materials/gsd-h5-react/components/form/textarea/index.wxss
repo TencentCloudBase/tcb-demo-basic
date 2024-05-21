@@ -1,0 +1,10 @@
+@import '../../../style/weda-ui.wxss';
+
+.weda-ui .weda-textarea .weui-cell_form {
+  padding: 16px;
+}
+
+.weda-ui .weda-textarea .weui-flex__item .weui-cell_form {
+  padding: 16px;
+  padding-left: 0;
+}

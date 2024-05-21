@@ -1,0 +1,35 @@
+<view class="{{className}} weda-calendar" style="{{style}}">
+  <view class="weda-calendar__control">
+    <view class="{{isTimePicker? 'weda-calendar__prevMonth__timepicker' : 'weda-calendar__prevMonth'}}" wx:if="{{visible}}" bindtap="handlePrevMonth">
+      <image class="weda-calendar__prevMonth-icon" src="arrowright--line.svg" mode="widthFix" />
+    </view>
+    <view class="{{isTimePicker? 'weda-calendar__current-date__no' : 'weda-calendar__current-date'}}">{{year}}年{{month}}月</view>
+    <view class="weda-calendar__nextMonth" wx:if="{{visible}}" bindtap="handleNextMonth">
+      <image class="weda-calendar__nextMonth-icon" src="arrowright--line.svg" mode="widthFix" />
+    </view>
+  </view>
+  <view class="weda-calendar__panel">
+    <view class="weda-calendar__table">
+      <view class="weda-calendar__table-head">
+        <view class="weda-calendar__table-head-row">
+          <view class="weda-calendar__table-head-cell" wx:for="{{headerlist}}" wx:for-index="index" wx:for-item="item" wx:key="index"> {{item.text}} </view>
+        </view>
+      </view>
+      <view class="weda-calendar__table-body">
+        <block wx:for="{{datalist}}" wx:for-item="dateRow" wx:key="index">
+          <view class="weda-calendar__table-body-row">
+            <block wx:for="{{dateRow}}" wx:for-item="dateCell" wx:key="index">
+              <view class="'weda-calendar__table-body-cell' {{(dateCell.belongTo !== 0||dateCell.disabled) ? 'is-invalid ': ''}} {{!dateCell.disabled&&(dateCell.isNow || dateCell.isCurrent) ? 'is-now' : ''}}" bindtap="onSelectDay" data-is-disable="{{dateCell.belongTo !== 0}}" data-day="{{dateCell.dateDay}}" data-item="{{dateCell}}">
+                <view class="weda-calendar__table-body-cell-value">
+                  {{dateCell.dateDay}}
+                  <view class="weda-calendar__table-body-cell-bg"></view>
+                  <view wx:if="{{dateCell.marked}}" class="weda-calendar__table-body-cell-marked" style="background: {{dateCell.marked}}"></view>
+                </view>
+              </view>
+            </block>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

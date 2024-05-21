@@ -1,0 +1,9 @@
+<view class="weda-statistics-card weda-ui {{className}}" style="{{style}}" bind:tap="tap">
+  <view class="weda-statistics-card__wrapper">
+    <view class="weda-statistics-card__title">{{label}}</view>
+    <view class="weda-statistics-card__detail">
+      <text class="weda-statistics-card__count">{{count}}</text>
+      <text class="weda-statistics-card__unit">{{suffix}}</text>
+    </view>
+  </view>
+</view>

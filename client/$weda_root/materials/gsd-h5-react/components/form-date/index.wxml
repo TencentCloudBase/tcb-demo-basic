@@ -1,0 +1,25 @@
+<block wx:if="{{visible}}">
+  <form-item-wrapper>
+    <old-select
+      id="{{id}}"
+      className="{{className}}"
+      style="{{style}}"
+      name="{{name}}"
+      label="{{label}}"
+      disabled="{{disabled}}"
+      layout="{{actualLayout}}"
+      labelVisible="{{labelVisible}}"
+      requiredFlag="{{requiredFlag && required}}"
+      mode="date"
+      dateMode="{{mode}}"
+      defaultDate="{{value}}"
+      endDate="{{end}}"
+      placeholder="{{placeholder}}"
+      size="{{size}}"
+      startDate="{{start}}"
+      bind:change="change"
+      bind:cancel="cancel"
+    />
+    <tips wx:if="{{validateState === 'error' || validateState === 'warn'}}" tips="{{validateErrorMsg}}" type="warn" />
+  </form-item-wrapper>
+</block>

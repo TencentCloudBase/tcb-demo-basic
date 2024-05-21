@@ -1,0 +1,256 @@
+@charset "UTF-8";
+.wd-g-text-default {
+  color: var(--wd-color-text-default);
+}
+
+.wd-g-text-secondary {
+  color: var(--wd-color-text-secondary);
+}
+
+.wd-g-text-placeholder {
+  color: var(--wd-color-text-placeholder);
+}
+
+.wd-g-text-disabled {
+  color: var(--wd-color-text-disabled);
+}
+
+.wd-g-text-brand {
+  color: var(--wd-color-text-brand);
+}
+
+.wd-g-text-error {
+  color: var(--wd-color-text-error);
+}
+
+.wd-g-text-success {
+  color: var(--wd-color-text-success);
+}
+
+.wd-g-text-refresh {
+  color: var(--wd-color-brand);
+}
+
+.wd-g-text-warning,
+.wd-g-text-warn {
+  color: var(--wd-color-text-warning);
+}
+
+.wd-g-text-ellipsis-1 {
+  /*将对象作为弹性伸缩盒子模型显示*/
+  display: -webkit-box;
+  overflow: hidden;
+  /*-webkit-line-clamp不是一个规范的属性，只有chrome浏览器支持，兼容性不好，适用于移动端，因为移动设备浏览器更多是基于webkit内核*/
+  -webkit-line-clamp: 1;
+  /*设置或检索伸缩盒对象的子元素的排列方式*/
+  -webkit-box-orient: vertical;
+}
+
+.wd-g-text-ellipsis-2 {
+  /*将对象作为弹性伸缩盒子模型显示*/
+  display: -webkit-box;
+  overflow: hidden;
+  /*-webkit-line-clamp不是一个规范的属性，只有chrome浏览器支持，兼容性不好，适用于移动端，因为移动设备浏览器更多是基于webkit内核*/
+  -webkit-line-clamp: 2;
+  /*设置或检索伸缩盒对象的子元素的排列方式*/
+  -webkit-box-orient: vertical;
+}
+
+.wd-g-text-ellipsis-3 {
+  /*将对象作为弹性伸缩盒子模型显示*/
+  display: -webkit-box;
+  overflow: hidden;
+  /*-webkit-line-clamp不是一个规范的属性，只有chrome浏览器支持，兼容性不好，适用于移动端，因为移动设备浏览器更多是基于webkit内核*/
+  -webkit-line-clamp: 3;
+  /*设置或检索伸缩盒对象的子元素的排列方式*/
+  -webkit-box-orient: vertical;
+}
+
+.wd-g-text-ellipsis-4 {
+  /*将对象作为弹性伸缩盒子模型显示*/
+  display: -webkit-box;
+  overflow: hidden;
+  /*-webkit-line-clamp不是一个规范的属性，只有chrome浏览器支持，兼容性不好，适用于移动端，因为移动设备浏览器更多是基于webkit内核*/
+  -webkit-line-clamp: 4;
+  /*设置或检索伸缩盒对象的子元素的排列方式*/
+  -webkit-box-orient: vertical;
+}
+
+.wd-g-text-ellipsis-5 {
+  /*将对象作为弹性伸缩盒子模型显示*/
+  display: -webkit-box;
+  overflow: hidden;
+  /*-webkit-line-clamp不是一个规范的属性，只有chrome浏览器支持，兼容性不好，适用于移动端，因为移动设备浏览器更多是基于webkit内核*/
+  -webkit-line-clamp: 5;
+  /*设置或检索伸缩盒对象的子元素的排列方式*/
+  -webkit-box-orient: vertical;
+}
+
+.wd-g-text-ellipsis-6 {
+  /*将对象作为弹性伸缩盒子模型显示*/
+  display: -webkit-box;
+  overflow: hidden;
+  /*-webkit-line-clamp不是一个规范的属性，只有chrome浏览器支持，兼容性不好，适用于移动端，因为移动设备浏览器更多是基于webkit内核*/
+  -webkit-line-clamp: 6;
+  /*设置或检索伸缩盒对象的子元素的排列方式*/
+  -webkit-box-orient: vertical;
+}
+
+.wd-g-text-ellipsis-7 {
+  /*将对象作为弹性伸缩盒子模型显示*/
+  display: -webkit-box;
+  overflow: hidden;
+  /*-webkit-line-clamp不是一个规范的属性，只有chrome浏览器支持，兼容性不好，适用于移动端，因为移动设备浏览器更多是基于webkit内核*/
+  -webkit-line-clamp: 7;
+  /*设置或检索伸缩盒对象的子元素的排列方式*/
+  -webkit-box-orient: vertical;
+}
+
+.wd-g-text-ellipsis-8 {
+  /*将对象作为弹性伸缩盒子模型显示*/
+  display: -webkit-box;
+  overflow: hidden;
+  /*-webkit-line-clamp不是一个规范的属性，只有chrome浏览器支持，兼容性不好，适用于移动端，因为移动设备浏览器更多是基于webkit内核*/
+  -webkit-line-clamp: 8;
+  /*设置或检索伸缩盒对象的子元素的排列方式*/
+  -webkit-box-orient: vertical;
+}
+
+.wd-g-text-ellipsis-9 {
+  /*将对象作为弹性伸缩盒子模型显示*/
+  display: -webkit-box;
+  overflow: hidden;
+  /*-webkit-line-clamp不是一个规范的属性，只有chrome浏览器支持，兼容性不好，适用于移动端，因为移动设备浏览器更多是基于webkit内核*/
+  -webkit-line-clamp: 9;
+  /*设置或检索伸缩盒对象的子元素的排列方式*/
+  -webkit-box-orient: vertical;
+}
+
+.wd-g-text-ellipsis-10 {
+  /*将对象作为弹性伸缩盒子模型显示*/
+  display: -webkit-box;
+  overflow: hidden;
+  /*-webkit-line-clamp不是一个规范的属性，只有chrome浏览器支持，兼容性不好，适用于移动端，因为移动设备浏览器更多是基于webkit内核*/
+  -webkit-line-clamp: 10;
+  /*设置或检索伸缩盒对象的子元素的排列方式*/
+  -webkit-box-orient: vertical;
+}
+
+.wd-g-user-select-auto {
+  user-select: auto;
+}
+
+.wd-g-user-select-none {
+  user-select: none;
+}
+
+.wd-g-white-space-pre-line {
+  white-space: pre-line;
+}
+
+.wd-g-white-space-pre-wrap {
+  white-space: pre-wrap;
+}
+
+.wd-g-white-space-pre {
+  white-space: pre;
+}
+
+.wd-g-word-break {
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.wd-typography {
+  --wd-body-margin-top: 0;
+  --wd-body-margin-bottom: 0;
+  --wd-title-margin-top: 0;
+  --wd-title-margin-bottom: 0;
+}
+
+.wd-typography {
+  color: var(--wd-color-text-default);
+  font-size: var(--wd-font-size-default);
+  line-height: var(--wd-font-line-height-default);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: inherit;
+  font-weight: inherit;
+}
+.wd-typography-body-sm {
+  font: var(--wd-typography-body-sm);
+  margin-top: var(--wd-body-margin-top);
+  margin-bottom: var(--wd-body-margin-bottom);
+}
+.wd-typography-body-md {
+  font: var(--wd-typography-body-md);
+  margin-top: var(--wd-body-margin-top);
+  margin-bottom: var(--wd-body-margin-bottom);
+}
+.wd-typography-body-lg {
+  font: var(--wd-typography-body-lg);
+  margin-top: var(--wd-body-margin-top);
+  margin-bottom: var(--wd-body-margin-bottom);
+}
+.wd-typography-display-lg {
+  font: var(--wd-typography-display-lg);
+  margin-top: var(--wd-title-margin-top);
+  margin-bottom: var(--wd-title-margin-bottom);
+}
+.wd-typography-display-md {
+  font: var(--wd-typography-display-md);
+  margin-top: var(--wd-title-margin-top);
+  margin-bottom: var(--wd-title-margin-bottom);
+}
+.wd-typography-headline-lg {
+  font: var(--wd-typography-headline-lg);
+  margin-top: var(--wd-title-margin-top);
+  margin-bottom: var(--wd-title-margin-bottom);
+}
+.wd-typography-headline-md {
+  font: var(--wd-typography-headline-md);
+  margin-top: var(--wd-title-margin-top);
+  margin-bottom: var(--wd-title-margin-bottom);
+}
+.wd-typography-headline-sm {
+  font: var(--wd-typography-headline-sm);
+  margin-top: var(--wd-title-margin-top);
+  margin-bottom: var(--wd-title-margin-bottom);
+}
+.wd-typography-title-xs {
+  font: var(--wd-typography-title-xs);
+  margin-top: var(--wd-title-margin-top);
+  margin-bottom: var(--wd-title-margin-bottom);
+}
+.wd-typography-title-sm {
+  font: var(--wd-typography-title-sm);
+  margin-top: var(--wd-title-margin-top);
+  margin-bottom: var(--wd-title-margin-bottom);
+}
+.wd-typography-title-md {
+  font: var(--wd-typography-title-md);
+  margin-top: var(--wd-title-margin-top);
+  margin-bottom: var(--wd-title-margin-bottom);
+}
+.wd-typography-title-lg {
+  font: var(--wd-typography-title-lg);
+  margin-top: var(--wd-title-margin-top);
+  margin-bottom: var(--wd-title-margin-bottom);
+}
+.wd-typography-title-xl {
+  font: var(--wd-typography-title-xl);
+  margin-top: var(--wd-title-margin-top);
+  margin-bottom: var(--wd-title-margin-bottom);
+}
+.wd-typography__inherit-color {
+  color: inherit;
+}
+
+.wd-typography {
+  display: block;
+}
+.wd-typography.wd-g-text-ellipsis-1, .wd-typography.wd-g-text-ellipsis-2, .wd-typography.wd-g-text-ellipsis-3, .wd-typography.wd-g-text-ellipsis-4, .wd-typography.wd-g-text-ellipsis-5, .wd-typography.wd-g-text-ellipsis-6, .wd-typography.wd-g-text-ellipsis-7, .wd-typography.wd-g-text-ellipsis-8, .wd-typography.wd-g-text-ellipsis-9, .wd-typography.wd-g-text-ellipsis-10 {
+  display: -webkit-box;
+}

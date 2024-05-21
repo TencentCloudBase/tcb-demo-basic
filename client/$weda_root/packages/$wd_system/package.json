@@ -1,0 +1,8 @@
+{
+  "name": "wd-system-sub-package",
+  "version": "0.0.1",
+  "scripts": {},
+  "dependencies": {
+  "aegis-mp-sdk": "~1.38.1"
+}
+}

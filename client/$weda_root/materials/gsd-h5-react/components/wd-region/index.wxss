@@ -1,0 +1,4 @@
+.weui-cells::after,
+.weui-cells::before {
+  display: none;
+}

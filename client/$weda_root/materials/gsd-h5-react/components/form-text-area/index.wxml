@@ -1,0 +1,26 @@
+<block wx:if="{{visible}}">
+  <form-item-wrapper>
+    <old-textarea
+      id="{{id}}"
+      className="{{className}}"
+      style="{{style}}"
+      requiredFlag="{{requiredFlag && required}}"
+      label="{{label}}"
+      layout="{{actualLayout}}"
+      labelVisible="{{labelVisible}}"
+      defaultValue="{{value}}"
+      placeholder="{{placeholder}}"
+      size="{{size}}"
+      type="{{type}}"
+      focus="{{focus}}"
+      disabled="{{disabled}}"
+      maxLength="{{maxLength}}"
+      counterVisible="{{counterVisible}}"
+      bind:change="handleChange"
+      bind:focus="handleFocus"
+      bind:blur="handleBlur"
+      bind:confirm="handleConfirm"
+    />
+    <tips wx:if="{{validateState === 'error' || validateState === 'warn'}}" tips="{{validateErrorMsg}}" type="warn" />
+  </form-item-wrapper>
+</block>

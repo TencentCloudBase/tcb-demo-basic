@@ -1,0 +1,32 @@
+<view class="wd-status" wx:if="{{visible}}">
+  <view style="transform: translateY(-20px);width: 100%;">
+    <view class="wd-status__img {{type === 'notfound'?'wd-status--notfound':''}}">
+      <view
+        class="icon"
+        wx:if="{{type !== 'loading'}}"
+      />
+      <view wx:if="{{type === 'loading'}}" class="sp sp-circle"></view>
+    </view>
+    <view class="wd-status__content">
+      <view class="wd-status__title" style="text-align: center; margin-bottom: 5px; font-size: 28rpx; font-weight: 600;">
+        {{message}}
+        <block wx:if="{{type === 'expired'}}"><text style="text-decoration: underline" bind:tap="showCustomService">添加客服</text>可获得付费套餐折扣优惠。</block>
+      </view>
+      <view class="tea-status__detail" wx:if="{{error}}">
+        <view class="stack">
+          <view>
+            <text style="font-weight: 600; font-size:14px;">错误信息：</text>
+            <text style="font-size:14px;" user-select="true">{{error.message}}</text>
+          </view>
+          <!-- <view wx:if="{{error.stack}}">
+            <text style="font-weight: 600;">错误堆栈：</text>
+            <text>{{error.stack}}</text>
+          </view> -->
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{type == 'auth'}}" class="wd-status__operate" style="display: flex;">
+      <button style="margin-top: 10px; width: 200rpx; border: 1px solid #DCDCDC; border-radius: 3px;" variant="outline" type="default" size="mini" plain="true" bind:tap="login">{{toLogin?'登录':'返回首页'}}</button>
+    </view>
+  </view>
+</view>

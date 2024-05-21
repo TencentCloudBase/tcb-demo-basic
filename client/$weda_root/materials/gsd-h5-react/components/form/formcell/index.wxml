@@ -1,0 +1,11 @@
+<view class="{{className}}" style="{{style}}">
+  <view class="{{cls}}">
+    <view wx:if="{{!!label}}" class="weda-formcells__label weui-cell">
+      <label wx:if="{{requiredFlag}}" class="weda-formcells__flag">*</label>
+      <label>{{label}}</label>
+    </view>
+    <view class="weda-formcells__content {{isFlex ? 'weui-flex__item' : ''}}">
+      <slot></slot>
+    </view>
+  </view>
+</view>

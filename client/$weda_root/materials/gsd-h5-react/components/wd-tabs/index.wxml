@@ -1,0 +1,34 @@
+<view id="{{id}}" style="{{style}}" class="{{classPrefix + '-tabs-root'}} {{classPrefix + '-tabs-h5-root'}} {{classPrefix + '-tabs-mp-root'}} {{direction==='vertical' ? 'wd-tabs--vertical' : ''}} {{className}}">
+  <view class="{{classPrefix + '-tabs__header'}}">
+    <view class="{{classPrefix + '-tabs__header-item-wrap' }}">
+      <view class="{{classPrefix + '-tabs__header-item-content'}}">
+        <scroll-view scroll-x="true" scroll-into-view="{{scrollId}}" class="{{classPrefix + '-tabs__scroll'}}" enable-flex="true" wx:if="{{direction!=='vertical'}}">
+          <view wx:for="{{list}}" class="{{classPrefix + '-tabs__item'}} {{item.selected?'is-selected':''}} {{item.isDisabled?'is-disabled':''}}" wx:for-index="index" wx:for-item="item" wx:key="index" id="{{'cell-'+index}}" bindtap="onItemClick" data-value="{{index}}" data-item="{{item}}">
+            <view wx-if="{{item.iconType !== 'none' && item.iconPosition === 'prefix'}}" class="{{classPrefix + '-tabs__item-icon'}}">
+              <wd-icon type="{{item.iconType}}" name="{{ item.iconType === 'inner' ? item.innerIcon : item.outerImage}}" src="{{item.iconType === 'custom' ? item.outerImage : ''}}" size="xs" />
+            </view>
+            <view class="{{classPrefix + '-tabs__item-text'}}"> {{item.label}} </view>
+            <view wx-if="{{item.iconType !== 'none' && item.iconPosition === 'suffix'}}" class="{{classPrefix + '-tabs__item-icon'}}">
+              <wd-icon type="{{item.iconType}}" name="{{ item.iconType === 'inner' ? item.innerIcon : item.outerImage}}" src="{{item.iconType === 'custom' ? item.outerImage : ''}}" size="xs" />
+            </view>
+          </view>
+        </scroll-view>
+        <view wx:if="{{direction==='vertical'}}" wx:for="{{list}}" class="{{classPrefix + '-tabs__item'}} {{item.selected?'is-selected':''}} {{item.isDisabled?'is-disabled':''}}" wx:for-index="index" wx:for-item="item" wx:key="index" id="{{'cell-'+index}}" bindtap="onItemClick" data-value="{{index}}" data-item="{{item}}">
+          <view wx-if="{{item.iconType !== 'none' && item.iconPosition === 'prefix'}}" class="{{classPrefix + '-tabs__item-icon'}}">
+            <wd-icon type="{{item.iconType}}" name="{{ item.iconType === 'inner' ? item.innerIcon : item.outerImage}}" src="{{item.iconType === 'custom' ? item.outerImage : ''}}" size="xs" />
+          </view>
+          <view class="{{classPrefix + '-tabs__item-text'}}"> {{item.label}} </view>
+          <view wx-if="{{item.iconType !== 'none' && item.iconPosition === 'suffix'}}" class="{{classPrefix + '-tabs__item-icon'}}">
+            <wd-icon type="{{item.iconType}}" name="{{ item.iconType === 'inner' ? item.innerIcon : item.outerImage}}" src="{{item.iconType === 'custom' ? item.outerImage : ''}}" size="xs" />
+          </view>
+        </view>
+        <view wx:if="{{showMask && direction!=='vertical'}}" class="{{classPrefix + '-tabs__header-item-mask'}}"></view>
+      </view>
+    </view>
+  </view>
+  <view class="{{classPrefix + '-tabs__body' }}">
+    <view class="{{classPrefix + '-tabs__body-content' }}">
+      <slot></slot>
+    </view>
+  </view>
+</view>

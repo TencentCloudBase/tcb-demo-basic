@@ -1,0 +1,13 @@
+@import '../../style/weda-ui.wxss';
+
+.weui-btn.weui-btn_primary:not(.weui-btn_disabled):active {
+  background-color: var(--weui-TAG-TEXT-BLUE);
+}
+.weda-ui.weui-btn.weui-btn_large {
+  font-size: large;
+  display: block;
+  padding-left: 7px;
+  padding-right: 7px;
+  text-align: center;
+  width: 100%;
+}

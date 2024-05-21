@@ -1,0 +1,23 @@
+@import '../../style/weda-ui.wxss';
+@import '../../style/wd-design.wxss';
+@import '../../style/wedatea2td.wxss';
+@import './wd-form.wxss';
+
+/*
+表单模版内置样式 {{{
+*/
+.wd-form-title__text.wd-mp-typography {
+  margin-left: 16px;
+  margin-right: 16px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.wd-mp-form .wd-form-title {
+  --wd-form-item-mb: 0px;
+  padding-top: 16px;
+  padding-bottom: 8px;
+}
+
+/*
+  表单模版内置样式 END }}}
+  */

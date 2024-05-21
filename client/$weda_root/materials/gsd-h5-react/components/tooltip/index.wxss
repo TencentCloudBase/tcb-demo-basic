@@ -1,0 +1,72 @@
+@import '../../style/wd-design.wxss';
+@import './wd-tooltip.wxss';
+
+.wd-tooltip {
+  position: relative;
+  display: inline-block;
+}
+.wd-tooltip__pos {
+  position: absolute;
+  min-width: fit-content;
+  min-height: fit-content;
+  font-size: 14px;
+  backdrop-filter: blur(10px);
+  background-clip: padding-box;
+  border-radius: 2px;
+  background: #fff;
+  color: rgba(0, 0, 0, 0.9);
+  text-align: center;
+  box-sizing: border-box;
+  z-index: 10;
+}
+.wd-tooltip__hidden {
+  left: -100vw;
+  bottom: -100vh;
+  visibility: hidden;
+}
+.wd-tooltip__container {
+  line-height: 18px;
+  font-size: 14px;
+}
+.wd-tooltip__inner {
+  padding: 12px;
+  white-space: nowrap;
+  line-height: 18px;
+  box-shadow: 0 6px 30px 5px rgba(0, 0, 0, 0.05),
+    0 16px 24px 2px rgba(0, 0, 0, 0.04), 0 8px 10px -5px rgba(0, 0, 0, 0.08),
+    inset 0 0.5px 0 #dcdcdc, inset 0.5px 0 0 #dcdcdc, inset 0 -0.5px 0 #dcdcdc,
+    inset -0.5px 0 0 #dcdcdc;
+}
+.wd-tooltip__arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+.wd-tooltip__arrow-down {
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 9px solid rgba(255, 255, 255, 1);
+  transform: translate(-50%, -2px);
+  bottom: -9px;
+}
+.wd-tooltip__arrow-up {
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 9px solid rgba(255, 255, 255, 0.8);
+  transform: translateX(-50%);
+  top: -9px;
+}
+.wd-tooltip__arrow-left {
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-right: 9px solid rgba(255, 255, 255, 0.8);
+  transform: translateY(-50%);
+  left: -9px;
+}
+.wd-tooltip__arrow-right {
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 9px solid rgba(255, 255, 255, 0.8);
+  transform: translateY(-50%);
+  right: -9px;
+}

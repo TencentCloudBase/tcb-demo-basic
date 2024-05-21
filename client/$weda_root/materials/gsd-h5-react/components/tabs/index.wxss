@@ -1,0 +1,61 @@
+.weda-tabs {
+  width: 100%;
+}
+.weda-tabs__panel {
+  min-height: 50px;
+}
+.weda-tabs__nav {
+  width: 100%;
+  height: 45px;
+  background-color: #fff;
+  position: relative;
+  white-space: nowrap;
+  border-bottom: 1px solid #eee;
+  display: flex;
+}
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.weda-tabs__nav-cell {
+  flex-basis: 0;
+  flex-grow: 1;
+  height: 100%;
+  font-size: 1em;
+  color: #000;
+  box-sizing: border-box;
+  padding: 0 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: unset;
+  position: relative;
+}
+.weda-tabs__nav-cell.scroll {
+  flex-basis: auto;
+  flex-shrink: 0;
+  flex-grow: 0;
+  width: unset;
+}
+.weda-tabs__nav-cell.active {
+  color: var(--wd-color-brand, #0052d9);
+}
+
+.weda-tabs__nav-cell::after {
+  display: block;
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  width: 0;
+  border-bottom: 2px solid transparent;
+}
+
+.weda-tabs__nav-cell.active::after {
+  width: 100%;
+  border-bottom-color: var(--wd-color-brand, #0052d9);
+  transition: border-color 0.15s ease-in-out, width 0.15s ease-in-out,
+    height 0.15s ease-in-out;
+}

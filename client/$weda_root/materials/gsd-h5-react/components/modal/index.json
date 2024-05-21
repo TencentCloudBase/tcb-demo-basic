@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "styleIsolation": "shared",
+  "usingComponents": {
+    "container": "../container/index",
+    "weda-button": "../button/index",
+    "weda-text": "../text/index"
+  }
+}

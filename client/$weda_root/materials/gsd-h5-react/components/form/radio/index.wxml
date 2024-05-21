@@ -1,0 +1,13 @@
+<formcell className="{{cls}}" style="{{style}}" label="{{labelVisible ? label : null}}" layout="{{layout}}" multiCell="{{true}}" requiredFlag="{{requiredFlag}}">
+  <radio-group class="{{isFlex ? 'weui-flex__item' : ''}}" bindchange="change">
+    <label class="{{subCls}}" wx:for="{{defaultRange}}" wx:key="value">
+      <view class="weui-cell__hd">
+        <radio class="weui-check" value="{{item.value}}" checked="{{item.checked}}" disabled="{{disabled}}" />
+        <i class="weui-icon-checked" />
+      </view>
+      <view class="weui-cell__bd">
+        <view>{{item.label}}</view>
+      </view>
+    </label>
+  </radio-group>
+</formcell>

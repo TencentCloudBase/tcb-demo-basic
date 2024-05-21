@@ -1,0 +1,41 @@
+<block wx:if="{{visible}}">
+  <wd-form-item
+    id="{{id}}"
+    className="{{className}}"
+    style="{{style}}"
+    label="{{label}}"
+    labelVisible="{{labelVisible}}"
+    labelTips="{{labelTips}}"
+    labelWidth="{{labelWidth}}"
+    labelAlign="{{labelAlign}}"
+    labelWrap="{{labelWrap}}"
+    layout="{{actualLayout}}"
+    extra="{{extra}}"
+    required="{{required}}"
+    readOnly="{{readOnly}}"
+    requiredFlag="{{requiredFlag}}"
+    validateState="{{validateState}}"
+    validateErrorMsg="{{validateErrorMsg}}"
+    readValue="{{readValue}}"
+    classRoot="{{classRoot}}"
+    size="{{size}}"
+    borderedH5="{{borderedH5}}"
+    before="{{before}}"
+    after="{{after}}"
+  >
+    <wd-input-group before="{{before}}" after="{{after}}" block="{{true}}" size="{{_size}}" classRoot="{{classRoot}}">
+      <wd-input-wrap block="{{block}}" classRoot="{{classRoot}}" before="{{before}}" after="{{after}}" disabled="{{disabled}}" prefixType="{{prefixType}}" prefixIcon="{{prefixIcon}}" prefixSrc="{{prefixSrc}}" suffixType="{{suffixType}}" suffixIcon="{{suffixIcon}}" suffixSrc="{{suffixSrc}}" hasClearIcon="{{clearable && !disabled && (value != null)}}" bind:onClear="handleClear">
+        <view class="{{classPrefix}}-form-select_input {{classPrefix}}-form-select_input--range" bind:tap="handleOpen">
+          <text class="{{classPrefix}}-form-select_input-{{valueDisplay[0]?'value':'placeholder'}}">{{valueDisplay[0] || startPlaceholder}}</text>
+          <text class="{{classPrefix}}-form-select_input-split">-</text>
+          <text class="{{classPrefix}}-form-select_input-{{valueDisplay[1]?'value':'placeholder'}}">{{valueDisplay[1] || endPlaceholder}}</text>
+        </view>
+      </wd-input-wrap>
+    </wd-input-group>
+  </wd-form-item>
+
+  <block wx:if="{{pickerVisible}}">
+    <date-picker wx:if="{{step === 'start'}}" value="{{_value && _value[0]}}" start="{{_start}}" end="{{_end}}" mode="{{mode}}" okText="下一步" maskClosable="{{false}}" bind:onClose="handleCancel" bind:onOk="handleNext" />
+    <date-picker wx:if="{{step === 'end'}}" value="{{_value && _value[1]}}" start="{{_start}}" end="{{_end}}" mode="{{mode}}" cancelText="上一步" maskClosable="{{false}}" bind:onClose="handlePre" bind:onOk="handleChange" />
+  </block>
+</block>

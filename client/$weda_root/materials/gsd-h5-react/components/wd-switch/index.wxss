@@ -1,0 +1,2 @@
+@import '../../style/wd-design.wxss';
+@import './wd-switch.wxss';

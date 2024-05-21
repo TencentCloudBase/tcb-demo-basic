@@ -1,0 +1,9 @@
+/**index.wxss**/
+ec-canvas {
+  width: 100%;
+  height: 100%;
+}
+.ec_container {
+  width: 100%;
+  height: 380px;
+}

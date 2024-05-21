@@ -1,0 +1,27 @@
+.weda-text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  /* -webkit-line-clamp: 1; */
+  /* white-space: pre-line; */
+  word-break: break-all;
+}
+.weda-text.level_1 {
+  font-size: 64px !important;
+}
+.weda-text.level_2 {
+  font-size: 56px !important;
+}
+.weda-text.level_3 {
+  font-size: 48px !important;
+}
+.weda-text.level_4 {
+  font-size: 40px !important;
+}
+.weda-text.level_5 {
+  font-size: 32px !important;
+}
+.weda-text.level_6 {
+  font-size: 24px !important;
+}

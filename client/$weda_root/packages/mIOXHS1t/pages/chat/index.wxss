@@ -1,0 +1,28 @@
+page { background: rgb(247, 249, 252); }
+
+#wd-page-root .wd-comp-id-menuLayout1{background-size:cover;background-image:linear-gradient(135deg, rgba(255,255,255, 0.2) 25%, rgba(255,255,255, 0.8) 75%), radial-gradient(ellipse at top left, var(--wd-color-brand-2), transparent 70%), radial-gradient(ellipse at top right, var(--wd-color-success-2), transparent 70%), radial-gradient(ellipse at bottom right, var(--wd-color-warning-2), transparent 70%), radial-gradient(ellipse at bottom left, var(--wd-color-brand-2), transparent 70%)}
+#wd-page-root .wd-comp-id-text1:active{box-shadow:unset}
+#wd-page-root .wd-comp-id-container24{height:100%;margin:0px 0px 0px;padding:100px 16px 0px;background-image:linear-gradient(180deg, rgba(255,255,255, 0.01), rgba(255,255,255, 1) 85%), radial-gradient(ellipse at top left, var(--wd-color-brand-focus), transparent 50%), radial-gradient(ellipse at top right, var(--wd-color-success-focus), transparent 50%), radial-gradient(ellipse at center right, var(--wd-color-warning-focus), transparent 50%), radial-gradient(ellipse at center left, var(--wd-color-brand-active), transparent 50%)}.wd-pc-root 
+#wd-page-root .wd-comp-id-container24{padding-top:200px}
+#wd-page-root .wd-comp-id-text12{padding:0px 0px 24px;font-weight:700}
+#wd-page-root .wd-comp-id-button4{white-space:wrap !important}
+#wd-page-root .wd-comp-id-button4 text{white-space:wrap !important}
+#wd-page-root .wd-comp-id-button13:not(:hover):not(:active){background-color:rgba(255,255,255, 0.9)}
+#wd-page-root .wd-comp-id-textarea1{width:100%}
+#wd-page-root .wd-comp-id-textarea1.wd-form-item{background:transparent}
+#wd-page-root .wd-comp-id-textarea1 .wd-form-input-wrap{border:2px solid #ddd !important;padding:16px 16px 4px 16px!important;background-color:#fff;border-radius:8px;box-shadow:var(--wd-shadow-lg);border-color:transparent!important}
+#wd-page-root .wd-comp-id-textarea1 .wd-form-input-wrap textarea{padding-right:30px!important;padding-left:8px!important;box-sizing:border-box}
+#wd-page-root .wd-comp-id-textarea1 .wd-form-input-wrap.is-focused{border-color:var(--wd-color-brand)!important}
+#wd-page-root .wd-comp-id-textarea1.wd-pc-textarea-root{padding:16px;padding-top:0}
+#wd-page-root .wd-comp-id-textarea1.wd-h5-textarea-root .wd-form-item-wrap__control,.wd-comp-id-textarea1.wd-mp-textarea-root .wd-form-item-wrap__control{padding-top:0}
+#wd-page-root .wd-comp-id-button1{position:absolute;bottom:50px;right:28px;border-radius:50%;width:40px;height:40px;z-index:10}
+#wd-page-root .wd-comp-id-button1.wd-pc-btn{bottom:56px;right:36px;z-index:10}
+#wd-page-root .wd-comp-id-container3{height:75px;display:flex;flex-direction:column;top:0;width:100%;z-index:900}
+#wd-page-root .wd-comp-id-text5{width:200px;margin:0px 0px 0px 16px}
+#wd-page-root .wd-comp-id-input1.wd-pc-input-root{padding:16px}
+#wd-page-root .wd-comp-id-text9.wd-mp-typography,.wd-comp-id-text9.wd-h5-typography{height:64px}
+#wd-page-root .wd-comp-id-text9.wd-pc-typography{height:57px}
+#wd-page-root .wd-comp-id-container5{background-image:linear-gradient(180deg, rgba(255,255,255, 0.01), rgba(255,255,255, 1) 85%), radial-gradient(ellipse at top left, var(--wd-color-brand-focus), transparent 50%), radial-gradient(ellipse at top right, var(--wd-color-success-focus), transparent 50%), radial-gradient(ellipse at center right, var(--wd-color-warning-focus), transparent 50%), radial-gradient(ellipse at center left, var(--wd-color-brand-active), transparent 50%)}
+#wd-page-root .wd-comp-id-container7{height:50px;display:flex;flex-direction:column;top:0;width:100%;z-index:900}
+@import "../../../../lowcode/style.wxss";
+@import "../../lowcode/chat/style.wxss"

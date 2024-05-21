@@ -1,0 +1,99 @@
+.wd-form-input-group {
+  --wd-form-input-group-border-radius: var(--wd-border-radius);
+  --wd-form-input-group-text-default: var(--wd-color-text-form-default);
+  --wd-form-input-group-text-hover: var(--wd-color-text-form-default);
+  --wd-form-input-group-text-focus: var(--wd-color-text-form-default);
+  --wd-form-input-group-text-disabled: var(--wd-color-text-form-disabled);
+  --wd-form-input-group-bg-default: var(--wd-color-bg-form-default);
+  --wd-form-input-group-bg-hover: var(--wd-color-bg-form-default);
+  --wd-form-input-group-bg-focus: var(--wd-color-bg-form-default);
+  --wd-form-input-group-bg-disabled: var(--wd-color-bg-form-disabled);
+  --wd-form-input-group-border-default: var(--wd-color-border-form-default);
+  --wd-form-input-group-border-hover: var(--wd-color-brand);
+  --wd-form-input-group-border-focus: var(--wd-color-brand-focus);
+  --wd-form-input-group-border-disabled: var(--wd-color-border-form-disabled);
+  --wd-form-input-group-height-sm: var(--wd-form-item-height-sm);
+  --wd-form-input-group-height-md: var(--wd-form-item-height-md);
+  --wd-form-input-group-height-lg: var(--wd-form-item-height-lg);
+  --wd-form-input-group-width-sm: var(--wd-form-width-sm);
+  --wd-form-input-group-width-md: var(--wd-form-width-md);
+  --wd-form-input-group-width-lg: var(--wd-form-width-lg);
+  --wd-form-input-addon-padding: 0.3125rem 0.5rem;
+  --wd-form-input-addon-bg: var(--wd-color-gray-1);
+  --wd-form-input-addon-border-default: var(
+    --wd-color-gray-4
+  );
+}
+
+.wd-form-input-group {
+  color: var(--wd-color-text-default);
+  font-size: var(--wd-font-size-default);
+  line-height: var(--wd-font-line-height-default);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  width: var(--wd-form-input-group-width-md);
+  height: var(--wd-form-input-group-height-md);
+}
+.wd-form-input-group__addon {
+  flex: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: var(--wd-form-input-addon-padding);
+  background: var(--wd-form-input-addon-bg);
+  border: 1px solid var(--wd-form-input-addon-border-default);
+}
+.wd-form-input-group__addon-left {
+  margin-right: -1px;
+  border-radius: var(--wd-form-input-group-border-radius) 0 0 var(--wd-form-input-group-border-radius);
+}
+.wd-form-input-group__addon-right {
+  border-width: 1px 1px 1px 0;
+  border-radius: 0 var(--wd-form-input-group-border-radius) var(--wd-form-input-group-border-radius) 0;
+}
+.wd-form-input-group .wd-form-input-wrap {
+  width: 100%;
+  height: 100%;
+}
+.wd-form-input-group__content {
+  flex: 1 1 0px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.wd-form-input-group.size-font-sm {
+  font: var(--wd-typography-body-sm);
+}
+.wd-form-input-group.size-height-sm {
+  height: var(--wd-form-height-sm);
+}
+.wd-form-input-group.size-width-sm {
+  width: var(--wd-form-width-sm);
+}
+.wd-form-input-group.size-font-md {
+  font: var(--wd-typography-body-md);
+}
+.wd-form-input-group.size-height-md {
+  height: var(--wd-form-item-height-md);
+}
+.wd-form-input-group.size-width-md {
+  width: var(--wd-form-width-md);
+}
+.wd-form-input-group.size-font-lg {
+  font: var(--wd-typography-body-lg);
+}
+.wd-form-input-group.size-height-lg {
+  height: var(--wd-form-item-height-lg);
+}
+.wd-form-input-group.size-width-lg {
+  width: var(--wd-form-width-lg);
+}
+.wd-form-input-group.size-width-hundred {
+  width: 100%;
+}

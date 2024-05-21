@@ -1,0 +1,5 @@
+@import '../../../style/weda-ui.wxss';
+
+.weda-ui.weui-form .weui-cells__group .weda-tips.weui-cells__tips {
+  padding-left: 16px;
+}

@@ -1,0 +1,36 @@
+<view class="{{className}} weda-calendar" style="{{style}}" id="{{id}}">
+  <view class="weda-calendar__control">
+    <view class="weda-calendar__prevMonth" wx:if="{{initVisible}}" data-diff="{{-1}}" bindtap="handleChangeMonth">
+      <image class="weda-calendar__prevMonth-icon" src="arrowright--line.svg" mode="widthFix" />
+    </view>
+    <view class="weda-calendar__current-date">{{yearMonthDisplay}}</view>
+    <view class="weda-calendar__nextMonth" wx:if="{{initVisible}}" data-diff="{{1}}" bindtap="handleChangeMonth">
+      <image class="weda-calendar__nextMonth-icon" src="arrowright--line.svg" mode="widthFix" />
+    </view>
+  </view>
+
+  <view class="weda-calendar__panel">
+    <view class="weda-calendar__table">
+      <view class="weda-calendar__table-head">
+        <view class="weda-calendar__table-head-row">
+          <view class="weda-calendar__table-head-cell" wx:for="{{WEEKS}}" wx:key="*this"> {{item}} </view>
+        </view>
+      </view>
+      <view class="weda-calendar__table-body">
+        <block wx:for="{{weeks}}" wx:for-item="week" wx:key="index">
+          <view class="weda-calendar__table-body-row">
+            <block wx:for="{{week}}" wx:key="ymd">
+              <view class="weda-calendar__table-body-cell {{item.disabled ? 'is-disabled' : ''}} {{checkedDay === item.ymd ? 'is-checked': ''}} {{checkedDay !== item.ymd && (item.isNext || item.isPre) ? 'is-invalid' : ''}}" bindtap="handleChange" data-item="{{item}}">
+                <view class="weda-calendar__table-body-cell-value">
+                  {{item.day}}
+                  <view class="weda-calendar__table-body-cell-bg"></view>
+                  <view wx:if="{{item.marked}}" class="weda-calendar__table-body-cell-marked" style="background: {{item.marked}}"></view>
+                </view>
+              </view>
+            </block>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

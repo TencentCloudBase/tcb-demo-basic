@@ -1,0 +1,29 @@
+<block wx:if="{{visible}}">
+  <form-item-wrapper>
+    <old-input
+      id="{{id}}"
+      name="{{name}}"
+      className="{{className}}"
+      style="{{style}}"
+      requiredFlag="{{requiredFlag && required}}"
+      label="{{label}}"
+      layout="{{actualLayout}}"
+      labelVisible="{{labelVisible}}"
+      clearable="{{clearable}}"
+      maxLength="{{maxLength}}"
+      password="{{password}}"
+      defaultValue="{{value}}"
+      placeholder="{{placeholder}}"
+      size="{{size}}"
+      disabled="{{disabled}}"
+      type="{{type}}"
+      focus="{{focus}}"
+      isNickNameType="{{isNickNameType}}"
+      bind:change="handleChange"
+      bind:focus="handleFocus"
+      bind:blur="handleBlur"
+      bind:confirm="handleConfirm"
+    />
+    <tips wx:if="{{validateState === 'error' || validateState === 'warn'}}" tips="{{validateErrorMsg}}" type="warn" />
+  </form-item-wrapper>
+</block>

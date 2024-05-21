@@ -1,0 +1,220 @@
+.wd-form-input-wrap {
+  --wd-form-input-wrap-border-radius: var(--wd-border-radius);
+  --wd-form-input-wrap-text-default: var(--wd-color-text-form-default);
+  --wd-form-input-wrap-text-hover: var(--wd-color-text-form-default);
+  --wd-form-input-wrap-text-focus: var(--wd-color-text-form-default);
+  --wd-form-input-wrap-text-disabled: var(--wd-color-text-form-disabled);
+  --wd-form-input-wrap-bg-default: transparent;
+  --wd-form-input-wrap-bg-hover: transparent;
+  --wd-form-input-wrap-bg-focus: transparent;
+  --wd-form-input-wrap-bg-disabled: var(--wd-color-bg-form-disabled);
+  --wd-form-input-wrap-border-default: var(--wd-color-border-form-default);
+  --wd-form-input-wrap-border-hover: var(--wd-color-brand);
+  --wd-form-input-wrap-border-focus: var(--wd-color-brand-focus);
+  --wd-form-input-wrap-border-disabled: var(--wd-color-border-form-disabled);
+  --wd-form-input-wrap-height-sm: var(--wd-form-item-height-sm);
+  --wd-form-input-wrap-height-md: var(--wd-form-item-height-md);
+  --wd-form-input-wrap-height-lg: var(--wd-form-item-height-lg);
+  --wd-form-input-wrap-width-sm: var(--wd-form-width-sm);
+  --wd-form-input-wrap-width-md: var(--wd-form-width-md);
+  --wd-form-input-wrap-width-lg: var(--wd-form-width-lg);
+  --wd-form-input-wrap-padding-lr: 0.5rem;
+  --wd-form-input-wrap-padding: 0 var(--wd-form-input-wrap-padding-lr);
+  --wd-form-input-wrap-text-align: left;
+  --wd-form-input-wrap-text-font-size: var(--wd-font-size-default);
+  --wd-form-input-wrap-text-font-color: var(--wd-font-gray-1);
+  --wd-form-input-wrap-text-font-weight: normal;
+}
+
+.wd-form.wd-form--weui .wd-form-input-wrap,
+.wd-form-item.wd-form-item--weui .wd-form-input-wrap {
+  --wd-form-input-wrap-text-font-size: var(--wd-font-size-4);
+}
+
+.wd-form-input-wrap {
+  color: var(--wd-color-text-default);
+  font-size: var(--wd-font-size-default);
+  line-height: var(--wd-font-line-height-default);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  height: var(--wd-form-input-wrap-height-md);
+  width: var(--wd-form-input-wrap-width-md);
+  border: 1px solid var(--wd-form-input-wrap-border-default);
+  border-radius: var(--wd-form-input-wrap-border-radius);
+  padding: var(--wd-form-input-wrap-padding);
+  background-color: var(--wd-form-input-wrap-bg-default);
+  font-size: var(--wd-form-input-wrap-text-font-size);
+  font-weight: var(--wd-form-input-wrap-text-font-weight);
+  cursor: text;
+}
+.wd-form-input-wrap--no-radius-right {
+  border-radius: var(--wd-form-input-group-border-radius) 0 0 var(--wd-form-input-group-border-radius);
+}
+.wd-form-input-wrap--no-radius-left {
+  border-radius: 0 var(--wd-form-input-group-border-radius) var(--wd-form-input-group-border-radius) 0;
+}
+.wd-form-input-wrap--no-padding-left {
+  padding-left: 0;
+}
+.wd-form-input-wrap--no-padding-right {
+  padding-right: 0;
+}
+.wd-form-input-wrap--no-radius {
+  border-radius: 0;
+}
+.wd-form-input-wrap--no-border {
+  border: none;
+  border-radius: 0;
+  border-color: transparent;
+  box-shadow: none;
+}
+.wd-form-input-wrap--no-border.wd-form-input-wrap {
+  border-color: transparent;
+  background-color: transparent;
+  box-shadow: none;
+}
+.wd-form-input-wrap--no-border.wd-form-input-wrap.is-focused:not(.is-disabled), .wd-form-input-wrap--no-border.wd-form-input-wrap:focus:not(.is-disabled) {
+  border-color: transparent;
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: var(--wd-form-weui-item-press-border-radius);
+  border-bottom: 1px solid var(--wd-form-input-wrap-border-hover);
+}
+.wd-form-input-wrap--no-border.wd-form-input-wrap__label {
+  line-height: none;
+}
+.wd-form-input-wrap:hover:not(.is-disabled) {
+  border-color: var(--wd-form-input-wrap-border-hover);
+  background-color: var(--wd-form-input-wrap-bg-hover);
+  color: var(--wd-form-input-wrap-text-hover);
+}
+.wd-form-input-wrap.is-focused:not(.is-disabled), .wd-form-input-wrap:focus:not(.is-disabled) {
+  border-color: var(--wd-form-input-wrap-border-hover);
+  background-color: var(--wd-form-input-wrap-bg-focus);
+  color: var(--wd-form-input-wrap-text-focus);
+  box-shadow: 0px 0px 0px 0px;
+}
+.wd-form-input-wrap.is-disabled {
+  border-color: var(--wd-form-input-wrap-border-disabled);
+  background-color: var(--wd-form-input-wrap-bg-disabled);
+  color: var(--wd-form-input-wrap-text-disabled);
+  cursor: not-allowed;
+}
+.wd-form-input-wrap.is-disabled input {
+  cursor: not-allowed;
+}
+.wd-form-input-wrap__content {
+  flex: 1 1 0px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.wd-form-input-wrap.wd-input-input-search.template.search-box.color-grey.is-pc-bordered {
+  background-color: #f2f2f2;
+  border-color: #f2f2f2;
+  border-radius: var(--wd-border-radius);
+  margin: calc(var(--wd-space-base) * 2) var(--wd-form-item-pd);
+}
+.wd-form-input-wrap.wd-input-input-search.template.search-box.color-grey.is-pc-bordered.is-focused {
+  background-color: #f2f2f2;
+}
+.wd-form-input-wrap.wd-input-input-search.template.search-box.color-grey.is-pc-bordered.is-h5-borderless {
+  padding: 0.5rem;
+}
+.wd-form-input-wrap.wd-input-input-search.template.search-box.color-grey.is-pc-bordered:hover {
+  background-color: #f2f2f2;
+}
+.wd-form-input-wrap.wd-input-input-search.template.search-box.color-white.is-pc-bordered {
+  border: 1px solid var(--wd-form-input-wrap-border-default);
+  border-radius: var(--wd-border-radius);
+  margin: calc(var(--wd-space-base) * 2) var(--wd-form-item-pd);
+}
+.wd-form-input-wrap.wd-input-input-search.template.search-box.color-white.is-pc-bordered.is-focused {
+  border: 1px solid var(--wd-form-input-wrap-border-default);
+  border-radius: var(--wd-border-radius);
+}
+.wd-form-input-wrap.wd-input-input-search.template.search-box.color-white.is-pc-bordered.is-h5-borderless {
+  padding: 0.5rem;
+}
+.wd-form-input-wrap input,
+.wd-form-input-wrap textarea, .wd-form-input-wrap__input {
+  height: 100%;
+  width: 100%;
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  font: inherit;
+  text-align: inherit;
+  -webkit-text-fill-color: inherit;
+}
+.wd-form-input-wrap input[type=number]::-webkit-inner-spin-button,
+.wd-form-input-wrap input[type=number]::-webkit-outer-spin-button,
+.wd-form-input-wrap input[type=number] {
+  -webkit-appearance: none;
+  -moz-animation: textfield;
+}
+.wd-form-input-wrap__placeholder {
+  color: var(--wd-color-text-placeholder);
+}
+.wd-form-input-wrap ::-webkit-input-placeholder {
+  color: var(--wd-color-text-placeholder);
+}
+.wd-form-input-wrap :-moz-placeholder {
+  color: var(--wd-color-text-placeholder);
+}
+.wd-form-input-wrap ::-moz-placeholder {
+  color: var(--wd-color-text-placeholder);
+}
+.wd-form-input-wrap :-ms-input-placeholder {
+  color: var(--wd-color-text-placeholder);
+}
+.wd-form-input-wrap__before, .wd-form-input-wrap__after {
+  flex: 0 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.wd-form-input-wrap__before i.wd-icon__trigger, .wd-form-input-wrap__after i.wd-icon__trigger {
+  cursor: pointer;
+}
+.wd-form-input-wrap__before {
+  margin-right: 0.25rem;
+}
+.wd-form-input-wrap__after {
+  margin-left: 0.25rem;
+}
+
+.wd-form-input-wrap.size-font-sm {
+  font: var(--wd-typography-body-sm);
+}
+.wd-form-input-wrap.size-height-sm {
+  height: var(--wd-form-height-sm);
+}
+.wd-form-input-wrap.size-width-sm {
+  width: var(--wd-form-width-sm);
+}
+.wd-form-input-wrap.size-font-md {
+  font: var(--wd-typography-body-md);
+}
+.wd-form-input-wrap.size-height-md {
+  height: var(--wd-form-item-height-md);
+}
+.wd-form-input-wrap.size-width-md {
+  width: var(--wd-form-width-md);
+}
+.wd-form-input-wrap.size-font-lg {
+  font: var(--wd-typography-body-lg);
+}
+.wd-form-input-wrap.size-height-lg {
+  height: var(--wd-form-item-height-lg);
+}
+.wd-form-input-wrap.size-width-lg {
+  width: var(--wd-form-width-lg);
+}
+.wd-form-input-wrap.size-width-hundred {
+  width: 100%;
+}

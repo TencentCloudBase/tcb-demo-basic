@@ -1,0 +1,42 @@
+{
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "libVersion": "3.4.4",
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "用户管理",
+          "pathName": "pages/user/index",
+          "query": ""
+        },
+        {
+          "name": "微信支付",
+          "pathName": "pages/pay-list/index",
+          "query": ""
+        },
+        {
+          "name": "订单列表",
+          "pathName": "pages/pay-order/index",
+          "query": ""
+        },
+        {
+          "name": "订单详情",
+          "pathName": "pages/pay-result/index",
+          "query": "id=goods_4-1541683061235"
+        },
+        {
+          "name": "模板消息",
+          "pathName": "pages/reserve/index",
+          "query": ""
+        }
+      ]
+    }
+  }
+}

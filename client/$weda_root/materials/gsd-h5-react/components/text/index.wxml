@@ -1,0 +1,7 @@
+<!-- 小程序 text 组件即使空白也会会有一个高度与web不一致，空白的时候改成空白view -->
+<block wx:if="{{text && text.length > 0}}">
+  <text class="weda-text weda-ui {{className}} {{levelName}}" id="{{id}}" user-select="{{userSelect}}" style="white-space: {{ space ? 'pre-warp' : 'pre-line'}}; {{style}}">{{text}}</text>
+</block>
+<block wx:else>
+  <view class="weda-text weda-ui {{className}} {{levelName}}" id="{{id}}" style="white-space: {{ space ? 'pre-warp' : 'pre-line'}}; {{style}}">{{text}}</view>
+</block>

@@ -1,0 +1,1206 @@
+@charset "UTF-8";
+/* prettier-ignore */
+/* 与重构沟通的root font-size 是 16, 设计稿分 大中小无，对应 4 3 2 0 */
+/* prettier-ignore */
+.wd-grid-row {
+  /**
+   * 不采用行列gutter 通过 Grid来设置
+   */
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--wd-grid-gutter-y));
+  margin-right: calc(-0.5 * var(--wd-grid-gutter-x));
+  margin-left: calc(-0.5 * var(--wd-grid-gutter-x));
+  /* 特殊加的 */
+  margin-bottom: calc(1 * var(--wd-grid-gutter-rb));
+  /* 只支持立即子节点的, 通过编辑器位置限制机制来保证 */
+}
+.wd-grid-row:last-child {
+  margin-bottom: unset;
+}
+.wd-grid-row > div,
+.wd-grid-row > view {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(var(--wd-grid-gutter-x) * 0.5);
+  padding-left: calc(var(--wd-grid-gutter-x) * 0.5);
+  margin-top: var(--wd-grid-gutter-y);
+}
+
+/* 小程序不支持 * 选择器， 使用view element选择器的需要加一个 优先级*/
+.wd-grid-col.wd-grid-col {
+  flex: 1 0 0%;
+}
+
+/* 小程序不支持 * 选择器， 使用view element选择器的需要加一个 优先级*/
+.wd-grid-col-auto.wd-grid-col-auto {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+.wd-grid-col-1.wd-grid-col-1 {
+  flex: 0 0 auto;
+  width: 8.33333333%;
+}
+
+.wd-grid-col-2.wd-grid-col-2 {
+  flex: 0 0 auto;
+  width: 16.66666667%;
+}
+
+.wd-grid-col-3.wd-grid-col-3 {
+  flex: 0 0 auto;
+  width: 25%;
+}
+
+.wd-grid-col-4.wd-grid-col-4 {
+  flex: 0 0 auto;
+  width: 33.33333333%;
+}
+
+.wd-grid-col-5.wd-grid-col-5 {
+  flex: 0 0 auto;
+  width: 41.66666667%;
+}
+
+.wd-grid-col-6.wd-grid-col-6 {
+  flex: 0 0 auto;
+  width: 50%;
+}
+
+.wd-grid-col-7.wd-grid-col-7 {
+  flex: 0 0 auto;
+  width: 58.33333333%;
+}
+
+.wd-grid-col-8.wd-grid-col-8 {
+  flex: 0 0 auto;
+  width: 66.66666667%;
+}
+
+.wd-grid-col-9.wd-grid-col-9 {
+  flex: 0 0 auto;
+  width: 75%;
+}
+
+.wd-grid-col-10.wd-grid-col-10 {
+  flex: 0 0 auto;
+  width: 83.33333333%;
+}
+
+.wd-grid-col-11.wd-grid-col-11 {
+  flex: 0 0 auto;
+  width: 91.66666667%;
+}
+
+.wd-grid-col-12.wd-grid-col-12 {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+/**
+ *
+ *  不生成offset
+ *
+ */
+.wd-grid-g-0,
+.wd-grid-gx-0 {
+  --wd-grid-gutter-x: 0;
+}
+
+.wd-grid-g-0,
+.wd-grid-gy-0 {
+  --wd-grid-gutter-y: 0;
+}
+
+.wd-grid-grb-0 {
+  --wd-grid-gutter-rb: 0;
+}
+
+.wd-grid-g-1,
+.wd-grid-gx-1 {
+  --wd-grid-gutter-x: 4PX;
+}
+
+.wd-grid-g-1,
+.wd-grid-gy-1 {
+  --wd-grid-gutter-y: 4PX;
+}
+
+.wd-grid-grb-1 {
+  --wd-grid-gutter-rb: 4PX;
+}
+
+.wd-grid-g-2,
+.wd-grid-gx-2 {
+  --wd-grid-gutter-x: 8PX;
+}
+
+.wd-grid-g-2,
+.wd-grid-gy-2 {
+  --wd-grid-gutter-y: 8PX;
+}
+
+.wd-grid-grb-2 {
+  --wd-grid-gutter-rb: 8PX;
+}
+
+.wd-grid-g-3,
+.wd-grid-gx-3 {
+  --wd-grid-gutter-x: 16PX;
+}
+
+.wd-grid-g-3,
+.wd-grid-gy-3 {
+  --wd-grid-gutter-y: 16PX;
+}
+
+.wd-grid-grb-3 {
+  --wd-grid-gutter-rb: 16PX;
+}
+
+.wd-grid-g-4,
+.wd-grid-gx-4 {
+  --wd-grid-gutter-x: 24PX;
+}
+
+.wd-grid-g-4,
+.wd-grid-gy-4 {
+  --wd-grid-gutter-y: 24PX;
+}
+
+.wd-grid-grb-4 {
+  --wd-grid-gutter-rb: 24PX;
+}
+
+.wd-grid-g-5,
+.wd-grid-gx-5 {
+  --wd-grid-gutter-x: 32PX;
+}
+
+.wd-grid-g-5,
+.wd-grid-gy-5 {
+  --wd-grid-gutter-y: 32PX;
+}
+
+.wd-grid-grb-5 {
+  --wd-grid-gutter-rb: 32PX;
+}
+
+.wd-grid-g-6,
+.wd-grid-gx-6 {
+  --wd-grid-gutter-x: 48PX;
+}
+
+.wd-grid-g-6,
+.wd-grid-gy-6 {
+  --wd-grid-gutter-y: 48PX;
+}
+
+.wd-grid-grb-6 {
+  --wd-grid-gutter-rb: 48PX;
+}
+
+.wd-grid-g-7,
+.wd-grid-gx-7 {
+  --wd-grid-gutter-x: 60PX;
+}
+
+.wd-grid-g-7,
+.wd-grid-gy-7 {
+  --wd-grid-gutter-y: 60PX;
+}
+
+.wd-grid-grb-7 {
+  --wd-grid-gutter-rb: 60PX;
+}
+
+.wd-grid-g-8,
+.wd-grid-gx-8 {
+  --wd-grid-gutter-x: 80PX;
+}
+
+.wd-grid-g-8,
+.wd-grid-gy-8 {
+  --wd-grid-gutter-y: 80PX;
+}
+
+.wd-grid-grb-8 {
+  --wd-grid-gutter-rb: 80PX;
+}
+
+.wd-grid-g-9,
+.wd-grid-gx-9 {
+  --wd-grid-gutter-x: 100PX;
+}
+
+.wd-grid-g-9,
+.wd-grid-gy-9 {
+  --wd-grid-gutter-y: 100PX;
+}
+
+.wd-grid-grb-9 {
+  --wd-grid-gutter-rb: 100PX;
+}
+
+.wd-grid-g-10,
+.wd-grid-gx-10 {
+  --wd-grid-gutter-x: 128PX;
+}
+
+.wd-grid-g-10,
+.wd-grid-gy-10 {
+  --wd-grid-gutter-y: 128PX;
+}
+
+.wd-grid-grb-10 {
+  --wd-grid-gutter-rb: 128PX;
+}
+
+@media (min-width: 576px) {
+  /* 小程序不支持 * 选择器， 使用view element选择器的需要加一个 优先级*/
+  .wd-grid-col-sm.wd-grid-col-sm {
+    flex: 1 0 0%;
+  }
+  /* 小程序不支持 * 选择器， 使用view element选择器的需要加一个 优先级*/
+  .wd-grid-col-sm-auto.wd-grid-col-sm-auto {
+    flex: 0 0 auto;
+    width: auto;
+  }
+  .wd-grid-col-sm-1.wd-grid-col-sm-1 {
+    flex: 0 0 auto;
+    width: 8.33333333%;
+  }
+  .wd-grid-col-sm-2.wd-grid-col-sm-2 {
+    flex: 0 0 auto;
+    width: 16.66666667%;
+  }
+  .wd-grid-col-sm-3.wd-grid-col-sm-3 {
+    flex: 0 0 auto;
+    width: 25%;
+  }
+  .wd-grid-col-sm-4.wd-grid-col-sm-4 {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+  }
+  .wd-grid-col-sm-5.wd-grid-col-sm-5 {
+    flex: 0 0 auto;
+    width: 41.66666667%;
+  }
+  .wd-grid-col-sm-6.wd-grid-col-sm-6 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+  .wd-grid-col-sm-7.wd-grid-col-sm-7 {
+    flex: 0 0 auto;
+    width: 58.33333333%;
+  }
+  .wd-grid-col-sm-8.wd-grid-col-sm-8 {
+    flex: 0 0 auto;
+    width: 66.66666667%;
+  }
+  .wd-grid-col-sm-9.wd-grid-col-sm-9 {
+    flex: 0 0 auto;
+    width: 75%;
+  }
+  .wd-grid-col-sm-10.wd-grid-col-sm-10 {
+    flex: 0 0 auto;
+    width: 83.33333333%;
+  }
+  .wd-grid-col-sm-11.wd-grid-col-sm-11 {
+    flex: 0 0 auto;
+    width: 91.66666667%;
+  }
+  .wd-grid-col-sm-12.wd-grid-col-sm-12 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  /**
+   *
+   *  不生成offset
+   *
+   */
+  .wd-grid-g-sm-0,
+  .wd-grid-gx-sm-0 {
+    --wd-grid-gutter-x: 0;
+  }
+  .wd-grid-g-sm-0,
+  .wd-grid-gy-sm-0 {
+    --wd-grid-gutter-y: 0;
+  }
+  .wd-grid-grb-sm-0 {
+    --wd-grid-gutter-rb: 0;
+  }
+  .wd-grid-g-sm-1,
+  .wd-grid-gx-sm-1 {
+    --wd-grid-gutter-x: 4PX;
+  }
+  .wd-grid-g-sm-1,
+  .wd-grid-gy-sm-1 {
+    --wd-grid-gutter-y: 4PX;
+  }
+  .wd-grid-grb-sm-1 {
+    --wd-grid-gutter-rb: 4PX;
+  }
+  .wd-grid-g-sm-2,
+  .wd-grid-gx-sm-2 {
+    --wd-grid-gutter-x: 8PX;
+  }
+  .wd-grid-g-sm-2,
+  .wd-grid-gy-sm-2 {
+    --wd-grid-gutter-y: 8PX;
+  }
+  .wd-grid-grb-sm-2 {
+    --wd-grid-gutter-rb: 8PX;
+  }
+  .wd-grid-g-sm-3,
+  .wd-grid-gx-sm-3 {
+    --wd-grid-gutter-x: 16PX;
+  }
+  .wd-grid-g-sm-3,
+  .wd-grid-gy-sm-3 {
+    --wd-grid-gutter-y: 16PX;
+  }
+  .wd-grid-grb-sm-3 {
+    --wd-grid-gutter-rb: 16PX;
+  }
+  .wd-grid-g-sm-4,
+  .wd-grid-gx-sm-4 {
+    --wd-grid-gutter-x: 24PX;
+  }
+  .wd-grid-g-sm-4,
+  .wd-grid-gy-sm-4 {
+    --wd-grid-gutter-y: 24PX;
+  }
+  .wd-grid-grb-sm-4 {
+    --wd-grid-gutter-rb: 24PX;
+  }
+  .wd-grid-g-sm-5,
+  .wd-grid-gx-sm-5 {
+    --wd-grid-gutter-x: 32PX;
+  }
+  .wd-grid-g-sm-5,
+  .wd-grid-gy-sm-5 {
+    --wd-grid-gutter-y: 32PX;
+  }
+  .wd-grid-grb-sm-5 {
+    --wd-grid-gutter-rb: 32PX;
+  }
+  .wd-grid-g-sm-6,
+  .wd-grid-gx-sm-6 {
+    --wd-grid-gutter-x: 48PX;
+  }
+  .wd-grid-g-sm-6,
+  .wd-grid-gy-sm-6 {
+    --wd-grid-gutter-y: 48PX;
+  }
+  .wd-grid-grb-sm-6 {
+    --wd-grid-gutter-rb: 48PX;
+  }
+  .wd-grid-g-sm-7,
+  .wd-grid-gx-sm-7 {
+    --wd-grid-gutter-x: 60PX;
+  }
+  .wd-grid-g-sm-7,
+  .wd-grid-gy-sm-7 {
+    --wd-grid-gutter-y: 60PX;
+  }
+  .wd-grid-grb-sm-7 {
+    --wd-grid-gutter-rb: 60PX;
+  }
+  .wd-grid-g-sm-8,
+  .wd-grid-gx-sm-8 {
+    --wd-grid-gutter-x: 80PX;
+  }
+  .wd-grid-g-sm-8,
+  .wd-grid-gy-sm-8 {
+    --wd-grid-gutter-y: 80PX;
+  }
+  .wd-grid-grb-sm-8 {
+    --wd-grid-gutter-rb: 80PX;
+  }
+  .wd-grid-g-sm-9,
+  .wd-grid-gx-sm-9 {
+    --wd-grid-gutter-x: 100PX;
+  }
+  .wd-grid-g-sm-9,
+  .wd-grid-gy-sm-9 {
+    --wd-grid-gutter-y: 100PX;
+  }
+  .wd-grid-grb-sm-9 {
+    --wd-grid-gutter-rb: 100PX;
+  }
+  .wd-grid-g-sm-10,
+  .wd-grid-gx-sm-10 {
+    --wd-grid-gutter-x: 128PX;
+  }
+  .wd-grid-g-sm-10,
+  .wd-grid-gy-sm-10 {
+    --wd-grid-gutter-y: 128PX;
+  }
+  .wd-grid-grb-sm-10 {
+    --wd-grid-gutter-rb: 128PX;
+  }
+}
+@media (min-width: 768px) {
+  /* 小程序不支持 * 选择器， 使用view element选择器的需要加一个 优先级*/
+  .wd-grid-col-md.wd-grid-col-md {
+    flex: 1 0 0%;
+  }
+  /* 小程序不支持 * 选择器， 使用view element选择器的需要加一个 优先级*/
+  .wd-grid-col-md-auto.wd-grid-col-md-auto {
+    flex: 0 0 auto;
+    width: auto;
+  }
+  .wd-grid-col-md-1.wd-grid-col-md-1 {
+    flex: 0 0 auto;
+    width: 8.33333333%;
+  }
+  .wd-grid-col-md-2.wd-grid-col-md-2 {
+    flex: 0 0 auto;
+    width: 16.66666667%;
+  }
+  .wd-grid-col-md-3.wd-grid-col-md-3 {
+    flex: 0 0 auto;
+    width: 25%;
+  }
+  .wd-grid-col-md-4.wd-grid-col-md-4 {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+  }
+  .wd-grid-col-md-5.wd-grid-col-md-5 {
+    flex: 0 0 auto;
+    width: 41.66666667%;
+  }
+  .wd-grid-col-md-6.wd-grid-col-md-6 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+  .wd-grid-col-md-7.wd-grid-col-md-7 {
+    flex: 0 0 auto;
+    width: 58.33333333%;
+  }
+  .wd-grid-col-md-8.wd-grid-col-md-8 {
+    flex: 0 0 auto;
+    width: 66.66666667%;
+  }
+  .wd-grid-col-md-9.wd-grid-col-md-9 {
+    flex: 0 0 auto;
+    width: 75%;
+  }
+  .wd-grid-col-md-10.wd-grid-col-md-10 {
+    flex: 0 0 auto;
+    width: 83.33333333%;
+  }
+  .wd-grid-col-md-11.wd-grid-col-md-11 {
+    flex: 0 0 auto;
+    width: 91.66666667%;
+  }
+  .wd-grid-col-md-12.wd-grid-col-md-12 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  /**
+   *
+   *  不生成offset
+   *
+   */
+  .wd-grid-g-md-0,
+  .wd-grid-gx-md-0 {
+    --wd-grid-gutter-x: 0;
+  }
+  .wd-grid-g-md-0,
+  .wd-grid-gy-md-0 {
+    --wd-grid-gutter-y: 0;
+  }
+  .wd-grid-grb-md-0 {
+    --wd-grid-gutter-rb: 0;
+  }
+  .wd-grid-g-md-1,
+  .wd-grid-gx-md-1 {
+    --wd-grid-gutter-x: 4PX;
+  }
+  .wd-grid-g-md-1,
+  .wd-grid-gy-md-1 {
+    --wd-grid-gutter-y: 4PX;
+  }
+  .wd-grid-grb-md-1 {
+    --wd-grid-gutter-rb: 4PX;
+  }
+  .wd-grid-g-md-2,
+  .wd-grid-gx-md-2 {
+    --wd-grid-gutter-x: 8PX;
+  }
+  .wd-grid-g-md-2,
+  .wd-grid-gy-md-2 {
+    --wd-grid-gutter-y: 8PX;
+  }
+  .wd-grid-grb-md-2 {
+    --wd-grid-gutter-rb: 8PX;
+  }
+  .wd-grid-g-md-3,
+  .wd-grid-gx-md-3 {
+    --wd-grid-gutter-x: 16PX;
+  }
+  .wd-grid-g-md-3,
+  .wd-grid-gy-md-3 {
+    --wd-grid-gutter-y: 16PX;
+  }
+  .wd-grid-grb-md-3 {
+    --wd-grid-gutter-rb: 16PX;
+  }
+  .wd-grid-g-md-4,
+  .wd-grid-gx-md-4 {
+    --wd-grid-gutter-x: 24PX;
+  }
+  .wd-grid-g-md-4,
+  .wd-grid-gy-md-4 {
+    --wd-grid-gutter-y: 24PX;
+  }
+  .wd-grid-grb-md-4 {
+    --wd-grid-gutter-rb: 24PX;
+  }
+  .wd-grid-g-md-5,
+  .wd-grid-gx-md-5 {
+    --wd-grid-gutter-x: 32PX;
+  }
+  .wd-grid-g-md-5,
+  .wd-grid-gy-md-5 {
+    --wd-grid-gutter-y: 32PX;
+  }
+  .wd-grid-grb-md-5 {
+    --wd-grid-gutter-rb: 32PX;
+  }
+  .wd-grid-g-md-6,
+  .wd-grid-gx-md-6 {
+    --wd-grid-gutter-x: 48PX;
+  }
+  .wd-grid-g-md-6,
+  .wd-grid-gy-md-6 {
+    --wd-grid-gutter-y: 48PX;
+  }
+  .wd-grid-grb-md-6 {
+    --wd-grid-gutter-rb: 48PX;
+  }
+  .wd-grid-g-md-7,
+  .wd-grid-gx-md-7 {
+    --wd-grid-gutter-x: 60PX;
+  }
+  .wd-grid-g-md-7,
+  .wd-grid-gy-md-7 {
+    --wd-grid-gutter-y: 60PX;
+  }
+  .wd-grid-grb-md-7 {
+    --wd-grid-gutter-rb: 60PX;
+  }
+  .wd-grid-g-md-8,
+  .wd-grid-gx-md-8 {
+    --wd-grid-gutter-x: 80PX;
+  }
+  .wd-grid-g-md-8,
+  .wd-grid-gy-md-8 {
+    --wd-grid-gutter-y: 80PX;
+  }
+  .wd-grid-grb-md-8 {
+    --wd-grid-gutter-rb: 80PX;
+  }
+  .wd-grid-g-md-9,
+  .wd-grid-gx-md-9 {
+    --wd-grid-gutter-x: 100PX;
+  }
+  .wd-grid-g-md-9,
+  .wd-grid-gy-md-9 {
+    --wd-grid-gutter-y: 100PX;
+  }
+  .wd-grid-grb-md-9 {
+    --wd-grid-gutter-rb: 100PX;
+  }
+  .wd-grid-g-md-10,
+  .wd-grid-gx-md-10 {
+    --wd-grid-gutter-x: 128PX;
+  }
+  .wd-grid-g-md-10,
+  .wd-grid-gy-md-10 {
+    --wd-grid-gutter-y: 128PX;
+  }
+  .wd-grid-grb-md-10 {
+    --wd-grid-gutter-rb: 128PX;
+  }
+}
+@media (min-width: 992px) {
+  /* 小程序不支持 * 选择器， 使用view element选择器的需要加一个 优先级*/
+  .wd-grid-col-lg.wd-grid-col-lg {
+    flex: 1 0 0%;
+  }
+  /* 小程序不支持 * 选择器， 使用view element选择器的需要加一个 优先级*/
+  .wd-grid-col-lg-auto.wd-grid-col-lg-auto {
+    flex: 0 0 auto;
+    width: auto;
+  }
+  .wd-grid-col-lg-1.wd-grid-col-lg-1 {
+    flex: 0 0 auto;
+    width: 8.33333333%;
+  }
+  .wd-grid-col-lg-2.wd-grid-col-lg-2 {
+    flex: 0 0 auto;
+    width: 16.66666667%;
+  }
+  .wd-grid-col-lg-3.wd-grid-col-lg-3 {
+    flex: 0 0 auto;
+    width: 25%;
+  }
+  .wd-grid-col-lg-4.wd-grid-col-lg-4 {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+  }
+  .wd-grid-col-lg-5.wd-grid-col-lg-5 {
+    flex: 0 0 auto;
+    width: 41.66666667%;
+  }
+  .wd-grid-col-lg-6.wd-grid-col-lg-6 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+  .wd-grid-col-lg-7.wd-grid-col-lg-7 {
+    flex: 0 0 auto;
+    width: 58.33333333%;
+  }
+  .wd-grid-col-lg-8.wd-grid-col-lg-8 {
+    flex: 0 0 auto;
+    width: 66.66666667%;
+  }
+  .wd-grid-col-lg-9.wd-grid-col-lg-9 {
+    flex: 0 0 auto;
+    width: 75%;
+  }
+  .wd-grid-col-lg-10.wd-grid-col-lg-10 {
+    flex: 0 0 auto;
+    width: 83.33333333%;
+  }
+  .wd-grid-col-lg-11.wd-grid-col-lg-11 {
+    flex: 0 0 auto;
+    width: 91.66666667%;
+  }
+  .wd-grid-col-lg-12.wd-grid-col-lg-12 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  /**
+   *
+   *  不生成offset
+   *
+   */
+  .wd-grid-g-lg-0,
+  .wd-grid-gx-lg-0 {
+    --wd-grid-gutter-x: 0;
+  }
+  .wd-grid-g-lg-0,
+  .wd-grid-gy-lg-0 {
+    --wd-grid-gutter-y: 0;
+  }
+  .wd-grid-grb-lg-0 {
+    --wd-grid-gutter-rb: 0;
+  }
+  .wd-grid-g-lg-1,
+  .wd-grid-gx-lg-1 {
+    --wd-grid-gutter-x: 4PX;
+  }
+  .wd-grid-g-lg-1,
+  .wd-grid-gy-lg-1 {
+    --wd-grid-gutter-y: 4PX;
+  }
+  .wd-grid-grb-lg-1 {
+    --wd-grid-gutter-rb: 4PX;
+  }
+  .wd-grid-g-lg-2,
+  .wd-grid-gx-lg-2 {
+    --wd-grid-gutter-x: 8PX;
+  }
+  .wd-grid-g-lg-2,
+  .wd-grid-gy-lg-2 {
+    --wd-grid-gutter-y: 8PX;
+  }
+  .wd-grid-grb-lg-2 {
+    --wd-grid-gutter-rb: 8PX;
+  }
+  .wd-grid-g-lg-3,
+  .wd-grid-gx-lg-3 {
+    --wd-grid-gutter-x: 16PX;
+  }
+  .wd-grid-g-lg-3,
+  .wd-grid-gy-lg-3 {
+    --wd-grid-gutter-y: 16PX;
+  }
+  .wd-grid-grb-lg-3 {
+    --wd-grid-gutter-rb: 16PX;
+  }
+  .wd-grid-g-lg-4,
+  .wd-grid-gx-lg-4 {
+    --wd-grid-gutter-x: 24PX;
+  }
+  .wd-grid-g-lg-4,
+  .wd-grid-gy-lg-4 {
+    --wd-grid-gutter-y: 24PX;
+  }
+  .wd-grid-grb-lg-4 {
+    --wd-grid-gutter-rb: 24PX;
+  }
+  .wd-grid-g-lg-5,
+  .wd-grid-gx-lg-5 {
+    --wd-grid-gutter-x: 32PX;
+  }
+  .wd-grid-g-lg-5,
+  .wd-grid-gy-lg-5 {
+    --wd-grid-gutter-y: 32PX;
+  }
+  .wd-grid-grb-lg-5 {
+    --wd-grid-gutter-rb: 32PX;
+  }
+  .wd-grid-g-lg-6,
+  .wd-grid-gx-lg-6 {
+    --wd-grid-gutter-x: 48PX;
+  }
+  .wd-grid-g-lg-6,
+  .wd-grid-gy-lg-6 {
+    --wd-grid-gutter-y: 48PX;
+  }
+  .wd-grid-grb-lg-6 {
+    --wd-grid-gutter-rb: 48PX;
+  }
+  .wd-grid-g-lg-7,
+  .wd-grid-gx-lg-7 {
+    --wd-grid-gutter-x: 60PX;
+  }
+  .wd-grid-g-lg-7,
+  .wd-grid-gy-lg-7 {
+    --wd-grid-gutter-y: 60PX;
+  }
+  .wd-grid-grb-lg-7 {
+    --wd-grid-gutter-rb: 60PX;
+  }
+  .wd-grid-g-lg-8,
+  .wd-grid-gx-lg-8 {
+    --wd-grid-gutter-x: 80PX;
+  }
+  .wd-grid-g-lg-8,
+  .wd-grid-gy-lg-8 {
+    --wd-grid-gutter-y: 80PX;
+  }
+  .wd-grid-grb-lg-8 {
+    --wd-grid-gutter-rb: 80PX;
+  }
+  .wd-grid-g-lg-9,
+  .wd-grid-gx-lg-9 {
+    --wd-grid-gutter-x: 100PX;
+  }
+  .wd-grid-g-lg-9,
+  .wd-grid-gy-lg-9 {
+    --wd-grid-gutter-y: 100PX;
+  }
+  .wd-grid-grb-lg-9 {
+    --wd-grid-gutter-rb: 100PX;
+  }
+  .wd-grid-g-lg-10,
+  .wd-grid-gx-lg-10 {
+    --wd-grid-gutter-x: 128PX;
+  }
+  .wd-grid-g-lg-10,
+  .wd-grid-gy-lg-10 {
+    --wd-grid-gutter-y: 128PX;
+  }
+  .wd-grid-grb-lg-10 {
+    --wd-grid-gutter-rb: 128PX;
+  }
+}
+@media (min-width: 1200px) {
+  /* 小程序不支持 * 选择器， 使用view element选择器的需要加一个 优先级*/
+  .wd-grid-col-xl.wd-grid-col-xl {
+    flex: 1 0 0%;
+  }
+  /* 小程序不支持 * 选择器， 使用view element选择器的需要加一个 优先级*/
+  .wd-grid-col-xl-auto.wd-grid-col-xl-auto {
+    flex: 0 0 auto;
+    width: auto;
+  }
+  .wd-grid-col-xl-1.wd-grid-col-xl-1 {
+    flex: 0 0 auto;
+    width: 8.33333333%;
+  }
+  .wd-grid-col-xl-2.wd-grid-col-xl-2 {
+    flex: 0 0 auto;
+    width: 16.66666667%;
+  }
+  .wd-grid-col-xl-3.wd-grid-col-xl-3 {
+    flex: 0 0 auto;
+    width: 25%;
+  }
+  .wd-grid-col-xl-4.wd-grid-col-xl-4 {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+  }
+  .wd-grid-col-xl-5.wd-grid-col-xl-5 {
+    flex: 0 0 auto;
+    width: 41.66666667%;
+  }
+  .wd-grid-col-xl-6.wd-grid-col-xl-6 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+  .wd-grid-col-xl-7.wd-grid-col-xl-7 {
+    flex: 0 0 auto;
+    width: 58.33333333%;
+  }
+  .wd-grid-col-xl-8.wd-grid-col-xl-8 {
+    flex: 0 0 auto;
+    width: 66.66666667%;
+  }
+  .wd-grid-col-xl-9.wd-grid-col-xl-9 {
+    flex: 0 0 auto;
+    width: 75%;
+  }
+  .wd-grid-col-xl-10.wd-grid-col-xl-10 {
+    flex: 0 0 auto;
+    width: 83.33333333%;
+  }
+  .wd-grid-col-xl-11.wd-grid-col-xl-11 {
+    flex: 0 0 auto;
+    width: 91.66666667%;
+  }
+  .wd-grid-col-xl-12.wd-grid-col-xl-12 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  /**
+   *
+   *  不生成offset
+   *
+   */
+  .wd-grid-g-xl-0,
+  .wd-grid-gx-xl-0 {
+    --wd-grid-gutter-x: 0;
+  }
+  .wd-grid-g-xl-0,
+  .wd-grid-gy-xl-0 {
+    --wd-grid-gutter-y: 0;
+  }
+  .wd-grid-grb-xl-0 {
+    --wd-grid-gutter-rb: 0;
+  }
+  .wd-grid-g-xl-1,
+  .wd-grid-gx-xl-1 {
+    --wd-grid-gutter-x: 4PX;
+  }
+  .wd-grid-g-xl-1,
+  .wd-grid-gy-xl-1 {
+    --wd-grid-gutter-y: 4PX;
+  }
+  .wd-grid-grb-xl-1 {
+    --wd-grid-gutter-rb: 4PX;
+  }
+  .wd-grid-g-xl-2,
+  .wd-grid-gx-xl-2 {
+    --wd-grid-gutter-x: 8PX;
+  }
+  .wd-grid-g-xl-2,
+  .wd-grid-gy-xl-2 {
+    --wd-grid-gutter-y: 8PX;
+  }
+  .wd-grid-grb-xl-2 {
+    --wd-grid-gutter-rb: 8PX;
+  }
+  .wd-grid-g-xl-3,
+  .wd-grid-gx-xl-3 {
+    --wd-grid-gutter-x: 16PX;
+  }
+  .wd-grid-g-xl-3,
+  .wd-grid-gy-xl-3 {
+    --wd-grid-gutter-y: 16PX;
+  }
+  .wd-grid-grb-xl-3 {
+    --wd-grid-gutter-rb: 16PX;
+  }
+  .wd-grid-g-xl-4,
+  .wd-grid-gx-xl-4 {
+    --wd-grid-gutter-x: 24PX;
+  }
+  .wd-grid-g-xl-4,
+  .wd-grid-gy-xl-4 {
+    --wd-grid-gutter-y: 24PX;
+  }
+  .wd-grid-grb-xl-4 {
+    --wd-grid-gutter-rb: 24PX;
+  }
+  .wd-grid-g-xl-5,
+  .wd-grid-gx-xl-5 {
+    --wd-grid-gutter-x: 32PX;
+  }
+  .wd-grid-g-xl-5,
+  .wd-grid-gy-xl-5 {
+    --wd-grid-gutter-y: 32PX;
+  }
+  .wd-grid-grb-xl-5 {
+    --wd-grid-gutter-rb: 32PX;
+  }
+  .wd-grid-g-xl-6,
+  .wd-grid-gx-xl-6 {
+    --wd-grid-gutter-x: 48PX;
+  }
+  .wd-grid-g-xl-6,
+  .wd-grid-gy-xl-6 {
+    --wd-grid-gutter-y: 48PX;
+  }
+  .wd-grid-grb-xl-6 {
+    --wd-grid-gutter-rb: 48PX;
+  }
+  .wd-grid-g-xl-7,
+  .wd-grid-gx-xl-7 {
+    --wd-grid-gutter-x: 60PX;
+  }
+  .wd-grid-g-xl-7,
+  .wd-grid-gy-xl-7 {
+    --wd-grid-gutter-y: 60PX;
+  }
+  .wd-grid-grb-xl-7 {
+    --wd-grid-gutter-rb: 60PX;
+  }
+  .wd-grid-g-xl-8,
+  .wd-grid-gx-xl-8 {
+    --wd-grid-gutter-x: 80PX;
+  }
+  .wd-grid-g-xl-8,
+  .wd-grid-gy-xl-8 {
+    --wd-grid-gutter-y: 80PX;
+  }
+  .wd-grid-grb-xl-8 {
+    --wd-grid-gutter-rb: 80PX;
+  }
+  .wd-grid-g-xl-9,
+  .wd-grid-gx-xl-9 {
+    --wd-grid-gutter-x: 100PX;
+  }
+  .wd-grid-g-xl-9,
+  .wd-grid-gy-xl-9 {
+    --wd-grid-gutter-y: 100PX;
+  }
+  .wd-grid-grb-xl-9 {
+    --wd-grid-gutter-rb: 100PX;
+  }
+  .wd-grid-g-xl-10,
+  .wd-grid-gx-xl-10 {
+    --wd-grid-gutter-x: 128PX;
+  }
+  .wd-grid-g-xl-10,
+  .wd-grid-gy-xl-10 {
+    --wd-grid-gutter-y: 128PX;
+  }
+  .wd-grid-grb-xl-10 {
+    --wd-grid-gutter-rb: 128PX;
+  }
+}
+@media (min-width: 1400px) {
+  /* 小程序不支持 * 选择器， 使用view element选择器的需要加一个 优先级*/
+  .wd-grid-col-xxl.wd-grid-col-xxl {
+    flex: 1 0 0%;
+  }
+  /* 小程序不支持 * 选择器， 使用view element选择器的需要加一个 优先级*/
+  .wd-grid-col-xxl-auto.wd-grid-col-xxl-auto {
+    flex: 0 0 auto;
+    width: auto;
+  }
+  .wd-grid-col-xxl-1.wd-grid-col-xxl-1 {
+    flex: 0 0 auto;
+    width: 8.33333333%;
+  }
+  .wd-grid-col-xxl-2.wd-grid-col-xxl-2 {
+    flex: 0 0 auto;
+    width: 16.66666667%;
+  }
+  .wd-grid-col-xxl-3.wd-grid-col-xxl-3 {
+    flex: 0 0 auto;
+    width: 25%;
+  }
+  .wd-grid-col-xxl-4.wd-grid-col-xxl-4 {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+  }
+  .wd-grid-col-xxl-5.wd-grid-col-xxl-5 {
+    flex: 0 0 auto;
+    width: 41.66666667%;
+  }
+  .wd-grid-col-xxl-6.wd-grid-col-xxl-6 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+  .wd-grid-col-xxl-7.wd-grid-col-xxl-7 {
+    flex: 0 0 auto;
+    width: 58.33333333%;
+  }
+  .wd-grid-col-xxl-8.wd-grid-col-xxl-8 {
+    flex: 0 0 auto;
+    width: 66.66666667%;
+  }
+  .wd-grid-col-xxl-9.wd-grid-col-xxl-9 {
+    flex: 0 0 auto;
+    width: 75%;
+  }
+  .wd-grid-col-xxl-10.wd-grid-col-xxl-10 {
+    flex: 0 0 auto;
+    width: 83.33333333%;
+  }
+  .wd-grid-col-xxl-11.wd-grid-col-xxl-11 {
+    flex: 0 0 auto;
+    width: 91.66666667%;
+  }
+  .wd-grid-col-xxl-12.wd-grid-col-xxl-12 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  /**
+   *
+   *  不生成offset
+   *
+   */
+  .wd-grid-g-xxl-0,
+  .wd-grid-gx-xxl-0 {
+    --wd-grid-gutter-x: 0;
+  }
+  .wd-grid-g-xxl-0,
+  .wd-grid-gy-xxl-0 {
+    --wd-grid-gutter-y: 0;
+  }
+  .wd-grid-grb-xxl-0 {
+    --wd-grid-gutter-rb: 0;
+  }
+  .wd-grid-g-xxl-1,
+  .wd-grid-gx-xxl-1 {
+    --wd-grid-gutter-x: 4PX;
+  }
+  .wd-grid-g-xxl-1,
+  .wd-grid-gy-xxl-1 {
+    --wd-grid-gutter-y: 4PX;
+  }
+  .wd-grid-grb-xxl-1 {
+    --wd-grid-gutter-rb: 4PX;
+  }
+  .wd-grid-g-xxl-2,
+  .wd-grid-gx-xxl-2 {
+    --wd-grid-gutter-x: 8PX;
+  }
+  .wd-grid-g-xxl-2,
+  .wd-grid-gy-xxl-2 {
+    --wd-grid-gutter-y: 8PX;
+  }
+  .wd-grid-grb-xxl-2 {
+    --wd-grid-gutter-rb: 8PX;
+  }
+  .wd-grid-g-xxl-3,
+  .wd-grid-gx-xxl-3 {
+    --wd-grid-gutter-x: 16PX;
+  }
+  .wd-grid-g-xxl-3,
+  .wd-grid-gy-xxl-3 {
+    --wd-grid-gutter-y: 16PX;
+  }
+  .wd-grid-grb-xxl-3 {
+    --wd-grid-gutter-rb: 16PX;
+  }
+  .wd-grid-g-xxl-4,
+  .wd-grid-gx-xxl-4 {
+    --wd-grid-gutter-x: 24PX;
+  }
+  .wd-grid-g-xxl-4,
+  .wd-grid-gy-xxl-4 {
+    --wd-grid-gutter-y: 24PX;
+  }
+  .wd-grid-grb-xxl-4 {
+    --wd-grid-gutter-rb: 24PX;
+  }
+  .wd-grid-g-xxl-5,
+  .wd-grid-gx-xxl-5 {
+    --wd-grid-gutter-x: 32PX;
+  }
+  .wd-grid-g-xxl-5,
+  .wd-grid-gy-xxl-5 {
+    --wd-grid-gutter-y: 32PX;
+  }
+  .wd-grid-grb-xxl-5 {
+    --wd-grid-gutter-rb: 32PX;
+  }
+  .wd-grid-g-xxl-6,
+  .wd-grid-gx-xxl-6 {
+    --wd-grid-gutter-x: 48PX;
+  }
+  .wd-grid-g-xxl-6,
+  .wd-grid-gy-xxl-6 {
+    --wd-grid-gutter-y: 48PX;
+  }
+  .wd-grid-grb-xxl-6 {
+    --wd-grid-gutter-rb: 48PX;
+  }
+  .wd-grid-g-xxl-7,
+  .wd-grid-gx-xxl-7 {
+    --wd-grid-gutter-x: 60PX;
+  }
+  .wd-grid-g-xxl-7,
+  .wd-grid-gy-xxl-7 {
+    --wd-grid-gutter-y: 60PX;
+  }
+  .wd-grid-grb-xxl-7 {
+    --wd-grid-gutter-rb: 60PX;
+  }
+  .wd-grid-g-xxl-8,
+  .wd-grid-gx-xxl-8 {
+    --wd-grid-gutter-x: 80PX;
+  }
+  .wd-grid-g-xxl-8,
+  .wd-grid-gy-xxl-8 {
+    --wd-grid-gutter-y: 80PX;
+  }
+  .wd-grid-grb-xxl-8 {
+    --wd-grid-gutter-rb: 80PX;
+  }
+  .wd-grid-g-xxl-9,
+  .wd-grid-gx-xxl-9 {
+    --wd-grid-gutter-x: 100PX;
+  }
+  .wd-grid-g-xxl-9,
+  .wd-grid-gy-xxl-9 {
+    --wd-grid-gutter-y: 100PX;
+  }
+  .wd-grid-grb-xxl-9 {
+    --wd-grid-gutter-rb: 100PX;
+  }
+  .wd-grid-g-xxl-10,
+  .wd-grid-gx-xxl-10 {
+    --wd-grid-gutter-x: 128PX;
+  }
+  .wd-grid-g-xxl-10,
+  .wd-grid-gy-xxl-10 {
+    --wd-grid-gutter-y: 128PX;
+  }
+  .wd-grid-grb-xxl-10 {
+    --wd-grid-gutter-rb: 128PX;
+  }
+}
+.wd-grid--avoid-scrollbar .wd-grid-row {
+  /**
+   * 不采用行列gutter 通过 Grid来设置
+   */
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--wd-grid-gutter-y));
+  margin-right: 0;
+  margin-left: calc(-1 * var(--wd-grid-gutter-x));
+}
+.wd-grid--avoid-scrollbar .wd-grid-row > div,
+.wd-grid--avoid-scrollbar .wd-grid-row > view {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: 0;
+  padding-left: calc(var(--wd-grid-gutter-x) * 1);
+  margin-top: var(--wd-grid-gutter-y);
+}
+
+/*# sourceMappingURL=grid.css.map */

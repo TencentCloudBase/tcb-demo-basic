@@ -1,0 +1,10 @@
+<block wx:if="{{complexReadOnly}}">
+  <view class="{{item}}__readonly">
+    <text class="{{item}}__readonly-before" wx:if="{{complexBefore}}">{{complexBefore}}</text>
+    <text class="{{item}}__readonly-value">{{complexReadValue}}</text>
+    <text class="{{item}}__readonly-after" wx:if="{{complexAfter}}">{{complexAfter}}</text>
+  </view>
+</block>
+<block wx:else>
+  <slot></slot>
+</block>

@@ -1,0 +1,4 @@
+<button id="{{id}}" class="{{cls}}" style="{{style}}" size="{{size}}" loading="{{loading}}" disabled="{{disabled}}" form-type="{{formType}}" open-type="{{openType}}" bindgetphonenumber="getPhoneNumber">
+  {{text ? text : ''}}
+  <slot name="contentSlot" wx:if="{{!text}}" />
+</button>

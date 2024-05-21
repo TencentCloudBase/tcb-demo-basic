@@ -1,0 +1,14 @@
+<view class="{{classPrefix}}-custom-picker" wx:if="{{visible}}">
+  <view class="{{classPrefix}}-custom-backdrop" bind:tap="handleClose"></view>
+
+  <view class="{{classPrefix}}-custom-picker__inner">
+    <view class="{{classPrefix}}-custom-picker__header">
+      <view class="{{classPrefix}}-custom-picker__header-cancle" bindtap="handleClose">取消 </view>
+      <view class="{{classPrefix}}-custom-picker__header-confirm" bindtap="handleOk">确定 </view>
+    </view>
+
+    <view class="{{classPrefix}}-custom-picker__body">
+      <slot></slot>
+    </view>
+  </view>
+</view>

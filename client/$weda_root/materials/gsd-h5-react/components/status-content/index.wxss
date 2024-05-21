@@ -1,0 +1,145 @@
+.weda-status_content {
+  width: 100%;
+  padding: 16px;
+  word-break: break-all;
+}
+.weda-status_content__content {
+  color: rgba(0, 0, 0, 0.9);
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 14px;
+  border-radius: 6px;
+}
+.white-bg {
+  background-color: #fff;
+}
+.grey-bg {
+  background-color: #f2f2f2;
+}
+
+.weda-status_content__content .weda-status_content__content__image {
+  width: 48px;
+  height: 48px;
+}
+
+/* 错误图片 */
+.wd-status-content__status-icon.error {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDQ4IDQ4IiBmaWxsPSJub25lIj4KPHJlY3QgeD0iNiIgeT0iMTQiIHdpZHRoPSIzNiIgaGVpZ2h0PSIyNiIgZmlsbD0iI0RDRENEQyIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTIzLjUgMjAuNVYzMEgyNC41VjIwLjVIMjMuNVpNMjMuMjUgMzJWMzMuNUgyNC43NVYzMkgyMy4yNVoiIGZpbGw9ImJsYWNrIiBmaWxsLW9wYWNpdHk9IjAuOSIvPgo8cGF0aCBkPSJNNiA3SDQyVjEzSDZWN1oiIGZpbGw9IiNEQ0RDREMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00Ni41MjM0IDQzLjk2MzZDNDYuNTIzNCA0NC40ODMgNDYuMjY4NyA0NC45MzI1IDQ1LjkwMjggNDUuMjkyOUM0NS41Mzg3IDQ1LjY1MTYgNDUuMDM3NCA0NS45NTE3IDQ0LjQ1ODQgNDYuMTkyOUM0My4yOTgxIDQ2LjY3NjQgNDEuNzI5OCA0Ni45NjM2IDQwLjAyMzQgNDYuOTYzNkMzOC4zMTcxIDQ2Ljk2MzYgMzYuNzQ4OCA0Ni42NzY0IDM1LjU4ODUgNDYuMTkyOUMzNS4wMDk0IDQ1Ljk1MTcgMzQuNTA4MiA0NS42NTE2IDM0LjE0NDEgNDUuMjkyOUMzMy43NzgyIDQ0LjkzMjUgMzMuNTIzNCA0NC40ODMgMzMuNTIzNCA0My45NjM2VjM2Ljk2MzZDMzMuNTIzNCAzNi40NDQzIDMzLjc3ODIgMzUuOTk0OCAzNC4xNDQxIDM1LjYzNDNDMzQuNTA4MiAzNS4yNzU2IDM1LjAwOTQgMzQuOTc1NiAzNS41ODg1IDM0LjczNDNDMzYuNzQ4OCAzNC4yNTA5IDM4LjMxNzEgMzMuOTYzNiA0MC4wMjM0IDMzLjk2MzZDNDEuNzI5OCAzMy45NjM2IDQzLjI5ODEgMzQuMjUwOSA0NC40NTg0IDM0LjczNDNDNDUuMDM3NCAzNC45NzU2IDQ1LjUzODcgMzUuMjc1NiA0NS45MDI4IDM1LjYzNDNDNDYuMjY4NyAzNS45OTQ4IDQ2LjUyMzQgMzYuNDQ0MyA0Ni41MjM0IDM2Ljk2MzZWNDMuOTYzNlpNMzQuODQ1OCAzNi4zNDY3QzM0LjYwNDUgMzYuNTg0NSAzNC41MjM0IDM2Ljc5MjYgMzQuNTIzNCAzNi45NjM2QzM0LjUyMzQgMzcuMTM0NiAzNC42MDQ1IDM3LjM0MjggMzQuODQ1OCAzNy41ODA1QzM1LjA4ODkgMzcuODIgMzUuNDY2NCAzOC4wNTg3IDM1Ljk3MzEgMzguMjY5OUMzNi45ODQ0IDM4LjY5MTIgMzguNDE2MSAzOC45NjM2IDQwLjAyMzQgMzguOTYzNkM0MS42MzA4IDM4Ljk2MzYgNDMuMDYyNSAzOC42OTEyIDQ0LjA3MzggMzguMjY5OUM0NC41ODA1IDM4LjA1ODcgNDQuOTU3OSAzNy44MiA0NS4yMDEgMzcuNTgwNUM0NS40NDI0IDM3LjM0MjggNDUuNTIzNCAzNy4xMzQ2IDQ1LjUyMzQgMzYuOTYzNkM0NS41MjM0IDM2Ljc5MjYgNDUuNDQyNCAzNi41ODQ1IDQ1LjIwMSAzNi4zNDY3QzQ0Ljk1NzkgMzYuMTA3MiA0NC41ODA1IDM1Ljg2ODUgNDQuMDczOCAzNS42NTc0QzQzLjA2MjUgMzUuMjM2IDQxLjYzMDggMzQuOTYzNiA0MC4wMjM0IDM0Ljk2MzZDMzguNDE2MSAzNC45NjM2IDM2Ljk4NDQgMzUuMjM2IDM1Ljk3MzEgMzUuNjU3NEMzNS40NjY0IDM1Ljg2ODUgMzUuMDg4OSAzNi4xMDcyIDM0Ljg0NTggMzYuMzQ2N1pNNDUuNTIzNCAzOC42MTE4VjQwLjQ2MzZDNDUuNTIzNCA0MC42MzQ2IDQ1LjQ0MjQgNDAuODQyOCA0NS4yMDEgNDEuMDgwNUM0NC45NTc5IDQxLjMyIDQ0LjU4MDUgNDEuNTU4NyA0NC4wNzM4IDQxLjc2OTlDNDMuMDYyNSA0Mi4xOTEyIDQxLjYzMDggNDIuNDYzNiA0MC4wMjM0IDQyLjQ2MzZDMzguNDE2MSA0Mi40NjM2IDM2Ljk4NDQgNDIuMTkxMiAzNS45NzMxIDQxLjc2OTlDMzUuNDY2NCA0MS41NTg3IDM1LjA4ODkgNDEuMzIgMzQuODQ1OCA0MS4wODA1QzM0LjYwNDUgNDAuODQyOCAzNC41MjM0IDQwLjYzNDYgMzQuNTIzNCA0MC40NjM2VjM4LjYxMThDMzQuODI4OCAzOC44MzMzIDM1LjE5MDIgMzkuMDI3IDM1LjU4ODUgMzkuMTkyOUMzNi43NDg4IDM5LjY3NjQgMzguMzE3MSAzOS45NjM2IDQwLjAyMzQgMzkuOTYzNkM0MS43Mjk4IDM5Ljk2MzYgNDMuMjk4MSAzOS42NzY0IDQ0LjQ1ODQgMzkuMTkyOUM0NC44NTY2IDM5LjAyNyA0NS4yMTgxIDM4LjgzMzMgNDUuNTIzNCAzOC42MTE4Wk00NS41MjM0IDQzLjk2MzZWNDIuMTExOEM0NS4yMTgxIDQyLjMzMzMgNDQuODU2NiA0Mi41MjcgNDQuNDU4NCA0Mi42OTI5QzQzLjI5ODEgNDMuMTc2NCA0MS43Mjk4IDQzLjQ2MzYgNDAuMDIzNCA0My40NjM2QzM4LjMxNzEgNDMuNDYzNiAzNi43NDg4IDQzLjE3NjQgMzUuNTg4NSA0Mi42OTI5QzM1LjE5MDIgNDIuNTI3IDM0LjgyODggNDIuMzMzMyAzNC41MjM0IDQyLjExMThWNDMuOTYzNkMzNC41MjM0IDQ0LjEzNDYgMzQuNjA0NSA0NC4zNDI4IDM0Ljg0NTggNDQuNTgwNUMzNS4wODg5IDQ0LjgyIDM1LjQ2NjQgNDUuMDU4NyAzNS45NzMxIDQ1LjI2OTlDMzYuOTg0NCA0NS42OTEyIDM4LjQxNjEgNDUuOTYzNiA0MC4wMjM0IDQ1Ljk2MzZDNDEuNjMwOCA0NS45NjM2IDQzLjA2MjUgNDUuNjkxMiA0NC4wNzM4IDQ1LjI2OTlDNDQuNTgwNSA0NS4wNTg3IDQ0Ljk1NzkgNDQuODIgNDUuMjAxIDQ0LjU4MDVDNDUuNDQyNCA0NC4zNDI4IDQ1LjUyMzQgNDQuMTM0NiA0NS41MjM0IDQzLjk2MzZaIiBmaWxsPSJibGFjayIgZmlsbC1vcGFjaXR5PSIwLjkiLz4KPC9zdmc+');
+}
+
+.weda-status_content__content .title {
+  padding: 10px 0 5px 0;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.9);
+  font-size: 16px;
+}
+
+.weda-status_content__content .code {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.weda-status_content__content .detail {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+  font-weight: 400;
+  padding-right: 7px;
+}
+
+.weda-status_content__content .arrow {
+  width: 6px;
+  height: 10px;
+}
+
+/* 底部弹窗 */
+.weda-status_content_error-picker {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 999;
+}
+
+.weda-status_content_mask {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.4);
+  transition: all 0.4s ease-in-out 0;
+  pointer-events: none;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.weda-status_content_picker-inner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 30px;
+}
+
+.weda-status_content_picker-inner .title {
+  position: relative;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.9);
+  padding: 10px 0 20px 0;
+}
+
+.weda-status_content_picker-inner .close {
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  cursor: pointer;
+}
+
+.weda-status_content_picker-inner .detail {
+  position: relative;
+  padding: 12px 15px;
+  display: block;
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  margin: 0 10px;
+}
+
+.weda-status_content_picker-inner .line {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: rgba(0, 0, 0, 0.6);
+  padding: 3px 0;
+  display: block;
+  word-wrap: break-word;
+}
+
+.weda-status_content_picker-inner .foot {
+  margin: 20px 10px 0 10px;
+}
+
+.weda-status_content_picker-inner .copy {
+  height: 44px;
+  background: var(--wd-color-brand, #0052d9);
+  border-radius: 3px;
+  color: #fff;
+  width: 100%;
+  line-height: 44px;
+  text-align: center;
+}

@@ -1,0 +1,37 @@
+<block wx:if="{{visible}}">
+  <wd-form-item
+    id="{{id}}"
+    className="{{className}}"
+    style="{{style}}"
+    label="{{label}}"
+    labelVisible="{{labelVisible}}"
+    labelTips="{{labelTips}}"
+    labelWidth="{{labelWidth}}"
+    labelAlign="{{labelAlign}}"
+    labelWrap="{{labelWrap}}"
+    layout="{{actualLayout}}"
+    extra="{{extra}}"
+    required="{{required}}"
+    disabled="{{disabled}}"
+    requiredFlag="{{requiredFlag}}"
+    validateState="{{validateState}}"
+    validateErrorMsg="{{validateErrorMsg}}"
+    borderedH5="{{borderedH5}}"
+    readOnly="{{readOnly}}"
+    readValue="{{readValue}}"
+    classRoot="radio"
+    size="xs"
+  >
+    <view class="{{radioCls}}">
+      <block wx:for="{{options}}" wx:key="index" wx:for-item="option">
+        <label class="{{classPrefix}}-radio-wrap size-lg {{(disabled || option.disabled) ? 'is-disabled' : ''}} {{(checkedItemValue + '') === (option.value + '') ? 'is-checked' : ''}} radio{{index+1}}" bindtap="handleClick" data-value="{{option.value}}" data-item="{{option}}">
+          <radio class="{{classPrefix}}-radio-input" value="{{option.value}}" checked="{{(checkedItemValue + '')===(option.value+'')}}" disabled="{{disabled || option.disabled}}" />
+          <text class="{{classPrefix}}-radio-inner" />
+          <block wx:if="{{option.label}}">
+            <text class="{{classPrefix}}-radio-label" style="cursor: none">{{option.label}}</text>
+          </block>
+        </label>
+      </block>
+    </view>
+  </wd-form-item>
+</block>

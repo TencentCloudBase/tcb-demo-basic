@@ -1,0 +1,12 @@
+<wxs module="gesture" src="./gesture.wxs"></wxs>
+<view 
+  bindtouchstart="{{gesture.start}}" 
+  bindtouchmove="{{gesture.move}}" 
+  bindtouchend="{{gesture.end}}" 
+  bindtouchcancel="{{gesture.cancel}}"
+
+  data-propagation="{{propagation}}"
+  data-requirefailure="{{requireFailure}}"
+>
+  <slot></slot>
+</view>

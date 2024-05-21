@@ -1,0 +1,67 @@
+.wd-g-justify-content-start {
+  justify-content: flex-start !important;
+}
+
+.wd-g-justify-content-end {
+  justify-content: flex-end !important;
+}
+
+.wd-g-justify-content-center {
+  justify-content: center !important;
+}
+
+.wd-g-justify-content-between {
+  justify-content: space-between !important;
+}
+
+.wd-g-justify-content-around {
+  justify-content: space-around !important;
+}
+
+.wd-g-justify-content-evenly {
+  justify-content: space-evenly !important;
+}
+
+.wd-g-align-items-start {
+  align-items: flex-start !important;
+}
+
+.wd-g-align-items-end {
+  align-items: flex-end !important;
+}
+
+.wd-g-align-items-center {
+  align-items: center !important;
+}
+
+.wd-g-align-items-baseline {
+  align-items: baseline !important;
+}
+
+.wd-g-align-items-stretch {
+  align-items: stretch !important;
+}
+
+.wd-g-align-self-auto {
+  align-self: auto !important;
+}
+
+.wd-g-align-self-start {
+  align-self: flex-start !important;
+}
+
+.wd-g-align-self-end {
+  align-self: flex-end !important;
+}
+
+.wd-g-align-self-center {
+  align-self: center !important;
+}
+
+.wd-g-align-self-baseline {
+  align-self: baseline !important;
+}
+
+.wd-g-align-self-stretch {
+  align-self: stretch !important;
+}

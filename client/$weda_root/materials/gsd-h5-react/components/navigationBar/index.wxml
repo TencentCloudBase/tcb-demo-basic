@@ -1,0 +1,83 @@
+<view class="weda-menu weda-menu-mobile">
+  <view class="weda-menu__wrapper" style="background:{{navigationStyle.menuBackgroundColor}}">
+    <view class="weda-menu__bar-main">
+      <view class="weda-menu__main-logo">
+        <image wx:if="{{navigationStyle.showLogo}}" class="weda-menu__main-icon" style="width:{{navigationStyle.logoWidth}}px;height:{{navigationStyle.logoHeight}}px;" src="{{navigationStyle.logoUrl||defaultLogoUrl}}"></image>
+        <text wx:if="{{navigationStyle.showTitle}}" style="font-size:{{navigationStyle.titleFontSize}}px;color:{{navigationStyle.titleColor}};line-height: 2px;"> {{navigationStyle.title}} </text>
+      </view>
+    </view>
+    <view class="weda-menu__mobile-content">
+      <slot name="navigationSlot"></slot>
+    </view>
+    <view class="weda-menu__bar-extra">
+      <view wx:if="{{!visible}}" class=".weda-menu__bar-btn weda-icon t-icon t-icon-view-list" bindtap="showMenu" style="color:{{navigationStyle.titleColor}}"></view>
+      <view wx:else class="weda-menu__bar-btn--close weda-icon t-icon t-icon-close" bindtap="showMenu" style="color:{{navigationStyle.titleColor}}"></view>
+    </view>
+  </view>
+  <view class="menu-solt">
+    <slot name="contentSlot"></slot>
+  </view>
+</view>
+
+<view class="weda-menu-mobile__drawer" wx-if="{{visible}}">
+  <view class="weda-menu weda-menu-mobile">
+    <view class="weda-menu__wrapper" style="background:{{navigationStyle.menuBackgroundColor}}">
+      <view class="weda-menu__bar-main">
+        <view class="weda-menu__main-logo">
+          <image wx:if="{{navigationStyle.showLogo}}" class="weda-menu__main-icon" style="width:{{navigationStyle.logoWidth}}px;height:{{navigationStyle.logoHeight}}px;" src="{{navigationStyle.logoUrl||defaultLogoUrl}}"></image>
+          <text wx:if="{{navigationStyle.showTitle}}" style="font-size:{{navigationStyle.titleFontSize}}px;color:{{navigationStyle.titleColor}};line-height: 2px;"> {{navigationStyle.title}} </text>
+        </view>
+      </view>
+      <view class="weda-menu__bar-extra">
+        <view wx:if="{{!visible}}" class=".weda-menu__bar-btn weda-icon t-icon t-icon-view-list" bindtap="showMenu" style="color:{{navigationStyle.titleColor}}"></view>
+        <view wx:else class="weda-menu__bar-btn--close weda-icon t-icon t-icon-close" bindtap="showMenu" style="color:{{navigationStyle.titleColor}}"></view>
+      </view>
+    </view>
+  </view>
+  <view class="weda-drawer-drawer__body">
+    <scroll-view class="weda-drawer-menu weda-menu__drawer-menu weda-drawer-menu--light" scroll-y>
+      <view class="weda-drawer-menu weda-menu__drawer-menu weda-drawer-menu--light" style="background:{{navigationStyle.menuBackgroundColor}}">
+        <view class="weda-drawer-menu__body">
+          <view class="weda-drawer-menu__list">
+            <block wx:for="{{menuData}}" wx:key="menuIndex" wx:for-item="menu">
+              <view class="{{menu.children ? 'weda-drawer-menu__submenu' : ''}} {{menu.expand?'expand':''}}">
+                <view class="weda-drawer-menu__item" style="background-color:{{selectedKey===menu.key?navigationStyle.menuHoverColor:'unset'}};" bindtap="menuClick" data-menu="{{menu}}">
+                  <view wx:if="{{navigationStyle.showMenuIcon && menu.iconType!=='image'}}" class="weda-grid-navigation__icon">
+                    <view wx:if="{{menu.iconType === 't-icon'}}" class="weda-icon t-icon t-icon-{{menu.ticon}}" style="font-size:{{navigationStyle.menuFontSize}}px;color:{{navigationStyle.menuColor}}"></view>
+                    <view wx:if="{{menu.iconType !== 't-icon'}}" class="weda-icon lcap-icon-padding lcap-icon lcap-icon-{{menu.iconUrl}}" style="font-size:{{navigationStyle.menuFontSize}}px;color:{{navigationStyle.menuColor}}"> </view>
+                  </view>
+                  <image wx:if="{{navigationStyle.showMenuIcon && menu.iconType==='image'}}" class="weda-drawer-menu__list-icon" src="{{menu.iconUrl}}" alt="icon"></image>
+                  <view class="weda-drawer-menu__text" style="font-size:{{navigationStyle.menuFontSize}}px;color:{{navigationStyle.menuColor}}">{{menu.title}}</view>
+                  <view wx-if="{{menu.children.length>0}}" class="weda-menu__bar-btn-expand lcap-icon lcap-icon-chevrondown"></view>
+                </view>
+                <view class="weda-drawer-menu__list">
+                  <block wx-if="{{menu.children}}">
+                    <block wx:for="{{menu.children}}" wx:key="secondIndex" wx:for-item="secondMenu">
+                      <view class="{{secondMenu.children ? 'weda-drawer-menu__submenu weda-menu__submenu' : ''}} {{secondMenu.expand?'expand':''}}">
+                        <view class="weda-drawer-menu__item" style="background-color:{{selectedKey===secondMenu.key?navigationStyle.menuHoverColor:'unset'}};" bindtap="menuClick" data-menu="{{secondMenu}}">
+                          <view class="weda-drawer-menu__text" style="font-size:{{navigationStyle.menuFontSize}}px;color:{{navigationStyle.menuColor}}">{{secondMenu.title}}</view>
+                          <view wx-if="{{secondMenu.children.length>0}}" class="weda-menu__bar-btn-expand lcap-icon lcap-icon-chevrondown"></view>
+                        </view>
+                        <view class="weda-drawer-menu__list">
+                          <block wx-if="{{secondMenu.children}}">
+                            <block wx:for="{{secondMenu.children}}" wx:key="thridIndex" wx:for-item="thridMenu">
+                              <view class="">
+                                <view class="weda-drawer-menu__item" style="background-color:{{selectedKey===thridMenu.key?navigationStyle.menuHoverColor:'unset'}};" bindtap="menuClick" data-menu="{{thridMenu}}">
+                                  <view class="weda-drawer-menu__text" style="font-size:{{navigationStyle.menuFontSize}}px;color:{{navigationStyle.menuColor}}">{{thridMenu.title}}</view>
+                                </view>
+                              </view>
+                            </block>
+                          </block>
+                        </view>
+                      </view>
+                    </block>
+                  </block>
+                </view>
+              </view>
+            </block>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

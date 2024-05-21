@@ -1,0 +1,20 @@
+/* component/videojs.wxss */
+
+.weda-ui_video-mp {
+  width: 100%;
+  position: relative;
+}
+
+.weda-ui_video-mp_error {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(0, 0, 0);
+  top: 0;
+  left: 0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}

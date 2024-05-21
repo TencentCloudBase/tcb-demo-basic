@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "styleIsolation": "shared",
+  "usingComponents": {
+    "wd-form-item": "../wd-form-item/index",
+    "old-image-uploader": "../form/uploader"
+  }
+}

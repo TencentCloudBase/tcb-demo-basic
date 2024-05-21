@@ -1,0 +1,15 @@
+<view class="{{cls}}" style="{{itemStyle}}" bindtap="handleClick">
+  <block wx:if="{{prefixType}}">
+    <wd-icon size="{{iconSize}}" name="{{prefixIcon}}" type="{{prefixType}}" src="{{prefixSrc}}" />
+  </block>
+  <text class="{{classPrefix}}-tag__text}}">{{label}}</text>
+  <block wx:if="{{suffixType}}">
+    <wd-icon size="{{iconSize}}" name="{{suffixIcon}}" type="{{suffixType}}" src="{{suffixSrc}}" />
+  </block>
+  <block wx:if="{{hasTick}}">
+    <view class="{{classPrefix}}-tag__tick--pure" style="{{boardPureStyle}}"></view>
+    <view class="{{classPrefix}}-tag__tick" style="{{boardStyle}}">
+      <view class="{{classPrefix}}-tag__tick-tick" style="{{tickStyle}}"></view>
+    </view>
+  </block>
+</view>

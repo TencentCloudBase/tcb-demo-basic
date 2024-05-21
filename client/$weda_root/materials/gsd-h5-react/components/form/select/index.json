@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "styleIsolation": "shared",
+  "usingComponents": {
+    "formcell": "../formcell",
+    "datetimepicker": "./allTimePicker",
+    "dropdownSelect": "./dropdown-select",
+    "wd-form-item-read-only": "../../wd-form-item-read-only"
+  }
+}

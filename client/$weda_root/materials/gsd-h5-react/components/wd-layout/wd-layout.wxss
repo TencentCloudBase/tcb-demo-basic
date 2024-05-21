@@ -1,0 +1,78 @@
+.wd-layout-root {
+  --wd-layout-border-color: var(--wd-color-border-separator);
+  --wd-layout-bg: var(--wd-white);
+  --wd-layout-heder-bg: transparent;
+  --wd-layout-heder-bg-left: transparent;
+  --wd-layout-heder-bg-right: transparent;
+  --wd-layout-heder-bg-right: 1.25rem;
+  --wd-layout-heder-pd: 1.5rem;
+  --wd-layout-heder-pd-1: 1rem;
+  --wd-layout-heder-border-color: var(--wd-color-gray-3);
+  --wd-layout-body-pd: 1.25rem 1.5rem 1.5rem;
+  --wd-layout-body-pd-1: 1rem 1.5rem;
+  --wd-layout-body-bg: transparent;
+  --wd-layout-body-bg-white: var(--wd-white);
+  --wd-layout-body-bg-gray: var(--wd-color-gray-1);
+}
+
+.wd-mp-layout-root,
+.wd-h5-layout-root {
+  --wd-layout-heder-pd: 1rem;
+  --wd-layout-heder-pd-1: 1rem;
+  --wd-layout-body-pd: 1rem;
+  --wd-layout-body-pd-1: 0.5rem;
+}
+
+.wd-layout-root {
+  color: var(--wd-color-text-default);
+  font-size: var(--wd-font-size-default);
+  line-height: var(--wd-font-line-height-default);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  background: var(--wd-layout-bg);
+  display: flex;
+  flex-direction: column;
+}
+.wd-layout-root.gray {
+  background-color: var(--wd-layout-body-bg-gray);
+}
+.wd-layout__header {
+  display: flex;
+  padding: var(--wd-layout-heder-pd-1) var(--wd-layout-heder-pd);
+  justify-content: space-between;
+  position: relative;
+  border-bottom: 1px solid var(--wd-layout-border-color);
+}
+.wd-layout__header-wrapper {
+  width: 100%;
+}
+.wd-layout__header-item {
+  display: flex;
+  align-items: center;
+}
+.wd-layout__header-item-left {
+  background-color: var(--wd-layout-heder-bg-left);
+  margin-inline-end: var(--wd-layout-heder-item-margin);
+}
+.wd-layout__header-item-right {
+  flex: none;
+  justify-content: flex-end;
+  background-color: var(--wd-layout-heder-bg-right);
+}
+.wd-layout__header.gray {
+  background-color: var(--wd-white);
+}
+.wd-layout__body {
+  background-color: var(--wd-layout-body-bg);
+  padding: var(--wd-layout-body-pd);
+}
+.wd-layout__body.gray {
+  padding: var(--wd-layout-body-pd-1);
+}
+
+.wd-layout__header-item ._wa-comp-container-empty-children {
+  min-width: 80px;
+}

@@ -1,0 +1,82 @@
+<view scroll-y scroll-with-animation style="{{style}}" class="weda-list-view__container weda-ui {{'weda-list-view__container-' + status}} {{className}}">
+  <!-- 列表插槽 -->
+  <view class="{{template === 'cardList' ? 'weda-list-view-card' : ''}} {{ (status === 'fail' && isSetStatusFinal) ? 'weda-list-view__content-blank' : ''}} {{'weda-list-view__content-' + pagination}} {{records.length > 0 ? '' : 'weda-list-view__content-init'}} weda-list-view__content">
+    <block wx:if="{{status === 'fail' &&  refType==='dataView'}}">
+      <view class="weda-list-view__error wd-status-content" wx:if="{{status === 'fail'}}">
+        <status-content errorObj="{{errorObj}}"></status-content>
+      </view>
+    </block>
+    <block wx:if="{{status !== 'fail' || refType !== 'dataView'}}"><slot></slot></block>
+
+    <!-- 列表内容加载中 -->
+    <view class="weda-list-view__pagination-loading weda-list-view__more" wx:if="{{pagination==='pagination' && status === 'loading' && isSetLoadingFinal}}">
+      <view class="weda-list-view__more-symbol">
+        <view class="weda-list-view__symbol-item"></view>
+        <view class="weda-list-view__symbol-item"></view>
+        <view class="weda-list-view__symbol-item"></view>
+      </view>
+    </view>
+    <view class="weda-list-view__empty wd-status-content" wx:if="{{status === 'empty' && emptyText}}">
+      <view class="weda-list-view__empty__content wd-status-content__content">
+        <view class="weda-list-view__empty__content__image wd-status-content__status-icon empty"></view>
+        <text class="title"> {{emptyText}} </text>
+      </view>
+    </view>
+    <view class="weda-list-view__error wd-status-content" wx:if="{{status === 'fail' && isSetStatusFinal}}">
+      <status-content errorObj="{{errorObj}}" hasRecord="{{records.length>0}}" component="listview"></status-content>
+    </view>
+  </view>
+
+  <view class="weda-list-view__more {{'weda-list-view__more-' + pagination}}">
+    <!-- 加载更多 -->
+    <block wx:if="{{pagination==='loadMoreButton'}}">
+      <block wx:if="{{status === 'loading' && isSetLoadingFinal}}">
+        <view class="weda-list-view__more-symbol">
+          <view class="weda-list-view__symbol-item"></view>
+          <view class="weda-list-view__symbol-item"></view>
+          <view class="weda-list-view__symbol-item"></view>
+        </view>
+      </block>
+      <block wx:else>
+        <block wx:if="{{pageSize * pageNo < listTotal}}">
+          <view class="weda-list-view__more-text" bindtap="handleNext">{{loadButtonTextFinal}}</view>
+        </block>
+        <block wx:else>
+          <view wx:if="{{!!loadCompletedText && status === 'success'}}" class="weda-list-view__load-completed">{{loadCompletedText}}</view>
+        </block>
+      </block>
+    </block>
+    <!-- 触底刷新 -->
+    <block wx:elif="{{pagination==='bottomLoad'}}">
+      <view class="weda-list-view__bottom-load" id="weda-list-view_sign">
+        <view class="weda-list-view__more-symbol" wx:if="{{status === 'loading' && isSetLoadingFinal}}">
+          <view class="weda-list-view__symbol-item"></view>
+          <view class="weda-list-view__symbol-item"></view>
+          <view class="weda-list-view__symbol-item"></view>
+        </view>
+        <view wx:if="{{!!loadCompletedText && status === 'success' && pageSize * pageNo >= listTotal}}" class="weda-list-view__load-completed">{{loadCompletedText}}</view>
+      </view>
+    </block>
+    <!-- 分页器 -->
+    <block wx:elif="{{pagination==='pagination'}}">
+      <view class="weda-list-view__pagination">
+        <view class="weda-list-view__pagination-pre {{pageNo > 1 ? 'active': ''}}" bindtap="handlePre">
+          <image class="weda-list-view__pagination-icon" src="arrow-right-line.svg" />
+          上一页
+        </view>
+        <view class="weda-list-view__pagination-text">{{pageStr}}</view>
+        <view class="weda-list-view__pagination-next {{pageSize * pageNo < listTotal ? 'active' : ''}}" bindtap="handleNext">
+          <image class="weda-list-view__pagination-icon" src="arrow-right-line.svg" />
+          下一页
+        </view>
+      </view>
+    </block>
+    <block wx:else>
+      <view class="weda-list-view__more-symbol" wx:if="{{status === 'loading' && isSetLoadingFinal}}">
+        <view class="weda-list-view__symbol-item"></view>
+        <view class="weda-list-view__symbol-item"></view>
+        <view class="weda-list-view__symbol-item"></view>
+      </view>
+    </block>
+  </view>
+</view>

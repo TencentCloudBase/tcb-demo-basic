@@ -1,0 +1,3 @@
+<view class="{{actualClassName}} wd-mp-grid-col" style="{{style}}" id="{{id}}">
+  <slot></slot>
+</view>

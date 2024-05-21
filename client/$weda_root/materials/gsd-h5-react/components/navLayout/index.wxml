@@ -1,0 +1,22 @@
+<view class="weda-grid-navigation" style="{{style}}">
+  <view class="weda-grid-navigation__wrapper">
+    <block wx:for="{{optionList}}" wx:key="colIndex" wx:for-item="row">
+      <view class="weda-grid weda-grid-navigation__row">
+        <block wx:for="{{row}}" wx:key="colIndex" wx:for-item="col">
+          <view class="weda-col weda-grid__item weda-grid-navigation__col weda-grid-navigation__col--{{iconSize}}" style="width: {{(1 / mobileCol)*100}}%" data-item="{{col}}" bindtap="navigaTo">
+            <view class="weda-grid__box">
+              <view class="weda-grid-navigation__col">
+                <view wx:if="{{col.icon!='自定义图片'}}" class="weda-grid-navigation__icon">
+                  <view wx:if="{{col.tdicon}}" class="weda-icon t-icon t-icon-{{col.tdicon}}"></view>
+                  <view wx:if="{{!col.tdicon}}" class="weda-icon lcap-icon-padding lcap-icon lcap-icon-{{col.icon}}"> </view>
+                </view>
+                <img wx:if="{{col.icon=='自定义图片'&&col.iconSrc}}" src="{{col.iconSrc}}" className="weda-grid-navigation__img" />
+              </view>
+              <view class="weda-grid-navigation__text" wx-if="{{col.title}}" style="-webkit-line-clamp:{{maxLines?maxLines:'revert'}};{{titleStyle}}">{{col.title}}</view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </block>
+  </view>
+</view>

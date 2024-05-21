@@ -1,0 +1,13 @@
+<picker-view indicator-class="weda-ui-custom-picker-view-indicator" class="weda-ui-custom-picker-view" value="{{pickerValue}}" bindchange="handleChange" immediate-change="{{true}}">
+  <picker-view-column>
+    <view style="{{itemStyle}}" wx:for="{{hourOptions}}" wx:key="*this">{{item < 10 ? ('0'+item) : item}}时 </view>
+  </picker-view-column>
+
+  <picker-view-column>
+    <view style="{{itemStyle}}" wx:for="{{minuteOptions}}" wx:key="*this">{{item < 10 ? ('0'+item) : item}}分 </view>
+  </picker-view-column>
+
+  <picker-view-column wx:if="{{mode !== 'datetimeMinute'}}">
+    <view style="{{itemStyle}}" wx:for="{{secondOptions}}" wx:key="*this">{{item < 10 ? ('0'+item) : item}}秒 </view>
+  </picker-view-column>
+</picker-view>

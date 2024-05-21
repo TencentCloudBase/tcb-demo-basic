@@ -1,0 +1,6 @@
+<block wx:if="{{visible}}">
+  <form-item-wrapper>
+    <old-select id="{{id}}" className="{{className}}" style="{{style}}" name="{{name}}" label="{{label}}" disabled="{{disabled}}" layout="{{actualLayout}}" labelVisible="{{labelVisible}}" requiredFlag="{{requiredFlag && required}}" defaultMutiRegion="{{value}}" placeholder="{{placeholder}}" mode="mutiRegion" size="{{size}}" regionType="{{regionType}}" bind:change="change" bind:cancel="cancel" />
+    <tips wx:if="{{validateState === 'error' || validateState === 'warn'}}" tips="{{validateErrorMsg}}" type="warn" />
+  </form-item-wrapper>
+</block>

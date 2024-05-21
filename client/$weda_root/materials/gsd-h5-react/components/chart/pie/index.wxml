@@ -1,0 +1,1 @@
+<view wx:if="ec" class="{{className}} ec_container" style="{{style}}" id="{{id}}"> <ec-canvas id="{{'canvas_'+id}}" canvas-id="{{canvas_id}}" ec="{{ ec }}" /> </view>

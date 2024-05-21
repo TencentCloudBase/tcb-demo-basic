@@ -1,0 +1,10 @@
+<wxs module="tools"> function includes(tabItem) { return tabItem.iconUrl && tabItem.iconUrl.indexOf('http') !== -1 ? 'custom' : 'inner' } module.exports = { includes: includes } </wxs>
+<view id="{{id}}" style="{{style}}" class="{{className}} {{classPrefix + '-tabbar'}} {{classPrefix + '-mp-tabbar'}}">
+  <view wx:for="{{tabsData}}" wx:key="tabIndex" wx:for-item="tabItem" class="{{classPrefix + '-tabbar__item'}} {{selectedKey === tabItem.key ? 'is-selected' : ''}}" bindtap="tabClick" data-tab="{{tabItem}}">
+    <view class="{{classPrefix + '-tabbar__item-icon'}}">
+      <wd-icon wx:if="{{tabItem.iconUrl}}" name="{{tabItem.iconUrl}}" src="{{tabItem.iconUrl}}" type="{{tools.includes(tabItem)}}" />
+      <wd-icon wx:elif="{{tabItem.selectedIconPath || tabItem.iconPath}}" name="{{selectedKey === tabItem.key? tabItem.selectedIconPath : tabItem.iconPath}}" src="{{selectedKey === tabItem.key? tabItem.selectedIconPath : tabItem.iconPath}}" type="custom" />
+    </view>
+    <view class="{{classPrefix + '-tabbar__item-text'}}">{{tabItem.title}}</view>
+  </view>
+</view>

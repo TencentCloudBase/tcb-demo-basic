@@ -1,0 +1,6 @@
+<block wx:if="{{visible}}">
+  <form-item-wrapper>
+    <old-checkbox id="{{id}}" className="{{className}}" style="{{style}}" requiredFlag="{{requiredFlag && required}}" name="{{name}}" label="{{label}}" layout="{{actualLayout}}" labelVisible="{{labelVisible}}" range="{{actualRange}}" disabled="{{disabled}}" controlValue="{{value}}" enumName="{{enumName}}" format="{{format}}" bind:change="change" />
+    <tips wx:if="{{validateState === 'error' || validateState === 'warn'}}" tips="{{validateErrorMsg}}" type="warn" />
+  </form-item-wrapper>
+</block>

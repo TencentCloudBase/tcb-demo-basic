@@ -1,0 +1,3 @@
+<view id="{{id}}" style="{{style}}" class="{{classPrefix}}-ad {{classPrefix}}-mp-ad {{classPrefix}}-ad--{{_adType}} {{className}} ">
+  <ad unit-id="{{unitId}}" ad-intervals="{{_adIntervals}}" ad-type="{{_adType}}" ad-theme="{{adTheme}}" grid-count="{{_gridCount}}" bindload="load" binderror="error" bindclose="close"></ad>
+</view>

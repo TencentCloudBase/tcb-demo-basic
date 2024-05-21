@@ -1,0 +1,22 @@
+<button
+  class="weda-ui weda-button weui-btn {{cls}}"
+  style="{{style}}"
+  size="{{size}}"
+  loading="{{loading}}"
+  disabled="{{disabled}}"
+  open-type="{{openType}}"
+  form-type="{{formType}}"
+  bind:tap="tap"
+  bindcontact="contact"
+  bindlaunchapp="launchApp"
+  bindopensetting="openSetting"
+  session-from="{{sessionFrom}}"
+  send-message-title="{{sendMessageTitle}}"
+  send-message-path="{{sendMessagePath}}"
+  send-message-img="{{sendMessageImg}}"
+  show-message-card="{{showMessageCard}}"
+  app-parameter="{{appParameter}}"
+>
+  <block>{{text ? text : ''}}</block>
+  <slot name="contentSlot" wx:if="{{!text}}" />
+</button>

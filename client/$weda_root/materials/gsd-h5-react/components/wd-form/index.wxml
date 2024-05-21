@@ -1,0 +1,13 @@
+<block wx:if="{{loadingStatus === 'hidden'}}"></block>
+<block wx:elif="{{loadingStatus === 'loading'}}">
+  <view class="wedatea2td-action-state">
+    <view class="wedatea2td-mr-2n wedatea2td-icon wedatea2td-icon-loading" role="img" aria-label="loading"></view>
+    <view class="wedatea2td-action-state__text" title="数据加载中...">数据加载中...</view>
+  </view>
+</block>
+<block wx:else>
+  <view class="weui-form weda-ui wd-form wd-mp-form {{className}}" id="{{id}}" style="{{style}}">
+    <block wx:if="{{errorObj.message}}"><status-content errorObj="{{errorObj}}"></status-content></block>
+    <block wx:if="{{!errorObj.message}}"><slot name="contentSlot" /></block>
+  </view>
+</block>

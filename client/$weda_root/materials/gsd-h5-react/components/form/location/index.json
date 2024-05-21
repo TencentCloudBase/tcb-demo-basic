@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "styleIsolation": "shared",
+  "usingComponents": {
+    "mapChoose": "./components/mapChoose/index",
+    "formcell": "../formcell",
+    "wd-text": "../../wd-text/index",
+    "wd-button": "../../wd-button/index"
+  }
+}

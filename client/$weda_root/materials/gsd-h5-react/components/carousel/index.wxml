@@ -1,0 +1,6 @@
+<!--components/carousel/index.wxml-->
+<swiper id="{{id}}" class="weda-ui {{className}}" style="{{style}}" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" current="{{current}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}" vertical="{{vertical}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" bindchange="changeCurrent">
+  <swiper-item class="carousle-swiper-item" bindtap="tapImg" wx:for="{{images}}" wx:key="index" data-tapMode="{{item.tapMode}}" data-insideUrl="{{item.insideUrl}}" data-params="{{item.params}}" data-packageName="{{item.packageName}}">
+    <img class="carousle-image" src="{{item.image}}" fit="{{item.fit}}" style="{{'height:'+item.height+';'+'width:'+item.width}}" />
+  </swiper-item>
+</swiper>

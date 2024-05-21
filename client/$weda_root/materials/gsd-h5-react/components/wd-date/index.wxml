@@ -1,0 +1,36 @@
+<block wx:if="{{visible}}">
+  <wd-form-item
+    id="{{id}}"
+    className="{{className}}"
+    style="{{style}}"
+    label="{{label}}"
+    labelVisible="{{labelVisible}}"
+    labelTips="{{labelTips}}"
+    labelWidth="{{labelWidth}}"
+    labelAlign="{{labelAlign}}"
+    labelWrap="{{labelWrap}}"
+    layout="{{actualLayout}}"
+    extra="{{extra}}"
+    required="{{required}}"
+    readOnly="{{readOnly}}"
+    requiredFlag="{{requiredFlag}}"
+    validateState="{{validateState}}"
+    validateErrorMsg="{{validateErrorMsg}}"
+    readValue="{{readValue}}"
+    classRoot="{{classRoot}}"
+    size="{{size}}"
+    borderedH5="{{borderedH5}}"
+    before="{{before}}"
+    after="{{after}}"
+  >
+    <wd-input-group before="{{before}}" after="{{after}}" block="{{true}}" size="{{_size}}" classRoot="{{classRoot}}">
+      <wd-input-wrap block="{{block}}" classRoot="{{classRoot}}" before="{{before}}" after="{{after}}" disabled="{{disabled}}" prefixType="{{prefixType}}" prefixIcon="{{prefixIcon}}" prefixSrc="{{prefixSrc}}" suffixType="{{suffixType}}" suffixIcon="{{suffixIcon}}" suffixSrc="{{suffixSrc}}" hasClearIcon="{{clearable && !disabled && (value != null)}}" bind:onClear="handleClear">
+        <input class="{{classPrefix}}-form-select_input" placeholder-class="weui-input__placeholder" placeholder="{{placeholder}}" value="{{readValue}}" disabled="true" name="{{name}}" bindtap="setPickerVisible" />
+      </wd-input-wrap>
+    </wd-input-group>
+  </wd-form-item>
+
+  <block wx:if="{{pickerVisible}}">
+    <date-picker value="{{value}}" start="{{_start}}" end="{{_end}}" mode="{{mode}}" bind:onClose="handleClose" bind:onOk="handleOk" />
+  </block>
+</block>

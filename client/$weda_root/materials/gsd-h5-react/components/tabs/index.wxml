@@ -1,0 +1,10 @@
+<view class="weda-tabs ext-class {{className}}" style="{{style}}">
+  <scroll-view class="weda-tabs__nav" scroll-into-view="{{ scrollCellId }}" scroll-with-animation scroll-x enable-flex="true">
+    <view bind:tap="toggle" class="weda-tabs__nav-cell {{ currentIndex === index ? 'active' : '' }} {{ tabs.length > 5 ? 'scroll' : '' }}" data-index="{{index}}" id="cell-{{index}}" wx:for="{{tabs}}" wx:for-index="index" wx:for-item="tab" wx:key="index">{{ tab.title }}</view>
+  </scroll-view>
+
+  <view class="weda-tabs__panel">
+    <slot wx:if="{{isMultipleSlot}}" name="panel{{currentIndex + 1}}"></slot>
+    <slot wx:else name="panel1"></slot>
+  </view>
+</view>

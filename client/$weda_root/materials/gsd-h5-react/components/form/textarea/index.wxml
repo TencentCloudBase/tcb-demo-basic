@@ -1,0 +1,8 @@
+<formcell className="{{cls}}" style="{{style}}" label="{{labelVisible ? label : null}}" layout="{{layout}}" multiCell="{{true}}" requiredFlag="{{requiredFlag}}">
+  <view class="weui-cell weui-cell_active weui-cell_form}} {{disabled ? 'weui-cell_disabled' : ''}}">
+    <view class="weui-cell__bd">
+      <textarea auto-focus="{{focus}}" focus="{{focus}}" class="weui-textarea" placeholder="{{placeholder}}" placeholder-class="weui-input__placeholder" bindinput="handleChange" value="{{value}}" disable="{{disabled}}" maxlength="{{maxLength}}" bindfocus="handleFocus" bindblur="handleBlur"></textarea>
+      <view wx:if="{{counterVisible}}" class="weui-textarea-counter"><span>{{!!value ? value.length : 0}}</span>/{{maxLength}}</view>
+    </view>
+  </view>
+</formcell>

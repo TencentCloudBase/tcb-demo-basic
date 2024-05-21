@@ -1,0 +1,9 @@
+<image style="{{style}}" class="weda-ui weda-image {{clsx}}" src="{{realSrc}}" alt="{{alt}}" mode="{{imgMode}}" lazy-load="{{lazyLoad}}" show-menu-by-longpress="{{showMenuByLongpress}}" bindtap="onImgTap" bindload="load" binderror="error" />
+<view wx:if="{{showImg}}" class="weda-img-mask" bindtap="onMaskClick">
+  <view bindtap="onCloseClick" class="weda-img-modal-close-btn">
+    <icon type="clear" size="23" color="white"></icon>
+  </view>
+  <gesture class="gesture-test" bindpinch="onPinch" catchtap="onTapImgPreview" bindpressMove="onPressMove">
+    <view class="weda-img-preview" style="margin-top:{{offsetHeight}}px;width: 100%;height:{{showHeight}}px;background-image: url('{{realSrc}}');transform: scale({{zoom}}) translateX({{previewTranslateX}}px) translateY({{previewTranslateY}}px);"></view>
+  </gesture>
+</view>

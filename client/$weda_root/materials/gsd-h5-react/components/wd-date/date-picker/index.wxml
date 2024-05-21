@@ -1,0 +1,41 @@
+<view class="{{classPrefix}}-custom-picker">
+  <view class="{{classPrefix}}-custom-backdrop" bind:tap="handleCloseMask"></view>
+
+  <view class="{{classPrefix}}-custom-picker__inner">
+    <view class="{{classPrefix}}-custom-picker__header">
+      <view class="{{classPrefix}}-custom-picker__header-cancle" bindtap="handleClose">{{cancelText}} </view>
+      <view class="{{classPrefix}}-custom-picker__header-confirm" bindtap="handleOk">{{okText}} </view>
+    </view>
+
+    <view class="{{classPrefix}}-custom-picker__body">
+      <block wx:if="{{mode === 'datetime' || mode === 'datetimeMinute'}}">
+        <view class="{{classPrefix}}-custom-picker__select">
+          <text class="{{classPrefix}}-custom-picker__select-item {{classPrefix}}-custom-picker__select-item-date {{dateOrTime === 'date' ? 'is-current' : ''}}" bind:tap="setDate">{{dateDisplay}}</text>
+          <text class="{{classPrefix}}-custom-picker__select-item {{classPrefix}}-custom-picker__select-item-time {{dateOrTime === 'time' ? 'is-current' : ''}}" bind:tap="setTime">{{timeDisplay}}</text>
+        </view>
+        <block wx:if="{{dateOrTime === 'date'}}">
+          <view class="{{classPrefix}}-custom-picker__select-date">
+            <calendar value="{{currentValue}}" start="{{start}}" end="{{end}}" mode="{{mode}}" bind:onChange="handleChange" isWheelChange="{{true}}" />
+          </view>
+        </block>
+        <block wx:else>
+          <view class="{{classPrefix}}-custom-picker__select-time">
+            <time-picker value="{{currentValue}}" start="{{start}}" end="{{end}}" mode="{{mode}}" bind:onChange="handleChange" />
+          </view>
+        </block>
+      </block>
+
+      <block wx:elif="{{mode === 'year'}}">
+        <year-month-picker value="{{currentValue}}" start="{{start}}" end="{{end}}" mode="{{mode}}" bind:onChange="handleChange" />
+      </block>
+
+      <block wx:elif="{{mode === 'month'}}">
+        <year-month-picker value="{{currentValue}}" start="{{start}}" end="{{end}}" mode="{{mode}}" bind:onChange="handleChange" />
+      </block>
+
+      <block wx:elif="{{mode === 'day'}}">
+        <calendar id="wd-date-day" value="{{currentValue}}" start="{{start}}" end="{{end}}" mode="{{mode}}" bind:onChange="handleChange" isWheelChange="{{true}}" />
+      </block>
+    </view>
+  </view>
+</view>

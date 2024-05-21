@@ -1,0 +1,32 @@
+<block wx:if="{{readOnly}}">
+  <slot></slot>
+</block>
+<block wx:else>
+  <view class="{{cls}}">
+    <!-- 前缀图标 -->
+    <block wx:if="{{prefixType}}">
+      <view class="{{inputWrap}}__before">
+        <wd-icon name="{{prefixIcon}}" type="{{prefixType}}" src="{{prefixSrc}}" size="{{iconSize}}" className="{{root}}__icon-before"></wd-icon>
+      </view>
+    </block>
+
+    <!-- 输入框 -->
+    <view class="{{inputWrap}}__content">
+      <slot></slot>
+    </view>
+
+    <!-- 清除按钮 -->
+    <block wx:if="{{hasClearIcon}}">
+      <view class="{{inputWrap}}__after">
+        <wd-icon className="{{classPrefix}}-icon__trigger" name="td:close-circle-filled" size="{{iconSize}}" bind:touchstart="handleClear"></wd-icon>
+      </view>
+    </block>
+
+    <!-- 后缀图标 -->
+    <block wx:if="{{!hasClearIcon && suffixType}}">
+      <view class="{{inputWrap}}__after">
+        <wd-icon name="{{suffixIcon}}" type="{{suffixType}}" src="{{suffixSrc}}" size="{{iconSize}}" className="{{root}}__icon-after"></wd-icon>
+      </view>
+    </block>
+  </view>
+</block>

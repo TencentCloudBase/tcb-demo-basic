@@ -1,0 +1,35 @@
+<block value="{{value}}" onChange="{{onChange}}">
+  <view class="weda-ui-custom-picker">
+    <view class="weda-ui-custom-mask" data-cancel="true"></view>
+    <view class="weda-ui-custom-picker__inner">
+      <view class="weda-ui-custom-picker__header">
+        <button class="weda-ui-custom-picker__header-btn" bindtap="cancelPicker" data-cancel="true">取消</button>
+        <button class="weda-ui-custom-picker__header-btn is-primary" bindtap="onAllTimePicker" data-cancel="false">确定</button>
+      </view>
+      <view class="weda-ui-custom-picker__select">
+        <view class="weda-ui-custom-picker__select-item {{isActive? 'is-active':''}}" data-item="Date" bindtap="onCheckTime"> {{pageShowDate}} </view>
+        <view class="weda-ui-custom-picker__select-item {{!isActive? 'is-active':''}}" data-item="Time" bindtap="onCheckTime">{{showDateTime}} </view>
+      </view>
+      <view class="weda-ui-custom-picker__body">
+        <view class="weda-ui-custom-picker-calendar__current-date" bindtap="onClickYearMonthArrow"
+          >{{arrowData}}
+          <image class="weda-ui-custom-picker-calendar__current-date-icon {{isArrowOpen? 'weda-ui-custom-picker-calendar-arrow-open':''}}" src="../../../calendar/arrowright--line.svg" mode="widthFix" />
+        </view>
+        <view class="weda-ui-custom-picker__datewrap">
+          <block wx:if="{{isSelectYearMonth}}">
+            <!-- 切换日历和时间日期选择 -->
+            <picker-view indicator-class="weda-ui-custom-picker-view-indicator" class="weda-ui-custom-picker-view" value="{{defaultSelectValue}}" bindchange="bindChange">
+              <picker-view-column wx:for="{{times}}" wx:for-item="time">
+                <view style="line-height: 40px; text-align: center" wx:for="{{time}}" wx:key="{{time}}">{{item}}</view>
+              </picker-view-column>
+            </picker-view>
+          </block>
+          <block wx:else>
+            <!-- 切换日历和时间日期选择 -->
+            <calendar isTimePicker="{{true}}" bind:onSelectDay="onSelectDay" configData="{{calendarConfigData}}" bind:onClickYearMonthArrow="onClickYearMonthArrow" bind:handleNextMonth="handleNextMonth" bind:handlePrevMonth="handlePrevMonth" id="calendar" initValue="{{showDate}}" />
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+</block>

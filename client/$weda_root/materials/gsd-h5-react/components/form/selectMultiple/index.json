@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "styleIsolation": "shared",
+  "usingComponents": {
+    "formcell": "../formcell",
+    "dropdownSelect": "./dropdown-select",
+    "wd-form-item-read-only": "../../wd-form-item-read-only"
+  }
+}

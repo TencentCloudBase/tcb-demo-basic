@@ -1,24 +1,42 @@
 {
-  "miniprogramRoot": "client/",
-  "cloudfunctionRoot": "cloud/functions/",
+  "packOptions": {
+    "ignore": [
+      {
+        "value": "$weda_root/materials/pageModule_ui/meta.json",
+        "type": "file"
+      },
+      {
+        "value": "$weda_root/materials/CLOUDBASE_BUSSINESS/meta.json",
+        "type": "file"
+      },
+      {
+        "value": "$weda_root/materials/gsd-h5-react/meta.json",
+        "type": "file"
+      }
+    ],
+    "include": []
+  },
   "setting": {
     "urlCheck": false,
     "es6": true,
     "enhance": true,
     "postcss": true,
-    "preloadBackgroundData": false,
     "minified": true,
     "newFeature": true,
-    "coverView": true,
     "nodeModules": true,
     "autoAudits": false,
-    "showShadowRootInWxmlPanel": true,
-    "scopeDataCheck": false,
     "uglifyFileName": false,
     "checkInvalidKey": true,
     "checkSiteMap": true,
     "uploadWithSourceMap": true,
+    "codeProtect": false,
     "compileHotReLoad": false,
+    "ignoreDevUnusedFiles": false,
+    "useCompilerPlugins": false,
+    "preloadBackgroundData": false,
+    "coverView": true,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
     "lazyloadPlaceholderEnable": false,
     "useMultiFrameRuntime": true,
     "useApiHook": true,
@@ -31,65 +49,68 @@
     "enableEngineNative": false,
     "useIsolateContext": false,
     "userConfirmedBundleSwitch": false,
-    "packNpmManually": false,
-    "packNpmRelationList": [],
+    "packNpmManually": true,
+    "packNpmRelationList": [
+      {
+        "packageJsonPath": "client/$weda_root/package.json",
+        "miniprogramNpmDistDir": "client/$weda_root"
+      },
+      {
+        "packageJsonPath": "client/$weda_root/packages/$wd_system/package.json",
+        "miniprogramNpmDistDir": "client/$weda_root/packages/$wd_system"
+      }
+    ],
     "minifyWXSS": true,
     "disableUseStrict": false,
     "showES6CompileOption": false,
-    "useCompilerPlugins": false,
-    "minifyWXML": true
+    "minifyWXML": true,
+    "bigPackageSizeSupport": true,
+    "ignoreUploadUnusedFiles": true
   },
+  "compileType": "miniprogram",
+  "libVersion": "2.13.2",
   "appid": "wxcf5102ada68a7ac9",
-  "projectname": "tcb-demo-basic",
-  "libVersion": "2.10.1",
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
+  "projectname": "tcb-demo-basic",
+  "miniprogramRoot": "client/",
+  "cloudfunctionRoot": "cloud/functions/",
   "condition": {
-    "search": {
-      "list": []
-    },
-    "conversation": {
-      "list": []
-    },
-    "plugin": {
-      "list": []
-    },
-    "game": {
-      "list": []
-    },
     "miniprogram": {
       "list": [
         {
-          "id": -1,
           "name": "用户管理",
           "pathName": "pages/user/index",
           "query": ""
         },
         {
-          "id": -1,
           "name": "微信支付",
           "pathName": "pages/pay-list/index",
           "query": ""
         },
         {
-          "id": 2,
           "name": "订单列表",
           "pathName": "pages/pay-order/index",
           "query": ""
         },
         {
-          "id": 3,
           "name": "订单详情",
           "pathName": "pages/pay-result/index",
           "query": "id=goods_4-1541683061235"
         },
         {
-          "id": -1,
           "name": "模板消息",
           "pathName": "pages/reserve/index",
           "query": ""
         }
       ]
     }
-  }
+  },
+  "srcMiniprogramRoot": "client/",
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  },
+  "wedaRoot": "$weda_root",
+  "appId": "wxcf5102ada68a7ac9"
 }

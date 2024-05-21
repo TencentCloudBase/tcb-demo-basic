@@ -1,0 +1,26 @@
+<block wx:if="{{visible}}">
+  <form-item-wrapper>
+    <old-file-uploader
+      id="{{id}}"
+      className="{{className}}"
+      style="{{style}}"
+      name="{{name}}"
+      label="{{label}}"
+      disabled="{{disabled}}"
+      layout="{{actualLayout}}"
+      labelVisible="{{labelVisible}}"
+      requiredFlag="{{requiredFlag && required}}"
+      acceptTypes="{{acceptTypes}}"
+      defaultValue="{{value}}"
+      maxSize="{{maxSize}}"
+      maxUploadCount="{{maxUploadCount}}"
+      single="{{single}}"
+      downloadVisible="{{downloadVisible}}"
+      deleteVisible="{{deleteVisible}}"
+      bind:change="change"
+      bind:success="success"
+      bind:error="error"
+    />
+    <tips wx:if="{{validateState === 'error' || validateState === 'warn'}}" tips="{{validateErrorMsg}}" type="warn" />
+  </form-item-wrapper>
+</block>

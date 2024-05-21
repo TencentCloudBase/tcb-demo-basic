@@ -1,0 +1,203 @@
+@import '../../style/weda-ui.wxss';
+
+/* components/calendar.wxss */
+.weda-calendar {
+  background: rgb(255, 255, 255);
+  width: 100%;
+  opacity: 0.9;
+  font-size: 14px;
+}
+
+.weda-calendar .weda-calendar__control {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px 16px 0;
+  position: relative;
+  /* text-align: center; */
+}
+
+.weda-calendar .weda-calendar__current-date {
+  font-weight: bold;
+  font-size: inherit;
+  line-height: 1.57142em;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+.weda-calendar .weda-calendar__current-date__no {
+  font-weight: bold;
+  font-size: inherit;
+  line-height: 1.57142em;
+  display: inline-flex;
+  align-items: center;
+  visibility: hidden;
+}
+
+.weda-calendar .weda-calendar__current-date-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.weda-calendar .weda-calendar__prevMonth,
+.weda-calendar .weda-calendar__prevMonth__timepicker,
+.weda-calendar .weda-calendar__nextMonth {
+  position: absolute;
+  width: 1.54285em;
+  vertical-align: middle;
+  top: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weda-calendar .weda-calendar__prevMonth .weda-calendar__prevMonth-icon,
+.weda-calendar
+  .weda-calendar__prevMonth__timepicker
+  .weda-calendar__prevMonth-icon,
+.weda-calendar .weda-calendar__nextMonth .weda-calendar__nextMonth-icon {
+  width: 100%;
+  height: 100%;
+}
+
+.weda-calendar .weda-calendar__prevMonth {
+  transform: rotate(180deg);
+}
+
+.weda-calendar .weda-calendar__prevMonth__timepicker {
+  transform: rotate(180deg);
+  right: 38px;
+}
+
+.weda-calendar .weda-calendar__nextMonth {
+  right: 16px;
+}
+
+.weda-calendar .weda-calendar__panel {
+  height: 21.85714em;
+  padding: 20px 16px 16px 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.weda-calendar .weda-calendar__table {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-self: start;
+  align-items: flex-start;
+  font-size: inherit;
+}
+
+.weda-calendar .weda-calendar__table-head {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.weda-calendar .weda-calendar__table-head-row {
+  width: 100%;
+  padding-bottom: 0;
+  display: flex;
+}
+
+.weda-calendar .weda-calendar__table-head-cell {
+  flex: 1 1 0%;
+  display: flex;
+  color: rgba(0, 0, 0, 0.6);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  font-size: 1em;
+  line-height: 1.42857em;
+  box-sizing: border-box;
+}
+
+.weda-calendar .weda-calendar__table-body {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+  flex: 1 1 0%;
+  width: 100%;
+}
+
+.weda-calendar .weda-calendar__table-body-row {
+  width: 100%;
+  display: flex;
+  flex: 1 1 0%;
+}
+
+.weda-calendar .weda-calendar__table-body-cell {
+  flex: 1 1 0%;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-size: 1em;
+  line-height: 1.42857em;
+  box-sizing: border-box;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.weda-calendar .weda-calendar__table-body-cell-value {
+  font-size: 1em;
+  text-align: center;
+  border-radius: 50%;
+  width: 40px;
+  line-height: 2.85714em;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.9);
+  position: relative;
+}
+
+.weda-calendar .weda-calendar__table-body-cell.is-disabled {
+  cursor: not-allowed;
+}
+
+.weda-calendar
+  .weda-calendar__table-body-cell.is-invalid
+  .weda-calendar__table-body-cell-value {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.weda-calendar
+  .weda-calendar__table-body-cell.is-disabled
+  .weda-calendar__table-body-cell-value {
+  color: #c5c5c5;
+}
+
+.weda-calendar
+  .weda-calendar__table-body-cell.is-checked
+  .weda-calendar__table-body-cell-value {
+  color: #fff;
+}
+
+/* theme */
+.weda-calendar
+  .weda-calendar__table-body-cell.is-checked
+  .weda-calendar__table-body-cell-bg {
+  position: absolute;
+  width: 1.714285em;
+  height: 1.714285em;
+  background-color: var(--wd-color-brand, #0052d9);
+  border-radius: 100%;
+  left: calc(50% - 0.85714em);
+  top: calc(50% - 0.85714em);
+  z-index: -1;
+}
+
+.weda-calendar .weda-calendar__table-body-cell-marked {
+  position: absolute;
+  border-radius: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: -10px;
+  width: 4px;
+  height: 4px;
+  top: calc(50% + 14px);
+}

@@ -1,0 +1,47 @@
+<view class="{{cls}}" id="{{id}}" style="{{style}}">
+  <view class="{{itemWrap}}">
+    <!-- Label -->
+    <block wx:if="{{labelVisible}}">
+      <view class="{{labelCls}}" style="{{labelStyle}}">
+        <label>
+          <text class="{{itemWrap}}__label-text {{labelRoot}}-text">{{label}}</text>
+          <block wx:if="{{labelTips}}">
+            <text class="{{itemWrap}}__label-explain">
+              <wd-icon name="td:help-circle"></wd-icon>
+            </text>
+          </block>
+        </label>
+      </view>
+    </block>
+
+    <!-- Item -->
+    <view class="{{itemWrap}}__control">
+      <view class="{{controlWrapCls}}">
+        <block wx:if="{{readOnly}}">
+          <view class="{{item}}__readonly">
+            <text class="{{item}}__readonly-before" wx:if="{{_before}}">{{_before}}</text>
+            <text class="{{item}}__readonly-value">{{_readValue}}</text>
+            <text class="{{item}}__readonly-after" wx:if="{{_after}}">{{_after}}</text>
+          </view>
+        </block>
+        <block wx:else>
+          <slot></slot>
+        </block>
+      </view>
+    </view>
+  </view>
+
+  <!-- Message -->
+  <block wx:if="{{validateErrorMsg}}">
+    <view class="{{item}}__help">
+      <text class="{{classPrefix}}-g-text-error {{root}}__error">{{validateErrorMsg}}</text>
+    </view>
+  </block>
+
+  <!-- Help -->
+  <block wx:if="{{extra}}">
+    <view class="{{item}}__help">
+      <text class="{{item}}__help-text {{root}}__help">{{extra}}</text>
+    </view>
+  </block>
+</view>

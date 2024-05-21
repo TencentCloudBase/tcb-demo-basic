@@ -1,0 +1,38 @@
+<block>
+  <view class="{{classPrefix}}-custom-calendar-op">
+    <view class="{{classPrefix}}-custom-calendar-op__start">
+      <view class="{{classPrefix}}-custom-calendar-op__select {{showMode === 'month' ? 'is-active' : ''}}" bind:tap="handleClickMode">
+        <block>{{yearMonthDisplay}}</block>
+        <i class="{{classPrefix}}-icon-arrow-right"></i>
+      </view>
+    </view>
+    <view class="{{classPrefix}}-custom-calendar-op__end" style="{{showMode === 'month' ? ' visibility:hidden' : ''}}">
+      <text class="{{classPrefix}}-icon-turn-pre" bind:tap="handlePreMonth"></text>
+      <text class="{{classPrefix}}-icon-turn-next" bind:tap="handletNextMonth"></text>
+    </view>
+  </view>
+
+  <view class="{{classPrefix}}-custom-picker__box{{showMode === 'day' ? '' : '--month'}}">
+    <block wx:if="{{showMode === 'day'}}">
+      <view class="{{classPrefix}}-custom-calendar">
+        <view class="{{classPrefix}}-custom-calendar__weeks">
+          <block wx:for="{{WEEKS}}" wx:key="*this">
+            <text class="{{classPrefix}}-custom-calendar__weeks-item">{{item}}</text>
+          </block>
+        </view>
+        <view class="{{classPrefix}}-custom-calendar__days">
+          <block wx:for="{{weeks}}" wx:for-item="week" wx:key="*this">
+            <view class="{{classPrefix}}-custom-calendar__days-row">
+              <block wx:for="{{week}}" wx:key="ymd">
+                <text class="{{classPrefix}}-custom-calendar__days-item {{item.ymd === ymd ? 'is-current' : ''}} {{item.disabled ? 'no-select' : ''}}" bind:tap="handleSelectDay" data-item="{{item}}">{{item.day}}</text>
+              </block>
+            </view>
+          </block>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{showMode === 'month'}}">
+      <year-month-picker value="{{yearMonthValue}}" start="{{start}}" end="{{end}}" bind:onChange="handleSelectYearMonth" />
+    </block>
+  </view>
+</block>

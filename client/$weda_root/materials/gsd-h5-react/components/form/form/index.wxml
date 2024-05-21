@@ -1,0 +1,5 @@
+<view class="weui-form weda-ui {{className}}" style="{{style}}">
+  <view class="weui-cells__group weui-cells__group_form">
+    <slot name="contentSlot" />
+  </view>
+</view>

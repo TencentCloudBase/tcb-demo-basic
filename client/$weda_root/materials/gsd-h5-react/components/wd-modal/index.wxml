@@ -1,0 +1,16 @@
+<view id="{{id}}" style="{{styleMain}}" class="{{cls}}">
+  <block wx:if="{{maskPreToShow}}">
+    <view class="{{modalMaskClasses}}" bindtap="maskClick" />
+    <view style="{{styleShow}}" class="{{modalBdClasses}}">
+      <view class="{{classPrefix + '-modal-bd__hd'}}">
+        <slot name="headerSlot"></slot>
+      </view>
+      <view class="{{classPrefix + '-modal-bd__main'}}">
+        <slot name="contentSlot"></slot>
+      </view>
+      <view class="{{classPrefix + '-modal-bd__ft'}} {{modalFtClasses}}">
+        <slot name="footerSlot"></slot>
+      </view>
+    </view>
+  </block>
+</view>

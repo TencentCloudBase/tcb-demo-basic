@@ -1,0 +1,22 @@
+<view class="{{tagCls}}" id="{{id}}" style="{{tagStyle}}">
+  <block wx:for="{{processedRange}}" wx:key="value">
+    <tag-item
+      label="{{item.label == null ? item.value : item.label}}"
+      size="{{tagSize}}"
+      prefixType="{{item.prefixType}}"
+      prefixIcon="{{item.prefixIcon}}"
+      prefixSrc="{{item.prefixSrc}}"
+      suffixType="{{item.suffixType}}"
+      suffixIcon="{{item.suffixIcon}}"
+      suffixSrc="{{item.suffixSrc}}"
+      tagStyleType="{{tagStyleType}}"
+      tagStyleRadius="{{tagStyleRadius}}"
+      tagStyleWidth="{{tagStyleWidthNew}}"
+      bindclick="handleClick"
+      data-item="{{item}}"
+      tagStyleColor="{{processedRangeExtra[index] && processedRangeExtra[index].color}}"
+      disabled="{{processedRangeExtra[index] && processedRangeExtra[index].disabled}}"
+      checked="{{processedRangeExtra[index] && processedRangeExtra[index].checked}}"
+    />
+  </block>
+</view>

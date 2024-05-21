@@ -1,4 +1,7 @@
 {
+  "useExtendedLib": {
+    "weui": true
+  },
   "pages": [
     "pages/home/index",
     "pages/index/index",
@@ -17,7 +20,8 @@
     "pages/toolbox/index",
     "pages/official-account/index",
     "pages/technology-group/index",
-    "pages/weda-appmarket/index"
+    "pages/weda-appmarket/index",
+    "$weda_root/pages/index/index"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -60,5 +64,17 @@
     "wx5a9f6a2c25353607",
     "wx5449e34426a83bdd"
   ],
-  "sitemapLocation": "sitemap73.json"
+  "subpackages": [
+    {
+      "root": "$weda_root/packages/$wd_system",
+      "name": "wd-sys-module",
+      "pages": []
+    },
+    {
+      "root": "$weda_root/packages/mIOXHS1t",
+      "pages": [
+        "pages/chat/index"
+      ]
+    }
+  ]
 }

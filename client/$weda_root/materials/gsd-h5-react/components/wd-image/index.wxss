@@ -1,0 +1,11 @@
+@import '../../style/wd-design.wxss';
+@import './wd-image.wxss';
+
+.wd-image-preview-container {
+  background-color: #000;
+}
+
+.wd-image-mask__icon-close {
+  width: 1rem;
+  height: 1rem;
+}

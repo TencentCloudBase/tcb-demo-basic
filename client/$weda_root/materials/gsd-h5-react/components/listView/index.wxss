@@ -1,0 +1,290 @@
+/* weda_list_view */
+
+.weda-list-view__container {
+  width: 100%;
+  overflow-x: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 列表内容区域 */
+.weda-list-view__container .weda-list-view__content {
+  position: relative;
+  flex-grow: 2;
+}
+
+/* 加载中-列表为空的状态最小高度 */
+.weda-list-view__container .weda-list-view__content-blank {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 35px;
+}
+
+/* 加载中-给分页器最小的高度 */
+.weda-list-view__container.weda-list-view__container-loading
+  .weda-list-view__content-pagination.weda-list-view__content-init {
+  min-height: 35px;
+}
+
+/* 加载中-给触底加载最小高度 */
+.weda-list-view__container.weda-list-view__container-loading
+  .weda-list-view__more-bottomLoad {
+  min-height: 35px;
+}
+
+/* 卡片列表 */
+.weda-list-view-card {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* 列表内容加载中 */
+.weda-list-view__container
+  .weda-list-view__more.weda-list-view__pagination-loading {
+  background: transparent;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weda-list-view__container
+  .weda-list-view__more.weda-list-view__pagination-loading
+  .weda-list-view__more-symbol {
+  padding: 0;
+}
+
+/* 列表内容加载为空 */
+.weda-list-view__container .weda-list-view__empty {
+  width: 100%;
+  padding: 16px;
+}
+.weda-list-view__container
+  .weda-list-view__empty
+  .weda-list-view__empty__content {
+  color: rgba(0, 0, 0, 0.9);
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 14px;
+  border-radius: 6px;
+}
+.weda-list-view__container
+  .weda-list-view__empty
+  .weda-list-view__empty__content
+  .weda-list-view__empty__content__image {
+  width: 48px;
+  height: 48px;
+}
+
+/* 暂无数据图片 */
+.wd-status-content__status-icon.empty {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDQ4IDQ4IiBmaWxsPSJub25lIj4KPHJlY3QgeD0iNiIgeT0iMTQiIHdpZHRoPSIzNiIgaGVpZ2h0PSIyNiIgZmlsbD0iI0RDRENEQyIvPgo8cGF0aCBkPSJNMjQgMjEuNUMyMi4xMDI2IDIxLjUgMjAuNSAyMi45NDc5IDIwLjUgMjQuOEgyMS41QzIxLjUgMjMuNTY0MSAyMi41ODg4IDIyLjUgMjQgMjIuNUMyNS40MTEyIDIyLjUgMjYuNSAyMy41NjQxIDI2LjUgMjQuOEMyNi41IDI1LjY4NDEgMjUuNzI1MyAyNi41NTA4IDI0LjczOTkgMjYuOTI0NUwyNC43Mzc0IDI2LjkyNTRDMjQuMDI0NSAyNy4yIDIzLjUgMjcuODY4NSAyMy41IDI4LjY4VjMwSDI0LjVWMjguNjhDMjQuNSAyOC4zMjM4IDI0LjcyOTMgMjguMDAwNiAyNS4wOTU4IDI3Ljg1OUMyNi4zMDQyIDI3LjQwMDMgMjcuNSAyNi4yNTE0IDI3LjUgMjQuOEMyNy41IDIyLjk0NzkgMjUuODk3NCAyMS41IDI0IDIxLjVaIiBmaWxsPSJibGFjayIgZmlsbC1vcGFjaXR5PSIwLjkiLz4KPHBhdGggZD0iTTI0IDMxQzIzLjU4NTggMzEgMjMuMjUgMzEuMzM1OCAyMy4yNSAzMS43NUMyMy4yNSAzMi4xNjQyIDIzLjU4NTggMzIuNSAyNCAzMi41QzI0LjQxNDIgMzIuNSAyNC43NSAzMi4xNjQyIDI0Ljc1IDMxLjc1QzI0Ljc1IDMxLjMzNTggMjQuNDE0MiAzMSAyNCAzMVoiIGZpbGw9ImJsYWNrIiBmaWxsLW9wYWNpdHk9IjAuOSIvPgo8cGF0aCBkPSJNNiA3SDQyVjEzSDZWN1oiIGZpbGw9IiNEQ0RDREMiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00Ni41MjM0IDQzLjk2MzZDNDYuNTIzNCA0NC40ODMgNDYuMjY4NyA0NC45MzI1IDQ1LjkwMjggNDUuMjkyOUM0NS41Mzg3IDQ1LjY1MTYgNDUuMDM3NCA0NS45NTE3IDQ0LjQ1ODQgNDYuMTkyOUM0My4yOTgxIDQ2LjY3NjQgNDEuNzI5OCA0Ni45NjM2IDQwLjAyMzQgNDYuOTYzNkMzOC4zMTcxIDQ2Ljk2MzYgMzYuNzQ4OCA0Ni42NzY0IDM1LjU4ODUgNDYuMTkyOUMzNS4wMDk0IDQ1Ljk1MTcgMzQuNTA4MiA0NS42NTE2IDM0LjE0NDEgNDUuMjkyOUMzMy43NzgyIDQ0LjkzMjUgMzMuNTIzNCA0NC40ODMgMzMuNTIzNCA0My45NjM2VjM2Ljk2MzZDMzMuNTIzNCAzNi40NDQzIDMzLjc3ODIgMzUuOTk0OCAzNC4xNDQxIDM1LjYzNDNDMzQuNTA4MiAzNS4yNzU2IDM1LjAwOTQgMzQuOTc1NiAzNS41ODg1IDM0LjczNDNDMzYuNzQ4OCAzNC4yNTA5IDM4LjMxNzEgMzMuOTYzNiA0MC4wMjM0IDMzLjk2MzZDNDEuNzI5OCAzMy45NjM2IDQzLjI5ODEgMzQuMjUwOSA0NC40NTg0IDM0LjczNDNDNDUuMDM3NCAzNC45NzU2IDQ1LjUzODcgMzUuMjc1NiA0NS45MDI4IDM1LjYzNDNDNDYuMjY4NyAzNS45OTQ4IDQ2LjUyMzQgMzYuNDQ0MyA0Ni41MjM0IDM2Ljk2MzZWNDMuOTYzNlpNMzQuODQ1OCAzNi4zNDY3QzM0LjYwNDUgMzYuNTg0NSAzNC41MjM0IDM2Ljc5MjYgMzQuNTIzNCAzNi45NjM2QzM0LjUyMzQgMzcuMTM0NiAzNC42MDQ1IDM3LjM0MjggMzQuODQ1OCAzNy41ODA1QzM1LjA4ODkgMzcuODIgMzUuNDY2NCAzOC4wNTg3IDM1Ljk3MzEgMzguMjY5OUMzNi45ODQ0IDM4LjY5MTIgMzguNDE2MSAzOC45NjM2IDQwLjAyMzQgMzguOTYzNkM0MS42MzA4IDM4Ljk2MzYgNDMuMDYyNSAzOC42OTEyIDQ0LjA3MzggMzguMjY5OUM0NC41ODA1IDM4LjA1ODcgNDQuOTU3OSAzNy44MiA0NS4yMDEgMzcuNTgwNUM0NS40NDI0IDM3LjM0MjggNDUuNTIzNCAzNy4xMzQ2IDQ1LjUyMzQgMzYuOTYzNkM0NS41MjM0IDM2Ljc5MjYgNDUuNDQyNCAzNi41ODQ1IDQ1LjIwMSAzNi4zNDY3QzQ0Ljk1NzkgMzYuMTA3MiA0NC41ODA1IDM1Ljg2ODUgNDQuMDczOCAzNS42NTc0QzQzLjA2MjUgMzUuMjM2IDQxLjYzMDggMzQuOTYzNiA0MC4wMjM0IDM0Ljk2MzZDMzguNDE2MSAzNC45NjM2IDM2Ljk4NDQgMzUuMjM2IDM1Ljk3MzEgMzUuNjU3NEMzNS40NjY0IDM1Ljg2ODUgMzUuMDg4OSAzNi4xMDcyIDM0Ljg0NTggMzYuMzQ2N1pNNDUuNTIzNCAzOC42MTE4VjQwLjQ2MzZDNDUuNTIzNCA0MC42MzQ2IDQ1LjQ0MjQgNDAuODQyOCA0NS4yMDEgNDEuMDgwNUM0NC45NTc5IDQxLjMyIDQ0LjU4MDUgNDEuNTU4NyA0NC4wNzM4IDQxLjc2OTlDNDMuMDYyNSA0Mi4xOTEyIDQxLjYzMDggNDIuNDYzNiA0MC4wMjM0IDQyLjQ2MzZDMzguNDE2MSA0Mi40NjM2IDM2Ljk4NDQgNDIuMTkxMiAzNS45NzMxIDQxLjc2OTlDMzUuNDY2NCA0MS41NTg3IDM1LjA4ODkgNDEuMzIgMzQuODQ1OCA0MS4wODA1QzM0LjYwNDUgNDAuODQyOCAzNC41MjM0IDQwLjYzNDYgMzQuNTIzNCA0MC40NjM2VjM4LjYxMThDMzQuODI4OCAzOC44MzMzIDM1LjE5MDIgMzkuMDI3IDM1LjU4ODUgMzkuMTkyOUMzNi43NDg4IDM5LjY3NjQgMzguMzE3MSAzOS45NjM2IDQwLjAyMzQgMzkuOTYzNkM0MS43Mjk4IDM5Ljk2MzYgNDMuMjk4MSAzOS42NzY0IDQ0LjQ1ODQgMzkuMTkyOUM0NC44NTY2IDM5LjAyNyA0NS4yMTgxIDM4LjgzMzMgNDUuNTIzNCAzOC42MTE4Wk00NS41MjM0IDQzLjk2MzZWNDIuMTExOEM0NS4yMTgxIDQyLjMzMzMgNDQuODU2NiA0Mi41MjcgNDQuNDU4NCA0Mi42OTI5QzQzLjI5ODEgNDMuMTc2NCA0MS43Mjk4IDQzLjQ2MzYgNDAuMDIzNCA0My40NjM2QzM4LjMxNzEgNDMuNDYzNiAzNi43NDg4IDQzLjE3NjQgMzUuNTg4NSA0Mi42OTI5QzM1LjE5MDIgNDIuNTI3IDM0LjgyODggNDIuMzMzMyAzNC41MjM0IDQyLjExMThWNDMuOTYzNkMzNC41MjM0IDQ0LjEzNDYgMzQuNjA0NSA0NC4zNDI4IDM0Ljg0NTggNDQuNTgwNUMzNS4wODg5IDQ0LjgyIDM1LjQ2NjQgNDUuMDU4NyAzNS45NzMxIDQ1LjI2OTlDMzYuOTg0NCA0NS42OTEyIDM4LjQxNjEgNDUuOTYzNiA0MC4wMjM0IDQ1Ljk2MzZDNDEuNjMwOCA0NS45NjM2IDQzLjA2MjUgNDUuNjkxMiA0NC4wNzM4IDQ1LjI2OTlDNDQuNTgwNSA0NS4wNTg3IDQ0Ljk1NzkgNDQuODIgNDUuMjAxIDQ0LjU4MDVDNDUuNDQyNCA0NC4zNDI4IDQ1LjUyMzQgNDQuMTM0NiA0NS41MjM0IDQzLjk2MzZaIiBmaWxsPSJibGFjayIgZmlsbC1vcGFjaXR5PSIwLjkiLz4KPC9zdmc+');
+}
+
+.weda-list-view__container
+  .weda-list-view__empty
+  .weda-list-view__empty__content
+  .title {
+  padding: 10px 0 5px 0;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.9);
+  font-size: 16px;
+}
+
+.weda-list-view__container
+  .weda-list-view__empty
+  .weda-list-view__empty__content
+  .code {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.weda-list-view__container
+  .weda-list-view__empty
+  .weda-list-view__empty__content
+  .detail {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+  font-weight: 400;
+  padding-right: 7px;
+}
+
+.weda-list-view__container
+  .weda-list-view__empty
+  .weda-list-view__empty__content
+  .arrow {
+  width: 6px;
+  height: 10px;
+}
+
+/* 加载更多 */
+.weda-list-view__container .weda-list-view__more {
+  width: 100%;
+  position: relative;
+}
+
+.weda-list-view__container .weda-list-view__more .weda-list-view__more-text {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 14px;
+  line-height: 21px;
+  color: rgba(0, 0, 0, 0.26);
+  text-align: center;
+  box-sizing: border-box;
+  height: 34px;
+}
+
+/* 触底加载 */
+.weda-list-view__container
+  .weda-list-view__more.weda-list-view__more-bottomLoad {
+  background: transparent;
+}
+
+.weda-list-view__bottom-load {
+  padding-top: 1px;
+}
+
+.weda-list-view__container
+  .weda-list-view__more
+  .weda-list-view__bottom-load
+  .weda-list-view__more-symbol {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* 加载效果, height 固定成 37px */
+.weda-list-view__container .weda-list-view__more .weda-list-view__more-symbol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 12px;
+  padding-bottom: 15px;
+  box-sizing: border-box;
+  height: 37px;
+}
+
+.weda-list-view__container .weda-list-view__more .weda-list-view__symbol-item {
+  width: 8px;
+  height: 8px;
+  background: #c4c4c4;
+  margin-left: 6px;
+  border-radius: 50%;
+}
+
+.weda-list-view__container
+  .weda-list-view__more
+  .weda-list-view__symbol-item:first-child {
+  width: 6px;
+  height: 6px;
+  margin-left: 0;
+}
+
+/* 加载更多 分页 */
+.weda-list-view__container .weda-list-view__more .weda-list-view__pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 10px 18px 12px 16px;
+  box-sizing: border-box;
+}
+
+.weda-list-view__container
+  .weda-list-view__more
+  .weda-list-view__pagination-pre,
+.weda-list-view__container
+  .weda-list-view__more
+  .weda-list-view__pagination-next {
+  font-size: 12px;
+  line-height: 24px;
+  color: rgba(0, 0, 0, 0.4);
+  padding: 0 24px;
+}
+
+.weda-list-view__container
+  .weda-list-view__more
+  .weda-list-view__pagination-pre.active,
+.weda-list-view__container
+  .weda-list-view__more
+  .weda-list-view__pagination-next.active {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.weda-list-view__container
+  .weda-list-view__more
+  .weda-list-view__pagination-pre
+  .weda-list-view__pagination-icon,
+.weda-list-view__container
+  .weda-list-view__more
+  .weda-list-view__pagination-next
+  .weda-list-view__pagination-icon {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 10px;
+  opacity: 0.2;
+}
+
+.weda-list-view__container
+  .weda-list-view__more
+  .active.weda-list-view__pagination-pre
+  .weda-list-view__pagination-icon,
+.weda-list-view__container
+  .weda-list-view__more
+  .active.weda-list-view__pagination-next
+  .weda-list-view__pagination-icon {
+  opacity: 1;
+}
+
+.weda-list-view__container
+  .weda-list-view__more
+  .weda-list-view__pagination-pre
+  .weda-list-view__pagination-icon {
+  left: 16px;
+  transform: rotate(180deg);
+}
+
+.weda-list-view__container
+  .weda-list-view__more
+  .weda-list-view__pagination-next
+  .weda-list-view__pagination-icon {
+  right: 18px;
+}
+
+.weda-list-view__container
+  .weda-list-view__more
+  .weda-list-view__pagination-text {
+  font-size: 12px;
+  line-height: 22px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.split {
+  height: 20px;
+}
+
+/* 加载完成底部文字 */
+.weda-list-view__load-completed {
+  text-align: center;
+  padding: 5px 0;
+  color: rgba(0, 0, 0, 0.4);
+  opacity: 0.4;
+  font-size: 12px;
+}
+.weda-list-view__error {
+  width: 100%;
+}

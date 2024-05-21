@@ -1,0 +1,18 @@
+<container className="lcap-modal {{className}}" style="{{style}}">
+  <container className="container" wx:if="{{isVisible}}">
+    <container className="lcap-modal__mask" />
+    <container className="lcap-modal__dialog {{isVisible ? 'enter' : ''}}">
+      <container className="lcap-modal__close_btn" bindtap="close">
+        <container className="lcap-icon-close lcap-icon" style="font-size: 24px" />
+      </container>
+      <container title="modal-header">
+        <weda-text wx:if="{{(content && content.length > 0)}}" level="0" text="{{content}}" maxLines="{{2}}" userSelect="{{true}}" space="{{false}}" contenteditable="false" />
+        <slot wx:else name="customContent"></slot>
+      </container>
+      <container className="lcap-modal__confirm_btn">
+        <weda-button wx:if="{{isDefaultButton}}" text="确定" bindtap="confirm" className="lcap-modal__default_btn" />
+        <slot wx:else name="customButton"></slot>
+      </container>
+    </container>
+  </container>
+</container>

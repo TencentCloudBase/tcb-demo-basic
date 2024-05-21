@@ -1,0 +1,28 @@
+<block wx:if="{{visible}}">
+  <wd-form-item
+    id="{{id}}"
+    className="{{className}}"
+    style="{{style}}"
+    label="{{label}}"
+    labelVisible="{{labelVisible}}"
+    labelTips="{{labelTips}}"
+    labelWidth="{{labelWidth}}"
+    labelAlign="{{labelAlign}}"
+    labelWrap="{{labelWrap}}"
+    layout="{{actualLayout}}"
+    extra="{{extra}}"
+    required="{{required}}"
+    disabled="{{disabled}}"
+    requiredFlag="{{requiredFlag}}"
+    validateState="{{validateState}}"
+    validateErrorMsg="{{validateErrorMsg}}"
+    borderedH5="{{borderedH5}}"
+    readValue="{{value}}"
+    classRoot="switch"
+  >
+    <label class="{{classPrefix}}-switch {{switchCls}}">
+      <switch class="{{classPrefix}}-switch__input" type="checkbox" checked="{{checked}}" bindchange="handleChange" disabled="{{disabled || readOnly}}" />
+      <view class="{{classPrefix}}-switch__box" />
+    </label>
+  </wd-form-item>
+</block>

@@ -1,0 +1,18 @@
+<view class="wd-tooltip" id="tooltip">
+  <view class="wd-tooltip__pos wd-tooltip__hidden" id="pos">
+    <view class="wd-tooltip__container">
+      <view class="wd-tooltip__inner">{{ content }}</view>
+    </view>
+  </view>
+  <view wx:if="{{ show }}" name="fade">
+    <view class="wd-tooltip__pos" style="{{ popStyle }};">
+      <view class="wd-tooltip__container">
+        <view wx:if="{{ visibleArrow }}" class="wd-tooltip__arrow {{ arrowClass }}" style="{{arrowStyle}}"></view>
+        <view class="wd-tooltip__inner wd-wedatea2td-bubble__inner">{{ content }}</view>
+      </view>
+    </view>
+  </view>
+  <view class="wd-tooltip__target" id="target">
+    <slot />
+  </view>
+</view>

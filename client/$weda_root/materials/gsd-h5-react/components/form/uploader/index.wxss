@@ -1,0 +1,47 @@
+@import '../../../style/weda-ui.wxss';
+.weui-uploader.horizontal {
+  display: flex;
+}
+
+.weui-uploader.horizontal .weui-uploader__hd {
+  display: inline-block;
+  align-self: center;
+}
+
+.weda-uploader-pc.horizontal {
+  display: flex;
+  justify-content: space-between;
+}
+
+.weui-uploader.horizontal .weda-formcells__label {
+  width: 130px;
+}
+
+.weui-uploader__label {
+  display: flex;
+  flex: 1;
+}
+
+.weui-uploader__title {
+  flex: unset;
+}
+.weda-ui .weui-uploader.horizontal .weui-uploader__bd {
+  padding: 16px 0;
+}
+.weda-ui .weui-uploader.vertical .weui-uploader__bd {
+  padding: 16px;
+}
+.weui-uploader__hd.vertical {
+  padding-bottom: 0;
+}
+
+/* 标准化样式适配 start */
+.wd-mp-upload-image-root .weui-cells::before,
+.wd-mp-upload-image-root .weui-cells::after {
+  display: none;
+}
+
+.wd-form-item .wd-form-item-wrap .weui-uploader__hd {
+  display: none;
+}
+/* 标准化样式适配 end */

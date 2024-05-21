@@ -1,0 +1,8 @@
+<!-- 小程序 text 组件即使空白也会会有一个高度与web不一致，空白的时候改成空白view -->
+<block wx:if="{{text && text.length > 0}}">
+  <text wx:if="{{userSelect}}" user-select="{{userSelect}}" class="{{cls}}" style="{{style}}" id="{{id}}" space="{{space?'nbsp':''}}" bind:tap="tap">{{text}}</text>
+  <text wx:else class="{{cls}}" style="{{WebkitLineClamp}};{{style}}" id="{{id}}" space="{{space?'nbsp':''}}" bind:tap="tap">{{text}}</text>
+</block>
+<block wx:else>
+  <view class="{{cls}}" style="{{style}}" id="{{id}}" bind:tap="tap">{{text}}</view>
+</block>

@@ -1,0 +1,11 @@
+<view id="{{id}}" style="{{style}}" class="{{classPrefix + '-card'}} {{classPrefix + '-mp-card-root'}} {{classPrefix + '-card-root'}} {{showDivider ? 'wd-card--bordered' : ''}} {{contentState !== 'show' ? 'wd-card--collapse-active' : ''}} {{className}}">
+  <view class="{{classPrefix + '-card__header'}}" wx:if="{{showHeader}}">
+    <slot name="headerSlot"></slot>
+  </view>
+  <view class="{{classPrefix + '-card__body'}}" wx:if="{{contentState === 'show'}}">
+    <slot name="contentSlot"></slot>
+  </view>
+  <view class="{{classPrefix + '-card__footer'}}" wx:if="{{showFooter}}">
+    <slot name="footerSlot"></slot>
+  </view>
+</view>

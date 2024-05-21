@@ -1,0 +1,152 @@
+<page-meta page-style="{{pageStyle}}">
+	<view id="wd-page-root" wx:if="{{weDaHasLogin && !_expiredMessage}}" data-weui-theme="light" class="wd-mp-root">
+		<a id="container10" style="{{container10.style}}" className="{{container10.className}}" data="{{container10.data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+			<b id="menuLayout1" style="{{menuLayout1.style}}" className="{{menuLayout1.className}}" menu="{{menuLayout1.menu}}" type="{{menuLayout1.type}}" template="{{menuLayout1.template}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+				<a id="container1" style="{{container1.style}}" className="{{container1.className}}" data="{{container1.data}}" bind:attached="__mnt__" bind:detached="__unmnt__" slot="contentSlot">
+					<c id="icon1" style="{{icon1.style}}" className="{{icon1.className}}" wx:if="{{icon1._waIf}}" name="{{icon1.name}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:tap="onicon1$tap"/>
+					<d id="image1" style="{{image1.style}}" className="{{image1.className}}" alt="{{image1.alt}}" fit="{{image1.fit}}" src="{{image1.src}}" lazyLoad="{{image1.lazyLoad}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:tap="onimage1$tap"/>
+					<e id="text1" style="{{text1.style}}" className="{{text1.className}}" text="{{text1.text}}" level="{{text1.level}}" maxLines="{{text1.maxLines}}" inheritColor="{{text1.inheritColor}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:tap="ontext1$tap">{{text1.text}}</e>
+					<c id="icon2" style="{{icon2.style}}" className="{{icon2.className}}" wx:if="{{icon2._waIf}}" name="{{icon2.name}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:tap="onicon2$tap"/>
+				</a>
+				<a id="container23" style="{{container23.style}}" className="{{container23.className}}" data="{{container23.data}}" bind:attached="__mnt__" bind:detached="__unmnt__" slot="footerSlot">
+					<a id="container32" style="{{container32.style}}" className="{{container32.className}}" data="{{container32.data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+						<f id="button13" style="{{button13.style}}" className="{{button13.className}}" wx:if="{{button13._waIf}}" icon="{{button13.icon}}" size="{{button13.size}}" text="{{button13.text}}" theme="{{button13.theme}}" variant="{{button13.variant}}" iconType="{{button13.iconType}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:tap="onbutton13$tap">{{button13.text}}</f>
+					</a>
+					<a id="container33" style="{{container33.style}}" className="{{container33.className}}" data="{{container33.data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+						<k id="textarea1" style="{{textarea1.style}}" className="{{textarea1.className}}" name="{{textarea1.name}}" focus="{{textarea1.focus}}" label="{{textarea1.label}}" value="{{textarea1.value}}" status="{{textarea1.status}}" maxLength="{{textarea1.maxLength}}" borderedH5="{{textarea1.borderedH5}}" placeholder="{{textarea1.placeholder}}" requiredMsg="{{textarea1.requiredMsg}}" labelVisible="{{textarea1.labelVisible}}" cursorSpacing="{{textarea1.cursorSpacing}}" bind:attached="__mnt__" bind:detached="__unmnt__"/>
+						<f id="button1" style="{{button1.style}}" className="{{button1.className}}" icon="{{button1.icon}}" text="{{button1.text}}" loading="{{button1.loading}}" iconType="{{button1.iconType}}" disabled="{{button1.disabled}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:tap="onbutton1$tap">{{button1.text}}</f>
+					</a>
+				</a>
+				<a id="container24" style="{{container24.style}}" className="{{container24.className}}" data="{{container24.data}}" bind:attached="__mnt__" bind:detached="__unmnt__" slot="contentSlot">
+					<a id="container34" style="{{container34.style}}" className="{{container34.className}}" data="{{container34.data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+						<e id="text12" style="{{text12.style}}" className="{{text12.className}}" text="{{text12.text}}" level="{{text12.level}}" maxLines="{{text12.maxLines}}" inheritColor="{{text12.inheritColor}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{text12.text}}</e>
+						<e id="text13" style="{{text13.style}}" className="{{text13.className}}" text="{{text13.text}}" level="{{text13.level}}" maxLines="{{text13.maxLines}}" inheritColor="{{text13.inheritColor}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{text13.text}}</e>
+						<a id="container25" style="{{container25.style}}" className="{{container25.className}}" data="{{container25.data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+							<f id="button2" style="{{button2.style}}" className="{{button2.className}}" icon="{{button2.icon}}" text="{{button2.text}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:tap="onbutton2$tap">{{button2.text}}</f>
+							<f id="button7" style="{{button7.style}}" className="{{button7.className}}" icon="{{button7.icon}}" text="{{button7.text}}" variant="{{button7.variant}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:tap="onbutton7$tap">{{button7.text}}</f>
+							<f id="button8" style="{{button8.style}}" className="{{button8.className}}" icon="{{button8.icon}}" text="{{button8.text}}" variant="{{button8.variant}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:tap="onbutton8$tap">{{button8.text}}</f>
+							<g id="modal1" style="{{modal1.style}}" className="{{modal1.className}}" position="{{modal1.position}}" template="{{modal1.template}}" closeType="{{modal1.closeType}}" defaultShow="{{modal1.defaultShow}}" defaultMaskShow="{{modal1.defaultMaskShow}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+								<a id="container36" style="{{container36.style}}" className="{{container36.className}}" data="{{container36.data}}" bind:attached="__mnt__" bind:detached="__unmnt__" slot="contentSlot">
+									<a id="container35" style="{{container35.style}}" className="{{container35.className}}" data="{{container35.data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+										<c id="icon9" style="{{icon9.style}}" className="{{icon9.className}}" name="{{icon9.name}}" size="{{icon9.size}}" bind:attached="__mnt__" bind:detached="__unmnt__"/>
+										<a id="container38" style="{{container38.style}}" className="{{container38.className}}" data="{{container38.data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+											<e id="text19" style="{{text19.style}}" className="{{text19.className}}" text="{{text19.text}}" level="{{text19.level}}" maxLines="{{text19.maxLines}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{text19.text}}</e>
+											<e id="text20" style="{{text20.style}}" className="{{text20.className}}" text="{{text20.text}}" maxLines="{{text20.maxLines}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{text20.text}}</e>
+										</a>
+									</a>
+									<h id="divider1" style="{{divider1.style}}" className="{{divider1.className}}" bind:attached="__mnt__" bind:detached="__unmnt__"/>
+									<a id="container26" style="{{container26.style}}" className="{{container26.className}}" data="{{container26.data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+										<c id="icon8" style="{{icon8.style}}" className="{{icon8.className}}" name="{{icon8.name}}" size="{{icon8.size}}" bind:attached="__mnt__" bind:detached="__unmnt__"/>
+										<a id="container37" style="{{container37.style}}" className="{{container37.className}}" data="{{container37.data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+											<e id="text16" style="{{text16.style}}" className="{{text16.className}}" text="{{text16.text}}" level="{{text16.level}}" maxLines="{{text16.maxLines}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{text16.text}}</e>
+											<e id="text17" style="{{text17.style}}" className="{{text17.className}}" text="{{text17.text}}" maxLines="{{text17.maxLines}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{text17.text}}</e>
+										</a>
+									</a>
+								</a>
+								<f id="button11" style="{{button11.style}}" className="{{button11.className}}" icon="{{button11.icon}}" text="{{button11.text}}" block="{{button11.block}}" bind:attached="__mnt__" bind:detached="__unmnt__" slot="footerSlot">{{button11.text}}</f>
+								<c id="icon7" style="{{icon7.style}}" className="{{icon7.className}}" src="{{icon7.src}}" name="{{icon7.name}}" size="{{icon7.size}}" type="{{icon7.type}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:tap="onicon7$tap" slot="footerSlot"/>
+							</g>
+						</a>
+						<e id="text14" style="{{text14.style}}" className="{{text14.className}}" text="{{text14.text}}" level="{{text14.level}}" maxLines="{{text14.maxLines}}" inheritColor="{{text14.inheritColor}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{text14.text}}</e>
+					</a>
+				</a>
+				<i id="scrollView1" style="{{scrollView1.style}}" className="{{scrollView1.className}}" bounces="{{scrollView1.bounces}}" scrollX="{{scrollView1.scrollX}}" scrollY="{{scrollView1.scrollY}}" enhanced="{{scrollView1.enhanced}}" scrollTop="{{scrollView1.scrollTop}}" enableFlex="{{scrollView1.enableFlex}}" pagingEnabled="{{scrollView1.pagingEnabled}}" showScrollbar="{{scrollView1.showScrollbar}}" lowerThreshold="{{scrollView1.lowerThreshold}}" upperThreshold="{{scrollView1.upperThreshold}}" enableBackToTop="{{scrollView1.enableBackToTop}}" scrollAnchoring="{{scrollView1.scrollAnchoring}}" fastDeceleration="{{scrollView1.fastDeceleration}}" refresherEnabled="{{scrollView1.refresherEnabled}}" refresherThreshold="{{scrollView1.refresherThreshold}}" refresherTriggered="{{scrollView1.refresherTriggered}}" refresherBackground="{{scrollView1.refresherBackground}}" scrollWithAnimation="{{scrollView1.scrollWithAnimation}}" refresherDefaultStyle="{{scrollView1.refresherDefaultStyle}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:scrolltolower="onscrollView1$scrolltolower" bind:scroll="onscrollView1$scroll" slot="contentSlot">
+					<a id="container9" style="{{container9.style}}" className="{{container9.className}}" wx:if="{{container9._waIf}}" data="{{container9.data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+						<block id="{{'repeater4_item'+ '-' + irepeater4_item}}" wx:for="{{repeater4_item}}" wx:for-index="irepeater4_item" wx:key="_key">
+							<a id="{{'container6'+ '-' + irepeater4_item}}" style="{{container6[irepeater4_item].style}}" className="{{container6[irepeater4_item].className}}" wx:if="{{container6[irepeater4_item]._waIf}}" data="{{container6[irepeater4_item].data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+								<j id="{{'richTextView1'+ '-' + irepeater4_item}}" style="{{richTextView1[irepeater4_item].style}}" className="{{richTextView1[irepeater4_item].className}}" value="{{richTextView1[irepeater4_item].value}}" bind:attached="__mnt__" bind:detached="__unmnt__"/>
+								<a id="{{'container27'+ '-' + irepeater4_item}}" style="{{container27[irepeater4_item].style}}" className="{{container27[irepeater4_item].className}}" wx:if="{{container27[irepeater4_item]._waIf}}" data="{{container27[irepeater4_item].data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+									<a id="{{'container30'+ '-' + irepeater4_item}}" style="{{container30[irepeater4_item].style}}" className="{{container30[irepeater4_item].className}}" data="{{container30[irepeater4_item].data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+										<f id="{{'button12'+ '-' + irepeater4_item}}" style="{{button12[irepeater4_item].style}}" className="{{button12[irepeater4_item].className}}" wx:if="{{button12[irepeater4_item]._waIf}}" icon="{{button12[irepeater4_item].icon}}" text="{{button12[irepeater4_item].text}}" theme="{{button12[irepeater4_item].theme}}" iconType="{{button12[irepeater4_item].iconType}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:tap="onbutton12$tap">{{button12[irepeater4_item].text}}</f>
+									</a>
+									<a id="{{'container31'+ '-' + irepeater4_item}}" style="{{container31[irepeater4_item].style}}" className="{{container31[irepeater4_item].className}}" data="{{container31[irepeater4_item].data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+										<f id="{{'button9'+ '-' + irepeater4_item}}" style="{{button9[irepeater4_item].style}}" className="{{button9[irepeater4_item].className}}" wx:if="{{button9[irepeater4_item]._waIf}}" icon="{{button9[irepeater4_item].icon}}" text="{{button9[irepeater4_item].text}}" theme="{{button9[irepeater4_item].theme}}" iconType="{{button9[irepeater4_item].iconType}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:tap="onbutton9$tap" bind:w8n3c5drhzq_success="onbutton9$w8n3c5drhzq_success">{{button9[irepeater4_item].text}}</f>
+										<f id="{{'button5'+ '-' + irepeater4_item}}" style="{{button5[irepeater4_item].style}}" className="{{button5[irepeater4_item].className}}" wx:if="{{button5[irepeater4_item]._waIf}}" icon="{{button5[irepeater4_item].icon}}" text="{{button5[irepeater4_item].text}}" theme="{{button5[irepeater4_item].theme}}" iconType="{{button5[irepeater4_item].iconType}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:tap="onbutton5$tap" bind:w8n3c5drhzq_success="onbutton5$w8n3c5drhzq_success">{{button5[irepeater4_item].text}}</f>
+									</a>
+								</a>
+							</a>
+							<a id="{{'container11'+ '-' + irepeater4_item}}" style="{{container11[irepeater4_item].style}}" className="{{container11[irepeater4_item].className}}" wx:if="{{container11[irepeater4_item]._waIf}}" data="{{container11[irepeater4_item].data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+								<a id="{{'container16'+ '-' + irepeater4_item}}" style="{{container16[irepeater4_item].style}}" className="{{container16[irepeater4_item].className}}" data="{{container16[irepeater4_item].data}}" bind:attached="__mnt__" bind:detached="__unmnt__"/>
+								<e id="{{'text3'+ '-' + irepeater4_item}}" style="{{text3[irepeater4_item].style}}" className="{{text3[irepeater4_item].className}}" text="{{text3[irepeater4_item].text}}" level="{{text3[irepeater4_item].level}}" maxLines="{{text3[irepeater4_item].maxLines}}" inheritColor="{{text3[irepeater4_item].inheritColor}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{text3[irepeater4_item].text}}</e>
+							</a>
+						</block>
+						<block id="{{'repeater6_item'+ '-' + irepeater6_item}}" wx:for="{{repeater6_item}}" wx:for-index="irepeater6_item" wx:key="_key">
+							<a id="{{'container17'+ '-' + irepeater6_item}}" style="{{container17[irepeater6_item].style}}" className="{{container17[irepeater6_item].className}}" data="{{container17[irepeater6_item].data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+								<f id="{{'button4'+ '-' + irepeater6_item}}" style="{{button4[irepeater6_item].style}}" className="{{button4[irepeater6_item].className}}" icon="{{button4[irepeater6_item].icon}}" text="{{button4[irepeater6_item].text}}" variant="{{button4[irepeater6_item].variant}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:tap="onbutton4$tap">{{button4[irepeater6_item].text}}</f>
+							</a>
+						</block>
+						<a id="container13" style="{{container13.style}}" className="{{container13.className}}" wx:if="{{container13._waIf}}" data="{{container13.data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+							<a id="container15" style="{{container15.style}}" className="{{container15.className}}" data="{{container15.data}}" bind:attached="__mnt__" bind:detached="__unmnt__"/>
+							<e id="text11" style="{{text11.style}}" className="{{text11.className}}" text="{{text11.text}}" level="{{text11.level}}" maxLines="{{text11.maxLines}}" inheritColor="{{text11.inheritColor}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{text11.text}}</e>
+						</a>
+					</a>
+				</i>
+			</b>
+			<a id="container2" style="{{container2.style}}" className="{{container2.className}}" data="{{container2.data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+				<a id="container3" style="{{container3.style}}" className="{{container3.className}}" data="{{container3.data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+					<e id="text5" style="{{text5.style}}" className="{{text5.className}}" text="{{text5.text}}" level="{{text5.level}}" maxLines="{{text5.maxLines}}" inheritColor="{{text5.inheritColor}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{text5.text}}</e>
+					<l id="select1" style="{{select1.style}}" className="{{select1.className}}" name="{{select1.name}}" label="{{select1.label}}" range="{{select1.range}}" value="{{select1.value}}" status="{{select1.status}}" clearable="{{select1.clearable}}" borderedH5="{{select1.borderedH5}}" prefixIcon="{{select1.prefixIcon}}" prefixType="{{select1.prefixType}}" suffixIcon="{{select1.suffixIcon}}" suffixType="{{select1.suffixType}}" placeholder="{{select1.placeholder}}" requiredMsg="{{select1.requiredMsg}}" labelVisible="{{select1.labelVisible}}" bind:attached="__mnt__" bind:detached="__unmnt__"/>
+					<c id="icon3" style="{{icon3.style}}" className="{{icon3.className}}" name="{{icon3.name}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:tap="onicon3$tap"/>
+				</a>
+				<a id="container28" style="{{container28.style}}" className="{{container28.className}}" data="{{container28.data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+					<m id="input1" style="{{input1.style}}" className="{{input1.className}}" name="{{input1.name}}" label="{{input1.label}}" status="{{input1.status}}" template="{{input1.template}}" borderedH5="{{input1.borderedH5}}" inputValue="{{input1.inputValue}}" prefixIcon="{{input1.prefixIcon}}" prefixType="{{input1.prefixType}}" suffixIcon="{{input1.suffixIcon}}" suffixType="{{input1.suffixType}}" placeholder="{{input1.placeholder}}" requiredMsg="{{input1.requiredMsg}}" labelVisible="{{input1.labelVisible}}" bind:attached="__mnt__" bind:detached="__unmnt__"/>
+					<f id="button10" style="{{button10.style}}" className="{{button10.className}}" icon="{{button10.icon}}" size="{{button10.size}}" text="{{button10.text}}" theme="{{button10.theme}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:tap="onbutton10$tap">{{button10.text}}</f>
+				</a>
+				<a id="container18" style="{{container18.style}}" className="{{container18.className}}" wx:if="{{container18._waIf}}" data="{{container18.data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+					<f id="button6" style="{{button6.style}}" className="{{button6.className}}" icon="{{button6.icon}}" text="{{button6.text}}" block="{{button6.block}}" theme="{{button6.theme}}" iconType="{{button6.iconType}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{button6.text}}</f>
+					<block id="{{'repeater1_item'+ '-' + irepeater1_item}}" wx:for="{{repeater1_item}}" wx:for-index="irepeater1_item" wx:key="_key">
+						<a id="{{'container19'+ '-' + irepeater1_item}}" style="{{container19[irepeater1_item].style}}" className="{{container19[irepeater1_item].className}}" data="{{container19[irepeater1_item].data}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:tap="oncontainer19$tap" bind:wuzo19h45x1_success="oncontainer19$wuzo19h45x1_success">
+							<a id="{{'container20'+ '-' + irepeater1_item}}" style="{{container20[irepeater1_item].style}}" className="{{container20[irepeater1_item].className}}" data="{{container20[irepeater1_item].data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+								<d id="{{'image4'+ '-' + irepeater1_item}}" style="{{image4[irepeater1_item].style}}" className="{{image4[irepeater1_item].className}}" alt="{{image4[irepeater1_item].alt}}" fit="{{image4[irepeater1_item].fit}}" src="{{image4[irepeater1_item].src}}" bind:attached="__mnt__" bind:detached="__unmnt__"/>
+							</a>
+							<a id="{{'container21'+ '-' + irepeater1_item}}" style="{{container21[irepeater1_item].style}}" className="{{container21[irepeater1_item].className}}" data="{{container21[irepeater1_item].data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+								<e id="{{'text7'+ '-' + irepeater1_item}}" style="{{text7[irepeater1_item].style}}" className="{{text7[irepeater1_item].className}}" text="{{text7[irepeater1_item].text}}" level="{{text7[irepeater1_item].level}}" maxLines="{{text7[irepeater1_item].maxLines}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{text7[irepeater1_item].text}}</e>
+								<e id="{{'text10'+ '-' + irepeater1_item}}" style="{{text10[irepeater1_item].style}}" className="{{text10[irepeater1_item].className}}" text="{{text10[irepeater1_item].text}}" level="{{text10[irepeater1_item].level}}" maxLines="{{text10[irepeater1_item].maxLines}}" overflow="{{text10[irepeater1_item].overflow}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{text10[irepeater1_item].text}}</e>
+							</a>
+							<a id="{{'container22'+ '-' + irepeater1_item}}" style="{{container22[irepeater1_item].style}}" className="{{container22[irepeater1_item].className}}" data="{{container22[irepeater1_item].data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+								<c id="{{'icon6'+ '-' + irepeater1_item}}" style="{{icon6[irepeater1_item].style}}" className="{{icon6[irepeater1_item].className}}" name="{{icon6[irepeater1_item].name}}" size="{{icon6[irepeater1_item].size}}" sizeSelfAdaptive="{{icon6[irepeater1_item].sizeSelfAdaptive}}" bind:attached="__mnt__" bind:detached="__unmnt__"/>
+							</a>
+						</a>
+					</block>
+				</a>
+				<a id="container4" style="{{container4.style}}" className="{{container4.className}}" wx:if="{{container4._waIf}}" data="{{container4.data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+					<n id="grid2" style="{{grid2.style}}" className="{{grid2.className}}" gutterX="{{grid2.gutterX}}" gutterY="{{grid2.gutterY}}" template="{{grid2.template}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+						<o id="row2" style="{{row2.style}}" className="{{row2.className}}" gutterX="{{row2.gutterX}}" alignItems="{{row2.alignItems}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+							<block id="{{'repeater3_item'+ '-' + irepeater3_item}}" wx:for="{{repeater3_item}}" wx:for-index="irepeater3_item" wx:key="_key">
+								<p id="{{'col2'+ '-' + irepeater3_item}}" style="{{col2[irepeater3_item].style}}" className="{{col2[irepeater3_item].className}}" alignSelf="{{col2[irepeater3_item].alignSelf}}" widthType="{{col2[irepeater3_item].widthType}}" lgWidthType="{{col2[irepeater3_item].lgWidthType}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+									<a id="{{'container12'+ '-' + irepeater3_item}}" style="{{container12[irepeater3_item].style}}" className="{{container12[irepeater3_item].className}}" data="{{container12[irepeater3_item].data}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:tap="oncontainer12$tap" bind:wuzo19h45x1_success="oncontainer12$wuzo19h45x1_success">
+										<a id="{{'container14'+ '-' + irepeater3_item}}" style="{{container14[irepeater3_item].style}}" className="{{container14[irepeater3_item].className}}" data="{{container14[irepeater3_item].data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+											<d id="{{'image2'+ '-' + irepeater3_item}}" style="{{image2[irepeater3_item].style}}" className="{{image2[irepeater3_item].className}}" alt="{{image2[irepeater3_item].alt}}" fit="{{image2[irepeater3_item].fit}}" src="{{image2[irepeater3_item].src}}" bind:attached="__mnt__" bind:detached="__unmnt__"/>
+											<e id="{{'text8'+ '-' + irepeater3_item}}" style="{{text8[irepeater3_item].style}}" className="{{text8[irepeater3_item].className}}" text="{{text8[irepeater3_item].text}}" level="{{text8[irepeater3_item].level}}" maxLines="{{text8[irepeater3_item].maxLines}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{text8[irepeater3_item].text}}</e>
+											<e id="{{'text9'+ '-' + irepeater3_item}}" style="{{text9[irepeater3_item].style}}" className="{{text9[irepeater3_item].className}}" text="{{text9[irepeater3_item].text}}" level="{{text9[irepeater3_item].level}}" maxLines="{{text9[irepeater3_item].maxLines}}" overflow="{{text9[irepeater3_item].overflow}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{text9[irepeater3_item].text}}</e>
+											<c id="{{'icon5'+ '-' + irepeater3_item}}" style="{{icon5[irepeater3_item].style}}" className="{{icon5[irepeater3_item].className}}" name="{{icon5[irepeater3_item].name}}" size="{{icon5[irepeater3_item].size}}" sizeSelfAdaptive="{{icon5[irepeater3_item].sizeSelfAdaptive}}" bind:attached="__mnt__" bind:detached="__unmnt__"/>
+										</a>
+									</a>
+								</p>
+							</block>
+						</o>
+					</n>
+				</a>
+				<q id="listView2" style="{{listView2.style}}" className="{{listView2.className}}" orderBy="{{listView2.orderBy}}" pageSize="{{listView2.pageSize}}" template="{{listView2.template}}" emptyText="{{listView2.emptyText}}" orderType="{{listView2.orderType}}" datasource="{{listView2.datasource}}" pagination="{{listView2.pagination}}" enableTotal="{{listView2.enableTotal}}" isSetStatus="{{listView2.isSetStatus}}" isSupportApis="{{listView2.isSupportApis}}" dataSourceData="{{listView2.dataSourceData}}" dataSourceType="{{listView2.dataSourceType}}" queryCondition="{{listView2.queryCondition}}" connectorMethod="{{listView2.connectorMethod}}" exprToFieldsSchema="{{listView2.exprToFieldsSchema}}" bindConnectMetadata="{{listView2.bindConnectMetadata}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:onDataChange="onlistView2$onDataChange"/>
+			</a>
+			<a id="container5" style="{{container5.style}}" className="{{container5.className}}" data="{{container5.data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+				<a id="container7" style="{{container7.style}}" className="{{container7.className}}" data="{{container7.data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+					<c id="icon4" style="{{icon4.style}}" className="{{icon4.className}}" name="{{icon4.name}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:tap="onicon4$tap"/>
+				</a>
+				<a id="container8" style="{{container8.style}}" className="{{container8.className}}" data="{{container8.data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+					<a id="container29" style="{{container29.style}}" className="{{container29.className}}" data="{{container29.data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+						<d id="image3" style="{{image3.style}}" className="{{image3.className}}" alt="{{image3.alt}}" fit="{{image3.fit}}" src="{{image3.src}}" imgPreview="{{image3.imgPreview}}" bind:attached="__mnt__" bind:detached="__unmnt__"/>
+						<e id="text2" style="{{text2.style}}" className="{{text2.className}}" text="{{text2.text}}" level="{{text2.level}}" maxLines="{{text2.maxLines}}" inheritColor="{{text2.inheritColor}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{text2.text}}</e>
+					</a>
+					<e id="text6" style="{{text6.style}}" className="{{text6.className}}" text="{{text6.text}}" level="{{text6.level}}" maxLines="{{text6.maxLines}}" inheritColor="{{text6.inheritColor}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{text6.text}}</e>
+					<e id="text4" style="{{text4.style}}" className="{{text4.className}}" text="{{text4.text}}" level="{{text4.level}}" maxLines="{{text4.maxLines}}" inheritColor="{{text4.inheritColor}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{text4.text}}</e>
+					<e id="text15" style="{{text15.style}}" className="{{text15.className}}" text="{{text15.text}}" level="{{text15.level}}" maxLines="{{text15.maxLines}}" inheritColor="{{text15.inheritColor}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{text15.text}}</e>
+					<r id="tag1" style="{{tag1.style}}" className="{{tag1.className}}" size="{{tag1.size}}" range="{{tag1.range}}" tagStyleType="{{tag1.tagStyleType}}" tagStyleSpace="{{tag1.tagStyleSpace}}" tagStyleWidthCols="{{tag1.tagStyleWidthCols}}" bind:attached="__mnt__" bind:detached="__unmnt__"/>
+					<f id="button3" style="{{button3.style}}" className="{{button3.className}}" icon="{{button3.icon}}" text="{{button3.text}}" block="{{button3.block}}" variant="{{button3.variant}}" iconType="{{button3.iconType}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:tap="onbutton3$tap">{{button3.text}}</f>
+					<e id="text18" style="{{text18.style}}" className="{{text18.className}}" text="{{text18.text}}" level="{{text18.level}}" maxLines="{{text18.maxLines}}" inheritColor="{{text18.inheritColor}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{text18.text}}</e>
+				</a>
+			</a>
+		</a>
+	</view>
+	<wd-info wx:if="{{weDaHasLogin === false && !_expiredMessage}}" message="无权限访问" type="auth" enableCustom="true" pageUUID="mIOXHS1t/chat" error="{{loginError}}"/>
+</page-meta>

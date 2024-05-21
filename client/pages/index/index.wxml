@@ -11,8 +11,9 @@
           <view id="{{item.id}}" class="kind-list-item-hd" bindtap="jumpUrl">
             <view class="kind-list-text">
               {{item.name}}
+              <text wx:if="{{item.isNew}}" class="kind-list-new-icon">NEW</text>
             </view>
-            <!-- <image class="kind-list-img" src="resources/kind/{{item.id}}.png"></image> -->
+            
           </view>
           
         </view>
