@@ -5,8 +5,8 @@
     "miniprogram": {
       "list": [
         {
-          "name": "pages/index/index",
-          "pathName": "pages/index/index",
+          "name": "智能体",
+          "pathName": "$weda_root/packages/mIOXHS1t/pages/chat/index",
           "query": "",
           "launchMode": "default",
           "scene": null

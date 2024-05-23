@@ -1,5 +1,4 @@
 
-import * as $$markdown2html from '../lowcode/common/markdown2html'
 
 const _weapps_app_common = {}
 
@@ -42,11 +41,6 @@ function getDefaultModule(targetModule) {
 
 Object.defineProperties(_weapps_app_common, {
   
-  markdown2html: {
-      get() {
-        return getDefaultModule($$markdown2html)
-      }
-    },
 })
 
 export default _weapps_app_common

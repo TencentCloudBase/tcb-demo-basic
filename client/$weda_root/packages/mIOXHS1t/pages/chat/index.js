@@ -503,7 +503,7 @@ $w.page.dataset.state.ai_bot_background ? 'ai-bot-chat__with-bg' : ''
 , widgetProps.menuLayout1.classList)
     )},'style': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
       {...widgetProps.menuLayout1.style, ...(
-$w.page.dataset.state.ai_bot_background ? {
+$w.page.dataset.state.ai_bot_current_bot?._id && $w.page.dataset.state.ai_bot_background ? {
   backgroundImage: `url(${$w.page.dataset.state.ai_bot_background})`
 } : {
   backgroundImage: 'linear-gradient(135deg, rgba(255,255,255, 0.2) 25%, rgba(255,255,255, 0.8) 75%), radial-gradient(ellipse at top left, var(--wd-color-brand-2), transparent 70%), radial-gradient(ellipse at top right, var(--wd-color-success-2), transparent 70%), radial-gradient(ellipse at bottom right, var(--wd-color-warning-2), transparent 70%), radial-gradient(ellipse at bottom left, var(--wd-color-brand-2), transparent 70%)'
@@ -535,11 +535,13 @@ $w.page.dataset.state.ai_bot_background ? {
       $w.page.dataset.state.ai_bot_current_bot?._id
     )}
   },
-  container24: { '_waDisplay': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
-      !$w.page.dataset.state.ai_bot_current_bot?._id
+  container24: { '_waIf': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
+      !$w.page.dataset.params.bot
+    )},'_waDisplay': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
+      !$w.page.dataset.state.ai_bot_current_bot?._id 
     )},'style': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
       ((display)=>{ const style = {...widgetProps.container24.style}; if(!display) {style.display = "none"}; return style })((
-!$w.page.dataset.state.ai_bot_current_bot?._id
+!$w.page.dataset.state.ai_bot_current_bot?._id 
 ))
     )}
   },
@@ -1202,7 +1204,7 @@ createPage({
   handlers,
   query,
   eventFlows,
-  pageAttributes: {"appShareMessage":{"enable":true,"pageId":"chat","packageName":""}},
+  pageAttributes: {"appShareMessage":{"enable":true,"pageId":"chat","packageName":"mIOXHS1t"}},
   resetShare: true,
   datasetProfile
 })

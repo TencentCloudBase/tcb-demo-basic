@@ -9,11 +9,11 @@ const CLOUD_CONFIG =  {
   /** 当前是否处于正式发布模式 */
   isProd: true,
   /** 低码应用ID */
-  appID: 'app-H7YuuKt5',
+  appID: 'app-RJbQpM5Z',
   /** 云开发环境ID */
   envID: 'tcb-advanced-a656fc',
   /** 应用端ID */
-  tcbClientId: 'AOJ8yAAB-xWHZ4CH6o4',
+  tcbClientId: 'AOJ8yAABEykNFuu7WLw',
   /** 云开发资源所属的微信app id */
   resourceAppid: '',
   /** 数据源描述对象数组 */

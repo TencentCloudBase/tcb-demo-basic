@@ -380,7 +380,9 @@ export const widgetProps = {
     "widgetType": "gsd-h5-react:WdText"
   },
   "scrollView1": {
-    "style": {},
+    "style": {
+      "height": "100%"
+    },
     "classList": [],
     "bounces": true,
     "scrollX": false,

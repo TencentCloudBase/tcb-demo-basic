@@ -66,15 +66,15 @@
   ],
   "subpackages": [
     {
-      "root": "$weda_root/packages/$wd_system",
-      "name": "wd-sys-module",
-      "pages": []
-    },
-    {
       "root": "$weda_root/packages/mIOXHS1t",
       "pages": [
         "pages/chat/index"
       ]
+    },
+    {
+      "root": "$weda_root/packages/$wd_system",
+      "name": "wd-sys-module",
+      "pages": []
     }
   ]
 }

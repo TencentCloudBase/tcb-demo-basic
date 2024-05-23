@@ -77,6 +77,7 @@ function extractLifecycles(ctx, lifecycle, appShareMessage, shareTimeline, dataB
             return map
           }, {}) : params,
         })
+        console.log(url)
         return {
           path: url,
           imageUrl: ctx.app?.__internal__?.resolveStaticResourceUrl?.(imageUrl) || imageUrl,

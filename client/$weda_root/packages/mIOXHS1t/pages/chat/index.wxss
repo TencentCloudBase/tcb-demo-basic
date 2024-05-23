@@ -2,7 +2,7 @@ page { background: rgb(247, 249, 252); }
 
 #wd-page-root .wd-comp-id-menuLayout1{background-size:cover;background-image:linear-gradient(135deg, rgba(255,255,255, 0.2) 25%, rgba(255,255,255, 0.8) 75%), radial-gradient(ellipse at top left, var(--wd-color-brand-2), transparent 70%), radial-gradient(ellipse at top right, var(--wd-color-success-2), transparent 70%), radial-gradient(ellipse at bottom right, var(--wd-color-warning-2), transparent 70%), radial-gradient(ellipse at bottom left, var(--wd-color-brand-2), transparent 70%)}
 #wd-page-root .wd-comp-id-text1:active{box-shadow:unset}
-#wd-page-root .wd-comp-id-container24{height:100%;margin:0px 0px 0px;padding:100px 16px 0px;background-image:linear-gradient(180deg, rgba(255,255,255, 0.01), rgba(255,255,255, 1) 85%), radial-gradient(ellipse at top left, var(--wd-color-brand-focus), transparent 50%), radial-gradient(ellipse at top right, var(--wd-color-success-focus), transparent 50%), radial-gradient(ellipse at center right, var(--wd-color-warning-focus), transparent 50%), radial-gradient(ellipse at center left, var(--wd-color-brand-active), transparent 50%)}.wd-pc-root 
+#wd-page-root .wd-comp-id-container24{height:100vh;margin:0px 0px 0px;padding:100px 16px 0px}.wd-pc-root 
 #wd-page-root .wd-comp-id-container24{padding-top:200px}
 #wd-page-root .wd-comp-id-text12{padding:0px 0px 24px;font-weight:700}
 #wd-page-root .wd-comp-id-button4{white-space:wrap !important}

@@ -17,7 +17,7 @@ import { watchAndSyncDatasetState2Local } from '../common/watch';
 
 import state from '../lowcode/state'
 import computed from '../lowcode/computed'
-import common from './common'
+const common = {}
 
 const mainAppKey = '__weappsMainApp';
 let GLOBAL_DATASET_SYNC_DISPOSES = [];
@@ -59,7 +59,7 @@ function createGlboalApi() {
       staticResourceDomain: config.domain,
       privatelink: cloudConfig.privatelink,
       ...({
-  "id": "app-H7YuuKt5",
+  "id": "app-RJbQpM5Z",
   "label": "AI 智能体主包",
   "envId": "tcb-advanced-a656fc",
   "envVersion": "production",

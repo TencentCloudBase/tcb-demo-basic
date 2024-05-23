@@ -17,7 +17,7 @@
 						<f id="button1" style="{{button1.style}}" className="{{button1.className}}" icon="{{button1.icon}}" text="{{button1.text}}" loading="{{button1.loading}}" iconType="{{button1.iconType}}" disabled="{{button1.disabled}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:tap="onbutton1$tap">{{button1.text}}</f>
 					</a>
 				</a>
-				<a id="container24" style="{{container24.style}}" className="{{container24.className}}" data="{{container24.data}}" bind:attached="__mnt__" bind:detached="__unmnt__" slot="contentSlot">
+				<a id="container24" style="{{container24.style}}" className="{{container24.className}}" wx:if="{{container24._waIf}}" data="{{container24.data}}" bind:attached="__mnt__" bind:detached="__unmnt__" slot="contentSlot">
 					<a id="container34" style="{{container34.style}}" className="{{container34.className}}" data="{{container34.data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
 						<e id="text12" style="{{text12.style}}" className="{{text12.className}}" text="{{text12.text}}" level="{{text12.level}}" maxLines="{{text12.maxLines}}" inheritColor="{{text12.inheritColor}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{text12.text}}</e>
 						<e id="text13" style="{{text13.style}}" className="{{text13.className}}" text="{{text13.text}}" level="{{text13.level}}" maxLines="{{text13.maxLines}}" inheritColor="{{text13.inheritColor}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{text13.text}}</e>
