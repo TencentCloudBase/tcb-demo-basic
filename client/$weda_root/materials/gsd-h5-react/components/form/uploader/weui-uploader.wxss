@@ -17,3 +17,7 @@
 .weui-uploader__files .img-shape-rounded-tectangle::before {
   border-radius: 6px;
 }
+
+.weui-uploader__files .weui-uploader__input-box .weui-uploader__input-button {
+  width: 100%;
+}

@@ -1,3 +1,9 @@
+@charset "UTF-8";
+._B00_Xa {
+  /* 如果生成的wxss 为空文件似乎会导致IDE编译报错， 所以这里给他弄个占位 */
+  word-break: inherit;
+}
+
 .wd-form-input-wrap {
   --wd-form-input-wrap-border-radius: var(--wd-border-radius);
   --wd-form-input-wrap-text-default: var(--wd-color-text-form-default);

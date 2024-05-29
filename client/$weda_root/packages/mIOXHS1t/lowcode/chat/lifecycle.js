@@ -22,14 +22,28 @@ export default {
     // 绑定 enter 事件
     if ($w.wedaContext.platforms.includes('WEB')) {
       let $textarea = document?.querySelector?.('.ai-bot-chat__textarea textarea')
+      let isComposing = false;
+      $textarea.addEventListener('compositionstart', function () {
+        isComposing = true;
+      });
+      $textarea.addEventListener('compositionend', function () {
+        isComposing = false;
+      });
       $textarea.addEventListener('keydown', function (event) {
+        if (!($w.textarea1.value?.trim())?.length || ['loading', 'sending', 'initing'].includes($w.page.dataset.state.ai_bot_status)) {
+          return
+        }
         if (event.key === 'Enter' && !event.shiftKey) {
-          event.preventDefault(); // 阻止默认行为，避免自动换行
-          $page.handler.ai_bot_send_msg({
-            data: {
-              target: $w.textarea1.value
-            }
-          })
+          // 判断输入法是否正在输入中文字符
+          if (!event.target.isComposing && !isComposing) {
+            event.preventDefault();
+            // 如果不是中文输入过程中，执行提交操作
+            $page.handler.ai_bot_send_msg({
+              data: {
+                target: $w.textarea1.value
+              }
+            })
+          }
         }
       });
     }

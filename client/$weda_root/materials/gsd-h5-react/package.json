@@ -3,7 +3,7 @@
   "miniprogram": "./",
   "packageManager": "yarn@3.0.2",
   "dependencies": {},
-  "version": "3.6.1",
+  "version": "3.7.2",
   "main": "./",
   "publishConfig": {
     "access": "public"

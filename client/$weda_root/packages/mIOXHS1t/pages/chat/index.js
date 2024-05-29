@@ -154,7 +154,6 @@ const evtListeners = {"onicon1$tap": [
           sourceKey: 'general-func:iife',
           handler: function({event, $w, params}) { return (
 ({event}) => {
-  console.log('滚动到底')
   $w.page.dataset.state.ai_bot_ui_scroll_to_bottom = true
 }
 )({event}) },
@@ -185,7 +184,7 @@ const evtListeners = {"onicon1$tap": [
 
   // 判断是否滚动到顶部
   if (scrollTop === 0) {
-    console.log('已滚动到顶部');
+    // console.log('已滚动到顶部');
   }
 
   // 判断是否滚动到底部
@@ -198,6 +197,38 @@ const evtListeners = {"onicon1$tap": [
     console.log('向上滚动 50 px以上');
     $w.page.dataset.state.ai_bot_ui_scroll_to_bottom = false
   }
+}
+)({event}) },
+          args: {
+  "params": [
+    {}
+  ]
+},
+          argsBinds: {}
+        }
+    ],"onimage5$tap": [
+      {
+          key: 'w75ea3mcxub',
+          sourceKey: 'chat:ai_bot_change_detail_visibilty',
+          handler: handlers.ai_bot_change_detail_visibilty,
+          args: {
+  "params": [
+    {
+      "target": "1"
+    }
+  ]
+},
+          argsBinds: {}
+        }
+    ],"ontext23$tap": [
+      {
+          key: 'wjse367q280',
+          sourceKey: 'general-func:iife',
+          handler: function({event, $w, params}) { return (
+({event}) => {
+    if($w.page.dataset.state.ai_bot_current_bot?._id) {
+        $w.page.handler.ai_bot_change_detail_visibilty({data: { target: "1"}})
+    }
 }
 )({event}) },
           args: {
@@ -234,37 +265,55 @@ const evtListeners = {"onicon1$tap": [
 },
           argsBinds: {}
         }
-    ],"onbutton9$tap": [
+    ],"onbutton15$tap": [
       {
-          key: 'w8n3c5drhzq',
-          sourceKey: 'platform:setClipboardData',
-          handler: function({args}){ return $app.setClipboardData(...args)},
-          args: {
-  "params": [
-    {}
-  ]
-},
-          argsBinds: {'params.0.data': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
-      `消息id: ${$w.item_listView1._id || ''}
-请求id: ${$w.item_listView1.trace_id || ''}
-`
-    )}}
-        }
-    ],"onbutton9$w8n3c5drhzq_success": [
-      {
-          key: 'wcpgtzvwo6r',
-          sourceKey: 'platform:showToast',
-          handler: function({args}){ return $app.showToast(...args)},
+          key: 'w3uiqsfhogn',
+          sourceKey: 'platform:invoke',
+          handler: function({data, $w}){ return $app.invoke({...data, component: $w[data?.component]?._widget});},
           args: {
   "params": [
     {
-      "icon": "none",
-      "title": "已成功复制相关错误定位信息",
-      "duration": 1500
+      "method": "open",
+      "params": {},
+      "component": "modal2",
+      "module": "gsd-h5-react"
     }
   ]
 },
-          argsBinds: {}
+          argsBinds: {'params.0.params.info': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
+      ({
+    type: 'upvote',
+    "conversation": $w.item_listView1._id,
+    "input": $w.repeater4.data[$w.index_listView1 - 1]?.content || '',
+    "ai_answer": $w.item_listView1.content,
+    "bot": $w.page.dataset.params.bot
+})
+    )}}
+        }
+    ],"onbutton16$tap": [
+      {
+          key: 'wh6jm38o2er',
+          sourceKey: 'platform:invoke',
+          handler: function({data, $w}){ return $app.invoke({...data, component: $w[data?.component]?._widget});},
+          args: {
+  "params": [
+    {
+      "method": "open",
+      "params": {},
+      "component": "modal2",
+      "module": "gsd-h5-react"
+    }
+  ]
+},
+          argsBinds: {'params.0.params.info': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
+      ({
+    type: 'downvote',
+    "conversation": $w.item_listView1._id,
+    "input": $w.repeater4.data[$w.index_listView1 - 1]?.content || '',
+    "ai_answer": $w.item_listView1.content,
+    "bot": $w.page.dataset.params.bot
+})
+    )}}
         }
     ],"onbutton5$tap": [
       {
@@ -344,6 +393,226 @@ const evtListeners = {"onicon1$tap": [
           argsBinds: {'params.0.target': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
       $w.textarea1.value
     )}}
+        }
+    ],"onicon11$tap": [
+      {
+          key: 'wdModal500',
+          sourceKey: 'platform:invoke',
+          handler: function({data, $w}){ return $app.invoke({...data, component: $w[data?.component]?._widget});},
+          args: {
+  "params": [
+    {
+      "method": "close",
+      "params": {
+        "info": "icon"
+      },
+      "component": "modal2",
+      "module": "gsd-h5-react"
+    }
+  ]
+},
+          argsBinds: {}
+        }
+    ],"onform1$onDataChange": [
+      {
+          key: '',
+          sourceKey: ':',
+          handler: ({event})=>{
+      if(event.currentTarget) {
+        $app.utils.set(event.currentTarget._scope, 'dataContext.data', event?.detail?.data);
+        $app.utils.set(event.currentTarget._scope, 'dataContext.state', event?.detail?.state);
+      }
+    },
+          args: {
+  "params": [
+    {}
+  ]
+},
+          argsBinds: {}
+        }
+    ],"onform1$submit": [
+      {
+          key: 'wa136p9yq',
+          sourceKey: 'platform:invoke',
+          handler: function({data, $w}){ return $app.invoke({...data, component: $w[data?.component]?._widget});},
+          args: {
+  "params": [
+    {
+      "method": "disableSubmit",
+      "component": "form1",
+      "module": "gsd-h5-react"
+    }
+  ]
+},
+          argsBinds: {}
+        }
+    ],"onform1$wa136p9yq_success": [
+      {
+          key: 'w7tds7ixr',
+          sourceKey: 'platform:cloud.callDataSource',
+          handler: function({args}){ return $app.cloud.callDataSource(...args)},
+          args: {
+  "params": [
+    {
+      "options": {
+        "showToast": false,
+        "showLoading": true
+      },
+      "methodName": "wedaCreateV2",
+      "dataSourceName": "ai_bot_feedback_5hobd2j"
+    }
+  ]
+},
+          argsBinds: {'params.0.params': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
+      $w.form1.submitParams
+    )}}
+        }
+    ],"onform1$w7tds7ixr_success": [
+      {
+          key: 'wdka4i4ip',
+          sourceKey: 'platform:invoke',
+          handler: function({data, $w}){ return $app.invoke({...data, component: $w[data?.component]?._widget});},
+          args: {
+  "params": [
+    {
+      "method": "enableSubmit",
+      "component": "form1",
+      "module": "gsd-h5-react"
+    }
+  ]
+},
+          argsBinds: {}
+        },{
+          key: 'ww4mjvhds',
+          sourceKey: 'platform:showToast',
+          handler: function({args}){ return $app.showToast(...args)},
+          args: {
+  "params": [
+    {
+      "icon": "success",
+      "title": "提交成功"
+    }
+  ]
+},
+          argsBinds: {}
+        }
+    ],"onform1$w7tds7ixr_fail": [
+      {
+          key: 'wlfg5z1ac',
+          sourceKey: 'platform:invoke',
+          handler: function({data, $w}){ return $app.invoke({...data, component: $w[data?.component]?._widget});},
+          args: {
+  "params": [
+    {
+      "method": "enableSubmit",
+      "component": "form1",
+      "module": "gsd-h5-react"
+    }
+  ]
+},
+          argsBinds: {}
+        },{
+          key: 'w6mqfr894',
+          sourceKey: 'platform:showModal',
+          handler: function({args}){ return $app.showModal(...args)},
+          args: {
+  "params": [
+    {
+      "title": "提交失败",
+      "cancelText": "取消",
+      "showCancel": false,
+      "cancelColor": "#000000",
+      "confirmText": "确认",
+      "confirmColor": "#576B95"
+    }
+  ]
+},
+          argsBinds: {'params.0.content': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
+      event.detail.message || JSON.stringify(event.detail)
+    )}}
+        }
+    ],"onbutton18$tap": [
+      {
+          key: 'wqjjeyem82c',
+          sourceKey: 'chat:ai_bot_feedback',
+          handler: handlers.ai_bot_feedback,
+          args: {
+  "params": [
+    {}
+  ]
+},
+          argsBinds: {'params.0.target': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
+      ({
+  ...$w.form1.value,
+  ...$w.modal2.openInfo
+})
+    )}}
+        }
+    ],"onbutton18$wqjjeyem82c_success": [
+      {
+          key: 'wanm5960pol',
+          sourceKey: 'platform:invoke',
+          handler: function({data, $w}){ return $app.invoke({...data, component: $w[data?.component]?._widget});},
+          args: {
+  "params": [
+    {
+      "method": "close",
+      "params": {
+        "info": ""
+      },
+      "component": "modal2",
+      "module": "gsd-h5-react"
+    }
+  ]
+},
+          argsBinds: {}
+        },{
+          key: 'wsllm6rw9zs',
+          sourceKey: 'platform:showToast',
+          handler: function({args}){ return $app.showToast(...args)},
+          args: {
+  "params": [
+    {
+      "icon": "success",
+      "title": "感谢反馈",
+      "duration": 1000
+    }
+  ]
+},
+          argsBinds: {}
+        }
+    ],"onbutton18$wqjjeyem82c_fail": [
+      {
+          key: 'wtsj7lzflqk',
+          sourceKey: 'platform:invoke',
+          handler: function({data, $w}){ return $app.invoke({...data, component: $w[data?.component]?._widget});},
+          args: {
+  "params": [
+    {
+      "method": "close",
+      "params": {
+        "info": ""
+      },
+      "component": "modal2",
+      "module": "gsd-h5-react"
+    }
+  ]
+},
+          argsBinds: {}
+        },{
+          key: 'wtt6cb2cey0',
+          sourceKey: 'platform:showToast',
+          handler: function({args}){ return $app.showToast(...args)},
+          args: {
+  "params": [
+    {
+      "icon": "success",
+      "title": "感谢反馈",
+      "duration": 1000
+    }
+  ]
+},
+          argsBinds: {}
         }
     ],"onicon3$tap": [
       {
@@ -537,12 +806,6 @@ $w.page.dataset.state.ai_bot_current_bot?._id && $w.page.dataset.state.ai_bot_ba
   },
   container24: { '_waIf': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
       !$w.page.dataset.params.bot
-    )},'_waDisplay': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
-      !$w.page.dataset.state.ai_bot_current_bot?._id 
-    )},'style': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
-      ((display)=>{ const style = {...widgetProps.container24.style}; if(!display) {style.display = "none"}; return style })((
-!$w.page.dataset.state.ai_bot_current_bot?._id 
-))
     )}
   },
   button11: { '_waDisplay': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
@@ -550,6 +813,14 @@ $w.page.dataset.state.ai_bot_current_bot?._id && $w.page.dataset.state.ai_bot_ba
     )},'style': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
       ((display)=>{ const style = {...widgetProps.button11.style}; if(!display) {style.display = "none"}; return style })((
 false
+))
+    )}
+  },
+  container39: { '_waDisplay': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
+      $w.page.dataset.params.bot
+    )},'style': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
+      ((display)=>{ const style = {...widgetProps.container39.style}; if(!display) {style.display = "none"}; return style })((
+$w.page.dataset.params.bot
 ))
     )}
   },
@@ -585,6 +856,30 @@ $w.page.dataset.state.ai_bot_current_bot?._id
       }, ...$w.page.dataset.state.ai_bot_chat_history.filter(item => item.bot === $w.page.dataset.state.ai_bot_current_bot._id)]
     )}
   },
+  container41: { 'classList': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
+      concatClassList(
+$w.item_listView1.role === 'user' ? 'ai-bot-chat__message-container-user' : 'ai-bot-chat__message-container-system'
+, widgetProps.container41.classList)
+    )}
+  },
+  container42: { '_waIf': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
+      $w.item_listView1.role === 'assistant' && $w.index_listView1 !== 0 && $w.item_listView1.content
+    )}
+  },
+  image5: { 'src': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
+      $w.page.dataset.state.ai_bot_current_bot.avatar
+    )},'_waDisplay': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
+      !!$w.page.dataset.state.ai_bot_current_bot.avatar
+    )},'style': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
+      ((display)=>{ const style = {...widgetProps.image5.style}; if(!display) {style.display = "none"}; return style })((
+!!$w.page.dataset.state.ai_bot_current_bot.avatar
+))
+    )}
+  },
+  text23: { 'text': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
+      $w.page.dataset.state.ai_bot_current_bot.name || 'AI 智能体'
+    )}
+  },
   container6: { '_waIf': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
       !!$w.item_listView1.content
     )},'classList': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
@@ -593,10 +888,18 @@ $w.item_listView1.role === 'user' ? 'ai-bot-chat__message-user' : 'ai-bot-chat__
 , widgetProps.container6.classList)
     )}
   },
+  text21: { 'text': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
+      $w.item_listView1.content
+    )},'_waIf': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
+      $w.item_listView1.role === 'user' 
+    )}
+  },
   richTextView1: { 'value': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
        ($w.page.dataset.state.ai_bot_md.render($w.item_listView1.content) || '') + 
   (($w.index_listView1 === $w.repeater4.data.length - 1 && ($w.item_listView1.role === 'assistant' && !$w.item_listView1.content && ['loading', 'sending'].includes($w.page.dataset.state.ai_bot_status))
  ) ? '$w.page.dataset.state.ai_bot_chat_history<span class="ai-bot-msg-curor"></span>' : '')
+    )},'_waIf': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
+      $w.item_listView1.role !== 'user' 
     )}
   },
   container27: { '_waIf': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
@@ -607,7 +910,33 @@ $w.item_listView1.role === 'user' ? 'ai-bot-chat__message-user' : 'ai-bot-chat__
       $w.item_listView1.status === 'timeout'
     )}
   },
-  button9: { '_waIf': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
+  container40: { '_waDisplay': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
+      (() => {
+  const list = $w.page.dataset.state.ai_bot_chat_history
+  const lastMsg = list[list?.length-1]
+  return $w.page.dataset.state.ai_bot_status === 'loading' && lastMsg?.content?.length > 7 && lastMsg.role === 'assistant' && lastMsg._id === $w.item_listView1._id
+})()
+
+    )},'style': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
+      ((display)=>{ const style = {...widgetProps.container40.style}; if(!display) {style.display = "none"}; return style })((
+(() => {
+  const list = $w.page.dataset.state.ai_bot_chat_history
+  const lastMsg = list[list?.length-1]
+  return $w.page.dataset.state.ai_bot_status === 'loading' && lastMsg?.content?.length > 7 && lastMsg.role === 'assistant' && lastMsg._id === $w.item_listView1._id
+})()
+
+))
+    )}
+  },
+  button15: { 'disabled': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
+      $w.page.dataset.params.debug === '1'
+    )},'_waIf': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
+      $w.item_listView1.role === 'assistant' && $w.item_listView1.type !== 'welcome'
+    )}
+  },
+  button16: { 'disabled': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
+      $w.page.dataset.params.debug === '1'
+    )},'_waIf': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
       $w.item_listView1.role === 'assistant' && $w.item_listView1.type !== 'welcome'
     )}
   },
@@ -688,6 +1017,27 @@ true
       ['loading', 'sending'].includes($w.page.dataset.state.ai_bot_status)
     )},'disabled': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
       !($w.textarea1.value?.trim())?.length || ['loading', 'sending', 'initing'].includes($w.page.dataset.state.ai_bot_status)
+    )}
+  },
+  rating1: { 'value': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
+      $w.modal2.openInfo.type === 'downvote' ? 1 : 5
+    )},'callbacks.tooltip': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
+      props => {
+  // return props.value + '分';
+  return props.value;
+}
+    )}
+  },
+  tagSelect1: { 'range': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
+      ($w.modal2.openInfo.type === 'upvote' ? ['准确有效', '回答全面', '立场正确', '格式规范', '专业性强', '富有创意', '表达清晰', '值得信赖', '高效', '满意'] : ['理解错误', '未识别问题', '事实错误', '推理错误', '内容不完整', '不专业', '违法有害', '格式错误', '乱码', '内容重复']).map(item => {
+  return {
+    lable: item,
+    value: item
+  }
+})
+    )},'value': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
+      [
+]
     )}
   },
   container2: { 'style': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
@@ -1086,7 +1436,7 @@ const datasetProfile = {
       "label": "",
       "varType": "state",
       "dataType": "string",
-      "initialValue": "v0.1.4",
+      "initialValue": "v0.2.4",
       "enableSyncLocal": false
     },
     "ai_bot_watcher": {

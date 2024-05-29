@@ -22,6 +22,7 @@ export default function({event, data}) {
       if (!$w.page.dataset.state.ai_bot_scroll_top) {
           $w.page.dataset.state.ai_bot_scroll_top = 1
       }
-      $w.page.dataset.state.ai_bot_scroll_top += ($w.page.dataset.state.ai_bot_ui_scroll_height || 999) + Math.random() * 100
+      $w.page.dataset.state.ai_bot_scroll_top += ($w.page.dataset.state.ai_bot_ui_scroll_height || 9999) + Math.random() * 100
+      $w.page.dataset.state.ai_bot_ui_scroll_to_bottom = true
     }, 0)
 }

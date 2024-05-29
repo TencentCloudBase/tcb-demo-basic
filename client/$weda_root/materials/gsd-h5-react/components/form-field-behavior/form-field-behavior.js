@@ -210,7 +210,7 @@ export default Behavior({
       Promise.resolve().then(() => {
         this._reaction = autorun(() => {
           const form = untracked(() => {
-            return this.$widget.closest(
+            return this.$widget?.closest(
               (w) => w.getConfig?.()?.componentType === 'form'
             );
           });
@@ -253,6 +253,8 @@ export default Behavior({
     },
     detached() {
       this._removeFormItem && this._removeFormItem();
+      // 清空嵌套表单
+      this._removeFormObjItem?.();
       if (this.$widget) {
         const form = this.$widget.closest(
           (w) => w.getConfig?.()?.componentType === 'form'
@@ -320,6 +322,9 @@ export default Behavior({
       if (newName === this.data._oldName) return;
       Promise.resolve().then(() => {
         this._removeFormItem?.();
+        // 清空嵌套表单
+        this._removeFormObjItem?.();
+
         // this.$instanceRef.current = this.$instanceRef.current ?? {};
         this.setReadonlyAttributes?.({ name: newName });
         // this.$instanceRef.current.name = newName;
@@ -332,6 +337,21 @@ export default Behavior({
         if (form) {
           // 在 form 里面
           this._removeFormItem = form.addFormItem(this.data.name, this.$widget);
+          if (!Object.prototype.hasOwnProperty.call(form?.value, newName)) {
+            form?.updateFormContext(this.data.name, this.data.value);
+          }
+        }
+
+        const formObj = this.$widget?.closest?.(
+          (w) => w.getConfig?.()?.componentType === 'formObj'
+        );
+
+        if (formObj) {
+          // 添加子组件到嵌套表单里面
+          this._removeFormObjItem = formObj.addFormItem(
+            this.data.name,
+            this.$widget
+          );
         }
       });
     },
@@ -350,8 +370,17 @@ export default Behavior({
           const form = this.$widget.closest(
             (w) => w.getConfig?.()?.componentType === 'form'
           );
-
-          form?.updateFormContext(this.data.name, value);
+          const formObj = this.$widget.closest(
+            (w) => w.getConfig?.()?.componentType === 'formObj'
+          );
+          // 有父级嵌套表单的不更新form值，父级嵌套表单会去更新
+          !formObj && form?.updateFormContext(this.data.name, value);
+          formObj?.valueChangeFromChild?.({
+            name: `${formObj?.formObjName ? `${formObj.formObjName}.` : ''}${
+              this.data.name
+            }`,
+            value,
+          });
         }
 
         // console.log(this.data.name, this.data.valueHistory, 'VALUE history');
@@ -387,11 +416,16 @@ export default Behavior({
       if (status === this.data._status) return;
       this.data._status = status;
       const { disabled: _disabled, readOnly: _readOnly } = this.data;
-      const { disabled, readOnly } = convertStatus(
-        status,
-        _disabled,
-        _readOnly
+      const statusParams = convertStatus(status, _disabled, _readOnly);
+      const form = this.$widget.closest(
+        (w) => w.getConfig?.()?.componentType === 'form'
       );
+      let disabled = statusParams.disabled;
+      let readOnly = statusParams.readOnly;
+      if (form) {
+        disabled = statusParams.disabled || form.formType === 'read';
+        readOnly = statusParams.readOnly || form.formType === 'read';
+      }
       this.setData({ disabled, readOnly });
     },
     'required,before,after,requiredMsg,isUnionValue': function (

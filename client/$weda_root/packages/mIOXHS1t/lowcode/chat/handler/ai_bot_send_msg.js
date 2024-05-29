@@ -74,7 +74,7 @@ export default async function ({ event, data }) {
         }
       }
     })
-    if (!res.errcode) {
+    if (!res.result?.errcode) {
       const reply = res.result?.data;
       const recommend_questions = res.result?.data?.recommend_questions;
       // 非流式输出

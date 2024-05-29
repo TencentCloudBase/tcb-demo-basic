@@ -1,0 +1,59 @@
+<block wx:if="{{visible}}">
+  <wd-form-item
+    id="{{id}}"
+    className="{{className}}"
+    style="{{style}}"
+    label="{{label}}"
+    labelVisible="{{labelVisible}}"
+    labelTips="{{labelTips}}"
+    labelWidth="{{labelWidth}}"
+    labelAlign="{{labelAlign}}"
+    labelWrap="{{labelWrap}}"
+    layout="{{actualLayout}}"
+    extra="{{extra}}"
+    required="{{required}}"
+    requiredFlag="{{requiredFlag}}"
+    validateState="{{validateState}}"
+    validateErrorMsg="{{validateErrorMsg}}"
+    classRoot="{{classRoot}}"
+    size="{{size}}"
+    borderedH5="{{borderedH5}}"
+  >
+    <wd-input-group before="{{before}}" after="{{after}}" block="{{true}}" size="{{_size}}" classRoot="{{classRoot}}" readOnly="{{readOnly}}">
+      <wd-input-wrap block="{{block}}" classRoot="{{classRoot}}" before="{{before}}" after="{{after}}" disabled="{{disabled}}" prefixType="{{prefixType}}" prefixIcon="{{prefixIcon}}" prefixSrc="{{prefixSrc}}" suffixType="{{_suffixType}}" suffixIcon="{{_suffixIcon}}" suffixSrc="{{suffixSrc}}" hasClearIcon="{{hasClearIcon}}" bind:onClear="handleClear" readOnly="{{readOnly}}">
+        <view class="weui-cell__bd">
+          <view bindtap="handleClick" class="weui-picker__group weui-input">
+            <label class="wd-form-select_input {{displayValue ? '' : 'weui-input__placeholder'}}">{{displayValue || placeholder}}</label>
+          </view>
+        </view>
+      </wd-input-wrap>
+    </wd-input-group>
+  </wd-form-item>
+  <wd-modal visible="{{modalVisible}}" bind:onClose="handleClose" bind:onOk="handleOk" header="{{focus}}" className="{{classPrefix + '-cascader-modal'}}">
+    <block wx:if="{{searchable}}">
+      <view class="wd-custom-search {{focus?'is-focused':''}}" style="{{focus? 'margin: 34rpx 32rpx 16rpx 32rpx':'margin: 20rpx 32rpx'}}">
+        <view class="wd-custom-search-box" bindtap="onFocus">
+          <input class="wd-input" focus="{{focus}}" bindfocus="onFocus" bindblur="onBlur" bindinput="bindinput" value="{{searchValue}}" hold-keyboard="true" bindconfirm="bindconfirm" />
+          <view class="wd-custom-search-box__label">
+            <span class="wd-custom-search-box__search-icon"></span>
+            <span class="wd-custom-search-box__search-placeholder"> 搜索 </span>
+          </view>
+          <span wx:if="{{focus && searchValue !== ''}}" class="wd-custom-search-box__dismiss-icon" bindtap="clear"></span>
+        </view>
+        <text class="wd-custom-search__btn-cancle" bindtap="shrink">取消</text>
+      </view>
+    </block>
+    <view class="wd-custom-view-content">
+      <wd-tabs list="{{tabData}}" bind:onCurrent="handleTabClick" direction="horizontal">
+        <scroll-view scroll-y="true" class="{{classPrefix + '-cascader-h5-view-list'}}" enable-flex="true">
+          <view wx:for="{{listOptions}}" class="{{classPrefix + '-cascader-h5-view-list__menu'}} {{item.selected?'is-selected':''}} {{item.isDisabled?'is-disabled':''}}" wx:for-index="index" wx:for-item="item" wx:key="{{item.value}}" id="{{'cell-'+index}}" bindtap="handleListOptionsClick" data-value="{{item.value}}" data-item="{{item}}">
+            <view class="{{classPrefix + '-cascader-h5-view-list__menu__text'}}"> {{item.label}} </view>
+            <view wx-if="{{item.selected}}">
+              <wd-icon name="td:check" size="md" />
+            </view>
+          </view>
+        </scroll-view>
+      </wd-tabs>
+    </view>
+  </wd-modal>
+</block>

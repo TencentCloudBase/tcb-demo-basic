@@ -205,6 +205,7 @@ page .ai-bot-chat__header {
   border-radius: 20px;
   margin: 8px 0;
   box-shadow: var(--wd-shadow-sm);
+  max-width: 320px;
 }
 .ai-bot-chat__message-system {
   background-color: #fff;
@@ -212,6 +213,10 @@ page .ai-bot-chat__header {
   border-radius: 20px;
   margin: 8px 0;
   box-shadow: var(--wd-shadow-sm);
+}
+.ai-bot-chat__message-container-user {
+  display: flex;
+  justify-content: flex-end;
 }
 .ai-bot-chat__with-bg .ai-bot-chat__message-user {
   background-color: rgba(58, 48, 216, 0.8);

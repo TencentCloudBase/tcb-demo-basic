@@ -40,7 +40,7 @@
     <view wx:if="{{currentFiles.length < maxCount && !readOnly}}" class="weui-uploader__input-box {{shapeClass}}" hover-class="weui-active">
       <view wx:if="{{!disabled&&!isChooseAvatar}}" class="weui-uploader__input" bindtap="chooseImage"></view>
 
-      <button class="weui-uploader__input" wx:if="{{!disabled&&isChooseAvatar}}" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar"></button>
+      <button class="weui-uploader__input weui-uploader__input-button" wx:if="{{!disabled&&isChooseAvatar}}" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar"></button>
 
       <view wx:if="{{disabled}}" class="weui-uploader__uploader_disabled"></view>
     </view>

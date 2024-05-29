@@ -1245,3 +1245,16 @@ export const WD_TABLE_CUSTOM_FORMAT = [
   { label: '数组', value: 'array' },
   { label: 'JSON', value: 'json' },
 ];
+
+export const WD_CODE_EDITOR_LANGUAGE = [
+  { label: 'JS', value: 'javascript' },
+  { label: 'TypeScript', value: 'typescript' },
+  { label: 'MongoDB', value: 'mongodb' },
+  { label: 'SQL', value: 'sql' },
+  { label: 'MySQL', value: 'mysql' },
+];
+
+export const WD_CODE_EDITOR_THEME = [
+  { label: '暗黑', value: 'githubDark' },
+  { label: '明亮', value: 'githubLight' },
+];

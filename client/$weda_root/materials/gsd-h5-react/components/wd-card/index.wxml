@@ -2,7 +2,7 @@
   <view class="{{classPrefix + '-card__header'}}" wx:if="{{showHeader}}">
     <slot name="headerSlot"></slot>
   </view>
-  <view class="{{classPrefix + '-card__body'}}" wx:if="{{contentState === 'show'}}">
+  <view class="{{classPrefix + '-card__body'}} {{contentState !== 'show'?'hide':''}}">
     <slot name="contentSlot"></slot>
   </view>
   <view class="{{classPrefix + '-card__footer'}}" wx:if="{{showFooter}}">

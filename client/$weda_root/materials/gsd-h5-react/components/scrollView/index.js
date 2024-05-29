@@ -99,9 +99,29 @@ Component({
       value: false,
     },
   },
+  data: {
+    clientHeight: 0,
+    clientWidth: 0,
+  },
   methods: {
+    getComponentClientHeight: function () {
+      const that = this;
+      const query = wx.createSelectorQuery().in(this);
+      query.select('.g-scroll-view').boundingClientRect();
+      query.exec((res) => {
+        that.setData({
+          clientHeight: res[0]?.height,
+          clientWidth: res[0]?.width,
+        });
+      });
+    },
+    scroll: function (event) {
+      const { clientHeight, clientWidth } = this.data;
+      const detail = { ...event.detail, clientHeight, clientWidth };
+      this.triggerEvent('scroll', detail);
+    },
     ...handleEvents([
-      { name: 'scroll', title: '滚动时触发' },
+      //   { name: 'scroll', title: '滚动时触发' },
       { name: 'scrolltolower', title: '滚动到底部/右边时触发' },
       { name: 'scrolltoupper', title: '滚动到顶部/左边时触发' },
       {
@@ -115,5 +135,10 @@ Component({
       { name: 'refresherrestore', title: '自定义下拉刷新被复位' },
       { name: 'refresherabort', title: '自定义下拉刷新被中止' },
     ]),
+  },
+  lifetimes: {
+    ready() {
+      this.getComponentClientHeight();
+    },
   },
 });

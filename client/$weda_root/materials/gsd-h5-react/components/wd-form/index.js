@@ -246,7 +246,7 @@ Component({
           methodName = methodGetItem;
           params = paramGetItem;
         }
-        console.log('aaaa======', datasourceType);
+
         if (
           (datasourceType === 'expression' ||
             (formTypeWithInitValue.includes(formType) &&

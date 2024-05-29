@@ -39,6 +39,9 @@ Component({
       this.setReadonlyAttributes &&
         this.setReadonlyAttributes({
           link,
+          postMessage: (message) => {
+            wx?.miniProgram?.postMessage(message);
+          },
         });
     },
 

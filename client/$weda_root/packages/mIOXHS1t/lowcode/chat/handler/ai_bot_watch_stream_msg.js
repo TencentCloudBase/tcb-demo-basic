@@ -24,6 +24,7 @@ export default async function ({ event, data }) {
   const dbName = $w.page.dataset.state.ai_bot_db_name;
   const id = data.target._id
   const lable = '推送消息' + id
+  let currentMsg 
   console.time(lable)
   const typewriter = new $w.page.handler.ai_bot_steam_typewriter(consumeMsg)
   typewriter.start();
@@ -77,7 +78,7 @@ export default async function ({ event, data }) {
     msg.content += str.replace(/\u0004/, '');
     if ($w.page.dataset.state.ai_bot_ui_scroll_to_bottom) {
       $w.page.handler.ai_bot_scroll_to_bottom({});
-    } 
+    }
     // 因为使用了 websocket 来替代 SSE，消息完毕后加一个字符代表消息已经发送完毕了
     // 比如使用不可见字符 U+0004 (End of Transmission)  来表示
     // 这样客户端碰到这个字符就知道什么时候消息发送完了，可以把长连接close掉
@@ -107,6 +108,11 @@ export default async function ({ event, data }) {
           },
         },
       });
+      const recommend_questions = currentMsg?.recommend_questions
+      if (Array.isArray(recommend_questions) && recommend_questions?.length) {
+        $w.page.dataset.state.ai_bot_recomand_questions = recommend_questions.slice(0, 5)
+      }
+      $w.page.handler.ai_bot_scroll_to_bottom({})
     }
   }
   // 关闭监听
@@ -141,6 +147,7 @@ export default async function ({ event, data }) {
               diff = newMsg.content;
             }
           }
+          currentMsg = newMsg
           $w.page.dataset.state.ai_bot_last_msg_content = newMsg.content
           typewriter.add(diff || '')
         }

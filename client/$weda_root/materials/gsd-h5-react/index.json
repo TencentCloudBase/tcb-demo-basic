@@ -37,6 +37,8 @@
     "FormTextArea": "components/form-text-area/index",
     "FormInput": "components/form-input/index",
     "WdForm": "components/wd-form/index",
+    "WdFormObj": "components/wd-form-obj/index",
+    "WdFormArr": "components/wd-form-arr/index",
     "WdInput": "components/wd-input/index",
     "WdInputUrl": "components/wd-input-url/index",
     "WdInputPhone": "components/wd-input-phone/index",

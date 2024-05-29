@@ -1,4 +1,9 @@
 @charset "UTF-8";
+._B00_Xa {
+  /* 如果生成的wxss 为空文件似乎会导致IDE编译报错， 所以这里给他弄个占位 */
+  word-break: inherit;
+}
+
 .wd-g-text-default {
   color: var(--wd-color-text-default);
 }
@@ -1249,5 +1254,15 @@ textarea {
   width: var(--wd-form-container-width-lg);
 }
 .wd-form.size-width-hundred {
+  width: 100%;
+}
+
+.wd-mp-form-item-obj .wd-form-obj-card-header {
+  display: flex;
+}
+.wd-mp-form-item-obj .wd-form-obj-item-wrap__control-wrap {
+  flex-direction: column;
+}
+.wd-mp-form-item-obj .wd-form-item--weui.wd-form-item {
   width: 100%;
 }

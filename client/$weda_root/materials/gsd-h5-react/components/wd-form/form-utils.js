@@ -27,6 +27,10 @@ export function getFormDataFromItemMap(formItemMap, formType) {
       if (w.getConfig?.()?.componentType === 'formdetail') {
         return acc;
       }
+      // 如果位于嵌套表单内，则跳过赋值，交给嵌套表单处理
+      if (w.closest((ww) => ww.getConfig?.().componentType === 'formObj')) {
+        return acc;
+      }
       lodashSet(acc, k, w?.getValue?.());
     });
 

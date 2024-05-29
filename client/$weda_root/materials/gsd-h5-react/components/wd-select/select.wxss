@@ -1,4 +1,9 @@
 @charset "UTF-8";
+._B00_Xa {
+  /* 如果生成的wxss 为空文件似乎会导致IDE编译报错， 所以这里给他弄个占位 */
+  word-break: inherit;
+}
+
 .wd-form-select-wrap,
 .wd-form-select-option-wrap {
   --wd-from-select-option-wrap-pd: calc(var(--wd-space-base) * 2);
@@ -222,6 +227,11 @@
 .wd-custom-search-box__search-icon {
   color: rgba(0, 0, 0, 0.9);
   margin-right: 4px;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNSAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE0Ljc2NTUgMTUuMzI3OUMxMy41Mzc4IDE2LjMyMjEgMTEuOTc0MSAxNi45MTc2IDEwLjI3MTQgMTYuOTE3NkM2LjMyNDUzIDE2LjkxNzYgMy4xMjUgMTMuNzE4MSAzLjEyNSA5Ljc3MTMyQzMuMTI1IDUuODI0NTEgNi4zMjQ1MyAyLjYyNSAxMC4yNzE0IDIuNjI1QzE0LjIxODIgMi42MjUgMTcuNDE3NyA1LjgyNDUxIDE3LjQxNzcgOS43NzEzMkMxNy40MTc3IDExLjQ3NDEgMTYuODIyMSAxMy4wMzc4IDE1LjgyOCAxNC4yNjU1TDIxLjEyNSAxOS41NjI1TDIwLjA2MjYgMjAuNjI1TDE0Ljc2NTUgMTUuMzI3OVpNMTUuOTE1MiA5Ljc3MTMyQzE1LjkxNTIgNi42NTQzNCAxMy4zODg0IDQuMTI3NTIgMTAuMjcxNCA0LjEyNzUyQzcuMTU0MzUgNC4xMjc1MiA0LjYyNzUyIDYuNjU0MzQgNC42Mjc1MiA5Ljc3MTMyQzQuNjI3NTIgMTIuODg4MyA3LjE1NDM1IDE1LjQxNTEgMTAuMjcxNCAxNS40MTUxQzEzLjM4ODQgMTUuNDE1MSAxNS45MTUyIDEyLjg4ODMgMTUuOTE1MiA5Ljc3MTMyWiIgZmlsbD0iYmxhY2siIGZpbGwtb3BhY2l0eT0iMC40Ii8+Cjwvc3ZnPgo=);
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
 }
 .wd-custom-search-box__dismiss-icon {
   position: absolute;
@@ -304,16 +314,17 @@
   border-radius: 0;
 }
 .wd-custom-picker__header {
-  height: 58px;
+  height: 48px;
   flex: 0 0 48px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid #e3e6eb;
 }
 .wd-custom-picker__header-confirm, .wd-custom-picker__header-cancle {
   flex: 0 0 auto;
-  padding: 0 16px;
-  font-size: 16px;
+  padding: 0 20px;
+  font: var(--wd-typography-body-md);
   color: rgba(0, 0, 0, 0.6);
   cursor: pointer;
 }

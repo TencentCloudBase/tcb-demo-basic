@@ -379,10 +379,19 @@ export const widgetProps = {
     "_order": 3,
     "widgetType": "gsd-h5-react:WdText"
   },
-  "scrollView1": {
+  "container39": {
     "style": {
-      "height": "100%"
+      "height": "100%",
+      "padding": "50px 0px 0px"
     },
+    "classList": [],
+    "data": {},
+    "_parentId": "menuLayout1",
+    "_order": 2,
+    "widgetType": "gsd-h5-react:Container"
+  },
+  "scrollView1": {
+    "style": {},
     "classList": [],
     "bounces": true,
     "scrollX": false,
@@ -402,16 +411,15 @@ export const widgetProps = {
     "refresherBackground": "#fff",
     "scrollWithAnimation": false,
     "refresherDefaultStyle": "block",
-    "_parentId": "menuLayout1",
-    "_order": 2,
+    "_parentId": "container39",
+    "_order": 0,
     "widgetType": "gsd-h5-react:ScrollView"
   },
   "container9": {
     "style": {
-      "margin": "0 auto",
+      "margin": "0px auto 0px",
       "padding": "16px",
-      "maxWidth": "800px",
-      "marginTop": "50px"
+      "maxWidth": "800px"
     },
     "classList": [],
     "data": {},
@@ -437,15 +445,79 @@ export const widgetProps = {
     "_parentId": "repeater4",
     "widgetType": "gsd-h5-react:RepeaterItem"
   },
+  "container41": {
+    "style": {},
+    "classList": [],
+    "data": {},
+    "_parentId": "repeater4_item",
+    "_order": 0,
+    "widgetType": "gsd-h5-react:Container"
+  },
+  "container42": {
+    "style": {
+      "display": "flex",
+      "alignItems": "center",
+      "flexDirection": "row",
+      "justifyContent": "flex-start"
+    },
+    "classList": [],
+    "data": {},
+    "_parentId": "container41",
+    "_order": 0,
+    "widgetType": "gsd-h5-react:Container"
+  },
+  "image5": {
+    "style": {
+      "width": "24px",
+      "height": "24px",
+      "borderRadius": "50%"
+    },
+    "classList": [],
+    "_staticResourceAttribute": [
+      "src"
+    ],
+    "alt": "[图片]",
+    "fit": "cover",
+    "lazyLoad": true,
+    "_parentId": "container42",
+    "_order": 0,
+    "widgetType": "gsd-h5-react:WdImage"
+  },
+  "text23": {
+    "style": {
+      "color": "#fff",
+      "margin": "0px 0px 0px 8px",
+      "padding": "2px 6px",
+      "borderRadius": "3px",
+      "backgroundColor": "var(--wd-color-brand-6)"
+    },
+    "classList": [],
+    "level": "body-sm",
+    "maxLines": "1",
+    "inheritColor": true,
+    "_parentId": "container42",
+    "_order": 1,
+    "widgetType": "gsd-h5-react:WdText"
+  },
   "container6": {
     "style": {
       "position": "relative"
     },
     "classList": [],
     "data": {},
-    "_parentId": "repeater4_item",
-    "_order": 0,
+    "_parentId": "container41",
+    "_order": 1,
     "widgetType": "gsd-h5-react:Container"
+  },
+  "text21": {
+    "style": {},
+    "classList": [],
+    "maxLines": "1",
+    "userSelect": true,
+    "inheritColor": true,
+    "_parentId": "container6",
+    "_order": 0,
+    "widgetType": "gsd-h5-react:WdText"
   },
   "richTextView1": {
     "style": {
@@ -455,7 +527,7 @@ export const widgetProps = {
       "ai-bot-richtext"
     ],
     "_parentId": "container6",
-    "_order": 0,
+    "_order": 1,
     "widgetType": "gsd-h5-react:RichTextView"
   },
   "container27": {
@@ -468,7 +540,7 @@ export const widgetProps = {
     "classList": [],
     "data": {},
     "_parentId": "container6",
-    "_order": 1,
+    "_order": 2,
     "widgetType": "gsd-h5-react:Container"
   },
   "container30": {
@@ -502,6 +574,20 @@ export const widgetProps = {
     "_order": 0,
     "widgetType": "gsd-h5-react:WdButton"
   },
+  "container40": {
+    "style": {
+      "zoom": 0.6,
+      "margin": "30px 0px 0px",
+      "opacity": 0.7
+    },
+    "classList": [
+      "ai-bot-chat__loader"
+    ],
+    "data": {},
+    "_parentId": "container30",
+    "_order": 1,
+    "widgetType": "gsd-h5-react:Container"
+  },
   "container31": {
     "style": {
       "flex": 1,
@@ -516,7 +602,7 @@ export const widgetProps = {
     "_order": 1,
     "widgetType": "gsd-h5-react:Container"
   },
-  "button9": {
+  "button15": {
     "style": {
       "margin": "0px 16px 0px 0px"
     },
@@ -527,12 +613,31 @@ export const widgetProps = {
       "sendMessageImg",
       "iconSrc"
     ],
-    "icon": "td:service",
+    "icon": "td:thumb-up-2",
     "text": "复制",
     "theme": "secondary",
     "iconType": "icon-only",
     "_parentId": "container31",
     "_order": 0,
+    "widgetType": "gsd-h5-react:WdButton"
+  },
+  "button16": {
+    "style": {
+      "margin": "0px 16px 0px 0px"
+    },
+    "classList": [
+      "ai-bot-msg-btn"
+    ],
+    "_staticResourceAttribute": [
+      "sendMessageImg",
+      "iconSrc"
+    ],
+    "icon": "td:thumb-down-2",
+    "text": "复制",
+    "theme": "secondary",
+    "iconType": "icon-only",
+    "_parentId": "container31",
+    "_order": 1,
     "widgetType": "gsd-h5-react:WdButton"
   },
   "button5": {
@@ -549,7 +654,7 @@ export const widgetProps = {
     "theme": "secondary",
     "iconType": "icon-only",
     "_parentId": "container31",
-    "_order": 1,
+    "_order": 2,
     "widgetType": "gsd-h5-react:WdButton"
   },
   "container11": {
@@ -766,6 +871,111 @@ export const widgetProps = {
     "_order": 1,
     "widgetType": "gsd-h5-react:WdButton"
   },
+  "modal2": {
+    "style": {},
+    "classList": [],
+    "position": "bottom",
+    "template": "default",
+    "closeType": [
+      "mask"
+    ],
+    "defaultShow": false,
+    "defaultMaskShow": true,
+    "_parentId": "container10",
+    "_order": 1,
+    "widgetType": "gsd-h5-react:WdModal"
+  },
+  "text22": {
+    "style": {
+      "fontWeight": "bolder"
+    },
+    "classList": [],
+    "text": "感谢您的宝贵反馈，我们会不断改进服务",
+    "level": "title-7",
+    "maxLines": "1",
+    "_parentId": "modal2",
+    "_order": 0,
+    "widgetType": "gsd-h5-react:WdText"
+  },
+  "icon11": {
+    "style": {
+      "color": "rgba(0, 0, 0, 0.6)"
+    },
+    "classList": [],
+    "name": "td:close",
+    "_parentId": "modal2",
+    "_order": 1,
+    "widgetType": "gsd-h5-react:WdIcon"
+  },
+  "form1": {
+    "style": {
+      "display": "block",
+      "padding": "0"
+    },
+    "classList": [],
+    "fields": [],
+    "lgWidth": "md",
+    "formType_bind": false,
+    "initialValues": {},
+    "dataSourceName": "ai_bot_feedback_5hobd2j",
+    "_parentId": "modal2",
+    "_order": 0,
+    "widgetType": "gsd-h5-react:WdForm"
+  },
+  "rating1": {
+    "style": {},
+    "classList": [],
+    "name": "rating",
+    "label": "评分",
+    "layout": "horizontal",
+    "callbacks": {},
+    "labelAlign": "left",
+    "_parentId": "form1",
+    "_order": 0,
+    "widgetType": "gsd-h5-react:WdRating"
+  },
+  "tagSelect1": {
+    "style": {},
+    "classList": [],
+    "name": "tags",
+    "size": "md",
+    "label": "回答内容",
+    "layout": "vertical",
+    "status": "edit",
+    "requiredMsg": "该项为必填项",
+    "tagStyleType": "dark",
+    "tagStyleWidthCols": 4,
+    "_parentId": "form1",
+    "_order": 1,
+    "widgetType": "gsd-h5-react:WdTagSelect"
+  },
+  "textarea2": {
+    "style": {},
+    "classList": [],
+    "name": "comment",
+    "label": "",
+    "value": "",
+    "layout": "vertical",
+    "status": "edit",
+    "placeholder": "也可以输入其他反馈建议",
+    "requiredMsg": "该项为必填项",
+    "labelVisible": false,
+    "requiredFlag": false,
+    "_parentId": "form1",
+    "_order": 2,
+    "widgetType": "gsd-h5-react:WdTextarea"
+  },
+  "button18": {
+    "style": {},
+    "classList": [],
+    "icon": "success",
+    "size": "lg",
+    "text": "提交反馈",
+    "block": true,
+    "_parentId": "modal2",
+    "_order": 0,
+    "widgetType": "gsd-h5-react:WdButton"
+  },
   "container2": {
     "style": {
       "color": "#fff",
@@ -779,7 +989,7 @@ export const widgetProps = {
     ],
     "data": {},
     "_parentId": "container10",
-    "_order": 1,
+    "_order": 2,
     "widgetType": "gsd-h5-react:Container"
   },
   "container3": {
@@ -1253,7 +1463,7 @@ export const widgetProps = {
     ],
     "data": {},
     "_parentId": "container10",
-    "_order": 2,
+    "_order": 3,
     "widgetType": "gsd-h5-react:Container"
   },
   "container7": {

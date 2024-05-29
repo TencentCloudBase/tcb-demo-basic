@@ -1,6 +1,6 @@
 <scroll-view
   id="{{id}}"
-  class="weda-ui {{className}}"
+  class="weda-ui g-scroll-view {{className}}"
   style="{{style}}"
   scroll-x="{{scrollX}}"
   scroll-y="{{scrollY}}"

@@ -227,14 +227,14 @@ Component({
           urls: newUrls,
         });
       }
-      this.handleChange(newUrls);
+      this.handleChange(newUrls, true);
     },
-    handleChange: function (values) {
+    handleChange: function (values, isDelete = false) {
       let value = values;
       if (this.properties.single) {
         value = values[0] ?? '';
       }
-      this.triggerEvent('change', { value });
+      this.triggerEvent('change', { value, isDelete });
     },
   },
   observers: {

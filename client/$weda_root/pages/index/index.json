@@ -3,5 +3,5 @@
   "usingComponents": {
   "wd-info": "/$weda_root/common/info/index"
 },
-"backgroundColor":"#FFFFFF","navigationStyle":"default","pageOrientation":"portrait","backgroundColorTop":"#FFFFFF","backgroundTextStyle":"dark","backgroundColorBottom":"#FFFFFF","navigationBarTextStyle":"black","navigationBarTitleText":"首页","navigationBarBackgroundColor":"#FFFFFF","onReachBottomDistance":50
+"navigationBarTextStyle":"black","navigationBarTitleText":"首页","navigationBarBackgroundColor":"#FFFFFF","onReachBottomDistance":50
 }

@@ -1,4 +1,4 @@
-<view class="{{classPrefix}}-custom-picker" wx:if="{{visible}}">
+<view class="{{classPrefix}}-custom-picker {{className}}" wx:if="{{visible}}">
   <view class="{{classPrefix}}-custom-backdrop" bind:tap="handleClose"></view>
 
   <view class="{{classPrefix}}-custom-picker__inner">

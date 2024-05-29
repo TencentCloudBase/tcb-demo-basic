@@ -1,0 +1,51 @@
+@charset "UTF-8";
+._B00_Xa {
+  /* 如果生成的wxss 为空文件似乎会导致IDE编译报错， 所以这里给他弄个占位 */
+  word-break: inherit;
+}
+
+.wd-form-obj-root {
+  display: flex;
+}
+.wd-form-obj-root .wd-form-obj-root {
+  margin-top: 10px;
+}
+.wd-form-obj-root.wd-form-item--weui.wd-form-item {
+  padding: 0;
+}
+.wd-form-obj-root .wd-form-obj {
+  min-width: 200px;
+  width: 100%;
+}
+.wd-form-obj-root.size-width-sm {
+  width: 100%;
+}
+.wd-form-obj-root.size-width-md {
+  width: 100%;
+}
+.wd-form-obj-root.size-width-lg {
+  width: 100%;
+}
+.wd-form-obj-root .wd-form-item-wrap {
+  width: 100%;
+}
+.wd-form-obj-root .wd-form-item-wrap .wd-form-item-wrap__control {
+  overflow: hidden;
+}
+.wd-form-obj-root .wd-form-item-wrap .wd-card-root {
+  width: 100%;
+}
+.wd-form-obj-root .wd-form-item-wrap .wd-card-root.wd-card-content__hidden .wd-card__body {
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+}
+.wd-form-obj-root .wd-form-item-wrap__label.wd-form-obj__label {
+  height: unset;
+  line-height: unset;
+  padding: unset;
+  margin-left: var(--wd-form-item-label-mr);
+}
+.wd-form-obj-root .wd-form-item-wrap .is-nowrap.wd-form-item-wrap__label.wd-form-obj__label > label {
+  line-height: unset;
+}

@@ -227,9 +227,11 @@ Component({
       option,
       loadStatus,
       searchOption,
-      searchStatus
+      searchStatus,
+      _needFetch
     ) {
       if (this.data.searchValue === '') {
+        // 初始化会走到这
         const { chooseIndexValue } = this.properties;
         let index = -1;
         if (chooseIndexValue !== '') {
@@ -250,12 +252,15 @@ Component({
           clickIndex: index,
         });
       } else {
-        this.setData({
-          status: searchStatus,
-          showOption: searchOption,
-          isFinish: true,
-          index: -1,
-        });
+        if (_needFetch) {
+          // 只有needFetch 才设置searchOption
+          this.setData({
+            status: searchStatus,
+            showOption: searchOption,
+            isFinish: true,
+            index: -1,
+          });
+        }
       }
     },
   },
