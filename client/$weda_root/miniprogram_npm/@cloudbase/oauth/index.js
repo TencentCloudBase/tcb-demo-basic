@@ -4,7 +4,7 @@ var __DEFINE__ = function(modId, func, req) { var m = { exports: {}, _tempexport
 var __REQUIRE__ = function(modId, source) { if(!__MODS__[modId]) return require(source); if(!__MODS__[modId].status) { var m = __MODS__[modId].m; m._exports = m._tempexports; var desp = Object.getOwnPropertyDescriptor(m, "exports"); if (desp && desp.configurable) Object.defineProperty(m, "exports", { set: function (val) { if(typeof val === "object" && val !== m._exports) { m._exports.__proto__ = val.__proto__; Object.keys(val).forEach(function (k) { m._exports[k] = val[k]; }); } m._tempexports = val }, get: function () { return m._tempexports; } }); __MODS__[modId].status = 1; __MODS__[modId].func(__MODS__[modId].req, m, m.exports); } return __MODS__[modId].m.exports; };
 var __REQUIRE_WILDCARD__ = function(obj) { if(obj && obj.__esModule) { return obj; } else { var newObj = {}; if(obj != null) { for(var k in obj) { if (Object.prototype.hasOwnProperty.call(obj, k)) newObj[k] = obj[k]; } } newObj.default = obj; return newObj; } };
 var __REQUIRE_DEFAULT__ = function(obj) { return obj && obj.__esModule ? obj.default : obj; };
-__DEFINE__(1715324755314, function(require, module, exports) {
+__DEFINE__(1717677448130, function(require, module, exports) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getAuth = exports.Auth = exports.initializeApp = exports.ErrorType = exports.Client = exports.initializeClient = void 0;
@@ -28,9 +28,9 @@ Object.defineProperty(exports, "initializeApp", { enumerable: true, get: functio
 var auth_2 = require("./auth");
 Object.defineProperty(exports, "Auth", { enumerable: true, get: function () { return auth_2.Auth; } });
 Object.defineProperty(exports, "getAuth", { enumerable: true, get: function () { return auth_2.getAuth; } });
-//# sourceMappingURL=index.js.map
-}, function(modId) {var map = {"./auth":1715324755315,"./app":1715324755325,"./app/request":1715324755326}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1715324755315, function(require, module, exports) {
+
+}, function(modId) {var map = {"./auth":1717677448131,"./app":1717677448142,"./app/request":1717677448143}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1717677448131, function(require, module, exports) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Auth = exports.getAuth = exports.DeviceAuthorizeState = exports.VerificationUsages = exports.ErrorType = void 0;
@@ -46,7 +46,7 @@ Object.defineProperty(exports, "DeviceAuthorizeState", { enumerable: true, get: 
  * Returns the existing `Auth` instance that is associated with the app
  */
 function getAuth(app, initOptions) {
-    return (0, internal_1._getComponent)(app, "auth", () => {
+    return (0, internal_1._getComponent)(app, 'auth', () => {
         const credentialsClient = (0, oauthclient_1.getOAuthClient)(app, initOptions);
         const baseRequest = credentialsClient.request.bind(credentialsClient);
         const captcha = (0, captcha_1.getCaptcha)(app, { request: baseRequest });
@@ -76,7 +76,7 @@ class Auth {
      */
     async signIn(params) {
         const credentials = await this.request(consts_1.ApiUrls.AUTH_SIGN_IN_URL, {
-            method: "POST",
+            method: 'POST',
             withBasicAuth: true,
             body: params,
         });
@@ -89,7 +89,7 @@ class Auth {
      */
     async signInAnonymously() {
         const credentials = await this.request(consts_1.ApiUrls.AUTH_SIGN_IN_ANONYMOUSLY_URL, {
-            method: "POST",
+            method: 'POST',
             withBasicAuth: true,
             body: {},
         });
@@ -103,7 +103,7 @@ class Auth {
      */
     async signUp(params) {
         const data = await this.request(consts_1.ApiUrls.AUTH_SIGN_UP_URL, {
-            method: "POST",
+            method: 'POST',
             withBasicAuth: true,
             body: params,
         });
@@ -122,14 +122,14 @@ class Auth {
         }
         try {
             resp = await this.request(consts_1.ApiUrls.AUTH_SIGNOUT_URL, {
-                method: "POST",
+                method: 'POST',
                 withCredentials: true,
                 body: params,
             });
         }
         catch (err) {
             if (err.error !== oauthclient_1.ErrorType.UNAUTHENTICATED) {
-                console.log("sign_out_error", err);
+                console.log('sign_out_error', err);
             }
         }
         await this.credentialsClient.setCredentials();
@@ -141,7 +141,7 @@ class Auth {
      */
     async revokeAllDevices() {
         await this.request(consts_1.ApiUrls.AUTH_REVOKE_ALL_URL, {
-            method: "DELETE",
+            method: 'DELETE',
             withCredentials: true,
         });
     }
@@ -151,7 +151,7 @@ class Auth {
      */
     async revokeDevice(params) {
         await this.request(consts_1.ApiUrls.AUTHORIZED_DEVICES_DELETE_URL + params.device_id, {
-            method: "DELETE",
+            method: 'DELETE',
             withCredentials: true,
         });
     }
@@ -164,7 +164,7 @@ class Auth {
         let withBasicAuth = false;
         let withCredentials = false;
         // 发送短信时，如果时给当前用户发，则需要带上鉴权信息
-        if (params.target == "CUR_USER") {
+        if (params.target == 'CUR_USER') {
             withCredentials = true;
         }
         else {
@@ -177,12 +177,15 @@ class Auth {
             }
         }
         return this.request(consts_1.ApiUrls.VERIFICATION_URL, {
-            method: "POST",
+            method: 'POST',
             withBasicAuth: withBasicAuth,
             withCredentials: withCredentials,
             body: params,
             withCaptcha: true,
         });
+    }
+    async getVerification(params) {
+        return this.sendVerificationCode(params);
     }
     /**
      *  Verify the code
@@ -191,7 +194,7 @@ class Auth {
      */
     async verify(params) {
         return this.request(consts_1.ApiUrls.VERIFY_URL, {
-            method: "POST",
+            method: 'POST',
             withBasicAuth: true,
             body: params,
         });
@@ -202,7 +205,7 @@ class Auth {
      */
     async resetPassword(params) {
         return this.request(consts_1.ApiUrls.RESET_PASSWORD_URL, {
-            method: "POST",
+            method: 'POST',
             withBasicAuth: true,
             body: params,
         });
@@ -222,7 +225,7 @@ class Auth {
             });
         }
         return this.request(url, {
-            method: "GET",
+            method: 'GET',
             withBasicAuth: true,
         });
     }
@@ -233,7 +236,7 @@ class Auth {
      */
     async grantProviderToken(params) {
         return this.request(consts_1.ApiUrls.PROVIDER_TOKEN_URL, {
-            method: "POST",
+            method: 'POST',
             withBasicAuth: true,
             body: params,
         });
@@ -245,7 +248,7 @@ class Auth {
      */
     async patchProviderToken(params) {
         return this.request(consts_1.ApiUrls.PROVIDER_TOKEN_URL, {
-            method: "PATCH",
+            method: 'PATCH',
             withBasicAuth: true,
             body: params,
         });
@@ -257,7 +260,7 @@ class Auth {
      */
     async signInWithProvider(params) {
         const credentials = await this.request(consts_1.ApiUrls.AUTH_SIGN_IN_WITH_PROVIDER_URL, {
-            method: "POST",
+            method: 'POST',
             withBasicAuth: true,
             body: params,
         });
@@ -271,7 +274,7 @@ class Auth {
      */
     async bindWithProvider(params) {
         return this.request(consts_1.ApiUrls.PROVIDER_BIND_URL, {
-            method: "POST",
+            method: 'POST',
             withBasicAuth: true,
             body: params,
             withCredentials: true,
@@ -283,7 +286,7 @@ class Auth {
      */
     async getUserProfile() {
         return this.request(consts_1.ApiUrls.USER_ME_URL, {
-            method: "GET",
+            method: 'GET',
             withCredentials: true,
         });
     }
@@ -293,7 +296,7 @@ class Auth {
      */
     async updateUserProfile(params) {
         return this.request(consts_1.ApiUrls.USER_ME_URL, {
-            method: "PATCH",
+            method: 'PATCH',
             withCredentials: true,
             body: params,
         });
@@ -328,7 +331,7 @@ class Auth {
      */
     async transByProvider(params) {
         return this.request(consts_1.ApiUrls.USER_TRANS_BY_PROVIDER_URL, {
-            method: "PATCH",
+            method: 'PATCH',
             body: params,
             withCredentials: true,
         });
@@ -340,7 +343,7 @@ class Auth {
      */
     async grantToken(params) {
         const credentials = await this.request(consts_1.ApiUrls.AUTH_TOKEN_URL, {
-            method: "POST",
+            method: 'POST',
             withBasicAuth: true,
             body: params,
         });
@@ -353,7 +356,7 @@ class Auth {
      */
     async getProviders() {
         return this.request(consts_1.ApiUrls.PROVIDER_LIST_URL, {
-            method: "GET",
+            method: 'GET',
             withCredentials: true,
         });
     }
@@ -364,7 +367,7 @@ class Auth {
     async checkIfUserExist(params) {
         const url = `${consts_1.ApiUrls.USER_ME_URL}?${Auth.parseParamsToSearch(params)}`;
         return this.request(url, {
-            method: "GET",
+            method: 'GET',
         });
     }
     /**
@@ -374,7 +377,7 @@ class Auth {
      */
     async unbindProvider(params) {
         return this.request(`${consts_1.ApiUrls.PROVIDER_UNBIND_URL}/${params.provider_id}`, {
-            method: "DELETE",
+            method: 'DELETE',
             withCredentials: true,
         });
     }
@@ -385,7 +388,7 @@ class Auth {
      */
     async checkPassword(params) {
         return this.request(`${consts_1.ApiUrls.SUDO_URL}`, {
-            method: "POST",
+            method: 'POST',
             withCredentials: true,
             body: params,
         });
@@ -397,7 +400,7 @@ class Auth {
      */
     async editContact(params) {
         return this.request(`${consts_1.ApiUrls.EDIT_CONTACT_URL}`, {
-            method: "PATCH",
+            method: 'PATCH',
             withCredentials: true,
             body: params,
         });
@@ -409,7 +412,7 @@ class Auth {
      */
     async setPassword(params) {
         return this.request(`${consts_1.ApiUrls.AUTH_SET_PASSWORD_URL}`, {
-            method: "PATCH",
+            method: 'PATCH',
             withCredentials: true,
             body: params,
         });
@@ -433,7 +436,7 @@ class Auth {
      */
     async sudo(params) {
         return this.request(`${consts_1.ApiUrls.SUDO_URL}`, {
-            method: "POST",
+            method: 'POST',
             withCredentials: true,
             body: params,
         });
@@ -444,9 +447,9 @@ class Auth {
      * @return {Promise<SendVerificationCodeResponse>} A Promise<SendVerificationCodeResponse> object.
      */
     async SendVerificationCodeToCurrentUser(params) {
-        params.target = "CUR_USER";
+        params.target = 'CUR_USER';
         return this.request(consts_1.ApiUrls.VERIFICATION_URL, {
-            method: "POST",
+            method: 'POST',
             body: params,
             withCredentials: true,
             withCaptcha: true,
@@ -459,7 +462,7 @@ class Auth {
      */
     async changeBoundProvider(params) {
         return this.request(`${consts_1.ApiUrls.PROVIDER_LIST_URL}/${params.provider_id}/trans`, {
-            method: "POST",
+            method: 'POST',
             body: {
                 provider_trans_token: params.trans_token,
             },
@@ -473,7 +476,7 @@ class Auth {
      */
     async setUserProfile(params) {
         return this.request(consts_1.ApiUrls.USER_PROFILE_URL, {
-            method: "PATCH",
+            method: 'PATCH',
             body: params,
             withCredentials: true,
         });
@@ -485,7 +488,7 @@ class Auth {
     async deleteMe(params) {
         const url = `${consts_1.ApiUrls.USER_ME_URL}?${Auth.parseParamsToSearch(params)}`;
         return this.request(url, {
-            method: "DELETE",
+            method: 'DELETE',
             withCredentials: true,
         });
     }
@@ -504,13 +507,13 @@ class Auth {
         const customSignTicketFn = this._getCustomSignTicketFn;
         if (!customSignTicketFn) {
             return Promise.reject({
-                error: "failed_precondition",
-                error_description: "please use setCustomSignFunc to set custom sign function",
+                error: 'failed_precondition',
+                error_description: 'please use setCustomSignFunc to set custom sign function',
             });
         }
         const customTicket = await customSignTicketFn();
         return this.signInWithProvider({
-            provider_id: "custom",
+            provider_id: 'custom',
             provider_token: customTicket,
         });
     }
@@ -521,7 +524,7 @@ class Auth {
     async queryUserProfile(params) {
         const url = `${consts_1.ApiUrls.USER_QUERY_URL}?${Auth.parseParamsToSearch(params)}`;
         return this.request(url, {
-            method: "GET",
+            method: 'GET',
             withCredentials: true,
         });
     }
@@ -532,7 +535,7 @@ class Auth {
      */
     async authorize(params) {
         return this.request(consts_1.ApiUrls.AUTHORIZE_URL, {
-            method: "POST",
+            method: 'POST',
             withCredentials: true,
             body: params,
         });
@@ -543,14 +546,14 @@ class Auth {
      */
     async authorizeDevice(params) {
         return this.request(consts_1.ApiUrls.AUTHORIZE_DEVICE_URL, {
-            method: "POST",
+            method: 'POST',
             withCredentials: true,
             body: params,
         });
     }
     async deviceAuthorize(params) {
         return this.request(consts_1.ApiUrls.AUTHORIZE_DEVICE_CODE_URL, {
-            method: "POST",
+            method: 'POST',
             withBasicAuth: true,
             body: params,
         });
@@ -570,7 +573,7 @@ class Auth {
             withBasicAuth = false;
         }
         return this.request(url, {
-            method: "GET",
+            method: 'GET',
             withBasicAuth: withBasicAuth,
             withCredentials: withCredentials,
         });
@@ -587,6 +590,25 @@ class Auth {
             },
         });
     }
+    async createCaptchaData(params) {
+        return this.request(consts_1.ApiUrls.CAPTCHA_DATA_URL, {
+            method: 'POST',
+            withBasicAuth: true,
+            body: params,
+        });
+    }
+    /**
+     * 验证输入验证码
+     * @param params.token 图形验证码token
+     * @param params.key 用户输入值
+     */
+    async verifyCaptchaData(params) {
+        return this.request(consts_1.ApiUrls.VERIFY_CAPTCHA_DATA_URL, {
+            method: 'POST',
+            withBasicAuth: true,
+            body: params,
+        });
+    }
     static parseParamsToSearch(params) {
         for (let key in params) {
             if (!params[key]) {
@@ -598,9 +620,9 @@ class Auth {
     }
 }
 exports.Auth = Auth;
-//# sourceMappingURL=index.js.map
-}, function(modId) { var map = {"./consts":1715324755316,"../oauthclient":1715324755317,"../captcha":1715324755324,"../app/internal":1715324755318}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1715324755316, function(require, module, exports) {
+
+}, function(modId) { var map = {"./consts":1717677448132,"../oauthclient":1717677448133,"../captcha":1717677448140,"../app/internal":1717677448134}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1717677448132, function(require, module, exports) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DeviceAuthorizeState = exports.ErrorType = exports.VerificationUsages = exports.ApiUrls = void 0;
@@ -623,6 +645,9 @@ var ApiUrls;
     ApiUrls["USER_TRANS_BY_PROVIDER_URL"] = "/auth/v1/user/trans/by/provider";
     ApiUrls["VERIFICATION_URL"] = "/auth/v1/verification";
     ApiUrls["VERIFY_URL"] = "/auth/v1/verification/verify";
+    ApiUrls["CAPTCHA_DATA_URL"] = "/auth/v1/captcha/data";
+    ApiUrls["VERIFY_CAPTCHA_DATA_URL"] = "/auth/v1/captcha/data/verify";
+    ApiUrls["GET_CAPTCHA_URL"] = "/auth/v1/captcha/init";
     ApiUrls["PROVIDER_LIST_URL"] = "/auth/v1/user/provider";
     ApiUrls["PROVIDER_UNBIND_URL"] = "/auth/v1/user/provider";
     ApiUrls["SUDO_URL"] = "/auth/v1/user/sudo";
@@ -681,9 +706,9 @@ var DeviceAuthorizeState;
     // 用户拒绝授权
     DeviceAuthorizeState["ACCESS_DENIED"] = "ACCESS_DENIED";
 })(DeviceAuthorizeState = exports.DeviceAuthorizeState || (exports.DeviceAuthorizeState = {}));
-//# sourceMappingURL=consts.js.map
+
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1715324755317, function(require, module, exports) {
+__DEFINE__(1717677448133, function(require, module, exports) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getOAuthClient = exports.ErrorType = void 0;
@@ -704,9 +729,9 @@ function getOAuthClient(app, opts) {
     });
 }
 exports.getOAuthClient = getOAuthClient;
-//# sourceMappingURL=index.js.map
-}, function(modId) { var map = {"../app/internal":1715324755318,"./oauthclient":1715324755319,"./consts":1715324755320}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1715324755318, function(require, module, exports) {
+
+}, function(modId) { var map = {"../app/internal":1717677448134,"./oauthclient":1717677448135,"./consts":1717677448136}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1717677448134, function(require, module, exports) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports._getComponent = void 0;
@@ -731,9 +756,9 @@ function _getComponent(app, name, creator) {
     return component;
 }
 exports._getComponent = _getComponent;
-//# sourceMappingURL=internal.js.map
+
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1715324755319, function(require, module, exports) {
+__DEFINE__(1717677448135, function(require, module, exports) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.OAuth2Client = exports.LocalCredentials = exports.generateRequestId = exports.toResponseError = void 0;
@@ -1148,9 +1173,9 @@ OAuth2Client._minRetry = 0;
 OAuth2Client._maxRetry = 5;
 OAuth2Client._retryInterval = 1000;
 exports.OAuth2Client = OAuth2Client;
-//# sourceMappingURL=oauthclient.js.map
-}, function(modId) { var map = {"./consts":1715324755320,"../utils/uuid":1715324755321,"../utils/base64":1715324755322,"../utils/promise":1715324755323}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1715324755320, function(require, module, exports) {
+
+}, function(modId) { var map = {"./consts":1717677448136,"../utils/uuid":1717677448137,"../utils/base64":1717677448138,"../utils/promise":1717677448139}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1717677448136, function(require, module, exports) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ErrorType = exports.Syntax = void 0;
@@ -1203,9 +1228,9 @@ var ErrorType;
     ErrorType["TEMPORARILY_UNAVAILABLE"] = "temporarily_unavailable";
     ErrorType["INTERACTION_REQUIRED"] = "interaction_required";
 })(ErrorType = exports.ErrorType || (exports.ErrorType = {}));
-//# sourceMappingURL=consts.js.map
+
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1715324755321, function(require, module, exports) {
+__DEFINE__(1717677448137, function(require, module, exports) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.uuidv4 = void 0;
@@ -1221,9 +1246,9 @@ function uuidv4() {
     });
 }
 exports.uuidv4 = uuidv4;
-//# sourceMappingURL=uuid.js.map
+
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1715324755322, function(require, module, exports) {
+__DEFINE__(1717677448138, function(require, module, exports) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.weappJwtDecode = exports.base64_url_decode = exports.weAtob = exports.weBtoa = void 0;
@@ -1317,9 +1342,9 @@ function weappJwtDecode(token, options) {
     }
 }
 exports.weappJwtDecode = weappJwtDecode;
-//# sourceMappingURL=base64.js.map
+
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1715324755323, function(require, module, exports) {
+__DEFINE__(1717677448139, function(require, module, exports) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PromiseOnce = void 0;
@@ -1367,19 +1392,22 @@ class PromiseOnce {
     }
 }
 exports.PromiseOnce = PromiseOnce;
-//# sourceMappingURL=promise.js.map
+
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1715324755324, function(require, module, exports) {
+__DEFINE__(1717677448140, function(require, module, exports) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Captcha = exports.getCaptcha = void 0;
+const consts_1 = require("../auth/consts");
 const internal_1 = require("../app/internal");
+const mp_1 = require("../utils/mp");
 function getCaptcha(app, opts) {
-    return (0, internal_1._getComponent)(app, "captcha", () => {
+    return (0, internal_1._getComponent)(app, 'captcha', () => {
         const initOpts = {
+            ...app.options.captchaOptions,
+            clientId: app.options.clientId,
             request: app.options.request,
             storage: app.options.storage,
-            openURIWithCallback: app.options.openURIWithCallback,
         };
         if (opts && opts.request) {
             initOpts.request = opts.request;
@@ -1388,15 +1416,14 @@ function getCaptcha(app, opts) {
     });
 }
 exports.getCaptcha = getCaptcha;
-const GET_CAPTCHA_URL = '/auth/v1/captcha/init';
 class Captcha {
     /**
      * constructor
      * @param {CaptchaOptions} opts
      */
     constructor(opts) {
-        this._config = opts;
-        this._tokenSectionName = 'captcha_';
+        this.config = opts;
+        this.tokenSectionName = `captcha_${opts.clientId || ''}`;
     }
     /**
      * request http like simple fetch api, exp:request('/v1/user/me', {withCredentials:true})
@@ -1410,79 +1437,97 @@ class Captcha {
         if (!options.method) {
             options.method = 'GET';
         }
-        const state = options.method + ":" + url;
+        const state = `${options.method}:${url}`;
         let reqURL = url;
         if (options.withCaptcha) {
-            reqURL = await this._appendCaptchaTokenToURL(url, state, false);
+            reqURL = await this.appendCaptchaTokenToURL(url, state, false);
         }
         let resp;
         try {
-            resp = await this._config.request(reqURL, options);
+            resp = await this.config.request(reqURL, options);
         }
         catch (err) {
-            if (err.error === 'captcha_required' || err.error === 'captcha_invalid') {
-                url = await this._appendCaptchaTokenToURL(url, state, err.error === 'captcha_invalid');
-                return this._config.request(url, options);
+            if (err.error === consts_1.ErrorType.CAPTCHA_REQUIRED || err.error === consts_1.ErrorType.CAPTCHA_INVALID) {
+                url = await this.appendCaptchaTokenToURL(url, state, err.error === consts_1.ErrorType.CAPTCHA_INVALID);
+                return this.config.request(url, options);
             }
-            else {
-                return Promise.reject(err);
-            }
+            return Promise.reject(err);
         }
         return resp;
     }
     /**
-     * _getCaptchaToken get captcha token
+     * getCaptchaToken 获取captchaToken
      */
-    async _getCaptchaToken(forceNewToken, state) {
+    async getCaptchaToken(forceNewToken, state) {
         if (!forceNewToken) {
-            // if local has captcha token then return
-            const captchaToken = await this._findCaptchaToken();
+            // 如果本地存在，则直接返回
+            const captchaToken = await this.findCaptchaToken();
             if (captchaToken) {
                 return captchaToken;
             }
         }
-        const redirectURL = window.location.origin + window.location.pathname;
-        const captchaTokenResp = await this._config.request(GET_CAPTCHA_URL, {
-            method: 'POST',
-            body: {
-                redirect_uri: redirectURL,
-                state: state
-            },
-            withBasicAuth: true,
-        });
-        if (captchaTokenResp.captcha_token) {
-            const captchaToken = {
-                captcha_token: captchaTokenResp.captcha_token,
-                expires_in: captchaTokenResp.expires_in,
+        let captchaTokenResp;
+        if ((0, mp_1.isMp)() || (0, mp_1.isInMpWebView)()) {
+            /**
+             * https://iwiki.woa.com/p/4010699417
+             */
+            const captchaDataResp = await this.config.request(consts_1.ApiUrls.CAPTCHA_DATA_URL, {
+                method: 'POST',
+                body: {
+                    state,
+                    redirect_uri: '',
+                },
+                withBasicAuth: true,
+                withCredentials: false,
+            });
+            captchaTokenResp = {
+                url: `${captchaDataResp.data}?state=${encodeURIComponent(state)}&token=${captchaDataResp.token}`,
             };
-            await this._saveCaptchaToken(captchaToken);
-            return captchaTokenResp.captcha_token;
-        }
-        const callbackData = await this._config.openURIWithCallback(captchaTokenResp.url, { width: '355px', height: '355px' });
-        const captchaToken = {
-            captcha_token: callbackData.captcha_token,
-            expires_in: Number(callbackData.expires_in)
-        };
-        await this._saveCaptchaToken(captchaToken);
-        return captchaToken.captcha_token;
-    }
-    async _appendCaptchaTokenToURL(url, state, forceNewToken) {
-        const captchaToken = await this._getCaptchaToken(forceNewToken, state);
-        if (url.indexOf("?") > 0) {
-            url += "&captcha_token=" + captchaToken;
         }
         else {
-            url += "?captcha_token=" + captchaToken;
+            const redirect_uri = `${window.location.origin + window.location.pathname}?__captcha=on`;
+            captchaTokenResp = await this.config.request(consts_1.ApiUrls.GET_CAPTCHA_URL, {
+                method: 'POST',
+                body: {
+                    client_id: this.config.clientId,
+                    redirect_uri,
+                    state,
+                },
+                withBasicAuth: true,
+            });
+        }
+        const captchaToken = captchaTokenResp.captcha_token
+            ? {
+                captcha_token: captchaTokenResp.captcha_token,
+                expires_in: captchaTokenResp.expires_in,
+            }
+            : await this.config.openURIWithCallback(captchaTokenResp.url, {
+                width: '355px',
+                height: '355px',
+            });
+        await this.saveCaptchaToken({
+            captcha_token: captchaToken.captcha_token,
+            expires_in: Number(captchaToken.expires_in),
+        });
+        return captchaToken.captcha_token;
+    }
+    async appendCaptchaTokenToURL(url, state, forceNewToken) {
+        const captchaToken = await this.getCaptchaToken(forceNewToken, state);
+        if (url.indexOf('?') > 0) {
+            url += `&captcha_token=${captchaToken}`;
+        }
+        else {
+            url += `?captcha_token=${captchaToken}`;
         }
         return url;
     }
-    async _saveCaptchaToken(token) {
+    async saveCaptchaToken(token) {
         token.expires_at = new Date(Date.now() + (token.expires_in - 10) * 1000);
         const tokenStr = JSON.stringify(token);
-        await this._config.storage.setItem(this._tokenSectionName, tokenStr);
+        await this.config.storage.setItem(this.tokenSectionName, tokenStr);
     }
-    async _findCaptchaToken() {
-        const tokenStr = await this._config.storage.getItem(this._tokenSectionName);
+    async findCaptchaToken() {
+        const tokenStr = await this.config.storage.getItem(this.tokenSectionName);
         if (tokenStr !== undefined && tokenStr !== null) {
             try {
                 const captchaToken = JSON.parse(tokenStr);
@@ -1496,7 +1541,7 @@ class Captcha {
                 return captchaToken.captcha_token;
             }
             catch (error) {
-                await this._config.storage.removeItem(this._tokenSectionName);
+                await this.config.storage.removeItem(this.tokenSectionName);
                 return null;
             }
         }
@@ -1504,9 +1549,76 @@ class Captcha {
     }
 }
 exports.Captcha = Captcha;
-//# sourceMappingURL=index.js.map
-}, function(modId) { var map = {"../app/internal":1715324755318}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1715324755325, function(require, module, exports) {
+
+}, function(modId) { var map = {"../auth/consts":1717677448132,"../app/internal":1717677448134,"../utils/mp":1717677448141}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1717677448141, function(require, module, exports) {
+
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.isInMpWebView = exports.isMp = void 0;
+function isMp() {
+    const wx = globalThis.wx;
+    if (typeof wx === 'undefined') {
+        return false;
+    }
+    if (globalThis.Page === undefined) {
+        return false;
+    }
+    if (!wx.getSystemInfoSync) {
+        return false;
+    }
+    if (!wx.getStorageSync) {
+        return false;
+    }
+    if (!wx.setStorageSync) {
+        return false;
+    }
+    if (!wx.connectSocket) {
+        return false;
+    }
+    if (!wx.request) {
+        return false;
+    }
+    try {
+        if (!wx.getSystemInfoSync()) {
+            return false;
+        }
+        if (wx.getSystemInfoSync().AppPlatform === 'qq') {
+            return false;
+        }
+    }
+    catch (e) {
+        return false;
+    }
+    return true;
+}
+exports.isMp = isMp;
+let IS_IN_MP_WEBVIEW = false;
+function ready() {
+    IS_IN_MP_WEBVIEW =
+        IS_IN_MP_WEBVIEW || (typeof window !== undefined && window.__wxjs_environment === 'miniprogram');
+}
+try {
+    if (!isMp()) {
+        IS_IN_MP_WEBVIEW =
+            IS_IN_MP_WEBVIEW ||
+                !!navigator.userAgent.match(/miniprogram/i) ||
+                window.__wxjs_environment === 'miniprogram';
+        if (window && window.WeixinJSBridge && window.WeixinJSBridge.invoke) {
+            ready();
+        }
+        else if (typeof document !== 'undefined') {
+            document.addEventListener('WeixinJSBridgeReady', ready, false);
+        }
+    }
+}
+catch (e) { }
+function isInMpWebView() {
+    return IS_IN_MP_WEBVIEW;
+}
+exports.isInMpWebView = isInMpWebView;
+
+}, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1717677448142, function(require, module, exports) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppImpl = exports.initializeApp = void 0;
@@ -1536,10 +1648,14 @@ class AppImpl {
         if (!options.storage) {
             options.storage = new storage_1.DefaultStorage({ env: storageEnv });
         }
-        if (!options.openURIWithCallback) {
-            options.openURIWithCallback = openuri_1.defaultOpenURIWithCallback;
+        if (!options.captchaOptions) {
+            options.captchaOptions = {};
         }
-        let baseRequest = options.request;
+        if (!options.captchaOptions.openURIWithCallback) {
+            // 兼容之前的传参方式，options.openURIWithCallback
+            options.captchaOptions.openURIWithCallback = options.openURIWithCallback || openuri_1.defaultOpenURIWithCallback;
+        }
+        let baseRequest = options.baseRequest || options.request || request_1.defaultRequest;
         if (!baseRequest) {
             baseRequest = request_1.defaultRequest;
         }
@@ -1560,9 +1676,9 @@ class AppImpl {
     }
 }
 exports.AppImpl = AppImpl;
-//# sourceMappingURL=index.js.map
-}, function(modId) { var map = {"./request":1715324755326,"./openuri":1715324755327,"./storage":1715324755328}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1715324755326, function(require, module, exports) {
+
+}, function(modId) { var map = {"./request":1717677448143,"./openuri":1717677448144,"./storage":1717677448145}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1717677448143, function(require, module, exports) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.defaultRequest = exports.ErrorType = void 0;
@@ -1580,13 +1696,19 @@ const defaultRequest = async (url, options) => {
     }
     if (copyOptions.body && typeof copyOptions.body !== 'string') {
         copyOptions.body = JSON.stringify(copyOptions.body, (key, value) => {
-            if (value && value !== '') {
-                return value;
+            if (value) {
+                if (value instanceof Map) {
+                    return Object.fromEntries(value.entries());
+                }
+                else if (value !== '') {
+                    return value;
+                }
             }
         });
     }
     const requestId = copyOptions.headers['x-request-id'];
     try {
+        copyOptions.credentials = 'include';
         const responseResult = await fetch(url, copyOptions);
         const jsonResponse = await responseResult.json();
         if (jsonResponse.error || responseResult.status >= 400) {
@@ -1614,12 +1736,13 @@ const defaultRequest = async (url, options) => {
     }
 };
 exports.defaultRequest = defaultRequest;
-//# sourceMappingURL=request.js.map
+
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1715324755327, function(require, module, exports) {
+__DEFINE__(1717677448144, function(require, module, exports) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.defaultOpenURIWithCallback = void 0;
+const consts_1 = require("../auth/consts");
 /**
  * default use iframe to open url can return callback
  * for example : open https://example.com/callback?rediret_uri=http://127.0.0.1:8080/
@@ -1634,14 +1757,16 @@ exports.defaultOpenURIWithCallback = void 0;
  */
 const defaultOpenURIWithCallback = (url, opts) => {
     let iframeTag = '__iframe';
+    const { width = '355px', height = '355px' } = opts || {};
+    const matched = url.match(/^(data:.*)$/);
+    if (matched) {
+        return Promise.reject({
+            error: consts_1.ErrorType.UNIMPLEMENTED,
+            error_description: `need to impl captcha data`,
+        });
+    }
     if (window.location.search.indexOf(iframeTag) > 0) {
         document.body.style.display = 'none';
-    }
-    if (!opts) {
-        opts = {
-            width: '355px',
-            height: '355px'
-        };
     }
     if (document.getElementById('_iframe_panel_wrap') === null) {
         var elementDiv = document.createElement('div');
@@ -1653,23 +1778,30 @@ const defaultOpenURIWithCallback = (url, opts) => {
     const target = document.getElementById('_iframe_panel_wrap'), iframe = document.createElement('iframe');
     target.innerHTML = '';
     const openURL = new URL(url);
-    const redirectUri = openURL.searchParams.get('redirect_uri');
+    let search = openURL.search.substring(1);
+    let contactSign = '?';
+    if (openURL.hash.indexOf('=') > 0) {
+        search = openURL.hash.substring(1);
+        contactSign = '#';
+    }
+    const searchParams = new URLSearchParams(search);
+    const redirectUri = searchParams.get('redirect_uri');
     if (redirectUri) {
         const redirectUrl = new URL(redirectUri);
-        redirectUrl.searchParams.append(iframeTag, "on");
-        openURL.searchParams.set('redirect_uri', redirectUrl.href);
-        url = openURL.href;
+        redirectUrl.searchParams.append(iframeTag, 'on');
+        searchParams.set('redirect_uri', redirectUrl.href);
+        url = openURL.origin + openURL.pathname + contactSign + searchParams.toString();
     }
     iframe.setAttribute('src', url);
     iframe.setAttribute('id', '_iframe_panel_wrap_iframe');
-    iframe.style.cssText = `min-width:${opts.width};display:block;height:${opts.height};margin:0 auto;background-color: rgb(255, 255, 255);border: none;`;
+    iframe.style.cssText = `min-width:${width};display:block;height:${height};margin:0 auto;background-color: rgb(255, 255, 255);border: none;`;
     target.appendChild(iframe);
     target.style.display = 'block';
     let callBack = new Callback();
     // handle callback from iframe post message
-    window.addEventListener('message', e => {
+    window.addEventListener('message', (e) => {
         if (e.origin == openURL.origin && callBack.callFunc) {
-            if (!(typeof e.data === "string")) {
+            if (!(typeof e.data === 'string')) {
                 return;
             }
             target.style.display = 'none';
@@ -1677,12 +1809,11 @@ const defaultOpenURIWithCallback = (url, opts) => {
             try {
                 callBack.callFunc(data);
             }
-            catch (e) {
-            }
+            catch (e) { }
         }
     }, false);
     return new Promise((resolve, reject) => {
-        callBack.callFunc = data => {
+        callBack.callFunc = (data) => {
             if (data.error) {
                 return reject(data);
             }
@@ -1693,10 +1824,7 @@ const defaultOpenURIWithCallback = (url, opts) => {
             try {
                 var windowLocation = window.location;
                 var iframeLocation = iframe.contentWindow.location;
-                if (iframeLocation.host +
-                    iframeLocation.pathname ===
-                    windowLocation.host +
-                        windowLocation.pathname) {
+                if (iframeLocation.host + iframeLocation.pathname === windowLocation.host + windowLocation.pathname) {
                     target.style.display = 'none';
                     const iframeUrlParams = new URLSearchParams(iframeLocation.search);
                     const data = {};
@@ -1706,7 +1834,7 @@ const defaultOpenURIWithCallback = (url, opts) => {
                     if (data.error) {
                         return reject({
                             error: iframeUrlParams.get('error'),
-                            error_description: iframeUrlParams.get('error_description')
+                            error_description: iframeUrlParams.get('error_description'),
                         });
                     }
                     return resolve(data);
@@ -1724,9 +1852,9 @@ const defaultOpenURIWithCallback = (url, opts) => {
 exports.defaultOpenURIWithCallback = defaultOpenURIWithCallback;
 class Callback {
 }
-//# sourceMappingURL=openuri.js.map
-}, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1715324755328, function(require, module, exports) {
+
+}, function(modId) { var map = {"../auth/consts":1717677448132}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1717677448145, function(require, module, exports) {
 
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DefaultStorage = void 0;
@@ -1761,9 +1889,9 @@ class DefaultStorage {
     }
 }
 exports.DefaultStorage = DefaultStorage;
-//# sourceMappingURL=storage.js.map
+
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-return __REQUIRE__(1715324755314);
+return __REQUIRE__(1717677448130);
 })()
 //miniprogram-npm-outsideDeps=[]
 //# sourceMappingURL=index.js.map

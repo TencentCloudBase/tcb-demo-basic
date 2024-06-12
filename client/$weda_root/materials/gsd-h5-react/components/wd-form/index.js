@@ -112,6 +112,18 @@ Component({
         });
       });
     },
+    setReadOnly() {
+      Object.keys(this.data._formItemMap).forEach((name) => {
+        const items = this.data._formItemMap[name];
+        items.forEach((item) => {
+          if (!item.setReadOnly) {
+            console.error('表单组件缺少setReadOnly方法:', item);
+            return;
+          }
+          item.setReadOnly(true);
+        });
+      });
+    },
     async validate() {
       const validatePromise = [];
       const validateKey = [];
@@ -617,14 +629,25 @@ Component({
         paramGetItem,
         value
       ) {
+        if (formType === 'read') {
+          this.setReadOnly();
+        }
+        const isDataModel = ![
+          'connector',
+          'custom-connector',
+          'expression',
+        ].includes(datasourceType);
+        if (
+          isDataModel &&
+          formTypeWithInitValue &&
+          _id &&
+          !equal(_id, this.data._preDataId)
+        ) {
+          this.setData({ isLoadingData: true });
+        }
         clearTimeout(this.data._delayRef.current.initTimer);
         // eslint-disable-next-line rulesdir/no-timer
         this.data._delayRef.current.initTimer = setTimeout(() => {
-          const isDataModel = ![
-            'connector',
-            'custom-connector',
-            'expression',
-          ].includes(datasourceType);
           if (!dataSourceName) {
             this.setData({ loadingStatus: 'done' });
             if (datasourceType !== 'expression') {

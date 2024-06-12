@@ -1,11 +1,11 @@
 {
-  "name": "lcap-app-hWO4LzUK",
+  "name": "lcap-app-MA8fOLo7",
   "version": "1.0.8",
   "scripts": {},
   "dependencies": {
-    "@cloudbase/oauth": "0.1.1-alpha.6",
-    "@cloudbase/weda-client": "1.0.33",
-    "@cloudbase/weda-cloud-sdk": "1.0.61",
+    "@cloudbase/oauth": "0.1.1-alpha.11",
+    "@cloudbase/weda-client": "1.0.34",
+    "@cloudbase/weda-cloud-sdk": "1.0.63",
     "mobx": "^5.15.4",
     "lodash.get": "^4.4.2",
     "lodash.set": "^4.3.2",

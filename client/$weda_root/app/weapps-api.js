@@ -58,12 +58,12 @@ function createGlboalApi() {
     appConfig: {
       staticResourceDomain: config.domain,
       privatelink: cloudConfig.privatelink,
+      envVersion: cloudConfig.isProd ? 'production' : 'preview',
       ...({
-  "id": "app-hWO4LzUK",
+  "id": "app-MA8fOLo7",
   "label": "AI 智能体主包",
-  "envId": "huodong-4gq9cm8i38068c05",
-  "envVersion": "production",
-  "loginConfigVersion": "",
+  "envId": "tcb-advanced-a656fc",
+  "loginConfigVersion": "v1_123c7e86167357e2d8e3224a258856ec",
   "basename": "$weda_root",
   "pages": [
     {

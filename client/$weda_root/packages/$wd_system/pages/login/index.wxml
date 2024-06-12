@@ -1,0 +1,85 @@
+<page-meta page-style="{{pageStyle}}">
+  <view wx:if="{{!initing && !error}}" class="wd-mp-root" data-weui-theme="light">
+    <view style="width:90%;margin:0px auto;display:flex;flex-direction:column;max-width:50rem;" class="login-class">
+      <view style="margin:80px 0px 60px;">
+        <image style="margin:0px auto;display:flex;justify-content:center;width: 80px;height: 80px;" class="weda-ui weda-image" mode="aspectFit" src="{{settingData.logo}}" />
+      </view>
+      <view wx:if="{{enablePassword}}">
+        <form bindsubmit="loginByPassword">
+          <login-input name="username" placeholder="请输入用户名" type="text" />
+          <view style="margin-bottom:30px;position:relative;">
+            <login-input name="password" placeholder="输入验证码" style="padding-right:100px" type="{{passwordVisible?'text':'password'}}">
+              <image style="width:20px;height:20px;padding:0 10px;box-sizing: content-box;" class="weda-ui weda-image wd-event-tap input-suffix" mode="widthFix" src="{{passwordVisible?'https://qcloudimg.tencent-cloud.cn/raw/487eba32ccfc23ebc68f8fac005d6919.svg':'https://qcloudimg.tencent-cloud.cn/raw/0b6cef53d62a3356e3bcc5bd83341482.svg'}}" bind:tap="togglePasswordVisible" slot="suffix" />
+            </login-input>
+          </view>
+          <button class="{{loginButtonClass}}" style="width:100%;border-radius:5px;" size="md" form-type="submit">
+            账号密码登录
+          </button>
+        </form>
+      </view>
+      <view wx:if="{{enableSms}}">
+        <form bindsubmit="loginBySms">
+          <login-input name="phoneNum" defaultValue="{{defaultPhoneNumber}}" placeholder="输入手机号" type="number" auto maxlength="11" bindchange="onPhoneChange">
+            <view class="input-prefix" style="color:#acacac;padding: 0 10px" slot="prefix">
+              +86
+            </view>
+          </login-input>
+          <view style="margin-bottom:30px;position:relative;">
+            <login-input name="verificationCode" placeholder="输入验证码" style="padding-right:100px" type="text" maxlength="6">
+              <view class="input-suffix wd-event-tap" style="font-size:14px;width: 150px;text-align:center;padding:0 10px;color:{{phoneValidateMessage || smsDelay>0?'var(--wd-color-brand-disabled)':'var(--wd-color-text-brand)'}};" slot="suffix" bindtap="getCaptcha">
+                {{smsDelay > 0 ? '重新获取'+smsDelay : '获取验证码'}}
+              </view>
+            </login-input>
+          </view>
+          <button class="{{loginButtonClass}}" style="width:100%;border-radius:5px;" size="md" form-type="submit">
+            登录
+          </button>
+        </form>
+      </view>
+      <view wx:if="{{enableMpPhone}}">
+        <button style="width:100%;border-radius: 5px;" bindgetphonenumber="getPhoneCodeNumber" open-type="getPhoneNumber" role="button" class="{{loginButtonClass}}">
+          登录
+        </button>
+      </view>
+      <view style="display:flex;justify-content:center;flex-direction:row;font-size:0.8rem;position:fixed;left:0px;right:0px;bottom:50px;" class="have-read" wx:if="{{settingData.agreement.enable}}">
+        <view class="weda-ui weda-ui-to-wd">
+          <view class="weda-ui weda-checkbox wd-event-change">
+            <view class="weda-ui weda-formcells weui-cells weui-cells_checkbox weui-flex">
+              <view class="weui-flex__item">
+                <view class="weui-cell__bd weui-flex">
+                  <checkbox-group bind:change="onAgreementChange">
+                    <label role="checkbox" aria-disables="false" aria-checked="false" class="weui-cell weui-cell_active weui-check__label">
+                      <view class="weui-cell__hd">
+                        <checkbox aria-disables="false" value="haveRead" role="checkbox" aria-checked="false" class="weui-check"></checkbox>
+                        <i class="weui-icon-checked"></i>
+                      </view>
+                      <view class="weui-cell__bd">
+                        <view>我已阅读并同意</view>
+                      </view>
+                    </label>
+                  </checkbox-group>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <text class="weda-text weda-ui wd-event-tap" style="white-space: pre-line; margin:0px 5px;display:flex;align-items:center;color:rgb(68, 144, 238);text-align:center;white-space:pre-line;" wx:if="{{settingData.agreement.items[0].enable}}" data-index="0" bind:tap="showAgreement">
+          《{{settingData.agreement.items[0].label}}》
+        </text>
+        <text style="white-space: pre-warp; display:flex;align-items:center;white-space:pre-line;" class="weda-text weda-ui" wx:if="{{settingData.agreement.items[0].enable && settingData.agreement.items[1].enable}}">
+          和
+        </text>
+        <text class="weda-text weda-ui wd-event-tap" style="white-space: pre-line; margin:0px 5px;display:flex;align-items:center;color:rgb(68, 144, 238);white-space:pre-line;" data-index="1" wx:if="{{settingData.agreement.items[1].enable}}" bind:tap="showAgreement">
+          《{{settingData.agreement.items[1].label}}》
+        </text>
+      </view>
+    </view>
+    <gsd-h5-react-Modal style="position: absolute;" isDefaultButton="{{false}}" visible="{{isShowAgreement}}" bind:close="showAgreement">
+      <scroll-view style="height:500px;margin-top:20px;" class="weda-ui" scroll-y="true" slot="customContent">
+        <gsd-h5-react-RichTextView style="height: 60%" value="{{agreementContent}}" />
+      </scroll-view>
+    </gsd-h5-react-Modal>
+  </view>
+  <wd-info type="{{initing? 'loading': 'auth'}}" wx:if="{{initing || error}}" message="{{loading?'加载配置中...':' '}}" error="{{error}}" />
+  <captcha-dialog />
+</page-meta>

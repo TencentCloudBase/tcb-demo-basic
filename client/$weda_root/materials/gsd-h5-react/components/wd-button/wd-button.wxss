@@ -507,3 +507,7 @@ button:not([size=mini]) {
   margin: 0;
   width: auto;
 }
+
+button:not([size=mini]).wd-btn--block {
+  width: 100%;
+}

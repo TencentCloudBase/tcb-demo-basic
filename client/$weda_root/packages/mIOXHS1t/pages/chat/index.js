@@ -881,7 +881,7 @@ $w.item_listView1.role === 'user' ? 'ai-bot-chat__message-container-user' : 'ai-
     )}
   },
   container6: { '_waIf': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
-      !!$w.item_listView1.content
+      !!$w.item_listView1.content || !!$w.item_listView1.image
     )},'classList': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
       concatClassList(
 $w.item_listView1.role === 'user' ? 'ai-bot-chat__message-user' : 'ai-bot-chat__message-system'
@@ -900,6 +900,12 @@ $w.item_listView1.role === 'user' ? 'ai-bot-chat__message-user' : 'ai-bot-chat__
  ) ? '$w.page.dataset.state.ai_bot_chat_history<span class="ai-bot-msg-curor"></span>' : '')
     )},'_waIf': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
       $w.item_listView1.role !== 'user' 
+    )}
+  },
+  image6: { 'src': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
+      $w.item_listView1.image
+    )},'_waIf': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
+      $w.item_listView1.image
     )}
   },
   container27: { '_waIf': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
@@ -941,7 +947,7 @@ $w.item_listView1.role === 'user' ? 'ai-bot-chat__message-user' : 'ai-bot-chat__
     )}
   },
   button5: { '_waIf': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(
-      $w.item_listView1.role === 'assistant' && $w.item_listView1.type !== 'welcome' 
+      $w.item_listView1.role === 'assistant' && $w.item_listView1.type !== 'welcome' && $w.item_listView1.type !== 'image'
     )}
   },
   container11: { '_waIf': ($page, lists, forItems, event, $context, $w, params) => {const $for = forItems; const $index=lists?.[0]?.currentIndex; return(

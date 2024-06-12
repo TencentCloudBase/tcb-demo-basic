@@ -417,7 +417,7 @@ export default Behavior({
       this.data._status = status;
       const { disabled: _disabled, readOnly: _readOnly } = this.data;
       const statusParams = convertStatus(status, _disabled, _readOnly);
-      const form = this.$widget.closest(
+      const form = this?.$widget?.closest(
         (w) => w.getConfig?.()?.componentType === 'form'
       );
       let disabled = statusParams.disabled;

@@ -9,11 +9,11 @@ const CLOUD_CONFIG =  {
   /** 当前是否处于正式发布模式 */
   isProd: true,
   /** 低码应用ID */
-  appID: 'app-ko8cQwjU',
+  appID: 'app-MA8fOLo7',
   /** 云开发环境ID */
   envID: 'tcb-advanced-a656fc',
   /** 应用端ID */
-  tcbClientId: 'AAU5PwABkGeWJPQA6U0',
+  tcbClientId: 'tcb-advanced-a656fc',
   /** 云开发资源所属的微信app id */
   resourceAppid: '',
   /** 数据源描述对象数组 */
@@ -54,8 +54,8 @@ export const AEGIS_CONFIG = {
   ext3: [
     CLOUD_CONFIG.envID,
     '100008130424',
-    '1.8.102',
-    '3.6.1',
+    '1.8.106',
+    '3.7.3',
     wx.getAccountInfoSync()?.miniProgram?.appId || '',
   ].join('|'),
   version: "0.0.2",

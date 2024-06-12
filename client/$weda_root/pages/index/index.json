@@ -1,7 +1,8 @@
 {
   "renderer": "webview",
   "usingComponents": {
-  "wd-info": "/$weda_root/common/info/index"
-},
+  "wd-info": "/$weda_root/common/info/index",
+  "wd-ph": "/$weda_root/common/placeholder/index"
+}, "componentPlaceholder": {},
 "navigationBarTextStyle":"black","navigationBarTitleText":"首页","navigationBarBackgroundColor":"#FFFFFF","onReachBottomDistance":50
 }

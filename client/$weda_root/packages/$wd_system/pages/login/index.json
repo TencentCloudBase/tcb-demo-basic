@@ -1,0 +1,15 @@
+{
+  "usingComponents": {
+    "login-input": "./components/input/index",
+    "gsd-h5-react-Modal": "../../../../materials/gsd-h5-react/components/modal/index",
+    "gsd-h5-react-RichTextView": "../../../../materials/gsd-h5-react/components/richText/index",
+    "wd-ph": "../../../../common/placeholder/index",
+    "wd-info": "../../../../common/info/index",
+    "captcha-dialog": "./components/captchaDialog/index"
+  },
+  "componentPlaceholder": {
+    "gsd-h5-react-Modal": "wd-ph",
+    "gsd-h5-react-RichTextView": "wd-ph"
+  },
+  "navigationBarTitleText": "登录"
+}

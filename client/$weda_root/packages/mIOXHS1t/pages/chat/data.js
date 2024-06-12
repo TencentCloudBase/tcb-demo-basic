@@ -501,6 +501,7 @@ export const widgetProps = {
   },
   "container6": {
     "style": {
+      "width": "auto",
       "position": "relative"
     },
     "classList": [],
@@ -530,6 +531,19 @@ export const widgetProps = {
     "_order": 1,
     "widgetType": "gsd-h5-react:RichTextView"
   },
+  "image6": {
+    "style": {
+      "width": "320px",
+      "height": "320px",
+      "margin": "0px 0px 16px"
+    },
+    "classList": [],
+    "alt": "[图片]",
+    "fit": "widthFix",
+    "_parentId": "container6",
+    "_order": 2,
+    "widgetType": "gsd-h5-react:WdImage"
+  },
   "container27": {
     "style": {
       "display": "flex",
@@ -540,7 +554,7 @@ export const widgetProps = {
     "classList": [],
     "data": {},
     "_parentId": "container6",
-    "_order": 2,
+    "_order": 3,
     "widgetType": "gsd-h5-react:Container"
   },
   "container30": {
@@ -1071,11 +1085,15 @@ export const widgetProps = {
   },
   "container28": {
     "style": {
+      "top": "0",
+      "zIndex": 100,
       "display": "flex",
+      "position": "sticky",
       "alignItems": "center",
       "marginBottom": "16px",
       "flexDirection": "row",
-      "justifyContent": "center"
+      "justifyContent": "center",
+      "backgroundColor": "var(--wd-color-brand)"
     },
     "classList": [],
     "data": {},

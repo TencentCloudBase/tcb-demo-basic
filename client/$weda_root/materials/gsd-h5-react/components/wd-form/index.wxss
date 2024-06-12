@@ -18,6 +18,21 @@
   padding-bottom: 8px;
 }
 
+.wd-mp-form {
+  position: relative;
+}
+.wd-mp-form .wedatea2td-action-state {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  background: #fff;
+}
 /*
   表单模版内置样式 END }}}
   */

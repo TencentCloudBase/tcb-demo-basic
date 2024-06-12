@@ -1,0 +1,13 @@
+<view class="weda-ui weda-ui-to-wd">
+  <view style="border-width:0 0 1px 0;border-style:solid;border-color:rgba(0, 0, 0, 0.25);" class="weda-ui weda-input wd-comp-id-input1 wd-event-focus wd-event-blur">
+    <view class="weda-ui weui-cells weui-cells_forms weui-flex">
+      <view class="weui-flex__item">
+        <view class="weui-cell__bd weui-flex" style="justify-content: space-between;align-items:center;">
+          <slot name="prefix"></slot>
+          <input maxlength="{{maxlength}}" value="{{value}}" style="padding-left: 16px; padding-right: 16px;" placeholder="{{placeholder}}" name="{{name}}" placeholder-class="weui-input__placeholder" type="{{type}}" class="weui-input" bind:focus="focus" bind:blur="blur" bindinput="setValue" />
+          <slot name="suffix"></slot>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

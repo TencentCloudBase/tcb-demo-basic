@@ -659,9 +659,20 @@ Component({
                       searchRecords.findIndex((r) => r._id === item._id) < 0
                   ) || []
                 ),
+                records: records.concat(
+                  (results ?? []).filter(
+                    (item) => records.findIndex((r) => r._id === item._id) < 0
+                  ) || []
+                ),
                 searchStatus: status,
               }
             : {
+                searchRecords: searchRecords.concat(
+                  (results ?? []).filter(
+                    (item) =>
+                      searchRecords.findIndex((r) => r._id === item._id) < 0
+                  ) || []
+                ),
                 records: records.concat(
                   (results ?? []).filter(
                     (item) => records.findIndex((r) => r._id === item._id) < 0

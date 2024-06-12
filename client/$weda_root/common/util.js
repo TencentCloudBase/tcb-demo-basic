@@ -8,7 +8,58 @@ import lodashGet from 'lodash.get';
 import lodashSet from 'lodash.set';
 import { getWedaAPI } from '@cloudbase/weda-client'
 
-let LOGIN_CONFIG = null
+let LOGIN_CONFIG = {
+  "logo": "https://sso-1303824488.cos.ap-shanghai.myqcloud.com/logo.svg",
+  "backgroundColor": "#ffffff",
+  "miniprogram": [
+    {
+      "id": "__miniprogram_phone",
+      "label": "微信小程序手机号授权（仅支持企业主体的小程序）",
+      "type": "miniprogram_phone",
+      "enable": true
+    }
+  ],
+  "web": [
+    {
+      "id": "__sms",
+      "label": "短信验证码",
+      "type": "sms",
+      "enable": true
+    }
+  ],
+  "agreement": {
+    "enable": false,
+    "items": [
+      {
+        "label": "隐私协议",
+        "type": "privacy",
+        "value": "",
+        "enable": false
+      },
+      {
+        "label": "用户协议",
+        "type": "user",
+        "value": "",
+        "enable": false
+      }
+    ]
+  },
+  "userRegistry": {
+    "enable": true
+  },
+  "access": {
+    "needLogin": false,
+    "noPermissionPolicy": "to_login",
+    "defaultRoleId": "1663436551092715522",
+    "defaultExternalRoleId": "-3",
+    "whiteListPageIds": "",
+    "configVersion": "v1"
+  },
+  "security": {
+    "expiresTime": 2592000,
+    "enableLoginStatusShare": true
+  }
+}
 
 /**
  * Convert abcWordSnd -> abc-word-snd
@@ -867,5 +918,32 @@ export function reportEvent(tag) {
 
 export async function getLoginConfig() {
   const { app } = getWedaAPI()
+  
+  const { staticResourceDomain, loginConfigVersion, id } = app.__internal__?.getConfig() || {};
+  if (staticResourceDomain && loginConfigVersion && id) {
+    const url = app.__internal__?.resolveStaticResourceUrl?.(`/__auth/app/app-MA8fOLo7/login.config.v1_123c7e86167357e2d8e3224a258856ec.json`)
+    if (!LOGIN_CONFIG) {
+      LOGIN_CONFIG = await new Promise((resolve, reject) => {
+        wx.request({
+          url,
+          success: res => {
+            if(String(res.statusCode).startsWith('2')){
+              resolve(res.data)
+            } else {
+              reject(new Error(`statusCode: ${res.statusCode} 获取${url}失败`))
+            }
+          },
+          fail: e => {
+            const error = new Error(e.errMsg)
+            error.code = e.errno
+            reject(error)
+          }
+        })
+      })
+    }
+    return LOGIN_CONFIG
+  } else {
+    throw new Error('缺少登录配置');
+  }
   
 }

@@ -1,0 +1,24 @@
+<mp-dialog title="{{loading?'验证码获取中...':'请输入你看到的字符:'}}" show="{{visible}}" bindbuttontap="tapDialogButton">
+    <view id="loading" style="height:40px;margin: 20px 0;position:relative;" wx:if="{{loading}}">
+        <view class="spinner"></view>
+    </view>
+    <view class="container" wx:if="{{!loading}}">
+        <view class="input_field captch_box" style="text-align: left;">
+            <image alt="captcha" src="{{captchaData}}"></image>
+            <button class="weda-ui weda-button weui-btn weui-btn_primary wd-event-tap refreshButton" bindtap="onRefresh">
+                <view class="icon-redo"></view>
+            </button>
+        </view>
+        <view class="input_field captch_input">
+            <input type="text" placeholder="输入字符" maxlength="6" bindinput="onChange" value="{{key}}"></input>
+        </view>
+        <view class="message" style="color: var(--wd-color-error); font-size:14px;display:block;">
+            {{message}}
+        </view>
+        <view class="input_field button">
+            <button class="weda-ui weda-button weui-btn weui-btn_primary wd-event-tap" bindtap="onVerifyCaptchaData">
+                确定
+            </button>
+        </view>
+    </view>
+</mp-dialog>
