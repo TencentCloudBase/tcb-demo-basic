@@ -21,7 +21,8 @@
     "pages/official-account/index",
     "pages/technology-group/index",
     "pages/weda-appmarket/index",
-    "$weda_root/pages/index/index"
+    "$weda_root/pages/index/index",
+    "pages/ai/index"
   ],
   "window": {
     "useExtendedLib": {

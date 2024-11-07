@@ -189,5 +189,10 @@ Page({
   },
   navigateToHandler(e) {
     app.tcbNavigateTo(e);
+  },
+  navigateToAI (e) {
+    wx.navigateTo({
+      url: '/pages/ai/index'
+    });
   }
 })

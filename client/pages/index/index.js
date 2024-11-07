@@ -6,9 +6,9 @@ Page({
     list: [
       {
         id: "ai-bot",
-        name: "AI 智能体",
-        url: "/$weda_root/packages/mIOXHS1t/pages/chat/index",
-        isNew: true
+        name: "小程序 AI+ 能力",
+        isNew: true,
+        url: "/pages/ai/index"
       },
       {
         id: "user",

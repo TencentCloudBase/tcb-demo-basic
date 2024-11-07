@@ -2,12 +2,17 @@
   <view class="nav_bar_customize_top">
     <navBar title-text="{{banner.title}}" title-text-left="true" background="transparent" back-icon="" home-icon="" backImg="{{banner.backImg}}" backImgMode="{{banner.backImgMode}}" bindback="back"/>
   </view>
+
   <view class="tcb-container"  style="padding-top: {{navHeight}}px; margin-top: -{{navHeight * 2}}px;">
     <view class="banner">
       <image style="width: 100%" mode="widthFix" src="{{banner.coverImage}}"></image>
     </view>
     <view class="home-container">
       <view class="section">
+        <button style="background-color: #fff;border: 1px solid #006eff; display: flex;flex-direction: row;align-items: center;justify-content: center;" bind:tap="navigateToAI">
+          <image style="width: 24px;height: 24px;margin-right: 10px;" src="https://cloudcache.tencent-cloud.com/qcloud/ui/static/static_source_business/f0fbee2c-96bb-41c5-8d3d-46e2bbdf4b05.svg"/>
+          从 AI 开始探索云开发
+        </button>
         <view class="section__title">产品家族</view>
         <view class="tcb-tabs">
           <view class="tcb-tabs__bar">
