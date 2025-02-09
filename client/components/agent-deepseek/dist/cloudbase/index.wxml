@@ -1,0 +1,103 @@
+<a id="container22" style="{{container22.style}};{{style}}" className="wa-comp-block-cloudbase {{container22.className}} {{className}}" data="{{container22.data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+	<b id="menuLayout1" style="{{menuLayout1.style}}" className="{{menuLayout1.className}}" defaultOpened="{{menuLayout1.defaultOpened}}" menu="{{menuLayout1.menu}}" outerClickClosable="{{menuLayout1.outerClickClosable}}" template="{{menuLayout1.template}}" type="{{menuLayout1.type}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+		<a id="container19" style="{{container19.style}}" className="{{container19.className}}" wx:if="{{container19._waIf}}" data="{{container19.data}}" bind:attached="__mnt__" bind:detached="__unmnt__" slot="contentSlot">
+			<c id="image3" style="{{image3.style}}" className="{{image3.className}}" alt="{{image3.alt}}" fit="{{image3.fit}}" src="{{image3.src}}" bind:attached="__mnt__" bind:detached="__unmnt__"/>
+			<d id="text11" style="{{text11.style}}" className="{{text11.className}}" inheritColor="{{text11.inheritColor}}" level="{{text11.level}}" maxLines="{{text11.maxLines}}" text="{{text11.text}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{text11.text}}</d>
+		</a>
+		<a id="container28" style="{{container28.style}}" className="{{container28.className}}" data="{{container28.data}}" bind:attached="__mnt__" bind:detached="__unmnt__" slot="footerSlot">
+			<j id="textarea1" style="{{textarea1.style}}" className="{{textarea1.className}}" borderedH5="{{textarea1.borderedH5}}" cursorSpacing="{{textarea1.cursorSpacing}}" focus="{{textarea1.focus}}" label="{{textarea1.label}}" labelVisible="{{textarea1.labelVisible}}" maxLength="{{textarea1.maxLength}}" name="{{textarea1.name}}" placeholder="{{textarea1.placeholder}}" requiredMsg="{{textarea1.requiredMsg}}" status="{{textarea1.status}}" value="{{textarea1.value}}" bind:attached="__mnt__" bind:detached="__unmnt__"/>
+			<a id="container8" style="{{container8.style}}" className="{{container8.className}}" data="{{container8.data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+				<a id="container14" style="{{container14.style}}" className="{{container14.className}}" data="{{container14.data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+					<a id="container7" style="{{container7.style}}" className="{{container7.className}}" data="{{container7.data}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:tap="oncontainer7$tap">
+						<g id="icon4" style="{{icon4.style}}" className="{{icon4.className}}" name="{{icon4.name}}" size="{{icon4.size}}" bind:attached="__mnt__" bind:detached="__unmnt__"/>
+						<d id="text6" style="{{text6.style}}" className="{{text6.className}}" inheritColor="{{text6.inheritColor}}" level="{{text6.level}}" maxLines="{{text6.maxLines}}" text="{{text6.text}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{text6.text}}</d>
+					</a>
+				</a>
+				<a id="container17" style="{{container17.style}}" className="{{container17.className}}" data="{{container17.data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+					<g id="icon1" style="{{icon1.style}}" className="{{icon1.className}}" name="{{icon1.name}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:tap="onicon1$tap"/>
+					<g id="icon12" style="{{icon12.style}}" className="{{icon12.className}}" wx:if="{{icon12._waIf}}" name="{{icon12.name}}" src="{{icon12.src}}" type="{{icon12.type}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:tap="onicon12$tap" bind:wuvqtrd69gn_success="onicon12$wuvqtrd69gn_success"/>
+					<g id="icon13" style="{{icon13.style}}" className="{{icon13.className}}" wx:if="{{icon13._waIf}}" name="{{icon13.name}}" src="{{icon13.src}}" type="{{icon13.type}}" bind:attached="__mnt__" bind:detached="__unmnt__"/>
+				</a>
+			</a>
+		</a>
+		<a id="container3" style="{{container3.style}}" className="{{container3.className}}" data="{{container3.data}}" bind:attached="__mnt__" bind:detached="__unmnt__" slot="contentSlot">
+			<a id="container18" style="{{container18.style}}" className="{{container18.className}}" wx:if="{{container18._waIf}}" data="{{container18.data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+				<c id="image2" style="{{image2.style}}" className="{{image2.className}}" alt="{{image2.alt}}" fit="{{image2.fit}}" src="{{image2.src}}" bind:attached="__mnt__" bind:detached="__unmnt__"/>
+				<d id="text7" style="{{text7.style}}" className="{{text7.className}}" inheritColor="{{text7.inheritColor}}" level="{{text7.level}}" maxLines="{{text7.maxLines}}" text="{{text7.text}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{text7.text}}</d>
+				<d id="text8" style="{{text8.style}}" className="{{text8.className}}" inheritColor="{{text8.inheritColor}}" level="{{text8.level}}" maxLines="{{text8.maxLines}}" text="{{text8.text}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{text8.text}}</d>
+				<d id="text10" style="{{text10.style}}" className="{{text10.className}}" inheritColor="{{text10.inheritColor}}" maxLines="{{text10.maxLines}}" text="{{text10.text}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{text10.text}}</d>
+			</a>
+			<e id="scrollView1" style="{{scrollView1.style}}" className="{{scrollView1.className}}" bounces="{{scrollView1.bounces}}" enableBackToTop="{{scrollView1.enableBackToTop}}" enableFlex="{{scrollView1.enableFlex}}" enhanced="{{scrollView1.enhanced}}" fastDeceleration="{{scrollView1.fastDeceleration}}" lowerThreshold="{{scrollView1.lowerThreshold}}" pagingEnabled="{{scrollView1.pagingEnabled}}" refresherBackground="{{scrollView1.refresherBackground}}" refresherDefaultStyle="{{scrollView1.refresherDefaultStyle}}" refresherEnabled="{{scrollView1.refresherEnabled}}" refresherThreshold="{{scrollView1.refresherThreshold}}" refresherTriggered="{{scrollView1.refresherTriggered}}" scrollAnchoring="{{scrollView1.scrollAnchoring}}" scrollTop="{{scrollView1.scrollTop}}" scrollWithAnimation="{{scrollView1.scrollWithAnimation}}" scrollX="{{scrollView1.scrollX}}" scrollY="{{scrollView1.scrollY}}" showScrollbar="{{scrollView1.showScrollbar}}" upperThreshold="{{scrollView1.upperThreshold}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:scrolltolower="onscrollView1$scrolltolower" bind:scroll="onscrollView1$scroll">
+				<a id="container1" style="{{container1.style}}" className="{{container1.className}}" data="{{container1.data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+					<c id="image1" style="{{image1.style}}" className="{{image1.className}}" alt="{{image1.alt}}" fit="{{image1.fit}}" src="{{image1.src}}" bind:attached="__mnt__" bind:detached="__unmnt__"/>
+					<d id="text1" style="{{text1.style}}" className="{{text1.className}}" inheritColor="{{text1.inheritColor}}" maxLines="{{text1.maxLines}}" text="{{text1.text}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{text1.text}}</d>
+				</a>
+				<a id="container11" style="{{container11.style}}" className="{{container11.className}}" data="{{container11.data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+					<block id="{{'repeater1_item'+ '-' + irepeater1_item}}" wx:for="{{repeater1_item}}" wx:for-index="irepeater1_item" wx:key="_key">
+						<a id="{{'container13'+ '-' + irepeater1_item}}" style="{{container13[irepeater1_item].style}}" className="{{container13[irepeater1_item].className}}" data="{{container13[irepeater1_item].data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+							<a id="{{'container16'+ '-' + irepeater1_item}}" style="{{container16[irepeater1_item].style}}" className="{{container16[irepeater1_item].className}}" data="{{container16[irepeater1_item].data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+								<f id="{{'card2'+ '-' + irepeater1_item}}" style="{{card2[irepeater1_item].style}}" className="{{card2[irepeater1_item].className}}" template="{{card2[irepeater1_item].template}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+									<a id="{{'container12'+ '-' + irepeater1_item}}" style="{{container12[irepeater1_item].style}}" className="{{container12[irepeater1_item].className}}" data="{{container12[irepeater1_item].data}}" bind:attached="__mnt__" bind:detached="__unmnt__" slot="headerSlot">
+										<d id="{{'text12'+ '-' + irepeater1_item}}" style="{{text12[irepeater1_item].style}}" className="{{text12[irepeater1_item].className}}" level="{{text12[irepeater1_item].level}}" maxLines="{{text12[irepeater1_item].maxLines}}" text="{{text12[irepeater1_item].text}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{text12[irepeater1_item].text}}</d>
+									</a>
+									<d id="{{'text13'+ '-' + irepeater1_item}}" style="{{text13[irepeater1_item].style}}" className="{{text13[irepeater1_item].className}}" maxLines="{{text13[irepeater1_item].maxLines}}" text="{{text13[irepeater1_item].text}}" tips="{{text13[irepeater1_item].tips}}" userSelect="{{text13[irepeater1_item].userSelect}}" bind:attached="__mnt__" bind:detached="__unmnt__" slot="contentSlot">{{text13[irepeater1_item].text}}</d>
+									<g id="{{'icon6'+ '-' + irepeater1_item}}" style="{{icon6[irepeater1_item].style}}" className="{{icon6[irepeater1_item].className}}" name="{{icon6[irepeater1_item].name}}" size="{{icon6[irepeater1_item].size}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:tap="onicon6$tap" slot="headerSlot"/>
+								</f>
+								<d id="{{'text9'+ '-' + irepeater1_item}}" style="{{text9[irepeater1_item].style}}" className="{{text9[irepeater1_item].className}}" wx:if="{{text9[irepeater1_item]._waIf}}" inheritColor="{{text9[irepeater1_item].inheritColor}}" maxLines="{{text9[irepeater1_item].maxLines}}" text="{{text9[irepeater1_item].text}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{text9[irepeater1_item].text}}</d>
+								<h id="{{'markdown1'+ '-' + irepeater1_item}}" style="{{markdown1[irepeater1_item].style}}" className="{{markdown1[irepeater1_item].className}}" wx:if="{{markdown1[irepeater1_item]._waIf}}" options="{{markdown1[irepeater1_item].options}}" value="{{markdown1[irepeater1_item].value}}" bind:attached="__mnt__" bind:detached="__unmnt__"/>
+								<f id="{{'card1'+ '-' + irepeater1_item}}" style="{{card1[irepeater1_item].style}}" className="{{card1[irepeater1_item].className}}" wx:if="{{card1[irepeater1_item]._waIf}}" showContent="{{card1[irepeater1_item].showContent}}" showDivider="{{card1[irepeater1_item].showDivider}}" template="{{card1[irepeater1_item].template}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+									<a id="{{'container9'+ '-' + irepeater1_item}}" style="{{container9[irepeater1_item].style}}" className="{{container9[irepeater1_item].className}}" data="{{container9[irepeater1_item].data}}" bind:attached="__mnt__" bind:detached="__unmnt__" slot="headerSlot">
+										<a id="{{'container10'+ '-' + irepeater1_item}}" style="{{container10[irepeater1_item].style}}" className="{{container10[irepeater1_item].className}}" data="{{container10[irepeater1_item].data}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:tap="oncontainer10$tap">
+											<g id="{{'icon15'+ '-' + irepeater1_item}}" style="{{icon15[irepeater1_item].style}}" className="{{icon15[irepeater1_item].className}}" size="{{icon15[irepeater1_item].size}}" src="{{icon15[irepeater1_item].src}}" type="{{icon15[irepeater1_item].type}}" bind:attached="__mnt__" bind:detached="__unmnt__"/>
+											<d id="{{'text5'+ '-' + irepeater1_item}}" style="{{text5[irepeater1_item].style}}" className="{{text5[irepeater1_item].className}}" level="{{text5[irepeater1_item].level}}" text="{{text5[irepeater1_item].text}}" userSelect="{{text5[irepeater1_item].userSelect}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{text5[irepeater1_item].text}}</d>
+										</a>
+									</a>
+									<block id="{{'repeater2_item'+ '-' + irepeater1_item+ '-' + irepeater2_item}}" wx:for="{{repeater2_item[irepeater1_item]}}" wx:for-index="irepeater2_item" wx:key="$$i">
+										<i id="{{'unifiedLink1'+ '-' + irepeater1_item+ '-' + irepeater2_item}}" style="{{unifiedLink1[irepeater1_item][irepeater2_item].style}}" className="{{unifiedLink1[irepeater1_item][irepeater2_item].className}}" options="{{unifiedLink1[irepeater1_item][irepeater2_item].options}}" params="{{unifiedLink1[irepeater1_item][irepeater2_item].params}}" url="{{unifiedLink1[irepeater1_item][irepeater2_item].url}}" bind:attached="__mnt__" bind:detached="__unmnt__" slot="contentSlot">
+											<d id="{{'text20'+ '-' + irepeater1_item+ '-' + irepeater2_item}}" style="{{text20[irepeater1_item][irepeater2_item].style}}" className="{{text20[irepeater1_item][irepeater2_item].className}}" level="{{text20[irepeater1_item][irepeater2_item].level}}" text="{{text20[irepeater1_item][irepeater2_item].text}}" userSelect="{{text20[irepeater1_item][irepeater2_item].userSelect}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{text20[irepeater1_item][irepeater2_item].text}}</d>
+										</i>
+									</block>
+									<g id="{{'icon5'+ '-' + irepeater1_item}}" style="{{icon5[irepeater1_item].style}}" className="{{icon5[irepeater1_item].className}}" name="{{icon5[irepeater1_item].name}}" size="{{icon5[irepeater1_item].size}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:tap="onicon5$tap" slot="headerSlot"/>
+								</f>
+								<a id="{{'container2'+ '-' + irepeater1_item}}" style="{{container2[irepeater1_item].style}}" className="{{container2[irepeater1_item].className}}" wx:if="{{container2[irepeater1_item]._waIf}}" data="{{container2[irepeater1_item].data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+									<a id="{{'container15'+ '-' + irepeater1_item}}" style="{{container15[irepeater1_item].style}}" className="{{container15[irepeater1_item].className}}" data="{{container15[irepeater1_item].data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+										<a id="{{'container25'+ '-' + irepeater1_item}}" style="{{container25[irepeater1_item].style}}" className="{{container25[irepeater1_item].className}}" data="{{container25[irepeater1_item].data}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:tap="oncontainer25$tap" bind:wut8yq2dti4_success="oncontainer25$wut8yq2dti4_success">
+											<a id="{{'container31'+ '-' + irepeater1_item}}" style="{{container31[irepeater1_item].style}}" className="{{container31[irepeater1_item].className}}" data="{{container31[irepeater1_item].data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+												<g id="{{'icon9'+ '-' + irepeater1_item}}" style="{{icon9[irepeater1_item].style}}" className="{{icon9[irepeater1_item].className}}" name="{{icon9[irepeater1_item].name}}" size="{{icon9[irepeater1_item].size}}" src="{{icon9[irepeater1_item].src}}" type="{{icon9[irepeater1_item].type}}" bind:attached="__mnt__" bind:detached="__unmnt__"/>
+											</a>
+											<d id="{{'text15'+ '-' + irepeater1_item}}" style="{{text15[irepeater1_item].style}}" className="{{text15[irepeater1_item].className}}" inheritColor="{{text15[irepeater1_item].inheritColor}}" maxLines="{{text15[irepeater1_item].maxLines}}" text="{{text15[irepeater1_item].text}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{text15[irepeater1_item].text}}</d>
+										</a>
+									</a>
+									<a id="{{'container23'+ '-' + irepeater1_item}}" style="{{container23[irepeater1_item].style}}" className="{{container23[irepeater1_item].className}}" wx:if="{{container23[irepeater1_item]._waIf}}" data="{{container23[irepeater1_item].data}}" bind:attached="__mnt__" bind:detached="__unmnt__"/>
+								</a>
+							</a>
+						</a>
+					</block>
+					<block id="{{'repeater5_item'+ '-' + irepeater5_item}}" wx:for="{{repeater5_item}}" wx:for-index="irepeater5_item" wx:key="_key">
+						<a id="{{'container26'+ '-' + irepeater5_item}}" style="{{container26[irepeater5_item].style}}" className="{{container26[irepeater5_item].className}}" data="{{container26[irepeater5_item].data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+							<a id="{{'container27'+ '-' + irepeater5_item}}" style="{{container27[irepeater5_item].style}}" className="{{container27[irepeater5_item].className}}" data="{{container27[irepeater5_item].data}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:tap="oncontainer27$tap">
+								<d id="{{'text19'+ '-' + irepeater5_item}}" style="{{text19[irepeater5_item].style}}" className="{{text19[irepeater5_item].className}}" inheritColor="{{text19[irepeater5_item].inheritColor}}" maxLines="{{text19[irepeater5_item].maxLines}}" text="{{text19[irepeater5_item].text}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{text19[irepeater5_item].text}}</d>
+							</a>
+						</a>
+					</block>
+				</a>
+			</e>
+		</a>
+		<a id="container4" style="{{container4.style}}" className="{{container4.className}}" data="{{container4.data}}" bind:attached="__mnt__" bind:detached="__unmnt__" slot="footerSlot">
+			<i id="unifiedLink2" style="{{unifiedLink2.style}}" className="{{unifiedLink2.className}}" options="{{unifiedLink2.options}}" url="{{unifiedLink2.url}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+				<d id="text3" style="{{text3.style}}" className="{{text3.className}}" inheritColor="{{text3.inheritColor}}" maxLines="{{text3.maxLines}}" text="{{text3.text}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{text3.text}}</d>
+			</i>
+		</a>
+	</b>
+	<k id="modal1" style="{{modal1.style}}" className="{{modal1.className}}" closeType="{{modal1.closeType}}" defaultMaskShow="{{modal1.defaultMaskShow}}" defaultShow="{{modal1.defaultShow}}" position="{{modal1.position}}" template="{{modal1.template}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+		<d id="text2" style="{{text2.style}}" className="{{text2.className}}" level="{{text2.level}}" maxLines="{{text2.maxLines}}" text="{{text2.text}}" bind:attached="__mnt__" bind:detached="__unmnt__" slot="headerSlot">{{text2.text}}</d>
+		<l id="rating1" style="{{rating1.style}}" className="{{rating1.className}}" callbacks="{{rating1.callbacks}}" label="{{rating1.label}}" labelAlign="{{rating1.labelAlign}}" layout="{{rating1.layout}}" name="{{rating1.name}}" value="{{rating1.value}}" bind:attached="__mnt__" bind:detached="__unmnt__" slot="contentSlot"/>
+		<a id="container36" style="{{container36.style}}" className="{{container36.className}}" data="{{container36.data}}" bind:attached="__mnt__" bind:detached="__unmnt__" slot="footerSlot">
+			<n id="button1" style="{{button1.style}}" className="{{button1.className}}" icon="{{button1.icon}}" size="{{button1.size}}" text="{{button1.text}}" variant="{{button1.variant}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:tap="onbutton1$tap">{{button1.text}}</n>
+			<n id="button4" style="{{button4.style}}" className="{{button4.className}}" icon="{{button4.icon}}" size="{{button4.size}}" text="{{button4.text}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:tap="onbutton4$tap" bind:wscsodi8evw_success="onbutton4$wscsodi8evw_success">{{button4.text}}</n>
+		</a>
+		<g id="icon3" style="{{icon3.style}}" className="{{icon3.className}}" name="{{icon3.name}}" size="{{icon3.size}}" src="{{icon3.src}}" type="{{icon3.type}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:tap="onicon3$tap" slot="headerSlot"/>
+		<m id="tagSelect1" style="{{tagSelect1.style}}" className="{{tagSelect1.className}}" label="{{tagSelect1.label}}" layout="{{tagSelect1.layout}}" name="{{tagSelect1.name}}" range="{{tagSelect1.range}}" requiredMsg="{{tagSelect1.requiredMsg}}" size="{{tagSelect1.size}}" status="{{tagSelect1.status}}" tagStyleColor="{{tagSelect1.tagStyleColor}}" tagStyleType="{{tagSelect1.tagStyleType}}" tagStyleWidthCols="{{tagSelect1.tagStyleWidthCols}}" value="{{tagSelect1.value}}" bind:attached="__mnt__" bind:detached="__unmnt__" slot="contentSlot"/>
+		<j id="textarea2" style="{{textarea2.style}}" className="{{textarea2.className}}" label="{{textarea2.label}}" layout="{{textarea2.layout}}" name="{{textarea2.name}}" placeholder="{{textarea2.placeholder}}" requiredFlag="{{textarea2.requiredFlag}}" requiredMsg="{{textarea2.requiredMsg}}" status="{{textarea2.status}}" value="{{textarea2.value}}" bind:attached="__mnt__" bind:detached="__unmnt__" slot="contentSlot"/>
+	</k>
+</a>

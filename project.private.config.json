@@ -1,12 +1,12 @@
 {
   "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
-  "libVersion": "3.4.4",
+  "libVersion": "3.7.7",
   "condition": {
     "miniprogram": {
       "list": [
         {
-          "name": "智能体",
-          "pathName": "$weda_root/packages/mIOXHS1t/pages/chat/index",
+          "name": "deepseek",
+          "pathName": "pages/deepseek/index",
           "query": "",
           "launchMode": "default",
           "scene": null

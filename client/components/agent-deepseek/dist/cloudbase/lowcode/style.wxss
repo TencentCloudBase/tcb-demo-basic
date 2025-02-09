@@ -1,0 +1,54 @@
+.wa-comp-block-agent-ui .ai-bot-chat__message-user {
+  color: white;
+  background-color: #3970FB;
+  font-size: 14px;
+  line-height: 26px;
+  padding: 9px 16px;
+  border-radius: 4px 0px 4px 4px;
+  margin: 10px 0;
+  font-weight: 400;
+}
+.wa-comp-block-agent-ui .ai-bot-chat__message-system {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 0px 4px 4px 4px;
+  margin: 10px 0;
+  border: 1px solid #E9ECF1;
+  box-shadow: 0px 12px 48px -12px #0000000D;
+}
+.wa-comp-block-agent-ui ::-webkit-scrollbar {
+  width: 0px;
+}
+.wa-comp-block-agent-ui .wd-menulayout--tab .wd-menulayout-body__left-slot {
+  z-index: 299;
+}
+.wa-comp-block-agent-ui .ai-bot-chat .wd-form-input-wrap.wd-input-input-search.template.search-box.color-grey.is-pc-bordered {
+  margin: unset;
+}
+.wa-comp-block-agent-ui .agent_markdown {
+  font-family: var(--wd-font-family);
+}
+.wa-comp-block-agent-ui .agent_markdown p {
+  margin-bottom: 0px;
+}
+.wa-comp-block-agent-ui .agent_markdown .markdown-body li > p {
+  margin-top: 0px;
+}
+.wa-comp-block-agent-ui .agent_markdown h1 {
+  font-size: 1.2em;
+}
+.wa-comp-block-agent-ui .agent_markdown h2 {
+  font-size: 1.1em;
+}
+.wa-comp-block-agent-ui .agent_markdown h3 {
+  font-size: 1em;
+}
+.wa-comp-block-agent-ui .agent_markdown h4 {
+  font-size: 0.8em;
+}
+.wa-comp-block-agent-ui .agent_markdown h5 {
+  font-size: 0.75em;
+}
+.wa-comp-block-agent-ui .agent_markdown h6 {
+  font-size: 0.7em;
+}

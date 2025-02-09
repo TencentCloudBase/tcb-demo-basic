@@ -1,0 +1,38 @@
+<block wx:if="{{visible}}">
+  <wd-form-item
+    id="{{id}}"
+    className="{{className}}"
+    style="{{style}}"
+    label="{{label}}"
+    labelVisible="{{labelVisible}}"
+    labelTips="{{labelTips}}"
+    labelWidth="{{labelWidth}}"
+    labelAlign="{{labelAlign}}"
+    labelWrap="{{labelWrap}}"
+    layout="{{actualLayout}}"
+    extra="{{extra}}"
+    required="{{required}}"
+    disabled="{{disabled}}"
+    requiredFlag="{{requiredFlag}}"
+    validateState="{{validateState}}"
+    validateErrorMsg="{{validateErrorMsg}}"
+    readValue="{{value}}"
+    classRoot="rating"
+    borderedH5="{{borderedH5}}"
+  >
+    <tooltip content="{{tooltipContent}}" show="{{tooltipShow}}" offsetX="{{tooltipOffsetX}}">
+      <view class="{{ratingCls}}" bind:touchstart="onTouchStart" bind:tap="onTap" bind:touchmove="onTouchMove" bind:touchcancel="onTouchCancel" bind:touchend="onTouchEnd">
+        <view class="{{classPrefix}}-rating__full-icons-container" style="clip-path: inset(0 {{percent}}% 0 0);-webkit-clip-path: inset(0 {{percent}}% 0 0);">
+          <view wx:for="{{icons}}" class="{{classPrefix}}-rating__icon-container">
+            <wd-icon className="{{fullIconCls}}" size="{{_size}}" name="{{fullIcon.name}}" src="{{fullIcon.src}}" type="{{fullIcon.type}}" color="{{foregroundColor}}"></wd-icon>
+          </view>
+        </view>
+        <view class="{{classPrefix}}-rating__empty-icons-container">
+          <view wx:for="{{icons}}" class="{{classPrefix}}-rating__icon-container">
+            <wd-icon className="{{emptyIconCls}}" size="{{_size}}" name="{{emptyIcon.name}}" src="{{emptyIcon.src}}" type="{{emptyIcon.type}}" color="{{backgroundColor}}"></wd-icon>
+          </view>
+        </view>
+      </view>
+    </tooltip>
+  </wd-form-item>
+</block>

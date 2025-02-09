@@ -1,0 +1,3 @@
+<button class="wd-mp-customer-service wd-customer-service wd-customer-service-container {{className}}" style="{{style}}" size="{{size}}" open-type="contact" bindcontact="contact" session-from="{{sessionFrom}}" send-message-title="{{sendMessageTitle}}" send-message-path="{{sendMessagePath}}" send-message-img="{{sendMessageImg}}" show-message-card="{{showMessageCard}}">
+  <slot />
+</button>

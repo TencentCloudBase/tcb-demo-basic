@@ -1,0 +1,155 @@
+@import '../../../style/weda-ui.wxss';
+/* components/location/location.wxss */
+
+.form-location-warp {
+  display: flex;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.form-location-disabled .form-location-con {
+  opacity: 0.4;
+}
+
+.form-location-warp-vertical {
+  flex-direction: column;
+}
+
+.form-location-warp::after {
+  bottom: 0;
+}
+
+.form-location_cell.form-location-con {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding-left: 0px;
+}
+
+.form-location-label_flag {
+  display: inline-block;
+  margin-right: 4px;
+  font-family: SimSun;
+  font-size: 12px;
+  color: #f60;
+}
+
+.form-location-label {
+  width: 130px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 12px;
+}
+
+.form-location-con-vertical {
+  padding-left: 16px !important;
+}
+
+.form-location-con_img {
+  min-width: 18px;
+  width: 18px;
+  height: 18px;
+  transform: translateX(20px);
+  filter: drop-shadow(-20px 1px 0 var(--wd-color-brand, #0052d9));
+}
+
+.form-location-con__text {
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+.form-location_cell {
+  padding: 16px;
+  line-height: 1.41176471;
+  font-size: 16px;
+  color: #000000e6;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.weda-formcells__flag {
+  display: inline-block;
+  margin-left: 4px;
+  font-family: SimSun;
+  font-size: 12px;
+  color: #f60;
+  align-self: flex-start;
+}
+
+.form-location-addr {
+  display: flex;
+  align-items: flex-start;
+  padding-left: 130px;
+  padding-right: 32px;
+}
+
+.form-location-addr-vertical {
+  padding-left: 16px;
+}
+
+.form-location-addr-lat {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.4);
+  line-height: 20px;
+}
+
+.form-location-addr-image {
+  width: 19px;
+  height: 19px;
+}
+
+.form-location-addr-box {
+  margin-left: 4px;
+}
+
+.form-location_cell.form-location-label {
+  width: var(--wd-form-item-label-width);
+  padding-left: 0;
+  padding-right: 0;
+  margin-right: var(--wd-form-item-label-mr);
+  align-items: flex-start;
+}
+
+/* 标准化样式适配 start */
+.wd-form-item .wd-form-input-wrap .weda-form-location {
+  width: 100%;
+}
+.wd-mp-location-root .weda-form-location .weui-cells::before,
+.wd-mp-location-root .weda-form-location .weui-cells::after {
+  display: none;
+}
+
+.wd-form-item .wd-form-input-wrap .weda-form-location .form-location_cell {
+  padding: 0;
+}
+
+.wd-form-item .wd-form-input-wrap .weda-form-location .form-location-addr {
+  padding-left: 0;
+  padding-right: 0;
+}
+/* 标准化样式适配 end */
+
+.form-location-addr-icon {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+}
+
+.form-location-addr--disabled {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+.form-location-addr--disabled .form-location-addr-icon {
+  opacity: 0.4;
+}
+
+.form-location-con__icon-wrap {
+  overflow: hidden;
+}
+
+.wd-form-item.showMap .wd-form-input-wrap.size-height-md {
+  height: auto;
+}

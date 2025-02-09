@@ -1,0 +1,52 @@
+<view class="weda-uploader-files weda-ui">
+  <block wx:if="{{!readOnly}}">
+    <view class="weda-uploader-files__hd {{layoutCls}}">
+      <view class="weda-uploader-files__title weda-formcells__label weui-cell" wx:if="{{labelVisible}}">
+        <label wx:if="{{requiredFlag}}" class="weda-formcells__flag">*</label>
+        {{label}}
+      </view>
+      <view class="weda-uploader-files__btn-contain">
+        <button class="weui-btn weda-uploader-files__btn" bindtap="onButtonTap" disabled="{{disabled}}">{{uploadButtonText}}</button>
+
+        <view wx:if="{{maxCount!=1}}" class="weda-uploader-files__tips">{{uploadTipText}}</view>
+        <view wx:else>
+          <slot name="tips"></slot>
+        </view>
+      </view>
+    </view>
+  </block>
+  <view class="weda-uploader-files__bd">
+    <view class="weda-uploader-files__files" wx-if="{{files.length > 0}}">
+      <block wx:for="{{files}}" wx:key="filePath">
+        <view class="weda-uploader-files__item">
+          <view class="weda-uploader-files__item-left">
+            <view class="weda-uploader-files__file-detail">
+              <text class="weda-uploader-files__file-name">{{item.name}}</text>
+            </view>
+            <view class="weda-uploader-files__progress weui-progress" wx-if="{{item.status === 'pending' || item.status === 'uploading'}}">
+              <view class="weui-progress__bar">
+                <progress percent="{{item.percent}}" stroke-width="3" activeColor="#0052D9" backgroundColor="#E7E7E7" stroke-width="3" />
+              </view>
+            </view>
+            <view class="weda-uploader-files__file-foot">
+              <view wx:if="{{item.status === 'success' || item.status === 'fail'}}" class="weda-uploader-files__file-status">
+                <text class="weda-uploader-files__file-status--msg">{{item.status === 'success' ? '上传成功' : '上传失败'}}</text>
+              </view>
+              <div class="weda-uploader-files__file-size">
+                <text wx-if="{{item.status === 'uploading' || item.status === 'pending'}}">{{item.status === 'uploading' ? item.uploaded : '0K' }}/</text>
+                <text>{{item.size || '-'}}</text>
+              </div>
+              <div wx-if="{{item.status === 'uploading' || item.status === 'pending'}}">{{item.status === 'pending' ? '等待上传' : '上传中'}}</div>
+            </view>
+          </view>
+          <view class="weda-uploader-files__btn-group">
+            <image wx-if="{{item.status === 'success'&&downloadVisible}}" data-item="{{item}}" bindtap="downloadFile" class="weda-uploader-files__icon" src="https://imgcache.qq.com/qcloud/tcloud_dtc/static/static_source_business/4cba5da1-cde4-40c6-a075-86eff22858a4.svg"></image>
+            <image wx-if="{{item.status === 'fail'}}" data-item="{{item}}" bindtap="reload" class="weda-uploader-files__icon" src="https://imgcache.qq.com/qcloud/tcloud_dtc/static/static_source_business/af5486eb-65e0-4536-8e51-6c68a17b71ac.svg"></image>
+            <image wx-if="{{!disabled}}" class="weda-uploader-files__icon" data-item="{{item}}" bindtap="onDelete" src="https://imgcache.qq.com/qcloud/tcloud_dtc/static/static_source_business/2372f6a8-2f6a-4f30-92bf-73c62a5c0ae7.svg"></image>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <mp-actionSheet bindactiontap="onActionTap" show="{{showActionsheet}}" actions="{{groups}}" title="选择文件来源"> </mp-actionSheet>
+</view>

@@ -1,0 +1,96 @@
+@charset "UTF-8";
+._B00_Xa {
+  /* 如果生成的wxss 为空文件似乎会导致IDE编译报错， 所以这里给他弄个占位 */
+  word-break: inherit;
+}
+
+.wd-tabbar {
+  --wd-tabbar-heder-item-color: var(--wd-color-text-placeholder);
+  --wd-tabbar-heder-item-color-selected: var(--wd-color-brand);
+  --wd-tabbar-heder-item-font: var(--wd-typography-body-md);
+  --wd-tabbar-heder-item-color-hover: var(--wd-color-brand-hover);
+}
+
+.wd-h5-tabbar,
+.wd-mp-tabbar {
+  --wd-tabbar-heder-item-font: var(--wd-typography-body-xs);
+}
+
+.wd-tabbar {
+  color: var(--wd-color-text-default);
+  font-size: var(--wd-font-size-default);
+  line-height: var(--wd-font-line-height-default);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: content-box;
+  overflow-x: unset;
+  display: flex;
+  min-height: 56px;
+  align-items: center;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+  background-color: var(--wd-menulayout-bg);
+}
+.wd-tabbar--shadow-top {
+  border-top: 1px solid var(--wd-color-border-separator);
+}
+.wd-tabbar--shadow-bottom {
+  border-bottom: 1px solid var(--wd-color-border-separator);
+}
+.wd-tabbar__item {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 0;
+  box-sizing: border-box;
+  position: relative;
+  cursor: pointer;
+  min-width: unset;
+  color: var(--wd-tabbar-heder-item-color);
+}
+.wd-tabbar__item:hover {
+  color: var(--wd-tabbar-heder-item-color-hover);
+}
+.wd-tabbar__item:hover .wd-tabbar__item-text {
+  color: inherit;
+}
+.wd-tabbar__item-text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  -webkit-line-clamp: 1;
+  white-space: pre-line;
+  margin-top: 1px;
+  color: var(--wd-tabbar-heder-item-color);
+  text-align: center;
+  font: var(--wd-tabbar-heder-item-font);
+}
+.wd-tabbar__item.is-selected {
+  color: var(--wd-tabbar-heder-item-color-selected);
+}
+.wd-tabbar__item.is-selected .wd-tabbar__item-text {
+  color: inherit;
+}
+.wd-tabbar .wd-link__slot {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.wd-mp-tabbar .wd-tabbar__item {
+  cursor: unset;
+}
+.wd-mp-tabbar .wd-tabbar__item-icon {
+  display: contents;
+}

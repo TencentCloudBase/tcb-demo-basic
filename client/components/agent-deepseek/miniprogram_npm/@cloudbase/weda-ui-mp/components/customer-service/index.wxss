@@ -1,0 +1,11 @@
+@import '../../style/wd-design.wxss';
+
+/* 去除按钮的默认细边框 */
+.wd-customer-service-container::after {
+  border: none;
+  background: none !important;
+}
+
+.wd-customer-service-container {
+  background: transparent;
+}

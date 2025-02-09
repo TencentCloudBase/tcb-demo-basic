@@ -1,0 +1,4 @@
+{
+  "component": true,
+  "usingComponents": {"a":"@cloudbase/weda-ui-mp/components/container/index","b":"@cloudbase/weda-ui-mp/components/wd-menu-layout/index","c":"@cloudbase/weda-ui-mp/components/wd-image/index","d":"@cloudbase/weda-ui-mp/components/wd-text/index","e":"@cloudbase/weda-ui-mp/components/scrollView/index","f":"@cloudbase/weda-ui-mp/components/wd-card/index","g":"@cloudbase/weda-ui-mp/components/wd-icon/index","h":"@cloudbase/weda-ui-mp/components/wd-markdown/index","i":"@cloudbase/weda-ui-mp/components/wd-unified-link/index","j":"@cloudbase/weda-ui-mp/components/wd-textarea/index","k":"@cloudbase/weda-ui-mp/components/wd-modal/index","l":"@cloudbase/weda-ui-mp/components/wd-rating/index","m":"@cloudbase/weda-ui-mp/components/wd-tag-select/index","n":"@cloudbase/weda-ui-mp/components/wd-button/index"}
+}

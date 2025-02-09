@@ -1,0 +1,32 @@
+<block wx:if="{{visible}}">
+  <wd-form-item
+    id="{{id}}"
+    className="{{className}}"
+    style="{{style}}"
+    label="{{label}}"
+    labelVisible="{{labelVisible}}"
+    labelTips="{{labelTips}}"
+    labelWidth="{{labelWidth}}"
+    labelAlign="{{labelAlign}}"
+    labelWrap="{{labelWrap}}"
+    layout="{{actualLayout}}"
+    extra="{{extra}}"
+    required="{{required}}"
+    disabled="{{disabled}}"
+    requiredFlag="{{requiredFlag}}"
+    validateState="{{validateState}}"
+    validateErrorMsg="{{validateErrorMsg}}"
+    borderedH5="{{borderedH5}}"
+    readValue="{{value}}"
+    classRoot="switch"
+  >
+    <view class="{{classPrefix}}-progress-container {{className}}" style="{{style}}" id="{{id}}">
+      <view class="{{classPrefix}}-progress" bind:touchstart="onTouchStart" bind:tap="onTap" bind:touchmove="onTouchMove">
+        <view class="{{classPrefix}}-progress__value" style="width: {{percent}}%;"></view>
+      </view>
+      <view class="{{classPrefix}}-progress__percent" wx:if="{{showPercent}}">
+        <slot name="percentSlot"></slot>
+      </view>
+    </view>
+  </wd-form-item>
+</block>

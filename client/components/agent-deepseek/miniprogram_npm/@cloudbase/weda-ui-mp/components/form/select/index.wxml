@@ -1,0 +1,57 @@
+<formcell className="{{cls}}" style="{{style}}" label="{{labelVisible ? label : null}}" layout="{{layout}}" multiCell="{{false}}" requiredFlag="{{requiredFlag}}">
+  <wd-form-item-read-only version="{{version}}" readOnly="{{readOnly}}" readValue="{{displayValue}}">
+    <view class="{{subCls}}">
+      <view class="weui-cell__bd">
+        <block wx:if="{{mode === 'mutiRegion'}}">
+          <picker mode="multiSelector" disabled="{{disabled}}" range="{{multiArray}}" range-key="value" bindcolumnchange="columnchange" value="{{multiIndex}}" bindchange="onChange" class="weui-picker__group weui-input">
+            <label class="select-picker-input {{displayValue ? '' : 'weui-input__placeholder'}}">{{displayValue || placeholder}}</label>
+          </picker>
+        </block>
+        <block wx:elif="{{mode === 'date'}}">
+          <block wx:if="{{dateMode === 'datetime'}}">
+            <view class="weui-picker__group weui-input all-time-picker" bindtap="onAllTimePicker" data-show="true">
+              <input placeholder="{{placeholder}}" disabled="true" value="{{value}}" />
+            </view>
+            <block wx:if="{{allPickerShow}}">
+              <datetimepicker startDateTime="{{startDate}}" endDateTime="{{endDate}}" defaultDateTime="{{value}}" bind:onAllTimePicker="onAllTimePicker" />
+            </block>
+          </block>
+          <block wx:else>
+            <picker class="weui-picker__group weui-input" bindchange="onChange" bindcancel="onCancel" mode="{{mode}}" disabled="{{disabled}}" start="{{start}}" end="{{end}}" value="{{value}}" fields="{{dateMode}}">
+              <label class="select-picker-input {{displayValue ? '' : 'weui-input__placeholder'}}">{{displayValue || placeholder}}</label>
+            </picker>
+          </block>
+        </block>
+        <block wx:elif="{{mode === 'time'}}">
+          <picker class="weui-picker__group weui-input" bindchange="onChange" bindcancel="onCancel" mode="{{mode}}" disabled="{{disabled}}" start="{{start}}" end="{{end}}" value="{{value}}">
+            <label class="select-picker-input {{displayValue  ? '' :  'weui-input__placeholder'}}">{{displayValue || placeholder}}</label>
+          </picker>
+        </block>
+        <block wx:else>
+          <view class="weui-picker__group weui-input select-picker" id="select-picker" bindchange="onChange" bindtap="onSelectPicker" data-show="true">
+            <label class="select-picker-input {{displayValue ? '' : 'weui-input__placeholder'}}">{{displayValue || placeholder}}</label>
+          </view>
+          <block wx:if="{{allPickerShow}}">
+            <dropdownSelect
+              ignoreCase="{{ignoreCase}}"
+              staticSearchable="{{staticSearchable}}"
+              class="weui-picker__group weui-input"
+              bindchange="onChange"
+              bind:_childFetchData="_childFetchData"
+              bind:onSelectPicker="onSelectPicker"
+              option="{{option}}"
+              loadStatus="{{loadStatus}}"
+              searchOption="{{searchOption}}"
+              searchStatus="{{searchStatus}}"
+              chooseIndexValue="{{chooseIndexValue}}"
+              isTurnPages="{{isTurnPages}}"
+              pageNo="{{pageNo}}"
+              _needFetch="{{formatNeedFetch}}"
+              bind:search="onSearch"
+            />
+          </block>
+        </block>
+      </view>
+    </view>
+  </wd-form-item-read-only>
+</formcell>

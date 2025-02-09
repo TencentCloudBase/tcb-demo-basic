@@ -1,0 +1,29 @@
+<formcell className="weda-ui weda-form-location {{className}}" style="{{style}}" label="{{null}}" layout="{{layout}}" multiCell="{{false}}" requiredFlag="{{requiredFlag}}">
+  <view class="form-location">
+    <view class="form-location-warp {{layout==='vertical'?'form-location-warp-vertical':''}} {{disabled ? 'form-location-disabled' : ''}}" wx:if="{{!isAddrShow}}">
+      <view class="form-location-label form-location_cell weda-formcells__label weui-cell" wx:if="{{labelVisible}}">
+        <label class="weda-formcells__flag" wx:if="{{requiredFlag}}">*</label>
+        <label> {{label}} </label>
+      </view>
+      <view class="form-location-con form-location_cell {{layout==='vertical'?'form-location-con-vertical':''}}" bindtap="chooseLocation" data-value="{{true}}">
+        <view class="form-location-con__icon-wrap">
+          <image class="form-location-con_img" src="location-btn.svg"></image>
+        </view>
+        <wd-button class="form-location-con__text" text="{{placeholder}}" variant="link"></wd-button>
+      </view>
+    </view>
+    <view class="form-location-addr {{disabled ? 'form-location-addr--disabled' : ''}} {{layout==='vertical'?'form-location-addr-vertical':''}}" wx:if="{{isAddrShow}}" bindtap="chooseLocation">
+      <view class="form-location-addr-icon">
+        <image wx:if="{{isAddrShow&&location.poiname}}" class="form-location-addr-image" src="location.svg" alt="" />
+      </view>
+      <view class="form-location-addr-box">
+        <wd-text class="form-location-addr-title wd-location__info" text="{{location.poiname}}"></wd-text>
+        <view class="form-location-addr-lat" wx:if="{{showLngLat}}"> {{location.longitude}}N,{{location.latitude}}E </view>
+      </view>
+    </view>
+    <view style="padding-left: 16px; padding-right: 16px; margin-top: 16px; padding-bottom: 16px" wx:if="{{showMap&&isAddrShow}}">
+      <map id="map" longitude="{{location.longitude}}" latitude="{{location.latitude}}" markers="{{markers}}" scale="16" enable-zoom="{{zoom}}" enable-scroll="{{drag}}" style="width: 100%; height: 200px"></map>
+    </view>
+    <mapChoose id="{{id}}" wx:if="{{isMapChooseVisible}}" isVisible="{{isMapChooseVisible}}" bindonClose="mapChooseOnClose" bindonConfirm="mapChooseOnConfirm" location="{{location}}" apiKey="{{isApikeyStatus.apiKey}}" circleRadius="{{locationRange}}" customRange="{{customRange}}" currentLocations="{{currentLocations}}" bind:error="handleError" />
+  </view>
+</formcell>

@@ -1,0 +1,213 @@
+@charset "UTF-8";
+._B00_Xa {
+  /* 如果生成的wxss 为空文件似乎会导致IDE编译报错， 所以这里给他弄个占位 */
+  word-break: inherit;
+}
+
+@-webkit-keyframes wd-fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes wd-fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes wd-fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes wd-fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.wd-modal {
+  position: fixed;
+  z-index: 1000;
+}
+.wd-modal-mask {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  z-index: 1000;
+}
+.wd-modal-mask__fadein {
+  animation: wd-fadein 0.3s forwards;
+}
+.wd-modal-mask__fadeout {
+  animation: wd-fadeout 0.3s forwards;
+}
+.wd-modal-mask__hide {
+  background: transparent;
+}
+.wd-modal-bd {
+  overflow: hidden;
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  background: var(--wd-color-bg-container);
+  box-sizing: border-box;
+  z-index: 1001;
+  transform: translate(-50%, 100%);
+  transition: all 0.3s;
+  height: inherit;
+  width: inherit;
+  overflow-y: auto;
+  border: 0.5px solid #dcdcdc;
+  display: flex;
+  flex-direction: column;
+}
+.wd-modal-bd__box {
+  box-shadow: var(--wd-shadow-lg);
+}
+.wd-modal-bd__toggle {
+  transform: translate(-50%, 0);
+}
+.wd-modal-bd__hd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font: var(--wd-typography-title-lg);
+}
+.wd-modal-bd__hd:empty {
+  margin-bottom: 0;
+}
+.wd-modal-bd__hd .wd-icon {
+  margin-left: auto;
+}
+.wd-modal-bd__main {
+  flex: 1;
+  overflow-y: auto;
+  color: #16181a;
+}
+.wd-modal-bd__main:empty {
+  margin-top: 0;
+}
+.wd-modal-bd__ft {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wd-modal-bd__ft:empty {
+  margin-top: 0;
+}
+.wd-modal-bd__ft .wd-btn {
+  margin-right: 12px;
+}
+
+.wd-modal-center .wd-modal-bd {
+  bottom: 50%;
+  transform: translate(-50%, 50%);
+  opacity: 0;
+}
+.wd-modal-center .wd-modal-bd__toggle {
+  opacity: 1;
+}
+
+.wd-modal {
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.wd-modal.wd-mp-modal-hide {
+  z-index: -1;
+}
+.wd-modal-center {
+  align-items: center;
+}
+.wd-modal-center .wd-modal-bd {
+  transform: unset;
+}
+.wd-modal-bd {
+  border-radius: 24rpx 24rpx 0 0;
+  padding: 64rpx 48rpx 48rpx 48rpx;
+  max-height: 90%;
+  position: static;
+}
+.wd-modal-bd__hd {
+  margin-bottom: 16rpx;
+}
+.wd-modal-bd__main {
+  font-size: 32rpx;
+}
+.wd-modal-bd__ft {
+  margin-top: 48rpx;
+}
+.wd-modal-bd__ft-text-btn {
+  display: flex;
+  margin: 24px -24px -24px -24px;
+  border-top: 0.5px solid var(--wd-color-border-default);
+}
+.wd-modal-bd__ft-text-btn .wd-mp-btn {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  min-height: 48px;
+}
+.wd-modal-bd__ft-text-btn .wd-mp-btn.wd-btn--primary {
+  color: var(--wd-color-brand, #0052d9);
+  background-color: transparent;
+}
+.wd-modal-bd__ft-text-btn .wd-mp-btn.wd-btn--primary:hover:not(.is-disabled) {
+  background-color: transparent;
+  border-color: var(--wd-color-border-default);
+}
+.wd-modal-bd__ft-text-btn .wd-mp-btn:hover:not(.is-disabled) {
+  background-color: transparent;
+  border-color: var(--wd-color-border-default);
+}
+.wd-modal-bd__ft-text-btn .wd-mp-btn + .wd-mp-btn {
+  border-left: 0.5px solid var(--wd-color-border-default);
+}
+.wd-modal-bd__ft-text-btn--vertical {
+  flex-direction: column;
+}
+.wd-modal-bd__ft-text-btn--vertical .wd-mp-btn + .wd-mp-btn {
+  border: none;
+  border-top: 0.5px solid var(--wd-color-border-default);
+}
+.wd-modal-bd__ft-btn {
+  border-radius: 12rpx;
+  margin-right: 24rpx;
+  padding: 16rpx 48rpx;
+  font-size: 32rpx;
+}
+.wd-modal-bd__toggle {
+  transform: unset;
+}
+
+.wd-modal-center .wd-modal-bd {
+  border-radius: 24rpx;
+}
+
+.weda-modal-new {
+  padding-bottom: constant(safe-area-inset-bottom);
+}

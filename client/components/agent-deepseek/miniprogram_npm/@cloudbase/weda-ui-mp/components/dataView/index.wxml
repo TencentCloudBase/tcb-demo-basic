@@ -1,0 +1,28 @@
+<list-view
+  class="{{selectorCls || 'weda-data-view'}}"
+  className="weda-data-view__container {{className}}"
+  style="{{style}}"
+  datasource="{{datasource}}"
+  dataSourceData="{{_dataSourceData}}"
+  bindConnectMetadata="{{bindConnectMetadata}}"
+  connectorMethod="{{connectorMethod}}"
+  connectorParams="{{connectorParams}}"
+  dataSourceType="{{dataSourceType}}"
+  where="{{where}}"
+  queryCondition="{{queryCondition}}"
+  pageSize="{{1}}"
+  pagination="none"
+  beforeDataChange="{{innerBeforeDataChange}}"
+  bindonDataChange="handleEvent"
+  bindqueryFail="handleEvent"
+  bindqueryEmpty="handleEvent"
+  bindquerySuccess="handleEvent"
+  bindattached="handleEvent"
+  isRecords="{{false}}"
+  refType="dataView"
+  supportManyRelated="{{supportManyRelated}}"
+  selectFields="{{selectFields}}"
+  selectFieldType="{{selectFieldType}}"
+>
+  <slot></slot>
+</list-view>

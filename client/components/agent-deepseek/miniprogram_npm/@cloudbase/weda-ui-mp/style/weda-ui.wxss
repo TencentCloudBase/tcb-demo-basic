@@ -1,0 +1,475 @@
+@import './wd-design.wxss';
+
+/*!
+ * Weda 自定义样式
+ */
+
+page .weda-ui {
+  --weui-BRAND: #006eff;
+  --weui-TAG-TEXT-BLUE: #0067eb;
+  --weui-BTN-DEFAULT-COLOR: #576b95;
+  --weui-WECHAT: #07c160;
+  --weui-TAG-TEXT-GREEN: #06ae56;
+  --weui-BG-2: rgba(255, 255, 255, 0);
+}
+
+.weui-form {
+  min-height: 0%;
+  padding: 0;
+}
+
+.weui-cells {
+  margin-top: 0;
+}
+
+.weda-ui.weui-form .weui-cells__tips {
+  margin-bottom: 16px;
+}
+
+.weui-cells__group_form .weui-cells__tips_warn {
+  color: var(--wd-color-text-error);
+  font-family: var(--wd-font-family);
+  font-size: var(--wd-font-size-default);
+}
+
+.weda-ui .weui-btn_input-clear {
+  display: none;
+}
+
+.weda-ui.weda-picker .weui-btn_primary:not(.weui-btn_disabled):active {
+  background-color: var(--weui-TAG-TEXT-BLUE);
+}
+
+.weda-ui .weui-cell {
+  font-size: inherit;
+}
+
+.weda-ui .weui-cells {
+  font-size: 1em;
+}
+
+.weui-cells__group_form .weui-cell::before,
+.weui-cells__group_form .weui-cells::before {
+  left: 16px;
+  right: 16px;
+}
+
+.weui-cells__group_form .weui-cells::after {
+  left: 16px;
+  right: 16px;
+}
+
+.weui-picker a:link:hover {
+  text-decoration: none;
+}
+
+.weda-ui .weui-input {
+  padding: 14px 0;
+}
+
+.weda-ui .weui-btn_input-clear {
+  visibility: hidden;
+  /* visibility 防止居中而且宽度auto时，出现输入时宽度抖动 */
+  display: inline;
+}
+
+.weda-ui .weui-input.focus.not-placeholder-shown + .weui-btn_input-clear {
+  visibility: visible;
+  display: inline;
+}
+
+.weda-ui .weui-check[disabled] + .weui-icon-checked {
+  opacity: 0.4;
+}
+
+.weui-cell_switch.weui-cell_readonly,
+.weui-cell_switch.weui-cell_disabled {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.weui-check__label.weui-cell_readonly,
+.weui-check__label.weui-cell_disabled {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.weui-cell_switch.weui-cell_disabled .weui-switch-cp__box {
+  opacity: 0.4;
+}
+
+@font-face {
+  font-family: 'lcap-icon';
+  font-weight: normal;
+  font-style: normal;
+  src: url(data:application/font-woff2;charset=utf-8;base64,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)
+    format('woff2');
+}
+
+:host {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lcap-icon {
+  font-size: 34px;
+  display: inline-block;
+  font-family: 'lcap-icon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  text-rendering: auto;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.lcap-icon-nointernet:before {
+  content: '\e900';
+}
+
+.lcap-icon-success:before {
+  content: '\e901';
+}
+
+.lcap-icon-warning:before {
+  content: '\e902';
+}
+
+.lcap-icon-pending:before {
+  content: '\e903';
+}
+
+.lcap-icon-refresh:before {
+  content: '\e904';
+}
+
+.lcap-icon-folder:before {
+  content: '\e905';
+}
+
+.lcap-icon-arrowup:before {
+  content: '\e906';
+}
+
+.lcap-icon-arrowdown:before {
+  content: '\e907';
+}
+
+.lcap-icon-arrowleft:before {
+  content: '\e908';
+}
+
+.lcap-icon-arrowright:before {
+  content: '\e909';
+}
+
+.lcap-icon-chevronup:before {
+  content: '\e90a';
+}
+
+.lcap-icon-chevrondown:before {
+  content: '\e90b';
+}
+
+.lcap-icon-chevronleft:before {
+  content: '\e90c';
+}
+
+.lcap-icon-chevronright:before {
+  content: '\e90d';
+}
+
+.lcap-icon-delete:before {
+  content: '\e90e';
+}
+
+.lcap-icon-edit:before {
+  content: '\e90f';
+}
+
+.lcap-icon-search:before {
+  content: '\e910';
+}
+
+.lcap-icon-check:before {
+  content: '\e911';
+}
+
+.lcap-icon-close:before {
+  content: '\e912';
+}
+
+.lcap-icon-add:before {
+  content: '\e913';
+}
+
+.lcap-icon-download:before {
+  content: '\e914';
+}
+
+.lcap-icon-success-fill:before {
+  content: '\e915';
+}
+
+.lcap-icon-close-fill:before {
+  content: '\e916';
+}
+
+.lcap-icon-minus-fill:before {
+  content: '\e917';
+}
+
+.lcap-icon-add-fill:before {
+  content: '\e918';
+}
+
+.lcap-icon-info-fill:before {
+  content: '\e919';
+}
+
+.lcap-icon-pending-fill:before {
+  content: '\e91a';
+}
+
+.lcap-icon-warning-fill:before {
+  content: '\e91b';
+}
+
+.lcap-icon-more:before {
+  content: '\e91c';
+}
+
+.lcap-icon-star:before {
+  content: '\e91d';
+}
+
+.lcap-icon-star-fill:before {
+  content: '\e91e';
+}
+
+.lcap-icon-location:before {
+  content: '\e91f';
+}
+
+.lcap-icon-question:before {
+  content: '\e920';
+}
+
+.wd-lcap-icon-nointernet:before {
+  content: '\e900';
+}
+
+.wd-lcap-icon-success:before {
+  content: '\e901';
+}
+
+.wd-lcap-icon-warning:before {
+  content: '\e902';
+}
+
+.wd-lcap-icon-pending:before {
+  content: '\e903';
+}
+
+.wd-lcap-icon-refresh:before {
+  content: '\e904';
+}
+
+.wd-lcap-icon-folder:before {
+  content: '\e905';
+}
+
+.wd-lcap-icon-arrowup:before {
+  content: '\e906';
+}
+
+.wd-lcap-icon-arrowdown:before {
+  content: '\e907';
+}
+
+.wd-lcap-icon-arrowleft:before {
+  content: '\e908';
+}
+
+.wd-lcap-icon-arrowright:before {
+  content: '\e909';
+}
+
+.wd-lcap-icon-chevronup:before {
+  content: '\e90a';
+}
+
+.wd-lcap-icon-chevrondown:before {
+  content: '\e90b';
+}
+
+.wd-lcap-icon-chevronleft:before {
+  content: '\e90c';
+}
+
+.wd-lcap-icon-chevronright:before {
+  content: '\e90d';
+}
+
+.wd-lcap-icon-delete:before {
+  content: '\e90e';
+}
+
+.wd-lcap-icon-edit:before {
+  content: '\e90f';
+}
+
+.wd-lcap-icon-search:before {
+  content: '\e910';
+}
+
+.wd-lcap-icon-check:before {
+  content: '\e911';
+}
+
+.wd-lcap-icon-close:before {
+  content: '\e912';
+}
+
+.wd-lcap-icon-add:before {
+  content: '\e913';
+}
+
+.wd-lcap-icon-download:before {
+  content: '\e914';
+}
+
+.wd-lcap-icon-success-fill:before {
+  content: '\e915';
+}
+
+.wd-lcap-icon-close-fill:before {
+  content: '\e916';
+}
+
+.wd-lcap-icon-minus-fill:before {
+  content: '\e917';
+}
+
+.wd-lcap-icon-add-fill:before {
+  content: '\e918';
+}
+
+.wd-lcap-icon-info-fill:before {
+  content: '\e919';
+}
+
+.wd-lcap-icon-pending-fill:before {
+  content: '\e91a';
+}
+
+.wd-lcap-icon-warning-fill:before {
+  content: '\e91b';
+}
+
+.wd-lcap-icon-more:before {
+  content: '\e91c';
+}
+
+.wd-lcap-icon-star:before {
+  content: '\e91d';
+}
+
+.wd-lcap-icon-star-fill:before {
+  content: '\e91e';
+}
+
+.wd-lcap-icon-location:before {
+  content: '\e91f';
+}
+
+.wd-lcap-icon-question:before {
+  content: '\e920';
+}
+
+/* 占位符 */
+.weda-ui.weda-ui-to-wd .weui-input__placeholder,
+.wd-form-item.wd-mp-form-item .weui-input__placeholder {
+  color: var(--wd-color-text-placeholder);
+}
+
+/* 外边框 */
+.weui-cells__group_form .weui-cells::before,
+.weda-ui.gsd-h5-react-formitem.weda-ui-to-wd .weui-cells::before {
+  border-top-color: transparent;
+  left: 0;
+  right: 0;
+}
+
+.weui-cells__group_form .weui-cells::after,
+.weda-ui.gsd-h5-react-formitem.weda-ui-to-wd .weui-cells::after {
+  border-bottom-width: var(--wd-form-item-border-width);
+  border-bottom-color: var(--wd-form-item-border-color);
+  left: 0;
+  right: 0;
+  transform: none;
+  -webkit-transform: none;
+}
+
+/* 标题 */
+.weda-ui.gsd-h5-react-formitem.weda-ui-to-wd
+  .weda-formcells.weui-flex
+  .weda-formcells__label {
+  width: var(--wd-form-item-label-width);
+  padding-left: 0;
+  padding-right: 0;
+  margin-right: var(--wd-form-item-label-mr);
+  align-items: flex-start;
+}
+
+/* 两边间距 */
+.weda-ui.gsd-h5-react-formitem.weda-ui-to-wd > .weda-ui {
+  padding-left: var(--wd-form-item-pd);
+  padding-right: var(--wd-form-item-pd);
+}
+
+.weui-cells__group_form
+  .weda-ui.gsd-h5-react-formitem.weda-ui-to-wd
+  .weui-cells {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* 必填标识 */
+.weda-ui.gsd-h5-react-formitem.weda-ui-to-wd .weda-formcells__flag {
+  margin-right: var(--wd-space-base);
+  color: var(--wd-color-text-error);
+  margin-left: 0;
+  font-size: var(--wd-font-size-default);
+  font-family: inherit;
+}
+
+/* 垂直时 */
+.weda-ui.gsd-h5-react-formitem.weda-ui-to-wd.wa-comp-CLOUDBASE_STANDARD-FormItem
+  .weda-formcells
+  .weda-formcells__label,
+.weda-formcells .weda-formcells__content .weui-cell {
+  padding-left: 0;
+}
+
+/* 页头/页脚覆盖低码样式 */
+.wa-comp-CLOUDBASE_STANDARD-Footer.lcap-footer.fixed,
+.wa-comp-CLOUDBASE_STANDARD-Header.lcap-header.fixed {
+  z-index: 1;
+}
+
+/* 事件样式 start */
+.wd-event-tap:active {
+  box-shadow: inset 0 -100vh var(--wd-color-bg-active);
+}
+
+/* 规避组件样式: WdButton */
+.wd-btn.wd-event-tap:active {
+  box-shadow: unset;
+}
+/* 事件样式 end  */
+
+/* 引入图标库  */
+@import './wd-font-icon.wxss';

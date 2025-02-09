@@ -1,21 +1,20 @@
 {
   "packOptions": {
-    "ignore": [
-      {
-        "value": "$weda_root/materials/pageModule_ui/meta.json",
-        "type": "file"
-      },
-      {
-        "value": "$weda_root/materials/CLOUDBASE_BUSSINESS/meta.json",
-        "type": "file"
-      },
-      {
-        "value": "$weda_root/materials/gsd-h5-react/meta.json",
-        "type": "file"
-      }
-    ],
+    "ignore": [],
     "include": []
   },
+  "subpackages": [
+    {
+      "root": "components/agent-deepseek",
+      "name": "agent-deepseek",
+      "pages": []
+    },
+    {
+      "root": "components/agent-ui",
+      "name": "agent-ui",
+      "pages": []
+    }
+  ],
   "setting": {
     "urlCheck": false,
     "es6": true,
@@ -50,16 +49,6 @@
     "useIsolateContext": false,
     "userConfirmedBundleSwitch": false,
     "packNpmManually": true,
-    "packNpmRelationList": [
-      {
-        "packageJsonPath": "client/$weda_root/package.json",
-        "miniprogramNpmDistDir": "client/$weda_root"
-      },
-      {
-        "packageJsonPath": "client/$weda_root/packages/$wd_system/package.json",
-        "miniprogramNpmDistDir": "client/$weda_root/packages/$wd_system"
-      }
-    ],
     "minifyWXSS": true,
     "disableUseStrict": false,
     "showES6CompileOption": false,
@@ -111,6 +100,5 @@
     "tabIndent": "insertSpaces",
     "tabSize": 2
   },
-  "wedaRoot": "$weda_root",
   "appId": "wxcf5102ada68a7ac9"
 }

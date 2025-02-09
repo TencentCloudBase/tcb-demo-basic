@@ -1,0 +1,3 @@
+<store-product id="{{id}}" appid="{{appid}}" product-id="{{productId}}" product-promotion-link="{{productPromotionLink}}" media-id="{{mediaId}}" custom-style="{{customStyle}}" custom-content="{{customContent}}" open-page="{{openPage}}" logo-position="{{logoPosition}}" bindentersuccess="bindentersuccess" bindentererror="bindentererror"  >
+ <slot></slot>
+</store-product>

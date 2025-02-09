@@ -1,0 +1,50 @@
+<view class="weui-uploader {{extClass}}">
+  <view class="weui-uploader__hd {{layout}}">
+    <view class="weda-formcells__label weui-cell" wx:if="{{labelVisible}}">
+      <block wx:if="{{layout === 'horizontal'}}">
+        <label wx:if="{{requiredFlag}}" class="weda-formcells__flag">*</label>
+        <view class="">
+          <view class="weui-uploader__title">{{title}}</view>
+          <view class="weui-uploader__info" wx:if="{{maxCount > 1}}">{{currentFiles.length}}/{{maxCount}}</view>
+        </view>
+      </block>
+      <block wx:if="{{layout === 'vertical'|| layout ===''}}">
+        <view class="weui-uploader__label">
+          <label wx:if="{{requiredFlag}}" class="weda-formcells__flag">*</label>
+          <view class="weui-uploader__title">{{title}}</view>
+        </view>
+        <view class="weui-uploader__info" wx:if="{{maxCount > 1}}">{{currentFiles.length}}/{{maxCount}}</view>
+      </block>
+    </view>
+  </view>
+  <view class="weui-uploader__bd">
+    <view class="weui-uploader__files">
+      <block wx:for="{{currentFiles}}" wx:key="*this">
+        <view wx:if="{{item.error}}" data-index="{{index}}" bindtap="previewImage" class="weui-uploader__file weui-uploader__file_status {{shapeClass}}">
+          <image class="weui-uploader__img {{shapeClass}}" src="{{item.url}}" mode="aspectFill" />
+          <view class="weui-uploader__file-content">
+            <icon type="warn" size="23" color="#F43530"></icon>
+          </view>
+        </view>
+        <view wx:elif="{{item.loading}}" data-index="{{index}}" bindtap="previewImage" class="weui-uploader__file weui-uploader__file_status {{shapeClass}}">
+          <image class="weui-uploader__img {{shapeClass}}" src="{{item.url}}" mode="aspectFill" />
+          <view class="weui-uploader__file-content">
+            <view class="weui-loading"></view>
+          </view>
+        </view>
+        <view wx:else class="weui-uploader__file {{shapeClass}}" data-index="{{index}}" bindtap="previewImage">
+          <image class="weui-uploader__img {{shapeClass}}" src="{{item.url}}" mode="aspectFill" />
+        </view>
+      </block>
+      <view wx:if="{{currentFiles.length < maxCount && !readOnly}}" class="weui-uploader__input-box {{shapeClass}}" hover-class="weui-active">
+      <view wx:if="{{!disabled&&!isChooseAvatar}}" class="weui-uploader__input" bindtap="chooseImage"></view>
+
+      <button class="weui-uploader__input weui-uploader__input-button" wx:if="{{!disabled&&isChooseAvatar}}" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar"></button>
+
+      <view wx:if="{{disabled}}" class="weui-uploader__uploader_disabled"></view>
+    </view>
+    </view>
+
+  </view>
+  <mp-gallery class="gallery" hide-on-click="{{true}}" show-delete="{{showDelete}}" show="{{showPreview}}" binddelete="deletePic" img-urls="{{previewImageUrls}}" current="{{previewCurrent}}"></mp-gallery>
+</view>

@@ -1,0 +1,3 @@
+<view id="wd-page-root">
+  <chat llmConig="{{llmConfig}}"></chat>
+</view>

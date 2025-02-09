@@ -1,0 +1,628 @@
+@charset "UTF-8";
+._B00_Xa {
+  /* 如果生成的wxss 为空文件似乎会导致IDE编译报错， 所以这里给他弄个占位 */
+  word-break: inherit;
+}
+
+:root,
+page,
+:host {
+  --wd-font-size-1: 0.625rem;
+  --wd-font-size-2: 0.75rem;
+  --wd-font-size-3: 0.875rem;
+  --wd-font-size-4: 1rem;
+  --wd-font-size-5: 1.125rem;
+  --wd-font-size-6: 1.25rem;
+  --wd-font-size-7: 1.5rem;
+  --wd-font-size-8: 1.75rem;
+  --wd-font-size-9: 2.25rem;
+  --wd-font-size-10: 3rem;
+  --wd-font-size-11: 4rem;
+  --wd-font-size-title-9: 0.75rem;
+  --wd-font-size-title-8: 0.875rem;
+  --wd-font-size-title-7: 1rem;
+  --wd-font-size-title-6: 1.125rem;
+  --wd-font-size-title-5: 1.25rem;
+  --wd-font-size-title-4: 1.5rem;
+  --wd-font-size-title-3: 2.25rem;
+  --wd-font-size-title-2: 3rem;
+  --wd-font-size-title-1: 4rem;
+  --wd-font-base: 16px;
+  --wd-font-weight-medium: 600;
+  --wd-font-family: "San Francisco", "Helvetica Neue", Helvetica, Arial,
+    PingFangSC-Light, "Hiragina Sans GB", "WenQuanYi Micro Hei",
+    "microsoft yahei ui", "microsoft yahei", sans-serif;
+  --wd-font-size-default: var(--wd-font-size-3);
+  --wd-font-line-height-title: 1.2;
+  --wd-font-weight-title-1: 600;
+  --wd-font-weight-title-2: 600;
+  --wd-font-weight-title-3: 600;
+  --wd-font-weight-title-4: 600;
+  --wd-font-weight-title-5: 600;
+  --wd-font-weight-title-6: 600;
+  --wd-font-weight-title-7: 600;
+  --wd-font-weight-title-8: 600;
+  --wd-font-weight-title-9: 600;
+  --wd-font-weight-1: 400;
+  --wd-font-weight-regular: 400;
+  --wd-font-weight-3: 400;
+  --wd-font-line-height-title-1: 1.2;
+  --wd-font-line-height-title-2: 1.2;
+  --wd-font-line-height-title-3: 1.2;
+  --wd-font-line-height-title-4: 1.5;
+  --wd-font-line-height-title-5: 1.5;
+  --wd-font-line-height-title-6: 1.5;
+  --wd-font-line-height-title-7: 1.5;
+  --wd-font-line-height-title-8: 1.5;
+  --wd-font-line-height-title-9: 1.5;
+  --wd-font-line-height-1: 1.5;
+  --wd-font-line-height-default: 1.5;
+  --wd-font-line-height-3: 1.5;
+  --wd-font-family-code: "Consolas,Menlo,Monaco,Andale Mono,Ubuntu Mono,monospace";
+  --wd-typography-title-xs: var(--wd-font-weight-title-9)
+    var(--wd-font-size-title-9) / var(--wd-font-line-height-title-9)
+    var(--wd-font-family);
+  --wd-typography-title-sm: var(--wd-font-weight-title-8)
+    var(--wd-font-size-title-8) / var(--wd-font-line-height-title-8)
+    var(--wd-font-family);
+  --wd-typography-title-md: var(--wd-font-weight-title-7)
+    var(--wd-font-size-title-7) / var(--wd-font-line-height-title-7)
+    var(--wd-font-family);
+  --wd-typography-title-lg: var(--wd-font-weight-title-6)
+    var(--wd-font-size-title-6) / var(--wd-font-line-height-title-6)
+    var(--wd-font-family);
+  --wd-typography-title-xl: var(--wd-font-weight-title-5)
+    var(--wd-font-size-title-5) / var(--wd-font-line-height-title-5)
+    var(--wd-font-family);
+  --wd-typography-headline-sm: var(--wd-font-weight-medium)
+    var(--wd-font-size-7) / var(--wd-font-line-height-default)
+    var(--wd-font-family);
+  --wd-typography-headline-md: var(--wd-font-weight-title-4)
+    var(--wd-font-size-title-4) / var(--wd-font-line-height-title-4)
+    var(--wd-font-family);
+  --wd-typography-headline-lg: var(--wd-font-weight-title-3)
+    var(--wd-font-size-title-3) / var(--wd-font-line-height-title-3)
+    var(--wd-font-family);
+  --wd-typography-display-md: var(--wd-font-weight-title-2)
+    var(--wd-font-size-title-2) / var(--wd-font-line-height-title-2)
+    var(--wd-font-family);
+  --wd-typography-display-lg: var(--wd-font-weight-title-1)
+    var(--wd-font-size-title-1) / var(--wd-font-line-height-title-1)
+    var(--wd-font-family);
+  --wd-typography-body-xs: var(--wd-font-weight-regular) var(--wd-font-size-1) /
+    var(--wd-font-line-height-default) var(--wd-font-family);
+  --wd-typography-body-sm: var(--wd-font-weight-1) var(--wd-font-size-2) /
+    var(--wd-font-line-height-1) var(--wd-font-family);
+  --wd-typography-body-md: var(--wd-font-weight-regular) var(--wd-font-size-3) /
+    var(--wd-font-line-height-default) var(--wd-font-family);
+  --wd-typography-body-lg: var(--wd-font-weight-3) var(--wd-font-size-4) /
+    var(--wd-font-line-height-3) var(--wd-font-family);
+  --wd-typography-card-sm: var(--wd-font-weight-regular) var(--wd-font-size-5) /
+    var(--wd-font-line-height-default) var(--wd-font-family);
+  --wd-typography-card-md: var(--wd-font-weight-regular) var(--wd-font-size-6) /
+    var(--wd-font-line-height-default) var(--wd-font-family);
+  --wd-typography-card-lg: var(--wd-font-weight-regular) var(--wd-font-size-7) /
+    var(--wd-font-line-height-default) var(--wd-font-family);
+  --wd-typography-card-xl: var(--wd-font-weight-regular) var(--wd-font-size-8) /
+    var(--wd-font-line-height-default) var(--wd-font-family);
+  --wd-typography-link-sm: var(--wd-font-weight-regular) var(--wd-font-size-2) /
+    var(--wd-font-line-height-default) var(--wd-font-family);
+  --wd-typography-link-md: var(--wd-font-weight-regular) var(--wd-font-size-3) /
+    var(--wd-font-line-height-default) var(--wd-font-family);
+  --wd-typography-link-lg: var(--wd-font-weight-regular) var(--wd-font-size-4) /
+    var(--wd-font-line-height-default) var(--wd-font-family);
+  --wd-border-radius-form: var(--wd-border-radius);
+  --wd-space-base: 0.25rem;
+  --wd-form-height-sm: 1.5rem;
+  --wd-form-height-md: 2rem;
+  --wd-form-height-lg: 2.5rem;
+  --wd-form-width-sm: 15rem;
+  --wd-form-width-md: 22.5rem;
+  --wd-form-width-lg: 30rem;
+  --wd-size-icon-md: 1rem;
+  --wd-form-item-height-xs: 1;
+  --wd-form-item-height-sm: 1.5rem;
+  --wd-form-item-height-md: 2rem;
+  --wd-form-item-height-lg: 2.5rem;
+  --wd-border-radius: 3px;
+  --wd-border-radius-md: 6px;
+  --wd-border-radius-lg: 12px;
+  --wd-shadow-sm: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+  /* 卡片 */
+  --wd-shadow-default: 0px 2px 8px 0px rgba(0, 0, 0, 0.16);
+  /* 下拉菜单 / 气泡确认框 / 选择器*/
+  --wd-shadow-lg: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+  /* 弹窗的投影 */
+  --exeditor-tables-contextmenu-z: 1002;
+}
+
+.wd-h5-root {
+  --wd-font-size-1: 0.625rem;
+  --wd-font-size-2: 0.75rem;
+  --wd-font-size-3: 0.875rem;
+  --wd-font-size-4: 1rem;
+  --wd-font-size-5: 1.125rem;
+  --wd-font-size-6: 1.25rem;
+  --wd-font-size-7: 1.5rem;
+  --wd-font-size-8: 1.75rem;
+  --wd-font-size-9: 2.25rem;
+  --wd-font-size-10: 3rem;
+  --wd-font-size-11: 4rem;
+  --wd-font-size-title-9: 0.875rem;
+  --wd-font-size-title-8: 1rem;
+  --wd-font-size-title-7: 1.125rem;
+  --wd-font-size-title-6: 1.125rem;
+  --wd-font-size-title-5: 1.25rem;
+  --wd-font-size-title-4: 1.5rem;
+  --wd-font-size-title-3: 2.25rem;
+  --wd-font-size-title-2: 3rem;
+  --wd-font-size-title-1: 4rem;
+  --wd-font-base: 16px;
+  --wd-font-weight-medium: 600;
+  --wd-font-family: "San Francisco", "Helvetica Neue", Helvetica, Arial,
+    PingFangSC-Light, "Hiragina Sans GB", "WenQuanYi Micro Hei",
+    "microsoft yahei ui", "microsoft yahei", sans-serif;
+  --wd-font-size-default: var(--wd-font-size-4);
+  --wd-font-line-height-title: 1.2;
+  --wd-font-weight-title-1: 600;
+  --wd-font-weight-title-2: 600;
+  --wd-font-weight-title-3: 600;
+  --wd-font-weight-title-4: 600;
+  --wd-font-weight-title-5: 600;
+  --wd-font-weight-title-6: 600;
+  --wd-font-weight-title-7: 600;
+  --wd-font-weight-title-8: 600;
+  --wd-font-weight-title-9: 600;
+  --wd-font-weight-1: 400;
+  --wd-font-weight-regular: 400;
+  --wd-font-weight-3: 400;
+  --wd-font-line-height-title-1: 1.2;
+  --wd-font-line-height-title-2: 1.2;
+  --wd-font-line-height-title-3: 1.2;
+  --wd-font-line-height-title-4: 1.5;
+  --wd-font-line-height-title-5: 1.5;
+  --wd-font-line-height-title-6: 1.5;
+  --wd-font-line-height-title-7: 1.5;
+  --wd-font-line-height-title-8: 1.5;
+  --wd-font-line-height-title-9: 1.5;
+  --wd-font-line-height-1: 1.5;
+  --wd-font-line-height-default: 1.5;
+  --wd-font-line-height-3: 1.5;
+  --wd-font-family-code: "Consolas,Menlo,Monaco,Andale Mono,Ubuntu Mono,monospace";
+  --wd-typography-title-xs: var(--wd-font-weight-title-9)
+    var(--wd-font-size-title-9) / var(--wd-font-line-height-title-9)
+    var(--wd-font-family);
+  --wd-typography-title-sm: var(--wd-font-weight-title-8)
+    var(--wd-font-size-title-8) / var(--wd-font-line-height-title-8)
+    var(--wd-font-family);
+  --wd-typography-title-md: var(--wd-font-weight-title-7)
+    var(--wd-font-size-title-7) / var(--wd-font-line-height-title-7)
+    var(--wd-font-family);
+  --wd-typography-title-lg: var(--wd-font-weight-title-6)
+    var(--wd-font-size-title-6) / var(--wd-font-line-height-title-6)
+    var(--wd-font-family);
+  --wd-typography-title-xl: var(--wd-font-weight-title-5)
+    var(--wd-font-size-title-5) / var(--wd-font-line-height-title-5)
+    var(--wd-font-family);
+  --wd-typography-headline-sm: var(--wd-font-weight-medium)
+    var(--wd-font-size-7) / var(--wd-font-line-height-default)
+    var(--wd-font-family);
+  --wd-typography-headline-md: var(--wd-font-weight-title-4)
+    var(--wd-font-size-title-4) / var(--wd-font-line-height-title-4)
+    var(--wd-font-family);
+  --wd-typography-headline-lg: var(--wd-font-weight-title-3)
+    var(--wd-font-size-title-3) / var(--wd-font-line-height-title-3)
+    var(--wd-font-family);
+  --wd-typography-display-md: var(--wd-font-weight-title-2)
+    var(--wd-font-size-title-2) / var(--wd-font-line-height-title-2)
+    var(--wd-font-family);
+  --wd-typography-display-lg: var(--wd-font-weight-title-1)
+    var(--wd-font-size-title-1) / var(--wd-font-line-height-title-1)
+    var(--wd-font-family);
+  --wd-typography-body-xs: var(--wd-font-weight-regular) var(--wd-font-size-2) /
+    var(--wd-font-line-height-default) var(--wd-font-family);
+  --wd-typography-body-sm: var(--wd-font-weight-1) var(--wd-font-size-3) /
+    var(--wd-font-line-height-1) var(--wd-font-family);
+  --wd-typography-body-md: var(--wd-font-weight-regular) var(--wd-font-size-4) /
+    var(--wd-font-line-height-default) var(--wd-font-family);
+  --wd-typography-body-lg: var(--wd-font-weight-3) var(--wd-font-size-5) /
+    var(--wd-font-line-height-3) var(--wd-font-family);
+  --wd-typography-card-sm: var(--wd-font-weight-regular) var(--wd-font-size-5) /
+    var(--wd-font-line-height-default) var(--wd-font-family);
+  --wd-typography-card-md: var(--wd-font-weight-regular) var(--wd-font-size-6) /
+    var(--wd-font-line-height-default) var(--wd-font-family);
+  --wd-typography-card-lg: var(--wd-font-weight-regular) var(--wd-font-size-7) /
+    var(--wd-font-line-height-default) var(--wd-font-family);
+  --wd-typography-card-xl: var(--wd-font-weight-regular) var(--wd-font-size-8) /
+    var(--wd-font-line-height-default) var(--wd-font-family);
+  --wd-typography-link-sm: var(--wd-font-weight-regular) var(--wd-font-size-3) /
+    var(--wd-font-line-height-default) var(--wd-font-family);
+  --wd-typography-link-md: var(--wd-font-weight-regular) var(--wd-font-size-4) /
+    var(--wd-font-line-height-default) var(--wd-font-family);
+  --wd-typography-link-lg: var(--wd-font-weight-regular) var(--wd-font-size-5) /
+    var(--wd-font-line-height-default) var(--wd-font-family);
+  --wd-border-radius: 6px;
+  --wd-border-radius-form: var(--wd-border-radius);
+  --wd-space-base: 0.25rem;
+  --wd-form-height-sm: 2rem;
+  --wd-form-height-md: 2.5rem;
+  --wd-form-height-lg: 3rem;
+  --wd-form-width-sm: 15rem;
+  --wd-form-width-md: 20rem;
+  --wd-form-width-lg: 30rem;
+  --wd-size-icon-md: 1rem;
+}
+
+:root,
+page,
+:host,
+:root[theme-mode=light],
+page[theme-mode=light],
+.wd-theme-light {
+  --wd-white: #ffffff;
+  --wd-black: #000000;
+  --wd-white-rgb: 255, 255, 255;
+  --wd-black-rgb: 0, 0, 0;
+  --wd-color-brand-1: #ecf2fe;
+  --wd-color-brand-2: #d4e3fc;
+  --wd-color-brand-3: #bbd3fb;
+  --wd-color-brand-4: #96bbf8;
+  --wd-color-brand-5: #699ef5;
+  --wd-color-brand-6: #4787f0;
+  --wd-color-brand-7: #266fe8;
+  --wd-color-brand-8: #0052d9;
+  --wd-color-brand-9: #0034b5;
+  --wd-color-brand-10: #001f97;
+  --wd-color-warning-1: #fef3e6;
+  --wd-color-warning-2: #f9e0c7;
+  --wd-color-warning-3: #f7c797;
+  --wd-color-warning-4: #f2995f;
+  --wd-color-warning-5: #ed7b2f;
+  --wd-color-warning-6: #d35a21;
+  --wd-color-warning-7: #ba431b;
+  --wd-color-warning-8: #9e3610;
+  --wd-color-warning-9: #842b0b;
+  --wd-color-warning-10: #5a1907;
+  --wd-color-error-1: #fdecee;
+  --wd-color-error-2: #f9d7d9;
+  --wd-color-error-3: #f8b9be;
+  --wd-color-error-4: #f78d94;
+  --wd-color-error-5: #f36d78;
+  --wd-color-error-6: #e34d59;
+  --wd-color-error-7: #c9353f;
+  --wd-color-error-8: #b11f26;
+  --wd-color-error-9: #951114;
+  --wd-color-error-10: #680506;
+  --wd-color-success-1: #e8f8f2;
+  --wd-color-success-2: #bcebdc;
+  --wd-color-success-3: #85dbbe;
+  --wd-color-success-4: #48c79c;
+  --wd-color-success-5: #00a870;
+  --wd-color-success-6: #078d5c;
+  --wd-color-success-7: #067945;
+  --wd-color-success-8: #056334;
+  --wd-color-success-9: #044f2a;
+  --wd-color-success-10: #033017;
+  --wd-color-gray-1: #f3f3f3;
+  --wd-color-gray-2: #eeeeee;
+  --wd-color-gray-3: #e7e7e7;
+  --wd-color-gray-4: #dcdcdc;
+  --wd-color-gray-5: #c5c5c5;
+  --wd-color-gray-6: #a6a6a6;
+  --wd-color-gray-7: #8b8b8b;
+  --wd-color-gray-8: #777777;
+  --wd-color-gray-9: #5e5e5e;
+  --wd-color-gray-10: #4b4b4b;
+  --wd-color-gray-11: #383838;
+  --wd-color-gray-12: #2c2c2c;
+  --wd-color-gray-13: #242424;
+  --wd-color-gray-14: #181818;
+  --wd-font-white-1: rgba(255, 255, 255, 90%);
+  --wd-font-white-2: rgba(255, 255, 255, 55%);
+  --wd-font-white-3: rgba(255, 255, 255, 35%);
+  --wd-font-white-4: rgba(255, 255, 255, 22%);
+  --wd-font-gray-1: rgba(0, 0, 0, 90%);
+  --wd-font-gray-2: rgba(0, 0, 0, 60%);
+  --wd-font-gray-3: rgba(0, 0, 0, 40%);
+  --wd-font-gray-4: rgba(0, 0, 0, 26%);
+  --wd-color-brand: var(--wd-color-brand-8);
+  --wd-color-brand-light: var(--wd-color-brand-1);
+  --wd-color-brand-dark: var(--wd-color-brand-9);
+  --wd-color-brand-hover: var(--wd-color-brand-7);
+  --wd-color-brand-focus: var(--wd-color-brand-2);
+  --wd-color-brand-active: var(--wd-color-brand-9);
+  --wd-color-brand-disabled: var(--wd-color-brand-3);
+  --wd-color-warning: var(--wd-color-warning-5);
+  --wd-color-warning-light: var(--wd-color-warning-1);
+  --wd-color-warning-dark: var(--wd-color-warning-9);
+  --wd-color-warning-hover: var(--wd-color-warning-4);
+  --wd-color-warning-focus: var(--wd-color-warning-2);
+  --wd-color-warning-active: var(--wd-color-warning-6);
+  --wd-color-warning-disabled: var(--wd-color-warning-3);
+  --wd-color-error: var(--wd-color-error-6);
+  --wd-color-error-light: var(--wd-color-error-1);
+  --wd-color-error-dark: var(--wd-color-error-9);
+  --wd-color-error-hover: var(--wd-color-error-5);
+  --wd-color-error-focus: var(--wd-color-error-2);
+  --wd-color-error-active: var(--wd-color-error-7);
+  --wd-color-error-disabled: var(--wd-color-error-3);
+  --wd-color-success: var(--wd-color-success-5);
+  --wd-color-success-light: var(--wd-color-success-1);
+  --wd-color-success-dark: var(--wd-color-success-9);
+  --wd-color-success-hover: var(--wd-color-success-4);
+  --wd-color-success-focus: var(--wd-color-success-2);
+  --wd-color-success-active: var(--wd-color-success-6);
+  --wd-color-success-disabled: var(--wd-color-success-3);
+  --wd-bg-mask: rgba(var(--wd-black-rgb), 50%);
+  --wd-bg-mask-inverse: rgba(var(--wd-white-rgb), 60%);
+  --wd-color-bg-page: var(--wd-color-gray-1);
+  --wd-color-bg-container: var(--wd-white);
+  --wd-color-bg-container-hover: var(--wd-color-gray-1);
+  --wd-color-bg-container-active: var(
+    --wd-color-gray-2
+  );
+  --wd-color-bg-container-select: var(--wd-white);
+  --wd-color-bg-secondarycontainer: var(--wd-color-gray-1);
+  --wd-color-bg-secondarycontainer-hover: var(
+    --wd-color-gray-2
+  );
+  --wd-color-bg-secondarycontainer-active: var(
+    --wd-color-gray-3
+  );
+  --wd-color-bg-component: var(--wd-color-gray-3);
+  --wd-color-bg-component-hover: var(--wd-color-gray-4);
+  --wd-color-bg-component-active: var(
+    --wd-color-gray-6
+  );
+  --wd-color-bg-component-disabled: var(
+    --wd-color-gray-2
+  );
+  --wd-color-bg-specialcomponent: var(--wd-white);
+  --wd-color-bg-hover: rgba(0, 0, 0, 0.05);
+  --wd-color-bg-active: rgba(0, 0, 0, 0.1);
+  --wd-color-text-default: var(--wd-font-gray-1);
+  --wd-color-text-secondary: var(--wd-font-gray-2);
+  --wd-color-text-placeholder: var(--wd-font-gray-3);
+  --wd-color-text-disabled: var(--wd-font-gray-4);
+  --wd-color-text-inverse: var(--wd-white);
+  --wd-color-text-brand: var(--wd-color-brand-6);
+  --wd-color-text-link: var(--wd-color-brand);
+  --wd-color-text-link-hover: var(--wd-color-brand-hover);
+  --wd-color-text-link-active: var(--wd-color-brand-active);
+  --wd-color-text-link-focus: var(--wd-color-brand-focus);
+  --wd-color-text-link-disabled: var(
+    --wd-color-brand-disabled
+  );
+  --wd-color-text-tooltips: var(--wd-white);
+  --wd-color-text-success: var(--wd-color-success-active);
+  --wd-color-text-error: var(--wd-color-error);
+  --wd-color-text-warning: var(--wd-color-warning-active);
+  --wd-color-border-separator: var(--wd-color-gray-3);
+  --wd-color-border-default: var(--wd-color-gray-4);
+  --wd-color-border-hover: var(--wd-color-gray-5);
+  --wd-color-border-disabled: var(--wd-color-gray-4);
+  --wd-color-shadow-1: rgba(54, 58, 80, 16%);
+  --wd-color-shadow-2: rgba(var(--wd-black-rgb), 32%);
+  --wd-color-shadow-3: rgba(19, 41, 75, 20%);
+  --wd-shadow-default: 0 0 16px 0 var(--wd-color-shadow-1);
+  --wd-shadow-sm: 0 2px 4px 0 var(--wd-color-shadow-2);
+  --wd-shadow-dropdown: 0 2px 4px 0 var(--wd-color-shadow-2);
+  --wd-shadow-card: 0 2px 4px 0 var(--wd-color-shadow-2);
+  --wd-shadow-message: 0 0 20px 0 var(--wd-color-shadow-3);
+  --wd-shadow-inset-top: inset 0 0.5px 0 #dcdcdc;
+  --wd-shadow-inset-right: inset 0.5px 0 0 #dcdcdc;
+  --wd-shadow-inset-bottom: inset 0 -0.5px 0 #dcdcdc;
+  --wd-shadow-inset-left: inset -0.5px 0 0 #dcdcdc;
+  --wd-shadow-inset: var(--wd-shadow-inset-top), var(--wd-shadow-inset-right),
+    var(--wd-shadow-inset-bottom), var(--wd-shadow-inset-left);
+  --wd-shadow-table: 0 2px 4px 0 rgba(var(--wd-black-rgb), 5%);
+  --wd-color-scrollbar: rgba(var(--wd-black-rgb), 10%);
+  --wd-color-scrollbar-hover: rgba(var(--wd-black-rgb), 30%);
+  --wd-color-scrolltrack: var(--wd-white);
+  --wd-color-focus-ring: var(--wd-color-brand-2);
+  --wd-color-text-form-default: var(--wd-color-text-default);
+  --wd-color-text-form-label: var(--wd-color-text-default);
+  --wd-color-text-form-hover: var(--wd-color-text-default);
+  --wd-color-text-form-focus: var(--wd-color-text-default);
+  --wd-color-text-form-disabled: var(--wd-color-text-disabled);
+  --wd-color-text-form-placeholder: var(--wd-color-text-placeholder);
+  --wd-color-border-form-default: var(--wd-color-border-default);
+  --wd-color-border-form-hover: var(--wd-color-border-hover);
+  --wd-color-border-form-focus: var(--wd-color-brand);
+  --wd-color-border-form-disabled: var(--wd-color-border-disabled);
+  --wd-color-bg-form-default: var(--wd-color-bg-container);
+  --wd-color-bg-form-hover: var(--wd-color-bg-container-hover);
+  --wd-color-bg-form-focus: var(--wd-color-bg-container);
+  --wd-color-bg-form-disabled: var(--wd-color-gray-2);
+  --wd-color-icon: var(--wd-color-text-default);
+  --wd-color-icon-dark: var(--wd-color-text-default);
+  --wd-color-icon-brand: var(--wd-color-brand);
+  --wd-color-icon-error: var(--wd-color-error);
+  --wd-color-icon-warning: var(--wd-color-warning);
+  --wd-color-icon-success: var(--wd-color-success);
+}
+
+page,
+.wd-mp-root {
+  --wd-font-size-1: 0.625rem;
+  --wd-font-size-2: 0.75rem;
+  --wd-font-size-3: 0.875rem;
+  --wd-font-size-4: 1rem;
+  --wd-font-size-5: 1.125rem;
+  --wd-font-size-6: 1.25rem;
+  --wd-font-size-7: 1.5rem;
+  --wd-font-size-8: 1.75rem;
+  --wd-font-size-9: 2.25rem;
+  --wd-font-size-10: 3rem;
+  --wd-font-size-11: 4rem;
+  --wd-font-size-title-9: 0.875rem;
+  --wd-font-size-title-8: 1rem;
+  --wd-font-size-title-7: 1.125rem;
+  --wd-font-size-title-6: 1.125rem;
+  --wd-font-size-title-5: 1.25rem;
+  --wd-font-size-title-4: 1.5rem;
+  --wd-font-size-title-3: 2.25rem;
+  --wd-font-size-title-2: 3rem;
+  --wd-font-size-title-1: 4rem;
+  --wd-font-base: 16px;
+  --wd-font-weight-medium: 600;
+  --wd-font-family: "San Francisco", "Helvetica Neue", Helvetica, Arial,
+    PingFangSC-Light, "Hiragina Sans GB", "WenQuanYi Micro Hei",
+    "microsoft yahei ui", "microsoft yahei", sans-serif;
+  --wd-font-size-default: var(--wd-font-size-4);
+  --wd-font-line-height-title: 1.2;
+  --wd-font-weight-title-1: 600;
+  --wd-font-weight-title-2: 600;
+  --wd-font-weight-title-3: 600;
+  --wd-font-weight-title-4: 600;
+  --wd-font-weight-title-5: 600;
+  --wd-font-weight-title-6: 600;
+  --wd-font-weight-title-7: 600;
+  --wd-font-weight-title-8: 600;
+  --wd-font-weight-title-9: 600;
+  --wd-font-weight-1: 400;
+  --wd-font-weight-regular: 400;
+  --wd-font-weight-3: 400;
+  --wd-font-line-height-title-1: 1.2;
+  --wd-font-line-height-title-2: 1.2;
+  --wd-font-line-height-title-3: 1.2;
+  --wd-font-line-height-title-4: 1.5;
+  --wd-font-line-height-title-5: 1.5;
+  --wd-font-line-height-title-6: 1.5;
+  --wd-font-line-height-title-7: 1.5;
+  --wd-font-line-height-title-8: 1.5;
+  --wd-font-line-height-title-9: 1.5;
+  --wd-font-line-height-1: 1.5;
+  --wd-font-line-height-default: 1.5;
+  --wd-font-line-height-3: 1.5;
+  --wd-font-family-code: "Consolas,Menlo,Monaco,Andale Mono,Ubuntu Mono,monospace";
+  --wd-typography-title-xs: var(--wd-font-weight-title-9)
+    var(--wd-font-size-title-9) / var(--wd-font-line-height-title-9)
+    var(--wd-font-family);
+  --wd-typography-title-sm: var(--wd-font-weight-title-8)
+    var(--wd-font-size-title-8) / var(--wd-font-line-height-title-8)
+    var(--wd-font-family);
+  --wd-typography-title-md: var(--wd-font-weight-title-7)
+    var(--wd-font-size-title-7) / var(--wd-font-line-height-title-7)
+    var(--wd-font-family);
+  --wd-typography-title-lg: var(--wd-font-weight-title-6)
+    var(--wd-font-size-title-6) / var(--wd-font-line-height-title-6)
+    var(--wd-font-family);
+  --wd-typography-title-xl: var(--wd-font-weight-title-5)
+    var(--wd-font-size-title-5) / var(--wd-font-line-height-title-5)
+    var(--wd-font-family);
+  --wd-typography-headline-sm: var(--wd-font-weight-medium)
+    var(--wd-font-size-7) / var(--wd-font-line-height-default)
+    var(--wd-font-family);
+  --wd-typography-headline-md: var(--wd-font-weight-title-4)
+    var(--wd-font-size-title-4) / var(--wd-font-line-height-title-4)
+    var(--wd-font-family);
+  --wd-typography-headline-lg: var(--wd-font-weight-title-3)
+    var(--wd-font-size-title-3) / var(--wd-font-line-height-title-3)
+    var(--wd-font-family);
+  --wd-typography-display-md: var(--wd-font-weight-title-2)
+    var(--wd-font-size-title-2) / var(--wd-font-line-height-title-2)
+    var(--wd-font-family);
+  --wd-typography-display-lg: var(--wd-font-weight-title-1)
+    var(--wd-font-size-title-1) / var(--wd-font-line-height-title-1)
+    var(--wd-font-family);
+  --wd-typography-body-xs: var(--wd-font-weight-regular) var(--wd-font-size-2) /
+    var(--wd-font-line-height-default) var(--wd-font-family);
+  --wd-typography-body-sm: var(--wd-font-weight-1) var(--wd-font-size-3) /
+    var(--wd-font-line-height-1) var(--wd-font-family);
+  --wd-typography-body-md: var(--wd-font-weight-regular) var(--wd-font-size-4) /
+    var(--wd-font-line-height-default) var(--wd-font-family);
+  --wd-typography-body-lg: var(--wd-font-weight-3) var(--wd-font-size-5) /
+    var(--wd-font-line-height-3) var(--wd-font-family);
+  --wd-typography-card-sm: var(--wd-font-weight-regular) var(--wd-font-size-5) /
+    var(--wd-font-line-height-default) var(--wd-font-family);
+  --wd-typography-card-md: var(--wd-font-weight-regular) var(--wd-font-size-6) /
+    var(--wd-font-line-height-default) var(--wd-font-family);
+  --wd-typography-card-lg: var(--wd-font-weight-regular) var(--wd-font-size-7) /
+    var(--wd-font-line-height-default) var(--wd-font-family);
+  --wd-typography-card-xl: var(--wd-font-weight-regular) var(--wd-font-size-8) /
+    var(--wd-font-line-height-default) var(--wd-font-family);
+  --wd-typography-link-sm: var(--wd-font-weight-regular) var(--wd-font-size-3) /
+    var(--wd-font-line-height-default) var(--wd-font-family);
+  --wd-typography-link-md: var(--wd-font-weight-regular) var(--wd-font-size-4) /
+    var(--wd-font-line-height-default) var(--wd-font-family);
+  --wd-typography-link-lg: var(--wd-font-weight-regular) var(--wd-font-size-5) /
+    var(--wd-font-line-height-default) var(--wd-font-family);
+  --wd-border-radius: 6px;
+  --wd-border-radius-form: var(--wd-border-radius);
+  --wd-space-base: 0.25rem;
+  --wd-form-height-sm: 2rem;
+  --wd-form-height-md: 2.5rem;
+  --wd-form-height-lg: 3rem;
+  --wd-form-width-sm: 15rem;
+  --wd-form-width-md: 20rem;
+  --wd-form-width-lg: 30rem;
+  --wd-size-icon-md: 1rem;
+  font-family: var(--wd-font-family);
+  font-size: var(--wd-font-size-default);
+}
+
+.wd-form,
+.wd-form-item,
+.gsd-h5-react-formitem {
+  --wd-form-item-mb: calc(var(--wd-space-base) * 5);
+  --wd-form-item-pd: calc(var(--wd-space-base) * 4);
+  --wd-form-item-label-width: 6em;
+  --wd-form-item-label-mr: calc(var(--wd-space-base) * 4);
+  --wd-form-item-label-height-xs: var(--wd-form-item-height-xs);
+  --wd-form-item-label-height-sm: var(--wd-form-item-height-sm);
+  --wd-form-item-label-height-md: var(--wd-form-item-height-md);
+  --wd-form-item-label-height-lg: var(--wd-form-item-height-lg);
+  --wd-form-container-width-sm: 31.75rem;
+  --wd-form-container-width-md: 39.25rem;
+  --wd-form-container-width-lg: 49.25rem;
+  --wd-form-item-width-sm: 20.25rem;
+  --wd-form-item-width-md: 27.75rem;
+  --wd-form-item-width-lg: 35.25rem;
+  --wd-form-item-label-color: var(--wd-color-text-form-label);
+  --wd-form-item-label-font-size: var(--wd-font-size-default);
+  --wd-form-item-label-font-weight: var(--wd-font-weight-regular);
+  --wd-form-item-label-color-disabled: var(--wd-color-text-form-disabled);
+  --wd-form-item-help-text-color: var(--wd-color-text-placeholder);
+  --wd-form-item-help-text-font-size: var(--wd-font-size-3);
+  --wd-form-item-border-color: var(--wd-color-border-default);
+  --wd-form-item-border-width: 0.5px;
+  --wd-form-title-size: var(--wd-font-size-6);
+  --wd-form-title-weight: 500;
+  --wd-form-title-line-height: calc(var(--wd-space-base) * 7);
+  --wd-form-title-border-color: var(--wd-color-border-separator);
+  --wd-form-title-pd-btm: calc(var(--wd-space-base) * 3);
+  --wd-form-readonly-font-weight: var(--wd-font-weight-regular);
+  --wd-form-readonly-font-size: var(--wd-font-size-4);
+  --wd-form-readonly-web-font-size: var(--wd-font-size-3);
+  --wd-form-readonly-font-color: var(--wd-font-gray-2);
+  --wd-input-limit-number-size: var(--wd-font-size-2);
+  --wd-input-limit-number-weight: var(--wd-font-weight-regular);
+  --wd-input-limit-number-color: var(--wd-color-text-placeholder);
+}
+
+.wd-form.wd-form--weui,
+.wd-form-item.wd-form-item--weui {
+  --wd-form-item-mb: calc(var(--wd-space-base) * 4);
+  --wd-form-item-label-font-size: var(--wd-font-size-4);
+  --wd-form-weui-control-height: calc(var(--wd-space-base) * 14);
+  --wd-form-weui-item-label-pd: calc(var(--wd-space-base) * 3);
+  --wd-form-weui-item-press-border-radius: var(--wd-space-base);
+  --wd-form-weui-input-wrap-bg-focus: var(--wd-color-gray-1);
+  --wd-form-weui-input-wrap-text-disabled: var(--wd-color-text-form-disabled);
+  --wd-form-weui-input-group-addon-min-width: 5.125rem;
+}
+
+page {
+  /* 修复小程序 Picker 组件滑动体验问题 */
+  touch-action: pan-y;
+  box-sizing: border-box;
+}
+
+page,
+page view,
+page element,
+page text,
+page image {
+  box-sizing: border-box;
+}

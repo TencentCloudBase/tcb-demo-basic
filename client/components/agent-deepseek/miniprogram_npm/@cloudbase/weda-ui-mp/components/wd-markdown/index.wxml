@@ -1,0 +1,3 @@
+<view class="wd-markdown wd-mp-markdown {{className}}" style="{{style}}" id="id">
+  <richText value="{{__html}}" />
+</view>

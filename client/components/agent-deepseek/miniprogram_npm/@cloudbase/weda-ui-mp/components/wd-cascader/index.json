@@ -1,0 +1,12 @@
+{
+  "component": true,
+  "styleIsolation": "shared",
+  "usingComponents": {
+    "wd-form-item": "../wd-form-item/index",
+    "wd-input-group": "../wd-input-group/index",
+    "wd-input-wrap": "../wd-input-wrap/index",
+    "wd-modal": "../wd-date/modal/index",
+    "wd-tabs": "../wd-tabs",
+    "wd-icon": "../wd-icon"
+  }
+}

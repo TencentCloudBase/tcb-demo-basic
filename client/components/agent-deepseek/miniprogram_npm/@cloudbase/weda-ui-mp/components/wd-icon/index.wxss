@@ -1,0 +1,4 @@
+@import '../../style/wd-design.wxss';
+@import '../../style/weda-ui.wxss';
+@import './wd-icon.wxss';
+@import '../../style/wd-font-icon.wxss';

@@ -1,0 +1,4 @@
+  <wd-tabs id="{{id}}" style="{{style}}" class="{{classPrefix + '-top-tab-root'}} {{classPrefix + '-mp-top-tab-root'}} {{className}}" list="{{tabsData}}" selectedIndex="{{selectedValue}}" direction="horizontal" bind:onCurrent="getCurrent" bind:change="change" currentIndex="{{currentIndex}}">
+    <slot wx:if="{{isSlotAuto}}" name="autoPanel_{{isMultipleSlot?slotKey:'1'}}"></slot>
+    <slot wx:elif="{{isMultipleSlot}}" name="panel{{currentIndex + 1}}"></slot>
+  </wd-tabs>

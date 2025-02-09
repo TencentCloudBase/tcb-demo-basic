@@ -1,0 +1,163 @@
+@import '../../../style/weda-ui.wxss';
+
+.weda-uploader-files {
+  width: 100%;
+}
+
+.weda-uploader-files__hd {
+  width: 100%;
+  /* padding: 16px; */
+  padding-left: 0;
+}
+
+.weda-uploader-files__btn::after {
+  border: 1px solid #dcdcdc;
+  border-radius: 3px;
+  width: 100%;
+  height: 100%;
+  transform: none;
+}
+
+.weda-uploader-files__title {
+  line-height: 20px;
+  padding: 16px;
+  width: 130px;
+}
+
+.weda-uploader-files__btn-contain {
+  padding: 12px 0;
+}
+
+/* theme */
+.weda-uploader-files__btn {
+  margin: 0;
+  width: fit-content;
+  height: 32px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--wd-color-brand, #000);
+  border: 1px solid #dcdcdc;
+  border-radius: 3px;
+  font-weight: normal;
+  background-color: transparent;
+}
+
+.weda-uploader-files__tips {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.weda-uploader-files__item {
+  width: 100%;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.weda-uploader-files__item-left {
+  flex: 1;
+  margin-right: 4px;
+  max-width: calc(100% - 65px);
+}
+
+.weda-uploader-files__file-detail {
+  display: flex;
+  align-items: center;
+}
+
+.weda-uploader-files__file-name {
+  font-size: 14px;
+  line-height: 22px;
+  color: rgba(0, 0, 0, 0.9);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 200px;
+}
+
+.weda-uploader-files__file-status {
+  margin-right: 4px;
+  width: 28%;
+}
+
+.weda-uploader-files__file-size {
+  margin-right: 4px;
+}
+
+.weda-uploader-files__file-status--msg {
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.weda-uploader-files__file-foot {
+  font-size: 12px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.4);
+  margin-top: 8px;
+  display: flex;
+}
+
+.weda-uploader-files__btn-group {
+  display: flex;
+  width: 60px;
+  justify-content: space-between;
+}
+
+.weda-uploader-files__icon {
+  width: 24px;
+  height: 24px;
+}
+
+.weda-uploader-files__icon + .weda-uploader-files__icon {
+  margin-left: 4px;
+}
+
+.weda-uploader-files__progress {
+  margin-top: 4px;
+}
+
+.weda-uploader-files .weda-uploader-files_split {
+  width: 100%;
+  height: 8px;
+  background-color: #f6f6f6;
+}
+
+/* 标准化样式适配 start */
+.wd-form-item.wd-mp-upload-file-root .weda-uploader-files .weda-uploader-files__btn-contain {
+  padding: 0;
+}
+
+.wd-form-item.wd-mp-upload-file-root .weda-uploader-files .weda-uploader-files__file-status {
+  width: auto;
+}
+
+.wd-form-item.wd-mp-upload-file-root .weda-uploader-files .weda-uploader-files__file-foot {
+  margin: 0;
+}
+
+.wd-form-item.wd-mp-upload-file-root .weda-uploader-files .weda-uploader-files__item {
+  padding: 0;
+}
+
+.wd-form-item.wd-mp-upload-file-root .wd-form-item-wrap__control {
+  overflow-x: hidden;
+}
+
+.wd-form-item.wd-mp-upload-file-root .weda-upload-file-mobile__btn-group {
+  overflow-x: hidden;
+}
+
+.wd-form-item.wd-mp-upload-file-root .weui-upload-file {
+  width: 100%;
+}
+
+/* 标准化样式适配 end */

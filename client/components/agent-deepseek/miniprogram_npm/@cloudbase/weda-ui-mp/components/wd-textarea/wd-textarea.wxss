@@ -1,0 +1,98 @@
+@charset "UTF-8";
+._B00_Xa {
+  /* 如果生成的wxss 为空文件似乎会导致IDE编译报错， 所以这里给他弄个占位 */
+  word-break: inherit;
+}
+
+.wd-form-textarea-wrap {
+  --wd-form-textarea-group-max-height: 13.125rem;
+  --wd-form-textarea-wrap-height-sm: var(--wd-form-height-sm);
+  --wd-form-textarea-wrap-height-md: 3.5rem;
+  --wd-form-textarea-wrap-restriction-height-md: 3rem;
+  --wd-form-textarea-wrap-height-lg: var(--wd-form-height-lg);
+  --wd-form-textarea-wrap-width-sm: var(--wd-form-width-sm);
+  --wd-form-textarea-wrap-width-md: var(--wd-form-width-md);
+  --wd-form-textarea-wrap-width-lg: var(--wd-form-width-lg);
+  --wd-form-textarea-label-font-weight: var(--wd-font-weight-regular);
+  --wd-form-textarea-label-font-size: var(--wd-font-size-2);
+  --wd-form-textarea-label-height: 1.25rem;
+  --wd-form-textarea-label-color: var(--wd-color-text-placeholder);
+  --wd-form-textarea-wrap-padding: 0.3125rem 0.3125rem 0.3125rem 0.5rem;
+}
+
+.wd-form-textarea-wrap {
+  color: var(--wd-color-text-default);
+  font-size: var(--wd-font-size-default);
+  line-height: var(--wd-font-line-height-default);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  padding: var(--wd-form-textarea-wrap-padding);
+}
+.wd-form-textarea-wrap.is-disabled textarea {
+  cursor: not-allowed;
+}
+.wd-form-textarea-wrap .wd-form-input-wrap__content {
+  flex-direction: column;
+}
+.wd-form-textarea-wrap__label {
+  font-weight: var(--wd-form-textarea-label-font-weight);
+  font-size: var(--wd-form-textarea-label-font-size);
+  line-height: var(--wd-form-textarea-label-height);
+  width: 100%;
+  text-align: right;
+  color: var(--wd-form-textarea-label-color);
+  margin-top: auto;
+}
+.wd-form-textarea-wrap__input {
+  max-height: var(--wd-form-textarea-group-max-height);
+}
+
+.wd-form-textarea-wrap.textarea-restriction textarea, .wd-form-textarea-wrap.textarea-restriction__input {
+  min-height: var(--wd-form-textarea-wrap-restriction-height-md);
+  resize: none;
+}
+
+.wd-form-textarea-wrap.size-font-sm {
+  font: var(--wd-typography-body-sm);
+}
+.wd-form-textarea-wrap.size-height-sm {
+  height: var(--wd-form-height-sm);
+}
+.wd-form-textarea-wrap.size-width-sm {
+  width: var(--wd-form-width-sm);
+}
+.wd-form-textarea-wrap.size-font-md {
+  font: var(--wd-typography-body-md);
+}
+.wd-form-textarea-wrap.size-height-md {
+  height: var(--wd-form-item-height-md);
+}
+.wd-form-textarea-wrap.size-width-md {
+  width: var(--wd-form-width-md);
+}
+.wd-form-textarea-wrap.size-font-lg {
+  font: var(--wd-typography-body-lg);
+}
+.wd-form-textarea-wrap.size-height-lg {
+  height: var(--wd-form-item-height-lg);
+}
+.wd-form-textarea-wrap.size-width-lg {
+  width: var(--wd-form-width-lg);
+}
+.wd-form-textarea-wrap.size-width-hundred {
+  width: 100%;
+}
+.wd-form-textarea-wrap.size-height-sm {
+  height: var(--wd-form-textarea-wrap-height-md);
+}
+.wd-form-textarea-wrap.size-height-md {
+  height: var(--wd-form-textarea-wrap-height-md);
+}
+.wd-form-textarea-wrap.size-height-lg {
+  height: var(--wd-form-textarea-wrap-height-md);
+}

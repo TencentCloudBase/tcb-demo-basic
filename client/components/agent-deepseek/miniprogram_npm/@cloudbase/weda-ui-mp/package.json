@@ -1,0 +1,19 @@
+{
+  "name": "@cloudbase/weda-ui-mp",
+  "miniprogram": "./",
+  "packageManager": "yarn@3.0.2",
+  "dependencies": {},
+  "version": "3.14.1",
+  "main": "./",
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "@cloudbase/weda-client": ">=1.0.31",
+    "miniprogram-gesture": "^1",
+    "miniprogram-api-promise": "^1",
+    "lodash.get": "*",
+    "lodash.set": "*",
+    "mobx": "^5"
+  }
+}

@@ -1,0 +1,26 @@
+/* materials/gsd-h5-react/components/form/uploader/weui-uploader.wxss */
+.weui-uploader .img-shape-rounded-tectangle {
+  border-radius: 6px;
+}
+.weui-uploader .img-shape-circular {
+  border-radius: 50%;
+}
+.weui-uploader .img-shape-ectangle {
+  border-radius: 0px;
+}
+.weui-uploader__files .img-shape-ectangle::before {
+  border-radius: 0px;
+}
+.weui-uploader__files .img-shape-circular::before {
+  border-radius: 50%;
+}
+.weui-uploader__files .img-shape-rounded-tectangle::before {
+  border-radius: 6px;
+}
+
+.weui-uploader__files .weui-uploader__input-box .weui-uploader__input-button {
+  width: 100%;
+}
+.weui-uploader__bd .weui-uploader__input-box .weui-uploader__input-button {
+  width: 100%;
+}

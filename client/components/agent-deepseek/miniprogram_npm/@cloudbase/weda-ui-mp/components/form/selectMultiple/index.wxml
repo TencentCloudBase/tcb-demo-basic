@@ -1,0 +1,34 @@
+<formcell className="{{cls}}" style="{{style}}" label="{{labelVisible ? label : null}}" layout="{{layout}}" multiCell="{{false}}" requiredFlag="{{requiredFlag}}">
+  <wd-form-item-read-only version="{{version}}" readOnly="{{readOnly}}" readValue="{{displayLabel}}">
+    <view class="{{subCls}}">
+      <view class="weui-cell__bd">
+        <view class="weui-picker__group weui-input select-picker weda-ui-tag" id="select-picker" bindtap="onOpenPicker" data-show="true">
+          <block wx:if="{{!isEmpty}}">
+            <view class="weda-ui-show-label">{{displayLabel}}</view>
+            <view class="weda-ui-select-multiple-picker-clear-icon" catchtap="onSelectPicker" data-clear="true"></view>
+          </block>
+          <block wx:else>
+            <view><label class="weda-ui-placeholder weui-input__placeholder">{{placeholder}}</label></view>
+          </block>
+        </view>
+        <block wx:if="{{allPickerShow}}">
+          <dropdownSelect
+            class="weui-picker__group weui-input"
+            bindchange="onChange"
+            bind:_childFetchData="_childFetchData"
+            bind:onSelectPicker="onSelectPicker"
+            bind:onClosePicker="onClosePicker"
+            option="{{option}}"
+            loadStatus="{{loadStatus}}"
+            searchStatus="{{searchStatus}}"
+            displayLabel="{{displayLabel}}"
+            selectedValue="{{value}}"
+            ignoreCase="{{ignoreCase}}"
+            staticSearchable="{{staticSearchable}}"
+            bind:search="onSearch"
+          />
+        </block>
+      </view>
+    </view>
+  </wd-form-item-read-only>
+</formcell>

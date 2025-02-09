@@ -1,0 +1,52 @@
+<block wx:if="{{visible}}">
+  <wd-form-item
+    id="{{id}}"
+    className="{{className}}"
+    style="{{style}}"
+    label="{{label}}"
+    labelVisible="{{labelVisible}}"
+    labelTips="{{labelTips}}"
+    labelWidth="{{labelWidth}}"
+    labelAlign="{{labelAlign}}"
+    labelWrap="{{labelWrap}}"
+    layout="{{actualLayout}}"
+    extra="{{extra}}"
+    required="{{required}}"
+    requiredFlag="{{requiredFlag}}"
+    validateState="{{validateState}}"
+    validateErrorMsg="{{validateErrorMsg}}"
+    classRoot="{{classRoot}}"
+    size="{{size}}"
+    borderedH5="{{borderedH5}}"
+  >
+    <wd-input-group before="{{before}}" after="{{after}}" block="{{true}}" size="{{_size}}" classRoot="{{classRoot}}" readOnly="{{readOnly}}">
+      <wd-input-wrap block="{{block}}" classRoot="{{classRoot}}" before="{{before}}" after="{{after}}" disabled="{{disabled}}" prefixType="{{prefixType}}" prefixIcon="{{prefixIcon}}" prefixSrc="{{prefixSrc}}" suffixType="{{_suffixType}}" suffixIcon="{{_suffixIcon}}" suffixSrc="{{suffixSrc}}" hasClearIcon="{{hasClearIcon}}" bind:onClear="handleClear" readOnly="{{readOnly}}">
+        <old-select
+          name="{{name}}"
+          labelVisible="{{false}}"
+          label=""
+          defaultValue="{{value}}"
+          enumName="{{enumName}}"
+          format="{{format === 'many-one' ? 'father-son' : format}}"
+          placeholder="{{placeholder}}"
+          primaryField="{{primaryField}}"
+          range="{{range}}"
+          size="full"
+          tipBlock="{{tipBlock}}"
+          viewId="{{viewId}}"
+          where="{{where}}"
+          dataSourceName="{{dataSourceName}}"
+          readOnly="{{readOnly}}"
+          disabled="{{disabled || readOnly}}"
+          version="wd"
+          mode="selector"
+          ignoreCase="{{ignoreCase}}"
+          staticSearchable="{{staticSearchable}}"
+          bind:change="handleChange"
+          bind:changeOptions="changeOptions"
+          bind:search="search"
+        />
+      </wd-input-wrap>
+    </wd-input-group>
+  </wd-form-item>
+</block>

@@ -1,0 +1,69 @@
+<view style="{{style}}" class="{{className}} {{classPrefix + '-menulayout'}} {{classPrefix + '-menulayout-root'}} {{classPrefix + '-menulayout-h5-root'}} {{classPrefix + '-menulayout--' + typeFinal}}">
+  <block wx:if="{{typeFinal === 'tab'}}">
+    <view class="{{classPrefix + '-menulayout-body__content'}} {{classPrefix + '-menulayout__body'}}">
+      <slot name="contentSlot"></slot>
+    </view>
+    <view class="{{classPrefix + '-menulayout-body__left-slot'}} {{classPrefix + '-menulayout-body__footer'}}">
+      <slot name="footerSlot"></slot>
+    </view>
+  </block>
+
+  <block wx:elif="{{typeFinal === 'nav'}}">
+    <view class="{{classPrefix + '-menulayout-header'}}">
+      <slot name="headRightSlot"></slot>
+    </view>
+    <view class="{{classPrefix + '-menulayout-body__content'}} {{classPrefix + '-menulayout__body'}}">
+      <slot name="contentSlot"></slot>
+    </view>
+  </block>
+
+  <block wx:elif="{{typeFinal === 'navTab'}}">
+    <view class="{{classPrefix + '-menulayout-header'}}">
+      <slot name="headRightSlot"></slot>
+    </view>
+    <view class="{{classPrefix + '-menulayout-body__content'}} {{classPrefix + '-menulayout__body'}}">
+      <slot name="contentSlot"></slot>
+    </view>
+    <view class="{{classPrefix + '-menulayout-body__left-slot'}} {{classPrefix + '-menulayout-body__footer'}}">
+      <slot name="footerSlot"></slot>
+    </view>
+  </block>
+
+  <block wx:else>
+    <view class="{{classPrefix + '-menulayout__bar-wrap'}}">
+      <view class="{{classPrefix + '-menulayout__bar-logo'}} ">
+        <view class="{{classPrefix + '-menulayout__slot'}}">
+          <slot name="headSlot"></slot>
+        </view>
+      </view>
+
+      <view class="{{classPrefix + '-menulayout__bar-content'}} ">
+        <view class="{{classPrefix + '-menulayout__slot'}}" style="justify-content: flex-end">
+          <slot name="headRightSlot"></slot>
+        </view>
+      </view>
+
+      <view class="{{classPrefix + '-menulayout__bar-extra'}}">
+        <wd-icon wx:if="{{!visible}}" name="td:view-list" size="md" bindtap="menuOpen" />
+        <wd-icon wx:else name="td:close" size="md" bindtap="menuClose" />
+      </view>
+
+      <view class="{{classPrefix + '-menulayout-h5__drawer'}} {{classPrefix + '-menulayout-menu'}}">
+        <view hidden="{{!visible}}">
+          <wd-menu-list menu="{{menu}}" defaultOpened="{{defaultOpened}}" selectedMenuKey="{{selectedMenuKey}}" bind:menuClick="menuClick" />
+        </view>
+        <view hidden="{{!visible}}" class="{{classPrefix + '-menulayout-h5__drawer-slot'}} is-not-content">
+          <view class="{{classPrefix + '-menulayout__slot'}} {{classPrefix + '-menulayout-body__footer'}}">
+            <slot name="footerSlot"></slot>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="{{classPrefix + '-menulayout-body'}}">
+      <view class="{{classPrefix + '-menulayout-body__content'}}">
+        <slot name="contentSlot"></slot>
+      </view>
+    </view>
+  </block>
+</view>

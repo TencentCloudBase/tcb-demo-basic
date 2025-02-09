@@ -1,0 +1,16 @@
+<block wx:if="{{!readOnly && (!!before || !!after)}}">
+  <view class="{{inputGroupCls}}">
+    <block wx:if="{{before}}">
+      <view class="{{inputGroup}}__addon {{inputGroup}}__addon-left {{root}}__text-before" data-type="beforeText" bind:tap="inputAdornmentClick">{{before}}</view>
+    </block>
+    <view class="{{inputGroup}}__content">
+      <slot></slot>
+    </view>
+    <block wx:if="{{after}}">
+      <view class="{{inputGroup}}__addon {{inputGroup}}__addon-right {{root}}__text-after" data-type="afterText" bind:tap="inputAdornmentClick">{{after}}</view>
+    </block>
+  </view>
+</block>
+<block wx:else>
+  <slot></slot>
+</block>

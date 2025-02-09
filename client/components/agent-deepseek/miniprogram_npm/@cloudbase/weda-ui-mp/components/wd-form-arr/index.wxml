@@ -1,0 +1,5 @@
+<block wx:if="{{visible}}">
+  <wd-form-item-obj id="{{id}}" mode="{{mode}}"  className="{{className}}" style="{{style}}" label="{{label}}" labelVisible="{{labelVisible}}" labelTips="{{labelTips}}" labelWidth="{{labelWidth}}" labelAlign="{{labelAlign}}" labelWrap="{{labelWrap}}" extra="{{extra}}" classRoot="{{classRoot}}" layout="{{_layout}}">
+    <slot></slot>
+  </wd-form-item-obj>
+</block>
