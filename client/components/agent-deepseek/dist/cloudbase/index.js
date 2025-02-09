@@ -974,6 +974,7 @@ const evtListeners = {
       key: "wk16hrnqmtc",
       sourceKey: "general-func:iife",
       handler: function ({ event, $w, params }) {
+        const $comp = $w.comp;
         return (({ event }) => {
           $comp.dataset.state.ai_bot_ui_scroll_to_bottom = true;
         })({ event });
@@ -989,6 +990,7 @@ const evtListeners = {
       key: "w3wu6xo0zn8",
       sourceKey: "general-func:iife",
       handler: function ({ event, $w, params }) {
+        const $comp = $w.comp;
         return (({ event }) => {
           const scrollTop = event.detail.scrollTop;
           const scrollHeight = event.detail.scrollHeight;
@@ -1069,6 +1071,7 @@ const evtListeners = {
       key: "w0gpll936se",
       sourceKey: "general-func:iife",
       handler: function ({ event, $w, params }) {
+        const $comp = $w.comp;
         return (({ event }) => {
           $w.card1.dealContentState(
             $w.card1.contentState === `show` ? `hide` : `show`
@@ -1174,6 +1177,7 @@ ${JSON.parse($w.item_listView1.refs || "[]")
       key: "wohl1yvtt3j",
       sourceKey: "general-func:iife",
       handler: function ({ event, $w, params }) {
+        const $comp = $w.comp;
         return (({ event }) => {
           const content = $w.item_listView1;
           $comp.dataset.state.chatRecords = [
@@ -1197,68 +1201,45 @@ ${JSON.parse($w.item_listView1.refs || "[]")
   oncontainer7$tap: [
     {
       key: "w1tz93x0esa",
-      sourceKey: "platform:_setStateVal",
-      handler: function ({ args }) {
-        return $app._setStateVal(...args);
+      sourceKey: "general-func:iife",
+      handler: function ({ event, $w, params }) {
+        const $comp = $w.comp;
+        return (({ event }) => {
+          $comp.dataset.state.enableReason = !$comp.dataset.state.enableReason;
+        })({ event });
       },
       args: {
-        params: [
-          {
-            varPath: "$page.enableReason",
-          },
-        ],
+        params: [{}],
       },
-      argsBinds: {
-        "params.0.val": ($comp, lists, forItems, event, $context, $w) => {
-          const $for = forItems;
-          const $index = lists?.[0]?.currentIndex;
-          return !$comp.dataset.state.enableReason;
-        },
-      },
+      argsBinds: {},
     },
   ],
   onicon1$tap: [
     {
       key: "whqz3p3qpee",
-      sourceKey: "platform:_setStateVal",
-      handler: function ({ args }) {
-        return $app._setStateVal(...args);
+      sourceKey: "general-func:iife",
+      handler: function ({ event, $w, params }) {
+        const $comp = $w.comp;
+        return (({ event }) => {
+          $comp.dataset.state.chatRecords = [
+            $comp.dataset.state.chatRecords[0],
+          ];
+        })({ event });
       },
       args: {
-        params: [
-          {
-            varPath: "$page.chatRecords",
-          },
-        ],
+        params: [{}],
       },
-      argsBinds: {
-        "params.0.val": ($comp, lists, forItems, event, $context, $w) => {
-          const $for = forItems;
-          const $index = lists?.[0]?.currentIndex;
-          return [$comp.dataset.state.chatRecords[0]];
-        },
-      },
+      argsBinds: {},
     },
   ],
   onicon12$tap: [
     {
       key: "wuvqtrd69gn",
-      sourceKey: "platform:_setStateVal",
-      handler: function ({ args }) {
-        return $app._setStateVal(...args);
-      },
-      args: {
-        params: [
-          {
-            varPath: "$page.chatRecords",
-          },
-        ],
-      },
-      argsBinds: {
-        "params.0.val": ($comp, lists, forItems, event, $context, $w) => {
-          const $for = forItems;
-          const $index = lists?.[0]?.currentIndex;
-          return [
+      sourceKey: "general-func:iife",
+      handler: function ({ event, $w, params }) {
+        const $comp = $w.comp;
+        return (({ event }) => {
+          $comp.dataset.state.chatRecords = [
             ...$comp.dataset.state.chatRecords,
             {
               role: "user",
@@ -1267,8 +1248,12 @@ ${JSON.parse($w.item_listView1.refs || "[]")
               bot: $comp.dataset.state.botInfo.botId,
             },
           ];
-        },
+        })({ event });
       },
+      args: {
+        params: [{}],
+      },
+      argsBinds: {},
     },
   ],
   onicon12$wuvqtrd69gn_success: [
