@@ -6,9 +6,3 @@
   display: flex;
   height: 50px;
 }
-.wd-tabs-mp-root .wd-tabs__scroll::-webkit-scrollbar {
-  display: none;
-  width: 0;
-  height: 0;
-  color: transparent;
-}

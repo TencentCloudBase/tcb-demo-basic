@@ -53,26 +53,6 @@ Component({
       type: String,
       value: 'rgba(0, 0, 0, 0.9)',
     },
-    layoutType: {
-      type: String,
-      value: 'normal',
-    },
-    transformType: {
-      type: String,
-      value: 'scaleAndFade',
-    },
-    nextMargin: {
-      type: String,
-      value: '0px',
-    },
-    previousMargin: {
-      type: String,
-      value: '0px',
-    },
-    easingFunction: {
-      type: String,
-      value: 'default',
-    },
   },
   methods: {
     ...handleEvents([

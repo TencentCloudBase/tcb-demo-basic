@@ -438,6 +438,7 @@
 .wd-form-item.is-borderless .wd-form-input-wrap.is-not-h5.is-focused:not(.is-disabled), .wd-form-item.is-borderless .wd-form-input-wrap.is-not-h5:focus:not(.is-disabled) {
   border-color: var(--wd-form-input-wrap-border-hover);
   background-color: var(--wd-form-input-wrap-bg-focus);
+  color: var(--wd-form-input-wrap-text-focus);
   box-shadow: 0px 0px 0px 0px;
 }
 .wd-form-item.is-borderless .wd-form-item-wrap {
@@ -825,6 +826,7 @@ textarea {
 .wd-form-item--weui .wd-form-input-wrap.is-not-h5:focus:not(.is-disabled) {
   border-color: var(--wd-form-input-wrap-border-hover);
   background-color: var(--wd-form-input-wrap-bg-focus);
+  color: var(--wd-form-input-wrap-text-focus);
   box-shadow: 0px 0px 0px 0px;
 }
 .wd-form.wd-form--weui .wd-upload__control,

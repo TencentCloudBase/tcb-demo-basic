@@ -33,23 +33,6 @@
   bottom: 0;
   width: 80%;
   margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.wd-pc-image-preview {
-  max-width: 80%;
-  max-height: 80%;
-  margin-top: 50px;
-}
-
-.wd-image-preview-img {
-  max-width: 100%;
-  max-height: 100%;
-  background-size: contain;
-  background-position: center center;
-  background-repeat: no-repeat;
 }
 
 .wd-image-mask {

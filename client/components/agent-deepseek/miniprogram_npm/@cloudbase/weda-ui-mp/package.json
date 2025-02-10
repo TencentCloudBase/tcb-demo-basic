@@ -1,19 +1,46 @@
 {
-  "name": "@cloudbase/weda-ui-mp",
-  "miniprogram": "./",
-  "packageManager": "yarn@3.0.2",
+  "_from": "@cloudbase/weda-ui-mp@3.13.7",
+  "_id": "@cloudbase/weda-ui-mp@3.13.7",
+  "_inBundle": false,
+  "_integrity": "sha512-TMj1wqJ0FvGxC086GGT3dxSrYdLzqN3WaJnxv0C7ji3eO5qqFrWu/xS+ly9Z5rH0ArIM/wRtf9UTYSBqLU6BwA==",
+  "_location": "/@cloudbase/weda-ui-mp",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@cloudbase/weda-ui-mp@3.13.7",
+    "name": "@cloudbase/weda-ui-mp",
+    "escapedName": "@cloudbase%2fweda-ui-mp",
+    "scope": "@cloudbase",
+    "rawSpec": "3.13.7",
+    "saveSpec": null,
+    "fetchSpec": "3.13.7"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@cloudbase/weda-ui-mp/-/weda-ui-mp-3.13.7.tgz",
+  "_shasum": "10c2b87d15baa8474585fe37e27acd6d0a38db21",
+  "_spec": "@cloudbase/weda-ui-mp@3.13.7",
+  "_where": "/Users/yang/WeChatProjects/miniprogram-16/miniprogram/components/agent-ui",
+  "bundleDependencies": false,
   "dependencies": {},
-  "version": "3.14.1",
+  "deprecated": false,
+  "description": "",
   "main": "./",
+  "miniprogram": "./",
+  "name": "@cloudbase/weda-ui-mp",
+  "packageManager": "yarn@3.0.2",
+  "peerDependencies": {
+    "mobx": "^5",
+    "lodash.get": "*",
+    "lodash.set": "*",
+    "miniprogram-gesture": "^1",
+    "@cloudbase/weda-client": ">=1.0.31",
+    "miniprogram-api-promise": "^1"
+  },
   "publishConfig": {
     "access": "public"
   },
-  "peerDependencies": {
-    "@cloudbase/weda-client": ">=1.0.31",
-    "miniprogram-gesture": "^1",
-    "miniprogram-api-promise": "^1",
-    "lodash.get": "*",
-    "lodash.set": "*",
-    "mobx": "^5"
-  }
+  "version": "3.13.7"
 }

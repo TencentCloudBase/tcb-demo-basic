@@ -101,6 +101,7 @@
 .wd-form-input-wrap.is-focused:not(.is-disabled), .wd-form-input-wrap:focus:not(.is-disabled) {
   border-color: var(--wd-form-input-wrap-border-hover);
   background-color: var(--wd-form-input-wrap-bg-focus);
+  color: var(--wd-form-input-wrap-text-focus);
   box-shadow: 0px 0px 0px 0px;
 }
 .wd-form-input-wrap.is-disabled {

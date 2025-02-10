@@ -21,7 +21,6 @@
 #wd-page-root .wd-comp-id-textarea1 textarea::-webkit-input-placeholder{font-size:14px;font-weight:400;line-height:20px;color:rgba(188,196,208,1)}
 #wd-page-root .wd-comp-id-textarea1 .wd-form-textarea-wrap__label{display:none}
 #wd-page-root .wd-comp-id-container7:hover{filter:brightness(0.9)}
-
 #wd-page-root .wd-comp-id-modal1 .wd-modal-bd__hd,#wd-page-root .wd-comp-id-modal1 .wd-modal-bd__hd ._wa-comp-slot-wrapper{align-items:flex-start;margin-bottom:8px;gap:8px}
 #wd-page-root .wd-comp-id-modal1 .wd-modal-bd{max-width:496px;min-width:unset !important}
 #wd-page-root .wd-comp-id-modal1 .wd-tag-item:hover{cursor:pointer}

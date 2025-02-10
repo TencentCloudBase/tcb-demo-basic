@@ -28,18 +28,6 @@ Component({
     customStyle: {
       type: Object,
     },
-    customContent: {
-      type: Boolean,
-      value: false,
-    },
-    openPage: {
-      type: String,
-      value: '',
-    },
-    logoPosition: {
-      type: String,
-      value: 'bottom-left',
-    },
   },
   methods: {
     ...handleEvents([

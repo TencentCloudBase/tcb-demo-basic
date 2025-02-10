@@ -1,4 +1,4 @@
-<a id="container22" style="{{container22.style}};{{style}}" className="wa-comp-block-cloudbase wa-comp-block-agent-ui {{container22.className}} {{className}}" data="{{container22.data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
+<a id="container22" style="{{container22.style}};{{style}}" className="wa-comp-block-cloudbase {{container22.className}} {{className}}" data="{{container22.data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
 	<b id="menuLayout1" style="{{menuLayout1.style}}" className="{{menuLayout1.className}}" defaultOpened="{{menuLayout1.defaultOpened}}" menu="{{menuLayout1.menu}}" outerClickClosable="{{menuLayout1.outerClickClosable}}" template="{{menuLayout1.template}}" type="{{menuLayout1.type}}" bind:attached="__mnt__" bind:detached="__unmnt__">
 		<a id="container19" style="{{container19.style}}" className="{{container19.className}}" wx:if="{{container19._waIf}}" data="{{container19.data}}" bind:attached="__mnt__" bind:detached="__unmnt__" slot="contentSlot">
 			<c id="image3" style="{{image3.style}}" className="{{image3.className}}" alt="{{image3.alt}}" fit="{{image3.fit}}" src="{{image3.src}}" bind:attached="__mnt__" bind:detached="__unmnt__"/>
@@ -12,11 +12,13 @@
 						<g id="icon4" style="{{icon4.style}}" className="{{icon4.className}}" name="{{icon4.name}}" size="{{icon4.size}}" bind:attached="__mnt__" bind:detached="__unmnt__"/>
 						<d id="text6" style="{{text6.style}}" className="{{text6.className}}" inheritColor="{{text6.inheritColor}}" level="{{text6.level}}" maxLines="{{text6.maxLines}}" text="{{text6.text}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{text6.text}}</d>
 					</a>
+					<d id="text18" style="{{text18.style}}" className="{{text18.className}}" inheritColor="{{text18.inheritColor}}" level="{{text18.level}}" maxLines="{{text18.maxLines}}" text="{{text18.text}}" bind:attached="__mnt__" bind:detached="__unmnt__">{{text18.text}}</d>
 				</a>
 				<a id="container17" style="{{container17.style}}" className="{{container17.className}}" data="{{container17.data}}" bind:attached="__mnt__" bind:detached="__unmnt__">
 					<g id="icon1" style="{{icon1.style}}" className="{{icon1.className}}" name="{{icon1.name}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:tap="onicon1$tap"/>
 					<g id="icon12" style="{{icon12.style}}" className="{{icon12.className}}" wx:if="{{icon12._waIf}}" name="{{icon12.name}}" src="{{icon12.src}}" type="{{icon12.type}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:tap="onicon12$tap" bind:wuvqtrd69gn_success="onicon12$wuvqtrd69gn_success"/>
 					<g id="icon13" style="{{icon13.style}}" className="{{icon13.className}}" wx:if="{{icon13._waIf}}" name="{{icon13.name}}" src="{{icon13.src}}" type="{{icon13.type}}" bind:attached="__mnt__" bind:detached="__unmnt__"/>
+					<g id="icon14" style="{{icon14.style}}" className="{{icon14.className}}" wx:if="{{icon14._waIf}}" name="{{icon14.name}}" src="{{icon14.src}}" type="{{icon14.type}}" bind:attached="__mnt__" bind:detached="__unmnt__" bind:tap="onicon14$tap"/>
 				</a>
 			</a>
 		</a>

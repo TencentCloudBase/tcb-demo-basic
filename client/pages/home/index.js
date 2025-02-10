@@ -194,5 +194,10 @@ Page({
     wx.navigateTo({
       url: '/pages/ai/index'
     });
+  },
+  navigateToDeepSeek (e) {
+    wx.navigateTo({
+      url: '/pages/deepseek/index'
+    });
   }
 })

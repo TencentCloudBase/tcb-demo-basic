@@ -51,18 +51,25 @@ Component({
       });
     },
     init() {
-      const { gutterX, gutterY, className: userClassName, avoidScrollbar } = this.data;
+      const {
+        gutterX,
+        gutterY,
+        className: userClassName,
+        avoidScrollbar,
+      } = this.data;
       const gutterXValue =
         typeof gutterX === 'number' && !isNaN(gutterX)
           ? gutterX
-          : GUTTER_VALUE.find((item) => item.gutterValue === gutterX)?.styleValue || 0;
+          : GUTTER_VALUE.find((item) => item.gutterValue === gutterX)
+              ?.styleValue || 0;
       const gutterYValue =
         typeof gutterY === 'number' && !isNaN(gutterY)
           ? gutterY
-          : GUTTER_VALUE.find((item) => item.gutterValue === gutterY)?.styleValue || 0;
+          : GUTTER_VALUE.find((item) => item.gutterValue === gutterY)
+              ?.styleValue || 0;
       const actalClassName = classNames({
         'wd-grid': true,
-        'wd-grid--avoid-scrollbar': avoidScrollbar,
+        'wd-grid--gap': avoidScrollbar,
         [`wd-grid-gx-${gutterXValue}`]: !isNil(gutterXValue),
         // 产品要求guterX 同时间决定row一个换行的间距和 row之间的间距
         [`wd-grid-gy-${gutterYValue}`]: !isNil(gutterYValue),
