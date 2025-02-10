@@ -9,6 +9,10 @@ import lifeCycle from "./lowcode/lifecycle";
 import stateFn from "./lowcode/state";
 import computedFuncs from "./lowcode/computed";
 
+import _hanlderai_bot_scroll_to_bottom from './lowcode/handler/ai_bot_scroll_to_bottom'
+import _hanldergetQuestionFromUrl from './lowcode/handler/getQuestionFromUrl'
+import _hanlderqueryRecommendQuestions from './lowcode/handler/queryRecommendQuestions'
+
 const app = new Proxy(
   {},
   {
@@ -26,7 +30,11 @@ const $app = new Proxy(
   }
 );
 
-const handlers = {};
+const handlers = {
+  ai_bot_scroll_to_bottom: _hanlderai_bot_scroll_to_bottom,
+  getQuestionFromUrl: _hanldergetQuestionFromUrl,
+  queryRecommendQuestions: _hanlderqueryRecommendQuestions,
+}
 
 const widgetProps = {
   container22: {
@@ -1140,13 +1148,12 @@ const evtListeners = {
           return `${$w.item_listView1.content}
 
 ${JSON.parse($w.item_listView1.refs || "[]")
-  .filter((item) => item.url)
-  .map((item, index) => {
-    return `${index === 0 ? "回答基于以下参考文档\n" : ""}${[index + 1]}. [${
-      item.title
-    }](${item.url})`;
-  })
-  .join("\n")}
+              .filter((item) => item.url)
+              .map((item, index) => {
+                return `${index === 0 ? "回答基于以下参考文档\n" : ""}${[index + 1]}. [${item.title
+                  }](${item.url})`;
+              })
+              .join("\n")}
 
 以上回答由 AI 完成（基于微信云开发 AI 智能体）
 `;
@@ -1502,9 +1509,9 @@ const dataBinds = {
         ...widgetProps.container13.style,
         ...($w.item_listView1.role === "user"
           ? {
-              display: "flex",
-              justifyContent: "flex-end",
-            }
+            display: "flex",
+            justifyContent: "flex-end",
+          }
           : {}),
       };
     },
@@ -1759,13 +1766,13 @@ const dataBinds = {
           ...widgetProps.container7.style,
           ...($comp.dataset.state.enableReason
             ? {
-                background: "#d0e5fe",
-                borderColor: "rgba(85,153,255,0.7)",
-                color: "#0056d4",
-              }
+              background: "#d0e5fe",
+              borderColor: "rgba(85,153,255,0.7)",
+              color: "#0056d4",
+            }
             : {
-                borderColor: "#d2d2d2",
-              }),
+              borderColor: "#d2d2d2",
+            }),
         };
         if (!display) {
           style.display = "none";
@@ -1857,29 +1864,29 @@ const dataBinds = {
       return (
         $w.modal1.openInfo.type === "upvote"
           ? [
-              "准确有效",
-              "回答全面",
-              "立场正确",
-              "格式规范",
-              "专业性强",
-              "富有创意",
-              "表达清晰",
-              "值得信赖",
-              "高效",
-              "满意",
-            ]
+            "准确有效",
+            "回答全面",
+            "立场正确",
+            "格式规范",
+            "专业性强",
+            "富有创意",
+            "表达清晰",
+            "值得信赖",
+            "高效",
+            "满意",
+          ]
           : [
-              "理解错误",
-              "未识别问题",
-              "事实错误",
-              "推理错误",
-              "内容不完整",
-              "不专业",
-              "违法有害",
-              "格式错误",
-              "乱码",
-              "内容重复",
-            ]
+            "理解错误",
+            "未识别问题",
+            "事实错误",
+            "推理错误",
+            "内容不完整",
+            "不专业",
+            "违法有害",
+            "格式错误",
+            "乱码",
+            "内容重复",
+          ]
       ).map((item) => {
         return {
           lable: item,
@@ -1895,7 +1902,358 @@ const dataBinds = {
   },
 };
 
-const query = {};
+const query = {
+  sendMessage: {
+    ...({
+      "id": "sendMessage",
+      "name": "sendMessage",
+      "type": "general-func",
+      "trigger": "manual",
+      "description": "",
+      "data": {
+        "params": [
+          {}
+        ]
+      }
+    }),
+    handler: (__data__, __params__, $comp, $w) => (
+      async ({
+        params
+      }) => {
+        // 获取输入框消息，params是外面传进来的，不传就使用输入框的值
+        const message = params || $w.textarea1.value; // 清空输入框
+
+        $w.textarea1.setValue({
+          value: ''
+        }); // 清空建议问题
+
+        $comp.dataset.state.recommendQuestions = []; // 修改聊天状态
+
+        $comp.dataset.state.chatStatus = 1; // 手动插入一回复消息，后面的返回都使用这条消息来实现打字机效果
+
+        $comp.dataset.state.chatRecords = [...$comp.dataset.state.chatRecords, {
+          role: "assistant",
+          content: "请稍等，正在卖力思考中🤔...",
+          btnGroupShow: 'hidden',
+          botId: $comp.dataset.state.botInfo?.botId
+        }]; // 滚动到底部
+
+        if ($comp.dataset.state.ai_bot_ui_scroll_to_bottom) {
+          $comp.handler.ai_bot_scroll_to_bottom({});
+        } // 如果是智能体预览状态，走预览接口
+
+        const { isPreview, bot = {}, llmConfig } = $w.container22?.data || {};
+        const record = $comp.dataset.state.chatRecords[$comp.dataset.state.chatRecords.length - 1]; // 请求参数
+
+        const sendMessage = () => {
+          if (llmConfig) {
+            return $w.ai.LLM.chat({
+              provider: llmConfig.provider,
+              model: $comp.dataset.state.enableReason ? llmConfig.reasonModel : llmConfig.model,
+              temperature: llmConfig.temperature ?? 1,
+              top_p: llmConfig.top_p ?? 1,
+              messages: $comp.dataset.state.chatRecords.slice(0, -1),
+              stream: true,
+            });
+          } else {
+            return isPreview
+              ? $w.app.ai.bot.getPreview({
+                name: bot.name,
+                model: bot.model,
+                modelValue: bot.modelValue,
+                introduction: bot.introduction,
+                agentSetting: bot.agentSetting,
+                knowledgeBase: bot.knowledgeBase,
+                msg: message,
+              })
+              : $w.app.ai.bot.sendMessage({
+                botId: $comp.dataset.state.botInfo?.botId,
+                msg: message,
+                history: $comp.dataset.state.chatRecords
+              });
+          }
+        }
+
+        const res = await sendMessage();
+        const stream = (!llmConfig && isPreview) ? res.dataStream : res.eventStream;
+        let result = '';
+        let reasoningResult = ''
+        $comp.dataset.state.chatStatus = 2;
+
+        /**
+         * record.reasoningStatus 0 未思考 1 思考中 2 已思考
+         */
+
+        const reasoningStartTime = Date.now();
+        record.reasoningStatus = 0;
+
+        for await (let json of stream) {
+          let content = ''
+          let reasoningContent = ''
+
+          if (llmConfig) {
+            content = json.choices.reduce((acc, item) => acc += item.delta.content || '', '');
+            reasoningContent = json.choices.reduce((acc, item) => acc += item.delta.reasoning_content || '', '');
+            result += content;
+            reasoningResult += reasoningContent;
+            record.recordId = json.id;
+          } else {
+            result += json.content || '';
+            reasoningResult += json.reasoning_content || '';
+            record.recordId = json.record_id;
+            record.knowledgeBase = json.knowledge_meta.map(item => JSON.parse(item)).filter(i => Object.keys(i).length);
+            // $comp.dataset.state.chatRecords = [...$comp.dataset.state.chatRecords.slice(0, $comp.dataset.state.chatRecords.length - 1), record]
+          }
+          record.content = result;
+          record.reasoningContent = reasoningResult.trim();
+
+          if (reasoningResult && record.reasoningStatus === 0) {
+            record.reasoningStatus = 1;
+          } else if (result && record.reasoningStatus === 1) {
+            record.reasoningStatus = 2;
+            record.reasoningDuration = Math.round((Date.now() - reasoningStartTime) / 1000)
+          }
+          if ($comp.dataset.state.ai_bot_ui_scroll_to_bottom) {
+            $comp.handler.ai_bot_scroll_to_bottom({});
+          }
+          if ($comp.dataset.state.chatStatus != 2) {
+            break;
+          }
+        } // 显示按钮组
+
+        delete record.btnGroupShow; // 切回聊天状态
+
+        $comp.dataset.state.chatStatus = 0;
+
+        if ($comp.dataset.state.botInfo.isNeedRecommend) {
+          $comp.handler.queryRecommendQuestions({
+            data: {
+              target: {
+                botId: $comp.dataset.state.botInfo?.botId,
+                message
+              }
+            }
+          });
+        }
+
+        return true;
+      }
+    )({ params: __params__, data: __data__, $comp, $w }),
+    dataBinds: {},
+    eventHandlers: {}
+  },
+  queryBotById: {
+    ...({
+      "id": "queryBotById",
+      "name": "queryBotById",
+      "type": "general-func",
+      "trigger": "auto",
+      "description": "",
+      "data": {
+        "params": [
+          {}
+        ]
+      }
+    }),
+    handler: (__data__, __params__, $comp, $w) => (
+      async () => {
+        const { isPreview, bot = {}, llmConfig } = $w.container22?.data || {}
+        if (llmConfig) {
+          return;
+        }
+        if (isPreview) {
+          $comp.dataset.state.botInfo = bot
+          $comp.dataset.state.recommendQuestions = bot.initQuestions
+          // 将欢迎语作为第一条聊天记录
+          $comp.dataset.state.chatRecords = [{
+            role: "assistant",
+            content: bot.welcomeMessage,
+            btnGroupShow: 'hidden'
+          }]
+          return
+        }
+        // 从区块获取botId
+        const botId = bot.botId
+        // 如果id为空，展示提示
+        if (!botId) {
+          return
+        }
+        const data = await $w.app.ai.bot.get({ botId });
+
+        $comp.dataset.state.botInfo = { ...data, ...bot }
+        // 查询聊天记录
+        await $w.queryChatRecords.trigger()
+        // 将初始的提示问题展示到聊天页面的最下面
+        $comp.dataset.state.recommendQuestions = data.initQuestions
+        // 滚动到底部
+        if ($comp.dataset.state.ai_bot_ui_scroll_to_bottom) {
+          setTimeout(() => {
+            $comp.handler.ai_bot_scroll_to_bottom({});
+          }, 500)
+        }
+        return true
+      }
+
+    )({ params: __params__, data: __data__, $comp, $w }),
+    dataBinds: {},
+    eventHandlers: {
+      "onqueryBotById$success": [
+        {
+          key: 'whsoa098nll',
+          sourceKey: 'platform:callNanoFlow',
+          handler: function ({ data, $w }) { return $w[data.id]?.trigger?.(data.data) },
+          args: {
+            "params": [
+              {
+                "data": "",
+                "id": "eventflowAddMessageFromUrl"
+              }
+            ]
+          },
+          argsBinds: {}
+        }
+      ],
+    }
+  },
+  addEnterEvent: {
+    ...({
+      "id": "addEnterEvent",
+      "name": "addEnterEvent",
+      "type": "general-func",
+      "trigger": "auto",
+      "description": "",
+      "data": {
+        "params": [
+          {}
+        ]
+      }
+    }),
+    handler: (__data__, __params__, $comp, $w) => (
+      ({ params }) => {
+        if ($w.wedaContext.platforms.includes('WEB')) {
+          let $textarea = document?.querySelector?.('.ai-bot-chat__textarea textarea')
+          let isComposing = false;
+          $textarea.addEventListener('compositionstart', function () {
+            isComposing = true;
+          });
+          $textarea.addEventListener('compositionend', function () {
+            isComposing = false;
+          });
+          $textarea.addEventListener('keydown', function (event) {
+            if (!($w.textarea1.value?.trim())?.length || [1, 2].includes($comp.dataset.state.chatStatus)) {
+              return
+            }
+            if (event.key === 'Enter' && !event.shiftKey) {
+              // 判断输入法是否正在输入中文字符
+              if (!event.target.isComposing && !isComposing) {
+                event.preventDefault();
+                // 如果不是中文输入过程中，执行提交操作
+                $comp.dataset.state.chatRecords = [...$comp.dataset.state.chatRecords,
+                {
+                  "role": "user",
+                  "type": "text",
+                  "content": $w.textarea1.value,
+                  "bot": $comp.dataset.state.botInfo.botId
+                }]
+                $w.sendMessage.trigger()
+              }
+            }
+          });
+        }
+      }
+
+    )({ params: __params__, data: __data__, $comp, $w }),
+    dataBinds: {},
+    eventHandlers: {}
+  },
+  submitFeedback: {
+    ...({
+      "id": "submitFeedback",
+      "name": "submitFeedback",
+      "type": "general-func",
+      "trigger": "manual",
+      "description": "",
+      "data": {
+        "params": [
+          {}
+        ]
+      }
+    }),
+    handler: (__data__, __params__, $comp, $w) => (
+      async ({ params }) => {
+        // 当前拉起反馈弹窗的聊天记录索引
+        const index = $w.modal1.openInfo.index
+        const type = $w.modal1.openInfo.type
+
+        const raw = {
+          "recordId": $comp.dataset.state.chatRecords[index].recordId,
+          "type": type,
+          "botId": $comp.dataset.state.chatRecords[index].botId,
+          "comment": $w.textarea2.value,
+          "rating": $w.rating1.value,
+          "tags": $w.tagSelect1.value,
+          "input": $comp.dataset.state.chatRecords[index - 1].content,
+          "aiAnswer": $comp.dataset.state.chatRecords[index].content
+        };
+        const res = await $w.app.ai.bot.sendFeedback({ userFeedback: raw })
+
+        const { status } = res
+        if (status === 'success') {
+          return true
+        }
+        return false
+      }
+
+    )({ params: __params__, data: __data__, $comp, $w }),
+    dataBinds: {},
+    eventHandlers: {}
+  },
+  queryChatRecords: {
+    ...({
+      "id": "queryChatRecords",
+      "name": "queryChatRecords",
+      "type": "general-func",
+      "trigger": "manual",
+      "description": "",
+      "data": {
+        "params": [
+          {}
+        ]
+      }
+    }),
+    handler: (__data__, __params__, $comp, $w) => (
+      async ({ params }) => {
+        const { bot = {} } = $w.container22.data;
+        const botInfo = $comp.dataset.state.botInfo
+        // 聊天记录
+        const { botId } = botInfo
+        const data = botId ? await $w.app.ai.bot.getChatRecords({
+          botId,
+          pageNumber: 1,
+          pageSize: 20,
+          sort: "desc",
+        }) : {};
+
+        const { recordList = [] } = data
+        //将欢迎语作为第一条聊天记录
+        //   const name = llmConfig
+        //     ? `${($comp.dataset.state.enableReason ? llmConfig.reasonModel : llmConfig.model)} 模型`
+        //     : (bot.name || botInfo?.name)
+
+        const welcomMessage = $comp.dataset.state.botInfo?.welcomeMessage
+
+        $comp.dataset.state.chatRecords = [{
+          role: "assistant",
+          content: welcomMessage,
+          btnGroupShow: 'hidden'
+        }, ...recordList.reverse()]
+      }
+
+    )({ params: __params__, data: __data__, $comp, $w }),
+    dataBinds: {},
+    eventHandlers: {}
+  },
+}
 
 const eventFlows = [];
 
@@ -1950,6 +2308,22 @@ const datasetProfile = {
       initialValue: 0,
       enableSyncLocal: false,
     },
+    "ai_bot_ui_scroll_top": {
+      "name": "ai_bot_ui_scroll_top",
+      "label": "",
+      "varType": "state",
+      "dataType": "number",
+      "initialValue": 999,
+      "enableSyncLocal": false
+    },
+    "ai_bot_ui_scroll_to_bottom": {
+      "name": "ai_bot_ui_scroll_to_bottom",
+      "label": "",
+      "varType": "state",
+      "dataType": "boolean",
+      "initialValue": true,
+      "enableSyncLocal": false
+    }
   },
   params: {},
 };
