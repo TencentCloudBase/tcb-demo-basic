@@ -974,7 +974,7 @@ const evtListeners = {
       key: "wk16hrnqmtc",
       sourceKey: "general-func:iife",
       handler: function ({ event, $w, params }) {
-        const $comp = $w.comp;
+        const $comp = $w.$comp;
         return (({ event }) => {
           $comp.dataset.state.ai_bot_ui_scroll_to_bottom = true;
         })({ event });
@@ -990,7 +990,7 @@ const evtListeners = {
       key: "w3wu6xo0zn8",
       sourceKey: "general-func:iife",
       handler: function ({ event, $w, params }) {
-        const $comp = $w.comp;
+        const $comp = $w.$comp;
         return (({ event }) => {
           const scrollTop = event.detail.scrollTop;
           const scrollHeight = event.detail.scrollHeight;
@@ -1071,7 +1071,7 @@ const evtListeners = {
       key: "w0gpll936se",
       sourceKey: "general-func:iife",
       handler: function ({ event, $w, params }) {
-        const $comp = $w.comp;
+        const $comp = $w.$comp;
         return (({ event }) => {
           $w.card1.dealContentState(
             $w.card1.contentState === `show` ? `hide` : `show`
@@ -1177,7 +1177,7 @@ ${JSON.parse($w.item_listView1.refs || "[]")
       key: "wohl1yvtt3j",
       sourceKey: "general-func:iife",
       handler: function ({ event, $w, params }) {
-        const $comp = $w.comp;
+        const $comp = $w.$comp;
         return (({ event }) => {
           const content = $w.item_listView1;
           $comp.dataset.state.chatRecords = [
@@ -1203,7 +1203,7 @@ ${JSON.parse($w.item_listView1.refs || "[]")
       key: "w1tz93x0esa",
       sourceKey: "general-func:iife",
       handler: function ({ event, $w, params }) {
-        const $comp = $w.comp;
+        const $comp = $w.$comp;
         return (({ event }) => {
           $comp.dataset.state.enableReason = !$comp.dataset.state.enableReason;
         })({ event });
@@ -1219,7 +1219,7 @@ ${JSON.parse($w.item_listView1.refs || "[]")
       key: "whqz3p3qpee",
       sourceKey: "general-func:iife",
       handler: function ({ event, $w, params }) {
-        const $comp = $w.comp;
+        const $comp = $w.$comp;
         return (({ event }) => {
           $comp.dataset.state.chatRecords = [
             $comp.dataset.state.chatRecords[0],
@@ -1237,7 +1237,7 @@ ${JSON.parse($w.item_listView1.refs || "[]")
       key: "wuvqtrd69gn",
       sourceKey: "general-func:iife",
       handler: function ({ event, $w, params }) {
-        const $comp = $w.comp;
+        const $comp = $w.$comp;
         return (({ event }) => {
           $comp.dataset.state.chatRecords = [
             ...$comp.dataset.state.chatRecords,
