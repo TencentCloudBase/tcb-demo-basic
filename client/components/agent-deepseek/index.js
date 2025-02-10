@@ -1,4 +1,4 @@
-export * as clientSDK from '@cloudbase/weda-client';
+import * as clientSDK from '@cloudbase/weda-client';
 
 clientSDK.init({
   envID: 'tcb-advanced-a656fc', // 云开发环境Id

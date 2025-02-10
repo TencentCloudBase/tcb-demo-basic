@@ -1,4 +1,3 @@
-require.async('./components/agent-deepseek/index.js')
 //app.js
 App({
   onLaunch: function () {

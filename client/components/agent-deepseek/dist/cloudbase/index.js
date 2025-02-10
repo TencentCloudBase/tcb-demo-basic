@@ -1,3 +1,4 @@
+import '../../index'
 import {
   getWedaAPI,
   createComponent,
