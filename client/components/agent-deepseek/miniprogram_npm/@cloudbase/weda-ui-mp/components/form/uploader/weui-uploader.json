@@ -1,7 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "mp-gallery": "weui-miniprogram/gallery/gallery"
-  },
-  "styleIsolation": "shared"
-}

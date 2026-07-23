@@ -1,5 +1,6 @@
 {
-  "navigationBarTitleText": "案例",
-  "navigationStyle": "custom",
-  "usingComponents": {}
+  "navigationBarTitleText": "体验",
+  "navigationBarBackgroundColor": "#E8ECF1",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#E8ECF1"
 }

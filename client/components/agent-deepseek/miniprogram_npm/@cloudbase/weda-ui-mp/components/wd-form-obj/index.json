@@ -1,7 +1,0 @@
-{
-  "component": true,
-  "styleIsolation": "shared",
-  "usingComponents": {
-    "wd-form-item-obj": "../wd-form-item-obj/index"
-  }
-}

@@ -1,7 +1,0 @@
-{
-  "component": true,
-  "styleIsolation": "shared",
-  "usingComponents": {
-    "tag-item": "./tag-item/index"
-  }
-}

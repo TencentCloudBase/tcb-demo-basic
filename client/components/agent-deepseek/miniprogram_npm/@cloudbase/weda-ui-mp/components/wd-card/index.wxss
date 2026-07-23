@@ -1,6 +1,0 @@
-@import '../../style/wd-design.wxss';
-@import './wd-card.wxss';
-
-.wd-mp-card-root {
-  --wd-card-body-pd: 1rem 1.5rem;
-}

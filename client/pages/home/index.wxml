@@ -1,72 +1,100 @@
 <view class="tcb-srcoll-box">
   <view class="nav_bar_customize_top">
-    <navBar title-text="{{banner.title}}" title-text-left="true" background="transparent" back-icon="" home-icon="" backImg="{{banner.backImg}}" backImgMode="{{banner.backImgMode}}" bindback="back"/>
+    <navBar title-text="" background="transparent" color="#fff" back-icon="" home-icon="" backImg="" bindback="back"/>
   </view>
 
-  <view class="tcb-container"  style="padding-top: {{navHeight}}px; margin-top: -{{navHeight * 2}}px;">
-    <view class="banner">
-      <image style="width: 100%" mode="widthFix" src="{{banner.coverImage}}"></image>
+  <view class="tcb-container home-scroll" style="margin-top: -{{navHeight}}px;">
+    <view class="banner" style="padding-top: {{navHeight}}px;">
+      <view class="hero-section">
+        <view class="hero-brand">云开发</view>
+        <view class="hero-title">AI 写代码，云开发管后端</view>
+        <view class="hero-desc">小程序场景下体验云开发：数据库、云函数、支付等。同一套后端也覆盖 Web。</view>
+        <view class="hero-actions">
+          <button class="cb-btn cb-btn--primary hero-btn" bindtap="goExperience">体验云开发能力</button>
+          <button class="cb-btn cb-btn--ghost hero-btn" bindtap="goDev">用 AI 加速</button>
+        </view>
+      </view>
     </view>
+
     <view class="home-container">
-      <view class="section">
-        <button style="background-color: #fff;border: 1px solid #006eff; display: flex;flex-direction: row;align-items: center;justify-content: center;" bind:tap="navigateToAI">
-          <image style="width: 24px;height: 24px;margin-right: 10px;" src="https://cloudcache.tencent-cloud.com/qcloud/ui/static/static_source_business/f0fbee2c-96bb-41c5-8d3d-46e2bbdf4b05.svg"/>
-          从 AI 开始探索云开发
-        </button>
-        <button style="background-color: #fff;border: 1px solid #006eff; display: flex;flex-direction: row;align-items: center;justify-content: center;margin-top: 10px;margin-bottom: 36rpx;" bind:tap="navigateToDeepSeek">
-          <image style="width: 24px;height: 24px;margin-right: 10px;" src="https://cloudcache.tencent-cloud.com/qcloud/ui/static/static_source_business/2339414f-2c0d-4537-9618-1812bd14f4af.svg"/>
-          云开发 DeepSeek 体验专区
-        </button>
-        <view class="section__title">产品家族</view>
-        <view class="tcb-tabs">
-          <view class="tcb-tabs__bar">
-            <button wx:for="{{productFamilySet}}" wx:key="title" wx:for-item="productFamily" bindtap="switchTab" class="tcb-tabs__item {{productFamily.active ? 'tcb-tabs__item--active' : ''}}" data-id="{{productFamily.id}}">{{productFamily.title}}</button>
+      <view class="home-section">
+        <view class="home-section__head">
+          <view class="home-section__title">产品体验</view>
+          <view class="home-section__tip">{{product.tip}}</view>
+        </view>
+        <view class="feature-grid">
+          <view
+            wx:for="{{product.advantage}}"
+            wx:key="title"
+            class="feature-tile {{item.url ? 'feature-tile--accent' : ''}}"
+            bindtap="onFeatureTap"
+            data-navigatetype="{{item.navigateType}}"
+            data-url="{{item.url || ''}}"
+          >
+            <image class="feature-tile__icon" src="{{item.coverImage}}"></image>
+            <view class="feature-tile__title">{{item.title}}</view>
+            <view class="feature-tile__desc">{{item.description}}</view>
+            <view wx:if="{{item.url}}" class="feature-tile__cta">立即体验</view>
           </view>
-          <view class="tcb-tabs__pannel">
-            <view wx:for="{{productFamilySet}}" hidden="{{!productFamily.active}}" wx:key="title" wx:for-item="productFamily" class="tcb-tabs__content">
-              <view class="product__tip">{{productFamily.tip}}</view>
-              <view class="product-advantage">
-                <view wx:for="{{productFamily.advantage}}" wx:key="title" wx:for-item="advantage" class="product-advantage__item">
-                  <view class="product-advantage__header">
-                    <view class="product-advantage__logo">
-                      <image src="{{advantage.coverImage}}"></image>
-                    </view>
-                    <view class="product-advantage__title">{{advantage.title}}</view>
-                  </view>
-                  <view class="product-advantage__description">{{advantage.description}}</view>
-                  <button style="margin-top: 16px;" wx:if="{{advantage.url}}" class="product-advantage__more" data-navigatetype="{{advantage.navigateType}}" data-url="{{advantage.url}}" bindtap="navigateToHandler">立即体验<image src="https://qcloudimg.tencent-cloud.cn/raw/8740a5479dd972bdac97d44b49ba92e5/%E8%BF%9B%E5%85%A5icon@2x.png"></image></button>
-                </view>
-              </view>
-              <view class="product-schematic">
-                <view class="product-schematic__title">产品示意</view>
-                <view class="product-schematic__description">{{productFamily.schematic.description}}</view>
-                <view class="product-schematic__image">
-                  <image mode="widthFix" src="{{productFamily.schematic.coverImage}}"></image>
-                  </view>
-              </view>
-              <button class="product-advantage__more" data-navigatetype="{{productFamily.navigateType}}" data-url="{{productFamily.url}}" bindtap="navigateToHandler">查看更多<image src="https://qcloudimg.tencent-cloud.cn/raw/8740a5479dd972bdac97d44b49ba92e5/%E8%BF%9B%E5%85%A5icon@2x.png"></image></button>
+        </view>
+
+        <view class="schematic">
+          <view class="schematic__meta">
+            <view class="schematic__label">产品示意</view>
+            <view class="schematic__desc">{{product.schematic.description}}</view>
+          </view>
+          <image class="schematic__img" mode="widthFix" src="{{product.schematic.coverImage}}"></image>
+        </view>
+
+        <button
+          class="cb-btn cb-btn--ghost-dark more-btn"
+          data-navigatetype="{{product.navigateType}}"
+          data-url="{{product.url}}"
+          bindtap="navigateToHandler"
+        >打开微信云开发官网</button>
+      </view>
+
+      <view class="home-section">
+        <view class="home-section__head">
+          <view class="home-section__title">用 AI 开发</view>
+        </view>
+        <view class="ai-panel" wx:for="{{aiPaths}}" wx:key="title" bindtap="goPath" data-url="{{item.url}}">
+          <view class="ai-panel__body">
+            <view class="ai-panel__title">{{item.title}}</view>
+            <view class="ai-panel__desc">{{item.description}}</view>
+          </view>
+          <view class="ai-panel__go">去安装</view>
+        </view>
+      </view>
+
+      <view class="home-section">
+        <view class="home-section__head">
+          <view class="home-section__title">帮助与服务</view>
+        </view>
+        <view class="help-panel">
+          <view
+            class="help-row"
+            wx:for="{{helpList}}"
+            wx:key="title"
+            wx:for-item="help"
+            bindtap="navigateToHandler"
+            data-navigatetype="{{help.navigateType}}"
+            data-appid="{{help.appId || ''}}"
+            data-url="{{help.url || ''}}"
+          >
+            <image class="help-row__icon" src="{{help.coverImage}}"></image>
+            <view class="help-row__body">
+              <view class="help-row__title">{{help.title}}</view>
+              <view class="help-row__desc">{{help.description}}</view>
             </view>
           </view>
         </view>
       </view>
-      <view class="section">
-        <view class="section__title">帮助与服务</view>
-        <view class="help">
-          <view wx:for="{{helpList}}" wx:key="title" wx:for-item="help" class="help__item" bindtap="navigateToHandler" data-navigatetype="{{help.navigateType}}" data-appid="{{help.appId || ''}}" data-url="{{help.url || ''}}">
-            <view class="help__logo">
-              <image src="{{help.coverImage}}"></image>
-            </view>
-            <view class="help__title">{{help.title}}</view>
-            <view class="help__description">{{help.description}}</view>
-          </view>
-        </view>
-      </view>
-      <view class="section" style="padding-top: 0;">
+
+      <view class="home-footer">
         <view class="show_privacy" bindtap="showPrivacyWin">《小程序服务声明》</view>
-        <trd-privacy id="trdPrivacy" name="云开发体验小程序" date="2023年10月24日" winStyle="{{winStyle}}"></trd-privacy>
-      </view>
-      <view class="copyright">
-        <text>powered by Weda</text>
+        <trd-privacy id="trdPrivacy" name="云开发体验小程序" date="2026年7月23日" winStyle="{{winStyle}}"></trd-privacy>
+        <view class="copyright">微信云开发</view>
       </view>
     </view>
   </view>

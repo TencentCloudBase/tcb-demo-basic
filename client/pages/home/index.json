@@ -2,6 +2,7 @@
   "navigationBarTitleText": "首页",
   "navigationStyle": "custom",
   "usingComponents": {
+    "navBar": "../../components/nav-bar/index",
     "trd-privacy": "../../components/trd-privacy/privacy"
   }
 }

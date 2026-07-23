@@ -1,8 +1,0 @@
-{
-  "component": true,
-  "styleIsolation": "shared",
-  "usingComponents": {
-    "wd-icon": "../wd-icon/index",
-    "wd-menu-list": "../wd-menu-list/index"
-  }
-}

@@ -1,0 +1,219 @@
+{
+  "version": "2.0",
+  "envId": "tcb-advanced-a656fc",
+  "functions": [
+    {
+      "name": "pay-common",
+      "timeout": 30,
+      "handler": "index.main",
+      "runtime": "Nodejs18.15",
+      "memorySize": 256,
+      "installDependency": true,
+      "dir": "cloud/functions/pay-common",
+      "envVariables": {
+        "signMode": "{{env.SIGN_MODE}}",
+        "appId": "{{env.WX_APP_ID}}",
+        "service_app_id": "{{env.SERVICE_APP_ID}}",
+        "merchantId": "{{env.MCH_ID}}",
+        "merchantSerialNumber": "{{env.MCH_SERIAL_NO}}",
+        "apiV3Key": "{{env.API_V3_KEY}}",
+        "privateKey": "{{env.PRIVATE_KEY}}",
+        "wxPayPublicKey": "{{env.WX_PAY_PUBLIC_KEY}}",
+        "wxPayPublicKeyId": "{{env.WX_PAY_PUBLIC_KEY_ID}}",
+        "notifyURLPayURL": "{{env.NOTIFY_PAY_URL}}",
+        "notifyURLRefundsURL": "{{env.NOTIFY_REFUNDS_URL}}",
+        "transferNotifyUrl": "{{env.NOTIFY_TRANSFER_URL}}",
+        "corsAllowOrigin": "{{env.CORS_ALLOW_ORIGIN}}"
+      },
+      "triggers": [],
+      "ignore": [
+        "node_modules",
+        ".git"
+      ],
+      "type": "HTTP"
+    }
+  ],
+  "database": {
+    "collections": [
+      {
+        "name": "bill_records",
+        "description": "缴费记录",
+        "indexes": [
+          {
+            "field": "openid",
+            "unique": false
+          }
+        ]
+      },
+      {
+        "name": "hospital_appointments",
+        "description": "医院挂号预约集合",
+        "indexes": [
+          {
+            "field": "openid",
+            "unique": false
+          },
+          {
+            "field": "hospitalId",
+            "unique": false
+          }
+        ]
+      },
+      {
+        "name": "ai_edit_history",
+        "description": "AI 图片编辑历史记录",
+        "indexes": [
+          {
+            "field": "_openid"
+          },
+          {
+            "field": "createTime"
+          }
+        ]
+      },
+      {
+        "name": "ai_image_history",
+        "description": "AI 图片生成历史记录",
+        "indexes": [
+          {
+            "field": "_openid"
+          },
+          {
+            "field": "createTime"
+          }
+        ]
+      },
+      {
+        "name": "orders",
+        "description": "外卖订单集合",
+        "indexes": [
+          {
+            "field": "openid",
+            "unique": false
+          },
+          {
+            "field": "status",
+            "unique": false
+          }
+        ]
+      },
+      {
+        "name": "parties",
+        "description": "聚会活动集合",
+        "indexes": [
+          {
+            "field": "openid",
+            "unique": false
+          }
+        ]
+      },
+      {
+        "name": "payment_records",
+        "description": "支付记录",
+        "indexes": [
+          {
+            "field": "openid",
+            "unique": false
+          },
+          {
+            "field": "orderId",
+            "unique": false
+          }
+        ]
+      },
+      {
+        "name": "queue_tickets",
+        "description": "排队票据集合",
+        "indexes": [
+          {
+            "field": "ticketId",
+            "unique": false
+          },
+          {
+            "field": "storeId",
+            "unique": false
+          }
+        ]
+      },
+      {
+        "name": "shopping_orders",
+        "description": "潮玩购物订单",
+        "indexes": [
+          {
+            "field": "openid",
+            "unique": false
+          },
+          {
+            "field": "status",
+            "unique": false
+          }
+        ]
+      },
+      {
+        "name": "trips",
+        "description": "出行行程集合",
+        "indexes": [
+          {
+            "field": "openid",
+            "unique": false
+          }
+        ]
+      },
+      {
+        "name": "ai_text_history",
+        "description": "AI 文本生成历史记录",
+        "indexes": [
+          {
+            "field": "_openid"
+          },
+          {
+            "field": "createTime"
+          }
+        ]
+      },
+      {
+        "name": "todo_items",
+        "description": "待办事项集合",
+        "indexes": [
+          {
+            "field": "ownerOpenid",
+            "unique": false
+          }
+        ]
+      },
+      {
+        "name": "travel_plans",
+        "description": "旅行规划集合",
+        "indexes": [
+          {
+            "field": "openid",
+            "unique": false
+          }
+        ]
+      },
+      {
+        "name": "water_daily",
+        "description": "每日饮水记录",
+        "indexes": [
+          {
+            "field": [
+              "openid",
+              "date"
+            ],
+            "unique": false
+          }
+        ]
+      },
+      {
+        "name": "water_profile",
+        "description": "用户饮水配置",
+        "indexes": [
+          {
+            "field": "openid",
+            "unique": false
+          }
+        ]
+      }
+    ]
+  }
+}

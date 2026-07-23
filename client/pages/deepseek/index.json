@@ -1,8 +1,0 @@
-{
-  "usingComponents": {
-    "chat": "/components/agent-deepseek/dist/cloudbase/index"
-  },
-  "componentPlaceholder": {
-    "chat": "block"
-  }
-}

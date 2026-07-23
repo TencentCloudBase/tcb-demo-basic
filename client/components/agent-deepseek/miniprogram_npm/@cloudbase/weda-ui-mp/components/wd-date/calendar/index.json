@@ -1,7 +1,0 @@
-{
-  "component": true,
-  "styleIsolation": "shared",
-  "usingComponents": {
-    "year-month-picker": "../year-month-picker"
-  }
-}

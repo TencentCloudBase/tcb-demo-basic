@@ -1,4 +1,5 @@
 @import 'style/weui.wxss';
+@import 'styles/tokens.wxss';
 
 page {
   background-color: #F8F8F8;

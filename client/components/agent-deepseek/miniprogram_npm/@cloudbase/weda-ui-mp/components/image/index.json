@@ -1,7 +1,0 @@
-{
-  "component": true,
-  "styleIsolation": "shared",
-  "usingComponents": {
-    "gesture": "miniprogram-gesture/gesture"
-  }
-}

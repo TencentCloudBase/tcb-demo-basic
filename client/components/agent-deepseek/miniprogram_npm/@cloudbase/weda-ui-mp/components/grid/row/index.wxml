@@ -1,3 +1,0 @@
-<view class="{{actualClassName}} wd-mp-grid-row" style="{{style}}">
-  <slot></slot>
-</view>

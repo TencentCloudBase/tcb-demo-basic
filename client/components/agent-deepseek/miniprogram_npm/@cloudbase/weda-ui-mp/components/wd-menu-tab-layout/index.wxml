@@ -1,3 +1,0 @@
-<view id="{{id}}" class="weda-ui {{className}}" style="{{style}}">
-  <slot></slot>
-</view>

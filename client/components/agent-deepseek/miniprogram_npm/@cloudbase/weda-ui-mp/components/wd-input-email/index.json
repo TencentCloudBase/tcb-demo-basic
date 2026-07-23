@@ -1,7 +1,0 @@
-{
-  "component": true,
-  "styleIsolation": "shared",
-  "usingComponents": {
-    "inner-input": "../wd-input/inner-input/index"
-  }
-}

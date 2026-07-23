@@ -1,8 +1,0 @@
-{
-  "component": true,
-  "styleIsolation": "shared",
-  "usingComponents": {
-    "mp-cells": "weui-miniprogram/cells/cells",
-    "img": "../image"
-  }
-}

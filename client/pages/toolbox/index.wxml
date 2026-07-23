@@ -1,19 +1,50 @@
-<view class="tcb-srcoll-box">
-  <view class="nav_bar_customize_top">
-    <navBar title-text="工具箱" title-text-left="true" background="#F7F7F8" back-icon="" home-icon="" backImg="" bindback="back"/>
+<view class="dev-page">
+  <view class="dev-intro">
+    <view class="dev-intro__title">AI 写代码，云开发管后端</view>
+    <view class="dev-intro__desc cb-muted">在 IDE 里装插件，用自然语言写小程序并管理云资源；也可查阅文档与云托管能力。</view>
   </view>
-  <view class="tcb-container" style="padding-top: {{navHeight}}px; margin-top: -{{navHeight}}px;">
-    <view class="toolbox-container">
-      <view class="tcb-card" wx:for="{{toolbox}}" wx:key="title" wx:for-item="tool" bindtap="navigateToTool"  data-navigatetype="{{tool.navigateType}}" data-appid="{{tool.appId || ''}}" data-url="{{tool.url || ''}}">
-        <view class="tcb-card__content">
-          <view class="tcb-card__title">
-            <image class="tcb-card_icon" src="{{tool.icon}}"></image>
-            <view>{{tool.title}}</view>
-          </view>
-          <view class="tcb-card__description">{{tool.description}}</view>
-        </view>
-        <image class="tcb-card__shading" src="{{tool.shading}}"></image>
+
+  <view class="dev-section">
+    <view class="section__title">用 AI 接云开发</view>
+    <view class="dev-feature">
+      <view class="dev-feature__title">安装 Plugin（推荐）</view>
+      <view class="dev-feature__desc">一条命令装好 MCP Server、Agent Skills 与 Hooks，支持 Cursor / Claude Code / CodeBuddy 等。</view>
+      <view class="dev-cmd" bindtap="copyText" data-text="{{pluginCmd}}">
+        <text class="dev-cmd__text" user-select>{{pluginCmd}}</text>
+        <text class="dev-cmd__action">复制</text>
       </view>
+      <view class="dev-feature__hint">仅需 Skills 时可在完整引导页查看第二条命令。</view>
+      <button class="cb-btn cb-btn--primary dev-feature__cta" bindtap="goAiToolkit">查看完整引导</button>
+    </view>
+  </view>
+
+  <view class="dev-section">
+    <view class="section__title">怎么用</view>
+    <view class="dev-step" wx:for="{{steps}}" wx:key="title">
+      <view class="dev-step__index">{{index + 1}}</view>
+      <view class="dev-step__body">
+        <view class="dev-step__title">{{item.title}}</view>
+        <view class="dev-step__desc">{{item.desc}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="dev-section">
+    <view class="section__title">学习与资源</view>
+    <view
+      class="dev-link"
+      wx:for="{{resources}}"
+      wx:key="title"
+      bindtap="navigateToTool"
+      data-navigatetype="{{item.navigateType}}"
+      data-appid="{{item.appId || ''}}"
+      data-url="{{item.url || ''}}"
+    >
+      <view class="dev-link__main">
+        <view class="dev-link__title">{{item.title}}</view>
+        <view class="dev-link__desc">{{item.description}}</view>
+      </view>
+      <view class="dev-link__arrow">›</view>
     </view>
   </view>
 </view>

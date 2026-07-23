@@ -1,0 +1,40 @@
+<view class="ai-toolkit">
+  <view class="hero">
+    <view class="hero__title">在 IDE 里用 AI 接云开发</view>
+    <view class="hero__desc">AI 写代码，云开发管后端。安装插件后，可在对话里操作数据库、云函数、存储与部署。示例可用小程序场景，同一套能力也覆盖 Web 等。</view>
+  </view>
+
+  <view class="section">
+    <view class="section__title">推荐安装（Plugin）</view>
+    <view class="cmd" bindtap="copyText" data-text="{{pluginCmd}}">
+      <text class="cmd__text" user-select>{{pluginCmd}}</text>
+      <text class="cmd__action">复制</text>
+    </view>
+    <view class="hint">一条命令安装 MCP Server、Agent Skills 与 Hooks。</view>
+  </view>
+
+  <view class="section">
+    <view class="section__title">仅需 Skills 时</view>
+    <view class="cmd" bindtap="copyText" data-text="{{skillsCmd}}">
+      <text class="cmd__text" user-select>{{skillsCmd}}</text>
+      <text class="cmd__action">复制</text>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section__title">怎么用</view>
+    <view class="step" wx:for="{{steps}}" wx:key="title">
+      <view class="step__index">{{index + 1}}</view>
+      <view class="step__body">
+        <view class="step__title">{{item.title}}</view>
+        <view class="step__desc">{{item.desc}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="actions">
+    <button class="cb-btn cb-btn--primary" bindtap="openDocs">打开插件文档</button>
+    <button class="cb-btn cb-btn--ghost" bindtap="openQuickStart">小程序云开发快速开始</button>
+    <button class="cb-btn cb-btn--ghost" bindtap="goExperience">体验云开发能力</button>
+  </view>
+</view>

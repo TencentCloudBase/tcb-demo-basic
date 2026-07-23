@@ -1,20 +1,12 @@
 {
   "packOptions": {
-    "ignore": [],
-    "include": []
+    "ignore": [
+      {
+        "value": "cli-agent-run",
+        "type": "folder"
+      }
+    ]
   },
-  "subpackages": [
-    {
-      "root": "components/agent-deepseek",
-      "name": "agent-deepseek",
-      "pages": []
-    },
-    {
-      "root": "components/agent-ui",
-      "name": "agent-ui",
-      "pages": []
-    }
-  ],
   "setting": {
     "urlCheck": false,
     "es6": true,
@@ -54,7 +46,13 @@
     "showES6CompileOption": false,
     "minifyWXML": true,
     "bigPackageSizeSupport": true,
-    "ignoreUploadUnusedFiles": true
+    "ignoreUploadUnusedFiles": true,
+    "compileWorklet": false,
+    "packNpmRelationList": [],
+    "localPlugins": false,
+    "condition": false,
+    "swc": false,
+    "disableSWC": true
   },
   "compileType": "miniprogram",
   "libVersion": "2.13.2",
@@ -100,5 +98,10 @@
     "tabIndent": "insertSpaces",
     "tabSize": 2
   },
-  "appId": "wxcf5102ada68a7ac9"
+  "appId": "wxcf5102ada68a7ac9",
+  "watchOptions": {
+    "ignore": [
+      "cli-agent-run/**/*"
+    ]
+  }
 }

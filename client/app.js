@@ -1,20 +1,20 @@
 //app.js
 App({
+  // 必须在 App 顶层声明，页面 data 初始化可能早于 onLaunch
+  globalData: {
+    userInfo: {},
+    navHeight: 64
+  },
   onLaunch: function () {
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
+      console.log('=====wx.cloud.init')
       wx.cloud.init({
+        env: "tcb-advanced-a656fc",
         traceUser: true
       })
     }
-
-    this.globalData = {
-      userInfo: {
-        // avatarUrl: '../../images/user-unlogin.png'
-      }
-    }
-    // 获取自定义导航高度
     this.setNavSize();
   },
   setNavSize: function () {

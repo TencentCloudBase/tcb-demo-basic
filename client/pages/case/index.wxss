@@ -1,10 +1,95 @@
 page {
+  background-color: #E8ECF1;
+}
+
+.exp-page {
+  padding: 40rpx 32rpx 80rpx;
+  box-sizing: border-box;
+  background: #E8ECF1;
+  min-height: 100vh;
+}
+
+.exp-intro {
+  margin-bottom: 48rpx;
+}
+
+.exp-intro__title {
+  font-size: 44rpx;
+  font-weight: 700;
+  line-height: 60rpx;
+  color: #0B1220;
+  margin-bottom: 12rpx;
+  letter-spacing: -0.02em;
+}
+
+.exp-intro__desc {
+  font-size: 26rpx;
+  line-height: 40rpx;
+  color: #5B6573;
+  max-width: 600rpx;
+}
+
+.exp-section {
+  margin-bottom: 16rpx;
+}
+
+.section__title {
+  font-size: 26rpx;
+  font-weight: 600;
+  color: #8B95A5;
+  margin-bottom: 16rpx;
+  letter-spacing: 0.04em;
+}
+
+.exp-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24rpx;
   background: #fff;
+  border-radius: 20rpx;
+  padding: 30rpx 28rpx;
+  margin-bottom: 12rpx;
 }
-.case-bar {
-  padding: 0 32rpx;
+
+.exp-link:last-child {
+  margin-bottom: 0;
 }
-.case-pannel {
-  background-color: #F7F7F8;
-  padding: 32rpx 24rpx;
+
+.exp-link__main {
+  flex: 1;
+  min-width: 0;
+}
+
+.exp-link__title {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #0B1220;
+  margin-bottom: 8rpx;
+}
+
+.exp-link__desc {
+  font-size: 22rpx;
+  line-height: 34rpx;
+  color: #8B95A5;
+}
+
+.exp-link__arrow {
+  flex-shrink: 0;
+  width: 44rpx;
+  height: 44rpx;
+  border-radius: 50%;
+  background: #F4F6F8;
+  color: #8B95A5;
+  font-size: 28rpx;
+  line-height: 44rpx;
+  text-align: center;
+}
+
+.exp-footer {
+  margin-top: 40rpx;
+  padding: 8rpx 0;
+  font-size: 24rpx;
+  color: #8B95A5;
+  text-align: center;
 }

@@ -1,3 +1,0 @@
-<view id="wd-page-root">
-  <chat llmConfig="{{llmConfig}}"></chat>
-</view>

@@ -5,12 +5,6 @@ Page({
   data: {
     list: [
       {
-        id: "ai-bot",
-        name: "小程序 AI+ 能力",
-        isNew: true,
-        url: "/pages/ai/index"
-      },
-      {
         id: "user",
         name: "用户管理"
       },

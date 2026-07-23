@@ -1,3 +1,0 @@
-@import '../../../style/weda-ui.wxss';
-@import '../../../style/wd-design.wxss';
-@import './wd-form.wxss';

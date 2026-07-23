@@ -1,0 +1,59 @@
+/* 云开发体验小程序 — 色阶与节奏 */
+page {
+  --cb-brand: #006EFF;
+  --cb-brand-deep: #0052D9;
+  --cb-ink: #0B1220;
+  --cb-secondary: #5B6573;
+  --cb-muted: #8B95A5;
+  --cb-tip: #A0A8B4;
+  --cb-line: rgba(15, 23, 42, 0.06);
+  --cb-canvas: #E8ECF1;
+  --cb-sheet: #FFFFFF;
+  --cb-soft: #F4F6F8;
+  --cb-tint: #EAF2FF;
+  --cb-cmd-bg: #0B1220;
+  --cb-cmd-fg: #E8ECF0;
+  --cb-radius: 20rpx;
+  --cb-radius-sheet: 32rpx;
+  --cb-space-xs: 12rpx;
+  --cb-space-sm: 20rpx;
+  --cb-space-md: 32rpx;
+  --cb-space-lg: 48rpx;
+  --cb-space-xl: 64rpx;
+}
+
+.cb-btn {
+  margin: 0;
+  border-radius: 999rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  line-height: 2.35;
+}
+
+.cb-btn::after {
+  border: none;
+}
+
+.cb-btn--primary {
+  background: #fff;
+  color: var(--cb-brand-deep);
+  border: none;
+}
+
+.cb-btn--ghost {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.cb-btn--ghost-dark {
+  background: var(--cb-soft);
+  color: var(--cb-ink);
+  border: none;
+}
+
+.cb-muted {
+  font-size: 26rpx;
+  line-height: 40rpx;
+  color: var(--cb-secondary);
+}

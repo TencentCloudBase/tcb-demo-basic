@@ -1,3 +1,0 @@
-<view id="{{id}}" style="{{style}}" class="{{cls}}" bind:tap="tap">
-  <slot></slot>
-</view>

@@ -22,8 +22,8 @@
   </view>
 
   <view class="index-bd">
-    <view class="index-desc">开发教程及源码：</view>
-    <view class="index-desc">https://github.com/TencentCloudBase/mp-book</view>
+    <view class="index-desc">开发教程：https://docs.cloudbase.net/quick-start/mini-program/introduce</view>
+    <view class="index-desc">源码：https://github.com/TencentCloudBase/tcb-demo-basic</view>
   </view>
 
   <official-account></official-account>

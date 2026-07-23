@@ -1,1 +1,0 @@
-<store-product id="{{id}}" appid="{{appid}}" product-id="{{productId}}" product-promotion-link="{{productPromotionLink}}" media-id="{{mediaId}}" custom-style="{{customStyle}}" bindentersuccess="bindentersuccess" bindentererror="bindentererror"  />

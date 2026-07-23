@@ -1,3 +1,0 @@
-<view class="weda-ui weda-RichTextView {{className}}" style="{{style}}">
-  <mp-html content="{{__html}}" />
-</view>
