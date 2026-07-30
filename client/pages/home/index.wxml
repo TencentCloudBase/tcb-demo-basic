@@ -63,7 +63,7 @@
             <view class="ai-panel__title">{{item.title}}</view>
             <view class="ai-panel__desc">{{item.description}}</view>
           </view>
-          <view class="ai-panel__go">去安装</view>
+          <view class="ai-panel__go">去接入</view>
         </view>
       </view>
 

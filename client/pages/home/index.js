@@ -39,7 +39,7 @@ Page({
     aiPaths: [
       {
         title: '在 IDE 里用 AI 接云开发',
-        description: '安装 Plugin / Skills，用自然语言写代码并管理云资源',
+        description: '复制 Prompt 粘给 AI，或装 Plugin 一键接入',
         url: '/pages/ai-toolkit/index'
       }
     ],

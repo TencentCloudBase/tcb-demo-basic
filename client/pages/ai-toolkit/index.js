@@ -1,3 +1,5 @@
+const AI_SETUP_PROMPT = '帮我把 CloudBase 接好：\n1. 打开 https://docs.cloudbase.net/skill.md，按说明完成接入。\n2. 接入完成后告诉我，并建议最相关的下一步。'
+const AI_USE_PROMPT = '使用 CloudBase Skills 开发一个全栈 Web 应用并部署'
 const PLUGIN_CMD = 'npx plugins add TencentCloudBase/cloudbase-plugin --yes'
 const SKILLS_CMD = 'npx skills add tencentcloudbase/cloudbase-skills -y'
 const DOCS_URL = 'https://docs.cloudbase.net/ai/cloudbase-ai-toolkit/ai-agent-plugins'
@@ -5,12 +7,14 @@ const QUICKSTART_URL = 'https://docs.cloudbase.net/quick-start/mini-program/intr
 
 Page({
   data: {
+    aiSetupPrompt: AI_SETUP_PROMPT,
+    aiUsePrompt: AI_USE_PROMPT,
     pluginCmd: PLUGIN_CMD,
     skillsCmd: SKILLS_CMD,
     steps: [
       {
-        title: '在 AI IDE 里安装插件',
-        desc: 'Cursor / Claude Code / CodeBuddy 等，一条命令装好 MCP + Skills + Hooks。'
+        title: '把 Prompt 粘给 AI（或装 Plugin）',
+        desc: '粘到 Cursor / Claude Code / CodeBuddy 等 AI IDE，AI 会按说明自动接入；也可用下面的 Plugin 命令一键安装。'
       },
       {
         title: '对 AI 说明需求',

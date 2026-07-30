@@ -27,7 +27,7 @@ page {
 }
 
 .section {
-  margin-bottom: 56rpx;
+  margin-bottom: 48rpx;
 }
 
 .section__title {
@@ -36,6 +36,63 @@ page {
   color: #8B95A5;
   margin-bottom: 16rpx;
   letter-spacing: 0.04em;
+}
+
+.section__sub-title {
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #8B95A5;
+  margin: 24rpx 0 12rpx;
+}
+
+.prompt-card {
+  background: #EAF2FF;
+  border-radius: 20rpx;
+  padding: 28rpx 24rpx;
+  margin-bottom: 16rpx;
+}
+
+.prompt-card--sub {
+  background: #F4F6F8;
+}
+
+.prompt-card__label {
+  font-size: 26rpx;
+  font-weight: 600;
+  color: #0B1220;
+  margin-bottom: 14rpx;
+}
+
+.prompt-box {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20rpx;
+  padding: 22rpx 24rpx;
+  background: #0B1220;
+  border-radius: 16rpx;
+}
+
+.prompt-box--inline {
+  align-items: center;
+}
+
+.prompt-box__text {
+  flex: 1;
+  font-size: 22rpx;
+  line-height: 36rpx;
+  color: #E8ECF0;
+  word-break: break-all;
+  white-space: pre-wrap;
+  font-family: Menlo, Consolas, monospace;
+}
+
+.prompt-box__action {
+  flex-shrink: 0;
+  font-size: 24rpx;
+  color: #6EB6FF;
+  font-weight: 500;
+  line-height: 36rpx;
 }
 
 .cmd {

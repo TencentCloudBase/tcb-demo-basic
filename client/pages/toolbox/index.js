@@ -1,15 +1,17 @@
 // pages/toolbox/index.js — Tab「开发」
 const app = getApp()
 
+const AI_SETUP_PROMPT = '帮我把 CloudBase 接好：\n1. 打开 https://docs.cloudbase.net/skill.md，按说明完成接入。\n2. 接入完成后告诉我，并建议最相关的下一步。'
 const PLUGIN_CMD = 'npx plugins add TencentCloudBase/cloudbase-plugin --yes'
 
 Page({
   data: {
+    aiSetupPrompt: AI_SETUP_PROMPT,
     pluginCmd: PLUGIN_CMD,
     steps: [
       {
-        title: '在 AI IDE 里安装插件',
-        desc: 'Cursor / Claude Code / CodeBuddy 等，一条命令装好 MCP + Skills。'
+        title: '把 Prompt 粘给 AI（或装 Plugin）',
+        desc: '粘到 Cursor / Claude Code / CodeBuddy 等 AI IDE，AI 会自动接入；也可用下面的 Plugin 命令一键安装。'
       },
       {
         title: '用自然语言描述需求',

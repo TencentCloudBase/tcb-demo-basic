@@ -1,20 +1,39 @@
 <view class="ai-toolkit">
   <view class="hero">
     <view class="hero__title">在 IDE 里用 AI 接云开发</view>
-    <view class="hero__desc">AI 写代码，云开发管后端。安装插件后，可在对话里操作数据库、云函数、存储与部署。示例可用小程序场景，同一套能力也覆盖 Web 等。</view>
+    <view class="hero__desc">AI 写代码，云开发管后端。把下面 Prompt 粘给 AI 即可接入；也可用 Plugin 命令一键安装。示例以小程序场景为主，同一套能力也覆盖 Web。</view>
   </view>
 
   <view class="section">
-    <view class="section__title">推荐安装（Plugin）</view>
+    <view class="section__title">方式一 · AI Prompt（推荐，最通用）</view>
+    <view class="prompt-card">
+      <view class="prompt-card__label">告诉 AI 接入 CloudBase</view>
+      <view class="prompt-box" bindtap="copyText" data-text="{{aiSetupPrompt}}">
+        <text class="prompt-box__text" user-select>{{aiSetupPrompt}}</text>
+        <view class="prompt-box__action">复制</view>
+      </view>
+      <view class="hint">粘到 Cursor / Claude Code / CodeBuddy 等 AI IDE，AI 会打开说明文档并自动完成接入。</view>
+    </view>
+
+    <view class="prompt-card prompt-card--sub">
+      <view class="prompt-card__label">开始用 · 对 AI 说</view>
+      <view class="prompt-box prompt-box--inline" bindtap="copyText" data-text="{{aiUsePrompt}}">
+        <text class="prompt-box__text" user-select>{{aiUsePrompt}}</text>
+        <view class="prompt-box__action">复制</view>
+      </view>
+      <view class="hint">接入完成后，用一句话描述你的需求即可。</view>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section__title">方式二 · Plugin 命令（一键安装）</view>
     <view class="cmd" bindtap="copyText" data-text="{{pluginCmd}}">
       <text class="cmd__text" user-select>{{pluginCmd}}</text>
       <text class="cmd__action">复制</text>
     </view>
-    <view class="hint">一条命令安装 MCP Server、Agent Skills 与 Hooks。</view>
-  </view>
+    <view class="hint">一条命令装好 MCP Server、Agent Skills 与 Hooks。若装不上，用上面的 Prompt 方式即可。</view>
 
-  <view class="section">
-    <view class="section__title">仅需 Skills 时</view>
+    <view class="section__sub-title">仅需 Skills 时</view>
     <view class="cmd" bindtap="copyText" data-text="{{skillsCmd}}">
       <text class="cmd__text" user-select>{{skillsCmd}}</text>
       <text class="cmd__action">复制</text>

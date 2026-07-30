@@ -1,19 +1,30 @@
 <view class="dev-page">
   <view class="dev-intro">
     <view class="dev-intro__title">AI 写代码，云开发管后端</view>
-    <view class="dev-intro__desc cb-muted">在 IDE 里装插件，用自然语言写小程序并管理云资源；也可查阅文档与云托管能力。</view>
+    <view class="dev-intro__desc cb-muted">把 Prompt 粘给 AI 即可接入；也可用 Plugin 命令一键安装。用自然语言写小程序并管理云资源。</view>
   </view>
 
   <view class="dev-section">
     <view class="section__title">用 AI 接云开发</view>
+
+    <view class="dev-feature dev-feature--primary">
+      <view class="dev-feature__tag">推荐 · 最通用</view>
+      <view class="dev-feature__title">方式一 · AI Prompt 接入</view>
+      <view class="dev-feature__desc">把下面 Prompt 复制粘到 AI IDE，AI 会打开说明文档并自动完成接入。插件装不上时用此方式。</view>
+      <view class="dev-prompt" bindtap="copyText" data-text="{{aiSetupPrompt}}">
+        <text class="dev-prompt__text" user-select>{{aiSetupPrompt}}</text>
+        <view class="dev-prompt__action">复制</view>
+      </view>
+    </view>
+
     <view class="dev-feature">
-      <view class="dev-feature__title">安装 Plugin（推荐）</view>
+      <view class="dev-feature__title">方式二 · Plugin 命令</view>
       <view class="dev-feature__desc">一条命令装好 MCP Server、Agent Skills 与 Hooks，支持 Cursor / Claude Code / CodeBuddy 等。</view>
       <view class="dev-cmd" bindtap="copyText" data-text="{{pluginCmd}}">
         <text class="dev-cmd__text" user-select>{{pluginCmd}}</text>
         <text class="dev-cmd__action">复制</text>
       </view>
-      <view class="dev-feature__hint">仅需 Skills 时可在完整引导页查看第二条命令。</view>
+      <view class="dev-feature__hint">仅需 Skills 等更多命令，见完整引导页。</view>
       <button class="cb-btn cb-btn--primary dev-feature__cta" bindtap="goAiToolkit">查看完整引导</button>
     </view>
   </view>

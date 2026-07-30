@@ -30,7 +30,7 @@ page {
 }
 
 .dev-section {
-  margin-bottom: 56rpx;
+  margin-bottom: 48rpx;
 }
 
 .section__title {
@@ -45,6 +45,23 @@ page {
   background: #EAF2FF;
   border-radius: 24rpx;
   padding: 32rpx 28rpx;
+  margin-bottom: 16rpx;
+}
+
+.dev-feature--primary {
+  background: linear-gradient(135deg, #EAF2FF 0%, #DCE9FF 100%);
+}
+
+.dev-feature__tag {
+  display: inline-block;
+  font-size: 20rpx;
+  font-weight: 600;
+  color: #006EFF;
+  background: rgba(0, 110, 255, 0.12);
+  border-radius: 8rpx;
+  padding: 4rpx 12rpx;
+  margin-bottom: 14rpx;
+  letter-spacing: 0.04em;
 }
 
 .dev-feature__title {
@@ -85,6 +102,34 @@ page {
   font-size: 24rpx;
   color: #6EB6FF;
   font-weight: 500;
+}
+
+.dev-prompt {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20rpx;
+  padding: 22rpx 24rpx;
+  background: #0B1220;
+  border-radius: 16rpx;
+}
+
+.dev-prompt__text {
+  flex: 1;
+  font-size: 22rpx;
+  line-height: 36rpx;
+  color: #E8ECF0;
+  word-break: break-all;
+  white-space: pre-wrap;
+  font-family: Menlo, Consolas, monospace;
+}
+
+.dev-prompt__action {
+  flex-shrink: 0;
+  font-size: 24rpx;
+  color: #6EB6FF;
+  font-weight: 500;
+  line-height: 36rpx;
 }
 
 .dev-feature__hint {
