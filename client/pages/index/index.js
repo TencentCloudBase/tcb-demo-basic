@@ -13,8 +13,12 @@ Page({
         name: "小程序码"
       },
       {
+        id: "messsend",
+        name: "订阅消息"
+      },
+      {
         id: "reserve",
-        name: "模板消息"
+        name: "服务消息"
       },
       {
         id: "customer-msg",
